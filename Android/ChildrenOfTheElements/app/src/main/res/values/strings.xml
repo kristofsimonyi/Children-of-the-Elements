@@ -2,6 +2,13 @@
 <resources>
 
     <string name="app_name">Children Of The Elements</string>
+
+
+    <!-- FIRST SCREEN -->
+    <string name="subtitle">First Story - The Story of the Sea</string>
+    <string name="tapAnywhere">Tap anywhere: proceed to map</string>
+
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_world_map">WorldMap</string>

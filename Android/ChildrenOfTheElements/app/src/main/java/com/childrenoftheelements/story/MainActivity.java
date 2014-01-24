@@ -1,26 +1,19 @@
 package com.childrenoftheelements.story;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.Fragment;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
-import java.util.List;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -36,14 +29,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+
+
 
 
         MediaPlayer mp = new MediaPlayer();
+
+        TextView titular = (TextView) findViewById(R.id.start_mainTitle);
+        TextView subtitle = (TextView) findViewById(R.id.start_subtitle);
+
+        Typeface estilo = Typeface.createFromAsset( getAssets(), "fonts/rugeboogie.ttf");
+
+        titular.setTypeface(estilo);
+        subtitle.setTypeface(estilo);
 
 
         /*

@@ -1,11 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash"
-    tools:context="com.childrenoftheelements.story.MainActivity"
-    tools:ignore="MergeRootFrame" >
+    android:background="#ffffff"
+    >
 
+    <TextView
+        android:id="@+id/start_mainTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="50sp"
+        android:gravity="center"
 
-</FrameLayout>
+        android:textColor="#A50710" />
+    <TextView
+        android:id="@+id/start_subtitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle"
+        android:textSize="30sp"
+        android:gravity="center"
+
+        android:layout_below="@+id/start_mainTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#A50710"
+        android:textIsSelectable="true" />
+
+</RelativeLayout>
