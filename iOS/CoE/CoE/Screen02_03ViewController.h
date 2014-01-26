@@ -6,11 +6,7 @@
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
 
-#import "ViewController.h"
-
-@interface Screen02_03ViewController : ViewController
-{
-    
+@interface Screen02_03ViewController : UIViewController{
 }
 
 -(IBAction)screen02_03BackToMainMenu:(id)sender;

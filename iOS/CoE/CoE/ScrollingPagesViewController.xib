@@ -36,7 +36,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <action selector="scrollingPaesBackToMainMenu:" destination="-1" eventType="touchUpInside" id="22"/>
+                        <action selector="scrollingPagesBackToMainMenu:" destination="-1" eventType="touchUpInside" id="wyM-CF-P76"/>
                     </connections>
                 </view>
             </subviews>

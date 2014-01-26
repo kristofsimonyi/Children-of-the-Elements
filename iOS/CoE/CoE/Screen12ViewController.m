@@ -42,7 +42,46 @@
 
 @implementation Screen12ViewController
 
-@synthesize screen12BackToMainMenu, screen12WavesImageView, screen12StoryTextView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView;
+@synthesize screen12BackToMainMenuImageView, screen12WavesImageView, screen12StoryTextView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView;
+
+-(void)goToNextScreen;
+{
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (void)screen12BackToMainMenu;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController=0;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)screen12NextScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController++;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)screen12PreviousScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController--;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -181,9 +220,9 @@
     
     UIImageView *selectedKelp;
     
-    if (CGRectContainsPoint(screen12BackToMainMenu.frame, translatedPoint)) 
+    if (CGRectContainsPoint(screen12BackToMainMenuImageView.frame, translatedPoint)) 
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self screen12BackToMainMenu];
     }
     
     if (CGRectContainsPoint(screen12Kelp1ImageView.frame, translatedPoint)) 

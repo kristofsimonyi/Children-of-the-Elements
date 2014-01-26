@@ -23,14 +23,14 @@
 #define FISH_ESPACE_X_DIFFERENE                 200.00
 #define FISH_ESPACE_TIME_INTERVAL               2.00
 
-#import "Screen09ViewController.h"
+#import "Inori_FatherAndSonPatchUpAFishnetViewController.h"
 #import "ViewController.h"
 
-@interface Screen09ViewController ()
+@interface Inori_FatherAndSonPatchUpAFishnetViewController ()
 
 @end
 
-@implementation Screen09ViewController
+@implementation Inori_FatherAndSonPatchUpAFishnetViewController
 
 @synthesize screen09Fish01ImageView, screen09Fish02ImageView, screen09NetImageView, screen09Sea01ImageView, screen09Sea02ImageView;
 

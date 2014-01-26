@@ -6,10 +6,9 @@
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "DesatView.h"
 
-@interface Screen08ViewController : ViewController
+@interface Screen08ViewController : UIViewController
 {
     int itIsWavingClock, bigShipRockingClock, bigShipRockingClockChange, smallShipRockingClock, smallShipRockingClockChange;
     CGFloat cloudMovingTimerClockChange, cloudMovingTimerClock;

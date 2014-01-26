@@ -159,13 +159,6 @@
                                 <rect key="frame" x="0.0" y="384" width="1024" height="384"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d2i-sU-Ebq">
-                                        <rect key="frame" x="11" y="47" width="19" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" id="KzU-Qh-iBb" userLabel="Screen 01 Control" customClass="UIControl">
                                         <rect key="frame" x="38" y="20" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -182,14 +175,7 @@
                                             <action selector="mainscreenScreen01ControlSelected:" destination="2" eventType="touchUpInside" id="aOf-FV-mj1"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="04" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p6W-Rt-3n4">
-                                        <rect key="frame" x="160" y="47" width="19" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" id="TQ6-Uj-7wg" userLabel="Screen 04 Control" customClass="UIControl">
+                                    <view contentMode="scaleToFill" id="TQ6-Uj-7wg" userLabel="Screen 02 Control" customClass="UIControl">
                                         <rect key="frame" x="187" y="20" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -204,14 +190,22 @@
                                             <action selector="mainscreenScreen04ControlSelected:" destination="2" eventType="touchUpInside" id="usf-7N-Zm3"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwZ-V4-C4i">
-                                        <rect key="frame" x="485" y="47" width="19" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" id="FJp-ws-v9N" userLabel="Screen 09 Control" customClass="UIControl">
+                                    <view contentMode="scaleToFill" id="erJ-WR-Fje" userLabel="Screen 03 Control" customClass="UIControl">
+                                        <rect key="frame" x="347" y="20" width="100" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Z89-fR-v4i">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                                        <connections>
+                                            <action selector="mainscreenScreen03ControlSelected:" destination="2" eventType="touchUpInside" id="5Ez-EX-fms"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="FJp-ws-v9N" userLabel="Screen 04 Control" customClass="UIControl">
                                         <rect key="frame" x="512" y="20" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -227,14 +221,7 @@
                                             <action selector="mainscreenScreen09ControlSelected:" destination="2" eventType="touchUpInside" id="Gyu-7j-Mqe"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1XL-k4-efS">
-                                        <rect key="frame" x="11" y="224" width="19" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" id="1iL-1l-v3r" userLabel="Screen 11 Control" customClass="UIControl">
+                                    <view contentMode="scaleToFill" id="1iL-1l-v3r" userLabel="Screen 05 Control" customClass="UIControl">
                                         <rect key="frame" x="38" y="197" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -250,14 +237,7 @@
                                             <action selector="mainscreenScreen11ControlSelected:" destination="2" eventType="touchUpInside" id="7EN-VP-Fq8"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O0A-0u-yeI">
-                                        <rect key="frame" x="160" y="224" width="19" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" id="Idu-8t-BGI" userLabel="Screen 14 Control" customClass="UIControl">
+                                    <view contentMode="scaleToFill" id="Idu-8t-BGI" userLabel="Screen 06 Control" customClass="UIControl">
                                         <rect key="frame" x="187" y="197" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -273,14 +253,7 @@
                                             <action selector="mainscreenScreen14ControlSelected:" destination="2" eventType="touchUpInside" id="cjn-SC-pYE"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="15-16" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M8h-EL-IyK">
-                                        <rect key="frame" x="295" y="214" width="44" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" id="OVy-G1-C50" userLabel="Screen 15-16 Control" customClass="UIControl">
+                                    <view contentMode="scaleToFill" id="OVy-G1-C50" userLabel="Screen 07 Control" customClass="UIControl">
                                         <rect key="frame" x="347" y="197" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -296,13 +269,6 @@
                                             <action selector="mainscreenScreen15_16ControlSelected:" destination="2" eventType="touchUpInside" id="cWv-et-z0h"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Icx-bB-yZ1">
-                                        <rect key="frame" x="600" y="200" width="19" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" id="Air-rc-9vY" userLabel="Screen FT Control" customClass="UIControl">
                                         <rect key="frame" x="630" y="170" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -312,6 +278,12 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of Fonts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Kf-gm-2GO">
+                                                <rect key="frame" x="0.0" y="27" width="100" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="7.621079918e-05" green="1" blue="0.66294469869999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -326,13 +298,6 @@
                                 <rect key="frame" x="0.0" y="384" width="1024" height="384"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="A1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7GY-dP-NgC">
-                                        <rect key="frame" x="11" y="47" width="21" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" id="9a2-sw-Rid" userLabel="Screen A1 Control" customClass="UIControl">
                                         <rect key="frame" x="38" y="20" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,13 +313,6 @@
                                             <action selector="mainscreenScreenA1ControlSelected:" destination="2" eventType="touchUpInside" id="T11-rM-qyp"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="E" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AMg-kk-Bp8">
-                                        <rect key="frame" x="160" y="47" width="12" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" id="JQ5-4v-D1e" userLabel="Screen E Control" customClass="UIControl">
                                         <rect key="frame" x="187" y="20" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -371,13 +329,6 @@
                                             <action selector="mainscreenScreenEControlSelected:" destination="2" eventType="touchUpInside" id="8T1-fL-JqZ"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="02-03" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wE5-7d-jOK">
-                                        <rect key="frame" x="295" y="47" width="44" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" id="r3t-Yr-Ayq" userLabel="Screen 02-03 Control" customClass="UIControl">
                                         <rect key="frame" x="347" y="20" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -401,29 +352,6 @@
                                 <rect key="frame" x="0.0" y="384" width="1024" height="384"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E0P-3Y-Usc">
-                                        <rect key="frame" x="11" y="47" width="19" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" id="266-Lg-C7h" userLabel="Screen FT Control" customClass="UIControl">
-                                        <rect key="frame" x="38" y="20" width="100" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="lkN-lw-zeW">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="7.621079918e-05" green="1" blue="0.66294469869999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                                        <connections>
-                                            <action selector="mainscreenScreenFontsSelected:" destination="2" eventType="touchUpInside" id="EIv-6j-4rT"/>
-                                        </connections>
-                                    </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="06-07" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Itn-zD-cW2">
                                         <rect key="frame" x="160" y="47" width="44" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -609,6 +537,206 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-394" y="-114"/>
+        </scene>
+        <!--Inori Father And Son Swim In The Sea View Controller-->
+        <scene sceneID="xYL-tJ-qha">
+            <objects>
+                <viewController storyboardIdentifier="FatherAndSonSwimInTheSea" id="TH8-v4-7J9" customClass="Inori_FatherAndSonSwimInTheSeaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jbo-U4-QEC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.48999998569488495" contentMode="scaleToFill" image="12_1k_alap.png" id="bA5-KZ-ctl" userLabel="BackgroundImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_inori.png" id="E7h-fL-Lzu" userLabel="InoriImageView" customClass="WavingImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_apa.png" id="NnR-7K-fmF" userLabel="FatherImageview" customClass="WavingImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="IKp-bV-6qK" userLabel="MenuImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView alpha="0.88999998569488525" contentMode="scaleToFill" image="6-7_1k_leny1.png" id="sYq-0p-Zif" userLabel="Fish01ImageView">
+                                <rect key="frame" x="72" y="61" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DXA-og-rYL" appends="YES" id="I0j-aN-CKw"/>
+                                </connections>
+                            </imageView>
+                            <imageView alpha="0.88999998569488525" contentMode="scaleToFill" image="6-7_1k_leny2.png" id="oXA-bj-ihn" userLabel="Fish02ImageView">
+                                <rect key="frame" x="497" y="13" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="i0n-7U-fN9" appends="YES" id="Kcg-TJ-j8P"/>
+                                </connections>
+                            </imageView>
+                            <imageView alpha="0.88999998569488525" contentMode="scaleToFill" image="6-7_1k_leny3.png" id="wsY-fp-aEm" userLabel="Fish03ImageView">
+                                <rect key="frame" x="799" y="176" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oaq-4z-ZM2" appends="YES" id="462-1D-wQW"/>
+                                </connections>
+                            </imageView>
+                            <imageView alpha="0.88999998569488525" contentMode="scaleToFill" image="6-7_1k_leny4.png" id="lTX-C3-cIi" userLabel="Fish04ImageView">
+                                <rect key="frame" x="84" y="606" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Mgh-l3-RWa" appends="YES" id="td4-1Q-8cE"/>
+                                </connections>
+                            </imageView>
+                            <imageView alpha="0.88999998569488525" contentMode="scaleToFill" image="6-7_1k_leny5.png" id="14K-8m-pIh" userLabel="Fish05ImageView">
+                                <rect key="frame" x="391" y="474" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NCW-m6-kHY" appends="YES" id="1dD-J8-lKC"/>
+                                </connections>
+                            </imageView>
+                            <imageView alpha="0.88999998569488525" contentMode="scaleToFill" image="6-7_1k_leny6.png" id="EY8-da-rga" userLabel="Fish06ImageView">
+                                <rect key="frame" x="743" y="553" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="l1X-UH-QGC" appends="YES" id="2bw-Ad-tMu"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="Siv-lE-eX1" userLabel="FatherControl" customClass="UIControl">
+                                <rect key="frame" x="363" y="113" width="342" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3Zl-1M-dNX" appends="YES" id="eGF-og-0cZ"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="5n4-0w-jIB" userLabel="InoriControl" customClass="UIControl">
+                                <rect key="frame" x="104" y="287" width="182" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yXY-di-Rdi" appends="YES" id="NUh-CY-JPm"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="z7R-4U-lhf" userLabel="PreviousScreenControl" customClass="UIControl">
+                                <rect key="frame" x="979" y="514" width="45" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="40M-Bi-SNg" appends="YES" id="xKT-Vb-jfS"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="48e-cV-lgk" userLabel="NextScreenControl" customClass="UIControl">
+                                <rect key="frame" x="979" y="432" width="45" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cuG-qL-baz" appends="YES" id="tMf-hK-DOp"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="Lfc-L6-fRK" userLabel="MusicControl" customClass="UIControl">
+                                <rect key="frame" x="979" y="654" width="45" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="I6R-Z7-Zdh" appends="YES" id="JpT-h9-s9F"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen03" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="397-ft-3pz">
+                                <rect key="frame" x="363" y="272" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="fatherControl" destination="Siv-lE-eX1" id="pK3-Y1-XrW"/>
+                        <outlet property="fatherImageView" destination="NnR-7K-fmF" id="23K-LC-Kj7"/>
+                        <outlet property="inoriControl" destination="5n4-0w-jIB" id="QL2-29-CPA"/>
+                        <outlet property="inoriImageView" destination="E7h-fL-Lzu" id="574-57-sig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRa-qc-3Zs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cuG-qL-baz" userLabel="NextScreenTap Gesture Recognizer">
+                    <connections>
+                        <action selector="NextScreenControlTapped:" destination="TH8-v4-7J9" id="cEA-0Q-kMy"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="40M-Bi-SNg" userLabel="PreviousScreenTap Gesture Recognizer">
+                    <connections>
+                        <action selector="PreviousScreenControlTapped:" destination="TH8-v4-7J9" id="l5P-xJ-J5o"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="I6R-Z7-Zdh" userLabel="MusicControlTap Gesture Recognizer">
+                    <connections>
+                        <action selector="musicControlTapped" destination="TH8-v4-7J9" id="QRL-Xq-hcQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="DXA-og-rYL" userLabel="Fish01Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="fishImageViewTapped:" destination="TH8-v4-7J9" id="Szs-sJ-Pp3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="i0n-7U-fN9" userLabel="Fish02Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="fishImageViewTapped:" destination="TH8-v4-7J9" id="q9C-a2-VHD"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="oaq-4z-ZM2" userLabel="Fish03Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="fishImageViewTapped:" destination="TH8-v4-7J9" id="djN-Ft-udI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Mgh-l3-RWa" userLabel="Fish04Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="fishImageViewTapped:" destination="TH8-v4-7J9" id="aWr-PP-Sia"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="NCW-m6-kHY" userLabel="Fish05Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="fishImageViewTapped:" destination="TH8-v4-7J9" id="5gJ-Ws-8ej"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="l1X-UH-QGC" userLabel="Fish06Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="fishImageViewTapped:" destination="TH8-v4-7J9" id="oxc-fI-5Xq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3Zl-1M-dNX" userLabel="FatherTap Gesture Recognizer">
+                    <connections>
+                        <action selector="inoriOrFatherImageViewTapped:" destination="TH8-v4-7J9" id="vgX-f8-2TI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="yXY-di-Rdi" userLabel="InoriTap Gesture Recognizer">
+                    <connections>
+                        <action selector="inoriOrFatherImageViewTapped:" destination="TH8-v4-7J9" id="2xn-NT-3jQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="751" y="-114"/>
         </scene>
         <!--PurchaseMiniEpisodesViewController-->
         <scene sceneID="Ow2-LK-PoG">
@@ -968,12 +1096,21 @@
         <image name="10_overview.jpg" width="200" height="150"/>
         <image name="11_1k_fazek-0.png" width="765" height="768"/>
         <image name="12-overview.png" width="200" height="150"/>
+        <image name="12_1k_alap.png" width="1024" height="768"/>
         <image name="12_1k_hal5.png" width="87" height="58"/>
         <image name="13_overview.jpg" width="200" height="150"/>
         <image name="14_1k_base_overview.jpg" width="200" height="150"/>
         <image name="15-16_1k_szita1.png" width="184" height="143"/>
         <image name="15-16_overview15.jpg" width="200" height="150"/>
         <image name="6-7-overview.png" width="200" height="150"/>
+        <image name="6-7_1k_apa.png" width="1024" height="768"/>
+        <image name="6-7_1k_inori.png" width="1024" height="768"/>
+        <image name="6-7_1k_leny1.png" width="84" height="102"/>
+        <image name="6-7_1k_leny2.png" width="115" height="103"/>
+        <image name="6-7_1k_leny3.png" width="91" height="107"/>
+        <image name="6-7_1k_leny4.png" width="94" height="97"/>
+        <image name="6-7_1k_leny5.png" width="115" height="109"/>
+        <image name="6-7_1k_leny6.png" width="133" height="66"/>
         <image name="8_overview small.png" width="200" height="150"/>
         <image name="9_overview.png" width="200" height="150"/>
         <image name="A1-overview.png" width="200" height="150"/>
@@ -988,6 +1125,7 @@
         <image name="e_1k_talamh_fly.png" width="161" height="250"/>
         <image name="e_1k_ziemelu_fly.png" width="250" height="248"/>
         <image name="korhinta-overview.png" width="200" height="150"/>
+        <image name="menu_set_4k.png" width="2048" height="1536"/>
         <image name="screen1-overview2.png" width="200" height="150"/>
         <image name="screen11-overview1.png" width="200" height="150"/>
         <image name="screen2-3-overview.jpg" width="200" height="150"/>

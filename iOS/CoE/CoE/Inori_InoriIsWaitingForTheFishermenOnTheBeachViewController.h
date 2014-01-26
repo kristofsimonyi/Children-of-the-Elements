@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVAudioPlayer.h>
 
-@interface Screen04ViewController : UIViewController<UIGestureRecognizerDelegate, AVAudioPlayerDelegate>
+@interface Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController : UIViewController<UIGestureRecognizerDelegate, AVAudioPlayerDelegate>
 {
     int itIsWavingClock, bigShipRockingClock, bigShipRockingClockChange, smallShipRockingClock, smallShipRockingClockChange;
     NSTimer *itIsWavingTimer, *bigShipRockingTimer, *smallShipRockingTimer;

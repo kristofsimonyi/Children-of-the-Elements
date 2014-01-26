@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E206832718610B2200BBAB61 /* menu_set_1k.png in Resources */ = {isa = PBXBuildFile; fileRef = E206832618610B2200BBAB61 /* menu_set_1k.png */; };
 		E20838C8171070390073A6A8 /* 8_1k_dune.png in Resources */ = {isa = PBXBuildFile; fileRef = E20838C5171070390073A6A8 /* 8_1k_dune.png */; };
 		E20838C9171070390073A6A8 /* 8_1k_hatter.png in Resources */ = {isa = PBXBuildFile; fileRef = E20838C6171070390073A6A8 /* 8_1k_hatter.png */; };
 		E20838CA171070390073A6A8 /* 8_1k_nagyhajo.png in Resources */ = {isa = PBXBuildFile; fileRef = E20838C7171070390073A6A8 /* 8_1k_nagyhajo.png */; };
@@ -27,8 +26,8 @@
 		E20A7C3F16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A7C3D16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m */; };
 		E20A7C4016C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20A7C3E16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib */; };
 		E210840F152CDC4500E4A492 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E210840E152CDC4400E4A492 /* AVFoundation.framework */; };
-		E222CEE31524B90C008FA949 /* Screen04ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E222CEE11524B90C008FA949 /* Screen04ViewController.m */; };
-		E222CEE41524B90C008FA949 /* Screen04ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E222CEE21524B90C008FA949 /* Screen04ViewController.xib */; };
+		E222CEE31524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E222CEE11524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m */; };
+		E222CEE41524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E222CEE21524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib */; };
 		E222CEE61524B9D5008FA949 /* 12-overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E222CEE51524B9D5008FA949 /* 12-overview.png */; };
 		E222CEFD1524B9E1008FA949 /* 12_1k_alap.png in Resources */ = {isa = PBXBuildFile; fileRef = E222CEE71524B9E1008FA949 /* 12_1k_alap.png */; };
 		E222CEFE1524B9E1008FA949 /* 12_1k_hal.png in Resources */ = {isa = PBXBuildFile; fileRef = E222CEE81524B9E1008FA949 /* 12_1k_hal.png */; };
@@ -84,11 +83,13 @@
 		E236A8361860F671003A1B04 /* FontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E236A8351860F671003A1B04 /* FontsViewController.m */; };
 		E2376406173143DF006B1232 /* ScrollingPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2376404173143DE006B1232 /* ScrollingPagesViewController.m */; };
 		E2376407173143DF006B1232 /* ScrollingPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2376405173143DF006B1232 /* ScrollingPagesViewController.xib */; };
-		E237640917315BA0006B1232 /* the-perfect-fantasy-sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E237640817315BA0006B1232 /* the-perfect-fantasy-sunset.jpg */; };
 		E23C51B116D6C989000D5958 /* CommonLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C51B016D6C989000D5958 /* CommonLibrary.m */; };
 		E24129A6159598E30094E53B /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = E24129A5159598E30094E53B /* UIImage+StackBlur.m */; };
 		E24AF55F1783720300C9EF11 /* Screen15_16ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */; };
 		E24AF5601783720300C9EF11 /* Screen15_16ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */; };
+		E253741418940C7C00EFC01B /* menu_set_4k.png in Resources */ = {isa = PBXBuildFile; fileRef = E253741318940C7C00EFC01B /* menu_set_4k.png */; };
+		E253741E1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E253741D1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg */; };
+		E253742B18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E253742A18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m */; };
 		E25745F2184D40B8001E98FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25745F1184D40B8001E98FB /* Images.xcassets */; };
 		E258B96B151665880094C4F7 /* A1-overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E258B96A151665880094C4F7 /* A1-overview.png */; };
 		E262C490173008590001BD41 /* 2-3_1k_base.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E262C48E173008590001BD41 /* 2-3_1k_base.jpg */; };
@@ -330,8 +331,8 @@
 		E2FA493916D431F00044816A /* 6-7-overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA491D16D431F00044816A /* 6-7-overview.png */; };
 		E2FA493D16D434620044816A /* Screen06_07ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA493B16D434620044816A /* Screen06_07ViewController.m */; };
 		E2FA493E16D434620044816A /* Screen06_07ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FA493C16D434620044816A /* Screen06_07ViewController.xib */; };
-		E2FA494316D43A8F0044816A /* Screen09ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA494116D43A8F0044816A /* Screen09ViewController.m */; };
-		E2FA494416D43A8F0044816A /* Screen09ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FA494216D43A8F0044816A /* Screen09ViewController.xib */; };
+		E2FA494316D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA494116D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m */; };
+		E2FA494416D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FA494216D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib */; };
 		E2FA494E16D43F7F0044816A /* 9_1k_alakok.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA494616D43F7F0044816A /* 9_1k_alakok.png */; };
 		E2FA494F16D43F7F0044816A /* 9_1k_hal1.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA494716D43F7F0044816A /* 9_1k_hal1.png */; };
 		E2FA495016D43F7F0044816A /* 9_1k_hal2.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA494816D43F7F0044816A /* 9_1k_hal2.png */; };
@@ -353,7 +354,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E206832618610B2200BBAB61 /* menu_set_1k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_set_1k.png; path = Resources/menu_set_1k.png; sourceTree = "<group>"; };
 		E20838C5171070390073A6A8 /* 8_1k_dune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8_1k_dune.png; path = Resources/08/8_1k_dune.png; sourceTree = "<group>"; };
 		E20838C6171070390073A6A8 /* 8_1k_hatter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8_1k_hatter.png; path = Resources/08/8_1k_hatter.png; sourceTree = "<group>"; };
 		E20838C7171070390073A6A8 /* 8_1k_nagyhajo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8_1k_nagyhajo.png; path = Resources/08/8_1k_nagyhajo.png; sourceTree = "<group>"; };
@@ -374,9 +374,9 @@
 		E20A7C3D16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_InorisFatherIsPrayingViewController.m; sourceTree = "<group>"; };
 		E20A7C3E16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inori_InorisFatherIsPrayingViewController.xib; sourceTree = "<group>"; };
 		E210840E152CDC4400E4A492 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		E222CEE01524B90C008FA949 /* Screen04ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen04ViewController.h; sourceTree = "<group>"; };
-		E222CEE11524B90C008FA949 /* Screen04ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen04ViewController.m; sourceTree = "<group>"; };
-		E222CEE21524B90C008FA949 /* Screen04ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen04ViewController.xib; sourceTree = "<group>"; };
+		E222CEE01524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h; sourceTree = "<group>"; };
+		E222CEE11524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m; sourceTree = "<group>"; };
+		E222CEE21524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib; sourceTree = "<group>"; };
 		E222CEE51524B9D5008FA949 /* 12-overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "12-overview.png"; path = "Resources/12/12-overview.png"; sourceTree = "<group>"; };
 		E222CEE71524B9E1008FA949 /* 12_1k_alap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12_1k_alap.png; path = Resources/12/12_1k/12_1k_alap.png; sourceTree = "<group>"; };
 		E222CEE81524B9E1008FA949 /* 12_1k_hal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 12_1k_hal.png; path = Resources/12/12_1k/12_1k_hal.png; sourceTree = "<group>"; };
@@ -434,7 +434,6 @@
 		E2376403173143DE006B1232 /* ScrollingPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingPagesViewController.h; sourceTree = "<group>"; };
 		E2376404173143DE006B1232 /* ScrollingPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingPagesViewController.m; sourceTree = "<group>"; };
 		E2376405173143DF006B1232 /* ScrollingPagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollingPagesViewController.xib; sourceTree = "<group>"; };
-		E237640817315BA0006B1232 /* the-perfect-fantasy-sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "the-perfect-fantasy-sunset.jpg"; path = "Resources/the-perfect-fantasy-sunset.jpg"; sourceTree = "<group>"; };
 		E23C51AF16D6C989000D5958 /* CommonLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonLibrary.h; sourceTree = "<group>"; };
 		E23C51B016D6C989000D5958 /* CommonLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLibrary.m; sourceTree = "<group>"; };
 		E24129A4159598E30094E53B /* UIImage+StackBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StackBlur.h"; sourceTree = "<group>"; };
@@ -442,6 +441,10 @@
 		E24AF55C1783720300C9EF11 /* Screen15_16ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen15_16ViewController.h; sourceTree = "<group>"; };
 		E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen15_16ViewController.m; sourceTree = "<group>"; };
 		E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen15_16ViewController.xib; sourceTree = "<group>"; };
+		E253741318940C7C00EFC01B /* menu_set_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_set_4k.png; path = Resources/menu_set_4k.png; sourceTree = "<group>"; };
+		E253741D1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "the-perfect-fantasy-sunset.jpg"; path = "Resources/the-perfect-fantasy-sunset.jpg"; sourceTree = "<group>"; };
+		E253742918943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_FatherAndSonSwimInTheSeaViewController.h; sourceTree = "<group>"; };
+		E253742A18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_FatherAndSonSwimInTheSeaViewController.m; sourceTree = "<group>"; };
 		E25745F1184D40B8001E98FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E258B96A151665880094C4F7 /* A1-overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "A1-overview.png"; path = "Resources/A1/A1-overview.png"; sourceTree = "<group>"; };
 		E262C48E173008590001BD41 /* 2-3_1k_base.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2-3_1k_base.jpg"; path = "Resources/02-03/2-3_1k_base.jpg"; sourceTree = "<group>"; };
@@ -703,9 +706,9 @@
 		E2FA493A16D434620044816A /* Screen06_07ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen06_07ViewController.h; sourceTree = "<group>"; };
 		E2FA493B16D434620044816A /* Screen06_07ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen06_07ViewController.m; sourceTree = "<group>"; };
 		E2FA493C16D434620044816A /* Screen06_07ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen06_07ViewController.xib; sourceTree = "<group>"; };
-		E2FA494016D43A8F0044816A /* Screen09ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen09ViewController.h; sourceTree = "<group>"; };
-		E2FA494116D43A8F0044816A /* Screen09ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen09ViewController.m; sourceTree = "<group>"; };
-		E2FA494216D43A8F0044816A /* Screen09ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen09ViewController.xib; sourceTree = "<group>"; };
+		E2FA494016D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_FatherAndSonPatchUpAFishnetViewController.h; sourceTree = "<group>"; };
+		E2FA494116D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_FatherAndSonPatchUpAFishnetViewController.m; sourceTree = "<group>"; };
+		E2FA494216D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inori_FatherAndSonPatchUpAFishnetViewController.xib; sourceTree = "<group>"; };
 		E2FA494616D43F7F0044816A /* 9_1k_alakok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9_1k_alakok.png; path = Resources/09/9_1k/9_1k_alakok.png; sourceTree = "<group>"; };
 		E2FA494716D43F7F0044816A /* 9_1k_hal1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9_1k_hal1.png; path = Resources/09/9_1k/9_1k_hal1.png; sourceTree = "<group>"; };
 		E2FA494816D43F7F0044816A /* 9_1k_hal2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9_1k_hal2.png; path = Resources/09/9_1k/9_1k_hal2.png; sourceTree = "<group>"; };
@@ -744,7 +747,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E20A7C2016C99C710036748A /* Screen01 */ = {
+		E20A7C2016C99C710036748A /* Inori_InorisFatherIsPrayingViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E20A7C2116C99C9B0036748A /* 1_2k_ablak.png */,
@@ -761,7 +764,7 @@
 				E20A7C2C16C99C9B0036748A /* screen1-overview2.png */,
 				E20A7C2D16C99C9B0036748A /* screen1-overview1.png */,
 			);
-			name = Screen01;
+			name = Inori_InorisFatherIsPrayingViewController;
 			path = KickOff;
 			sourceTree = "<group>";
 		};
@@ -775,17 +778,17 @@
 			name = Screen01;
 			sourceTree = "<group>";
 		};
-		E222CEDF1524B8C8008FA949 /* Screen04 */ = {
+		E222CEDF1524B8C8008FA949 /* Screen02 */ = {
 			isa = PBXGroup;
 			children = (
-				E222CEE01524B90C008FA949 /* Screen04ViewController.h */,
-				E222CEE11524B90C008FA949 /* Screen04ViewController.m */,
-				E222CEE21524B90C008FA949 /* Screen04ViewController.xib */,
+				E222CEE01524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h */,
+				E222CEE11524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m */,
+				E222CEE21524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib */,
 			);
-			name = Screen04;
+			name = Screen02;
 			sourceTree = "<group>";
 		};
-		E222CF131524B9F6008FA949 /* Screen04 */ = {
+		E222CF131524B9F6008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E222CF281524BB00008FA949 /* 04-overview.png */,
@@ -800,7 +803,7 @@
 				E222CF1C1524BA0F008FA949 /* 4_1k_kishajo.png */,
 				E222CF1D1524BA0F008FA949 /* 4_1k_nagyhajo.png */,
 			);
-			name = Screen04;
+			name = Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController;
 			sourceTree = "<group>";
 		};
 		E23C2DF915189B0100281164 /* A1 */ = {
@@ -832,6 +835,154 @@
 				E2EF912916AC098500FEA0A3 /* DesatView.m */,
 			);
 			name = CommonLibrary;
+			sourceTree = "<group>";
+		};
+		E2537415189434FC00EFC01B /* Screen04 */ = {
+			isa = PBXGroup;
+			children = (
+				E2FA494016D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.h */,
+				E2FA494116D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m */,
+				E2FA494216D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib */,
+			);
+			name = Screen04;
+			sourceTree = "<group>";
+		};
+		E25374161894353500EFC01B /* Screen03 */ = {
+			isa = PBXGroup;
+			children = (
+				E253742918943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.h */,
+				E253742A18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m */,
+			);
+			name = Screen03;
+			sourceTree = "<group>";
+		};
+		E25374171894358400EFC01B /* MiniEpisode01 */ = {
+			isa = PBXGroup;
+			children = (
+				E20A7C3B16C99D660036748A /* Screen01 */,
+				E222CEDF1524B8C8008FA949 /* Screen02 */,
+				E25374161894353500EFC01B /* Screen03 */,
+				E2537415189434FC00EFC01B /* Screen04 */,
+				E27309461700FD50003B955F /* Screen05 */,
+				E2B8D85117816C7200F058D6 /* Screen06 */,
+				E272A26C158BC408004D39D6 /* Screen07 */,
+				E253742818943EEB00EFC01B /* FontsViewController */,
+			);
+			name = MiniEpisode01;
+			sourceTree = "<group>";
+		};
+		E2537418189435A400EFC01B /* MiniEpisode02 */ = {
+			isa = PBXGroup;
+			children = (
+				E23C2DF915189B0100281164 /* A1 */,
+				E2E26DDF157D27B300E82757 /* E */,
+				E262C49217300A560001BD41 /* Screen02_03 */,
+			);
+			name = MiniEpisode02;
+			sourceTree = "<group>";
+		};
+		E2537419189435DD00EFC01B /* MiniEpisode03 */ = {
+			isa = PBXGroup;
+			children = (
+				E2FA48F616D431660044816A /* Screen06_07 */,
+				E2B8AF6216AB5F68004238A9 /* Screen08 */,
+			);
+			name = MiniEpisode03;
+			sourceTree = "<group>";
+		};
+		E253741A1894361800EFC01B /* MiniEpisode04 */ = {
+			isa = PBXGroup;
+			children = (
+				E2B8D8471781690300F058D6 /* Screen 10 */,
+				E23C2DFA15189B1D00281164 /* Screen12 */,
+			);
+			name = MiniEpisode04;
+			sourceTree = "<group>";
+		};
+		E253741B1894362000EFC01B /* MiniEpisode05 */ = {
+			isa = PBXGroup;
+			children = (
+				E2B8D85C178170EC00F058D6 /* Screen13 */,
+				E253741C1894366A00EFC01B /* ScreenScrollingPages */,
+			);
+			name = MiniEpisode05;
+			sourceTree = "<group>";
+		};
+		E253741C1894366A00EFC01B /* ScreenScrollingPages */ = {
+			isa = PBXGroup;
+			children = (
+				E2376403173143DE006B1232 /* ScrollingPagesViewController.h */,
+				E2376404173143DE006B1232 /* ScrollingPagesViewController.m */,
+				E2376405173143DF006B1232 /* ScrollingPagesViewController.xib */,
+			);
+			name = ScreenScrollingPages;
+			sourceTree = "<group>";
+		};
+		E253741F189438CD00EFC01B /* MiniEpisode01 */ = {
+			isa = PBXGroup;
+			children = (
+				E20A7C2016C99C710036748A /* Inori_InorisFatherIsPrayingViewController */,
+				E222CF131524B9F6008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController */,
+				E2FA494516D43AA60044816A /* Screen09 */,
+				E27309271700FCF6003B955F /* Screen11 */,
+				E2B8D85017816C6300F058D6 /* Screen14 */,
+				E272A270158BC470004D39D6 /* Screen15_16 */,
+			);
+			name = MiniEpisode01;
+			sourceTree = "<group>";
+		};
+		E2537420189438D800EFC01B /* MiniEpisode02 */ = {
+			isa = PBXGroup;
+			children = (
+				E2CE7E1114FE812200FB442A /* A1 */,
+				E272A26F158BC468004D39D6 /* E */,
+				E262C48D173002A40001BD41 /* Screen02_03 */,
+			);
+			name = MiniEpisode02;
+			sourceTree = "<group>";
+		};
+		E2537421189438DC00EFC01B /* MiniEpisode03 */ = {
+			isa = PBXGroup;
+			children = (
+				E2FA490116D431CF0044816A /* Screen06_07 */,
+				E2B8AF6916AB62D6004238A9 /* Screen 08 */,
+			);
+			name = MiniEpisode03;
+			sourceTree = "<group>";
+		};
+		E2537422189438E200EFC01B /* MiniEpisode04 */ = {
+			isa = PBXGroup;
+			children = (
+				E2B8D84D17816B6400F058D6 /* Screen10 */,
+				E258B93F151663F80094C4F7 /* Screen12 */,
+			);
+			name = MiniEpisode04;
+			sourceTree = "<group>";
+		};
+		E2537423189438E700EFC01B /* MiniEpisode05 */ = {
+			isa = PBXGroup;
+			children = (
+				E2B8D85B178170D600F058D6 /* Screen13 */,
+				E2537424189439C600EFC01B /* ScreenScorllingPages */,
+			);
+			name = MiniEpisode05;
+			sourceTree = "<group>";
+		};
+		E2537424189439C600EFC01B /* ScreenScorllingPages */ = {
+			isa = PBXGroup;
+			children = (
+				E253741D1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg */,
+			);
+			name = ScreenScorllingPages;
+			sourceTree = "<group>";
+		};
+		E253742818943EEB00EFC01B /* FontsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E236A8341860F671003A1B04 /* FontsViewController.h */,
+				E236A8351860F671003A1B04 /* FontsViewController.m */,
+			);
+			name = FontsViewController;
 			sourceTree = "<group>";
 		};
 		E258B93F151663F80094C4F7 /* Screen12 */ = {
@@ -915,14 +1066,14 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		E272A26C158BC408004D39D6 /* Screen15_16 */ = {
+		E272A26C158BC408004D39D6 /* Screen07 */ = {
 			isa = PBXGroup;
 			children = (
 				E24AF55C1783720300C9EF11 /* Screen15_16ViewController.h */,
 				E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */,
 				E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */,
 			);
-			name = Screen15_16;
+			name = Screen07;
 			sourceTree = "<group>";
 		};
 		E272A26F158BC468004D39D6 /* E */ = {
@@ -1000,14 +1151,14 @@
 			name = Screen11;
 			sourceTree = "<group>";
 		};
-		E27309461700FD50003B955F /* Screen11 */ = {
+		E27309461700FD50003B955F /* Screen05 */ = {
 			isa = PBXGroup;
 			children = (
 				E27309471700FD7A003B955F /* Screen11ViewController.h */,
 				E27309481700FD7A003B955F /* Screen11ViewController.m */,
 				E27309491700FD7A003B955F /* Screen11ViewController.xib */,
 			);
-			name = Screen11;
+			name = Screen05;
 			sourceTree = "<group>";
 		};
 		E2B8AF6216AB5F68004238A9 /* Screen08 */ = {
@@ -1059,14 +1210,14 @@
 			name = Screen14;
 			sourceTree = "<group>";
 		};
-		E2B8D85117816C7200F058D6 /* Screen14 */ = {
+		E2B8D85117816C7200F058D6 /* Screen06 */ = {
 			isa = PBXGroup;
 			children = (
 				E2B8D85217816CD100F058D6 /* Screen14ViewController.h */,
 				E2B8D85317816CD100F058D6 /* Screen14ViewController.m */,
 				E2B8D85417816CD100F058D6 /* Screen14ViewController.xib */,
 			);
-			name = Screen14;
+			name = Screen06;
 			sourceTree = "<group>";
 		};
 		E2B8D85B178170D600F058D6 /* Screen13 */ = {
@@ -1195,32 +1346,18 @@
 				E2CE7DEA14FE265B00FB442A /* AppDelegate.h */,
 				E2CE7DEB14FE265B00FB442A /* AppDelegate.m */,
 				E271EA73188DC07000C2286F /* BackgoundIslands.jpg */,
-				E236A8341860F671003A1B04 /* FontsViewController.h */,
-				E236A8351860F671003A1B04 /* FontsViewController.m */,
 				E2657B30185DE13C0099018E /* IntroScreenViewController.h */,
 				E2657B31185DE13C0099018E /* IntroScreenViewController.m */,
 				E2CE7DF014FE265B00FB442A /* ViewController.h */,
 				E2CE7DF114FE265B00FB442A /* ViewController.m */,
 				E2A34AE018551A5C006446F4 /* PurchaseMiniEpisodesViewController.h */,
 				E2A34AE118551A5C006446F4 /* PurchaseMiniEpisodesViewController.m */,
-				E2376403173143DE006B1232 /* ScrollingPagesViewController.h */,
-				E2376404173143DE006B1232 /* ScrollingPagesViewController.m */,
-				E2376405173143DF006B1232 /* ScrollingPagesViewController.xib */,
 				E23C51AE16D6C946000D5958 /* CommonLibrary */,
-				E23C2DF915189B0100281164 /* A1 */,
-				E2E26DDF157D27B300E82757 /* E */,
-				E20A7C3B16C99D660036748A /* Screen01 */,
-				E262C49217300A560001BD41 /* Screen02_03 */,
-				E222CEDF1524B8C8008FA949 /* Screen04 */,
-				E2FA48F616D431660044816A /* Screen06_07 */,
-				E2B8AF6216AB5F68004238A9 /* Screen08 */,
-				E2FA493F16D43A630044816A /* Screen09 */,
-				E2B8D8471781690300F058D6 /* Screen 10 */,
-				E27309461700FD50003B955F /* Screen11 */,
-				E23C2DFA15189B1D00281164 /* Screen12 */,
-				E2B8D85C178170EC00F058D6 /* Screen13 */,
-				E2B8D85117816C7200F058D6 /* Screen14 */,
-				E272A26C158BC408004D39D6 /* Screen15_16 */,
+				E25374171894358400EFC01B /* MiniEpisode01 */,
+				E2537418189435A400EFC01B /* MiniEpisode02 */,
+				E2537419189435DD00EFC01B /* MiniEpisode03 */,
+				E253741A1894361800EFC01B /* MiniEpisode04 */,
+				E253741B1894362000EFC01B /* MiniEpisode05 */,
 				E25745F1184D40B8001E98FB /* Images.xcassets */,
 				E2CE7DE214FE265B00FB442A /* Supporting Files */,
 			);
@@ -1262,24 +1399,14 @@
 			children = (
 				E2C6B0AF185E3E56002862EA /* Music, SFX */,
 				E2657B33185DE8110099018E /* Fonts */,
-				E206832618610B2200BBAB61 /* menu_set_1k.png */,
-				E237640817315BA0006B1232 /* the-perfect-fantasy-sunset.jpg */,
+				E253741318940C7C00EFC01B /* menu_set_4k.png */,
 				E2A34ADE18550341006446F4 /* PadlockClosed.png */,
 				E2E5F8AE187CBE8500996FA5 /* Speaker.png */,
-				E2CE7E1114FE812200FB442A /* A1 */,
-				E272A26F158BC468004D39D6 /* E */,
-				E20A7C2016C99C710036748A /* Screen01 */,
-				E262C48D173002A40001BD41 /* Screen02_03 */,
-				E222CF131524B9F6008FA949 /* Screen04 */,
-				E2FA490116D431CF0044816A /* Screen06_07 */,
-				E2B8AF6916AB62D6004238A9 /* Screen 08 */,
-				E2FA494516D43AA60044816A /* Screen09 */,
-				E2B8D84D17816B6400F058D6 /* Screen10 */,
-				E27309271700FCF6003B955F /* Screen11 */,
-				E258B93F151663F80094C4F7 /* Screen12 */,
-				E2B8D85B178170D600F058D6 /* Screen13 */,
-				E2B8D85017816C6300F058D6 /* Screen14 */,
-				E272A270158BC470004D39D6 /* Screen15_16 */,
+				E253741F189438CD00EFC01B /* MiniEpisode01 */,
+				E2537420189438D800EFC01B /* MiniEpisode02 */,
+				E2537421189438DC00EFC01B /* MiniEpisode03 */,
+				E2537422189438E200EFC01B /* MiniEpisode04 */,
+				E2537423189438E700EFC01B /* MiniEpisode05 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1400,16 +1527,6 @@
 			name = Screen06_07;
 			sourceTree = "<group>";
 		};
-		E2FA493F16D43A630044816A /* Screen09 */ = {
-			isa = PBXGroup;
-			children = (
-				E2FA494016D43A8F0044816A /* Screen09ViewController.h */,
-				E2FA494116D43A8F0044816A /* Screen09ViewController.m */,
-				E2FA494216D43A8F0044816A /* Screen09ViewController.xib */,
-			);
-			name = Screen09;
-			sourceTree = "<group>";
-		};
 		E2FA494516D43AA60044816A /* Screen09 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1510,6 +1627,7 @@
 				E2C07228150D30AA00D78BA7 /* a1-1k_hab-paca.png in Resources */,
 				E2C07229150D30AA00D78BA7 /* a1-1k_mandula.png in Resources */,
 				E2C0722A150D30AA00D78BA7 /* a1-1k_pocsolya1.png in Resources */,
+				E253741E1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg in Resources */,
 				E2C0722B150D30AA00D78BA7 /* a1-1k_pocsolya2.png in Resources */,
 				E2C6B0E3185E3E79002862EA /* 003_hosszuhalak.mp3 in Resources */,
 				E2C0722C150D30AA00D78BA7 /* a1-1k_pocsolya3.png in Resources */,
@@ -1560,7 +1678,7 @@
 				E2C07252150D30AA00D78BA7 /* csepp_4_d.png in Resources */,
 				E2E0B75D151661CE009C0F56 /* Screen12ViewController.xib in Resources */,
 				E258B96B151665880094C4F7 /* A1-overview.png in Resources */,
-				E222CEE41524B90C008FA949 /* Screen04ViewController.xib in Resources */,
+				E222CEE41524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib in Resources */,
 				E222CEE61524B9D5008FA949 /* 12-overview.png in Resources */,
 				E222CEFD1524B9E1008FA949 /* 12_1k_alap.png in Resources */,
 				E222CEFE1524B9E1008FA949 /* 12_1k_hal.png in Resources */,
@@ -1706,7 +1824,7 @@
 				E2C6B0AE185E35A6002862EA /* RugeBoogie-Regular.ttf in Resources */,
 				E2FA493E16D434620044816A /* Screen06_07ViewController.xib in Resources */,
 				E2C6B0EA185E3E79002862EA /* 004_sohaj.mp3 in Resources */,
-				E2FA494416D43A8F0044816A /* Screen09ViewController.xib in Resources */,
+				E2FA494416D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib in Resources */,
 				E2C6B0D5185E3E79002862EA /* 001_Atm_tucsok.mp3 in Resources */,
 				E2C6B0DA185E3E79002862EA /* 001_rakozelithazra2OK.mp3 in Resources */,
 				E2FA494E16D43F7F0044816A /* 9_1k_alakok.png in Resources */,
@@ -1750,7 +1868,6 @@
 				E2C6B0D6185E3E79002862EA /* 001_foarizstea.mp3 in Resources */,
 				E2C6B0DE185E3E79002862EA /* 002_csiga2.mp3 in Resources */,
 				E2376407173143DF006B1232 /* ScrollingPagesViewController.xib in Resources */,
-				E237640917315BA0006B1232 /* the-perfect-fantasy-sunset.jpg in Resources */,
 				E2B8D84C1781692600F058D6 /* Screen10ViewController.xib in Resources */,
 				E2B8D84F17816B7A00F058D6 /* 10_overview.jpg in Resources */,
 				E2C6B0DD185E3E79002862EA /* 002_csiga1.mp3 in Resources */,
@@ -1768,13 +1885,13 @@
 				E2B8D8731781729200F058D6 /* 13_1k_gitar.png in Resources */,
 				E2B8D8741781729200F058D6 /* 13_1k_hatter.jpg in Resources */,
 				E2B8D8751781729200F058D6 /* 13_overview.jpg in Resources */,
-				E206832718610B2200BBAB61 /* menu_set_1k.png in Resources */,
 				E2B8D8781781735F00F058D6 /* 14_1k_base_overview.jpg in Resources */,
 				E2B8D8791781735F00F058D6 /* 14_1k_base.jpg in Resources */,
 				E24AF5601783720300C9EF11 /* Screen15_16ViewController.xib in Resources */,
 				E232917A17837911006B2A77 /* 15-16_1k_15bg.jpg in Resources */,
 				E232917B17837911006B2A77 /* 15-16_1k_15csillag.png in Resources */,
 				E232917C17837911006B2A77 /* 15-16_1k_15ejszaka.png in Resources */,
+				E253741418940C7C00EFC01B /* menu_set_4k.png in Resources */,
 				E2C6B0D9185E3E79002862EA /* 001_rakozelithazra.mp3 in Resources */,
 				E2C6B0E5185E3E79002862EA /* 003_rovidhalak.mp3 in Resources */,
 				E2C6B0EB185E3E79002862EA /* 006_hal1.mp3 in Resources */,
@@ -1832,7 +1949,7 @@
 				E2657B32185DE13C0099018E /* IntroScreenViewController.m in Sources */,
 				E2E0B75C151661CE009C0F56 /* Screen12ViewController.m in Sources */,
 				E2E0B7671516632F009C0F56 /* A1ViewController.m in Sources */,
-				E222CEE31524B90C008FA949 /* Screen04ViewController.m in Sources */,
+				E222CEE31524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m in Sources */,
 				E2B469FD186F321F0063647F /* NavigationController.m in Sources */,
 				E2E26DE5157D27F200E82757 /* EViewController.m in Sources */,
 				E24129A6159598E30094E53B /* UIImage+StackBlur.m in Sources */,
@@ -1841,11 +1958,12 @@
 				E2EF912A16AC098500FEA0A3 /* DesatView.m in Sources */,
 				E20A7C3F16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m in Sources */,
 				E2FA493D16D434620044816A /* Screen06_07ViewController.m in Sources */,
-				E2FA494316D43A8F0044816A /* Screen09ViewController.m in Sources */,
+				E2FA494316D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m in Sources */,
 				E23C51B116D6C989000D5958 /* CommonLibrary.m in Sources */,
 				E273094A1700FD7A003B955F /* Screen11ViewController.m in Sources */,
 				E262C49617300A7A0001BD41 /* Screen02_03ViewController.m in Sources */,
 				E2A34AE318551A5C006446F4 /* PurchaseMiniEpisodesViewController.m in Sources */,
+				E253742B18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */,
 				E2376406173143DF006B1232 /* ScrollingPagesViewController.m in Sources */,
 				E2B8D84B1781692600F058D6 /* Screen10ViewController.m in Sources */,
 				E2B8D85517816CD100F058D6 /* Screen14ViewController.m in Sources */,

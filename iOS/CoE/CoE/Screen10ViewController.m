@@ -90,6 +90,7 @@
 
 #import "Screen10ViewController.h"
 #import <CoreImage/CoreImage.h>
+#import "ViewController.h"
 
 @interface Screen10ViewController ()
 
@@ -98,6 +99,45 @@
 @implementation Screen10ViewController
 
 @synthesize compassControl, Screen10BackgroundImageView, Screen10DuneImageView, Screen10Wave01ImageView, Screen10Wave02ImageView, Screen10Wave03ImageView, Screen10Wave04ImageView, Screen10BigShipImageView, Screen10SmallShipImageView, Screen10CloudImageView, Screen10InoriImageView;
+
+-(void)goToNextScreen;
+{
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (void)screen10BackToMainMenu;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController=0;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)screen10NextScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController++;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)screen10PreviousScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController--;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -156,7 +196,7 @@
         
         if (CGRectContainsPoint(compassControl.frame, translatedPoint))
         {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self screen10BackToMainMenu];
         }
         touchCount++;
     }

@@ -6,9 +6,7 @@
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
 
-#import "ViewController.h"
-
-@interface Screen13ViewController : ViewController
+@interface Screen13ViewController : UIViewController
 {
     BOOL screenIsTouchable;
     NSTimer *guitarTimer, *zitherTimer, *drumTimer, *fluteTimer;

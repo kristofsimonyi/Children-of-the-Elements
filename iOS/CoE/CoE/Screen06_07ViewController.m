@@ -45,6 +45,7 @@
 #define CREATURE_POSITION_CHANGE_DECREMENT          1.005
 
 #import "Screen06_07ViewController.h"
+#import "ViewController.h"
 
 @interface Screen06_07ViewController ()
 
@@ -53,6 +54,45 @@
 @implementation Screen06_07ViewController
 
 @synthesize screen06_07FatherImageView, screen06_07InoriImageView, screen06_07Wave01ImageView, screen06_07Wave02ImageView, screen06_07Wave03ImageView, screen06_07Wave04ImageView, screen06_07Wave05ImageView, screen06_07Wave06ImageView, screen06_07Wave07ImageView, screen06_07Wave08ImageView, screen06_07Wave09ImageView, screen06_07FatherControlView, screen06_07InoriControlView, screen06_07FatherControl, screen06_07InoriControl, screen06_07SmallFishSwarmView;
+
+-(void)goToNextScreen;
+{
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (IBAction)screen06_07BackToMainMenu:(id)sender;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController=0;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (IBAction)screen06_07NextScreenButtonTouched:(id)sender
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController++;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (IBAction)screen06_07PreviousScreenButtonTouched:(id)sender
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController--;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
@@ -78,16 +118,6 @@
         
         touchCount++;
     }
-    
-    
-}
-
--(IBAction)screen06_07BackToMainMenu:(id)sender;
-{
-    //    ViewController *mainViewController=[[ViewController alloc] init];
-    //    [self presentViewController:mainViewController animated:NO completion:Nil];
-    
-    [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
 -(void)screen06_07AppearWaves;

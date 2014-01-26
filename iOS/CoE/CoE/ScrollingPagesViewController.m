@@ -13,6 +13,7 @@
 #define GROTH_PERCENTAGE    0.50
 
 #import "ScrollingPagesViewController.h"
+#import "ViewController.h"
 
 @interface ScrollingPagesViewController ()
 
@@ -21,6 +22,45 @@
 @implementation ScrollingPagesViewController
 
 @synthesize scroll;
+
+-(void)goToNextScreen;
+{
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (IBAction)scrollingPagesBackToMainMenu:(id)sender;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController=0;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)scrollingPagesNextScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController++;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)scrollingPagesPreviousScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController--;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
@@ -87,11 +127,6 @@
     CGAffineTransform newTransform = CGAffineTransformMakeScale(1.0+groth, 1.0+groth);
     [selectedImageView setTransform:newTransform];
     [scroll setContentOffset:CGPointMake(actualPositionOfScroll-PAGE_WIDTH/2, 0) animated:NO];
-}
-
--(IBAction)scrollingPaesBackToMainMenu:(id)sender;
-{
-    [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

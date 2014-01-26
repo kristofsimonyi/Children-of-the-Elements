@@ -21,13 +21,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_1k.png" id="w5i-zf-NbH" userLabel="MenuImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="w5i-zf-NbH" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="afR-S1-6tn" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="488" width="45" height="80"/>
+                    <rect key="frame" x="979" y="431" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -35,7 +35,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="oti-d1-3ox" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="571" width="45" height="80"/>
+                    <rect key="frame" x="979" y="514" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -61,6 +61,6 @@
     </objects>
     <resources>
         <image name="14_1k_base.jpg" width="1024" height="768"/>
-        <image name="menu_set_1k.png" width="1024" height="768"/>
+        <image name="menu_set_4k.png" width="2048" height="1536"/>
     </resources>
 </document>

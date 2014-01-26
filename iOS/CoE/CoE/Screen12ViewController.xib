@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Screen12ViewController">
             <connections>
-                <outlet property="screen12BackToMainMenu" destination="7" id="96"/>
+                <outlet property="screen12BackToMainMenuImageView" destination="7" id="VjP-gh-Q6E"/>
                 <outlet property="screen12BackgroundMedusa1ImageView" destination="67" id="87"/>
                 <outlet property="screen12BackgroundMedusa2ImageView" destination="71" id="88"/>
                 <outlet property="screen12BackgroundMedusa3ImageView" destination="72" id="89"/>

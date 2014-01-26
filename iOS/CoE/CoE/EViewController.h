@@ -6,10 +6,9 @@
 //  Copyright (c) 2012 No company - private person. All rights reserved.
 //
 
-#import "ViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface EViewController : ViewController <UIAccelerometerDelegate> {
+@interface EViewController : UIViewController <UIAccelerometerDelegate> {
     double alphaValue;
     CGAffineTransform carouselTightOriginalTransform, carouselRisenOriginalTransform, amihanHangOriginalTransform, kusiniHangOriginalTransform, talamhHangOriginalTransform, ziemeluHangOriginalTransform;
     int amihanRockingClock, amihanRockingClockChange, kusiniRockingClock, kusiniRockingClockChange, talamhRockingClock, talamhRockingClockChange, ziemeluRockingClock, ziemeluRockingClockChange, delayedStartClock;

@@ -30,6 +30,7 @@
 #define MUSICAL_INSTRUMENTS_TIMER_FREQUENCY 0.01
 
 #import "Screen13ViewController.h"
+#import "ViewController.h"
 
 @interface Screen13ViewController ()
 
@@ -38,6 +39,45 @@
 @implementation Screen13ViewController
 
 @synthesize compassControl, Screen13BackgroundImageView, Screen13DrumImageView, Screen13DrumLabelImageView, Screen13FluteImageView, Screen13FluteLabelImageView, Screen13GuitarImageView, Screen13GuitarLabelImageView, Screen13ZitherImageView, Screen13ZitherLabelImageView, Screen13DrumTouchView, Screen13FluteTouchView, Screen13GuitarTouchView, Screen13ZitherTouchView;
+
+-(void)goToNextScreen;
+{
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (void)screen13BackToMainMenu;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController=0;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)screen13NextScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController++;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (void)screen13PreviousScreenButtonTouched;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController--;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,7 +99,7 @@
             
             if (CGRectContainsPoint(compassControl.frame, translatedPoint))
             {
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [self screen13BackToMainMenu];
             }
 
             if ([self Screen13IsMI:Screen13FluteTouchView TouchedAtPoint:translatedPoint])

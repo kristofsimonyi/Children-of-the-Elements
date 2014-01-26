@@ -28,28 +28,32 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 #define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN01 201
 #define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN02 202
 #define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN03 203
-#define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN04 204
-#define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN05 205
-#define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN06 206
-#define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN07 207
-#define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN08 208
+
+#define NEXT_SCREEN_INORI_MINIEPISODE03_SCREEN01 301
+#define NEXT_SCREEN_INORI_MINIEPISODE03_SCREEN02 302
+
+#define NEXT_SCREEN_INORI_MINIEPISODE04_SCREEN01 401
+#define NEXT_SCREEN_INORI_MINIEPISODE04_SCREEN02 402
+
+#define NEXT_SCREEN_INORI_MINIEPISODE05_SCREEN01 501
+#define NEXT_SCREEN_INORI_MINIEPISODE05_SCREEN02 502
 
 #import "ViewController.h"
 #import "A1ViewController.h"
 #import "EViewController.h"
 #import "Inori_InorisFatherIsPrayingViewController.h"
 #import "Screen02_03ViewController.h"
-#import "Screen04ViewController.h"
+#import "Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h"
 #import "Screen06_07ViewController.h"
 #import "Screen08ViewController.h"
-#import "Screen09ViewController.h"
+#import "Inori_FatherAndSonPatchUpAFishnetViewController.h"
+#import "Inori_FatherAndSonSwimInTheSeaViewController.h"
 #import "Screen10ViewController.h"
 #import "Screen11ViewController.h"
 #import "Screen12ViewController.h"
 #import "Screen13ViewController.h"
 #import "Screen14ViewController.h"
 #import "Screen15_16ViewController.h"
-#import "Screen25ViewController.h"
 #import "ScrollingPagesViewController.h"
 #import "FontsViewController.h"
 
@@ -158,10 +162,19 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 -(void)presentPurchaseMiniEpisodesViewController;
 {
+    //Go to theScreenFonts that is on the MainStoryboard
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     _purchaseMiniEpisodesViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PurchaseViewController"];
     
-    [self presentViewController:_purchaseMiniEpisodesViewController animated:YES completion:nil];    
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController pushViewController:_purchaseMiniEpisodesViewController animated:NO];
+    
 }
 
 - (void)miniEpisode02Purchased;
@@ -200,17 +213,14 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 -(IBAction)mainscreenScreenA1ControlSelected:(id)sender;
 {
-    A1ViewController *a1ViewController=[[A1ViewController alloc] init];
-    a1ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:a1ViewController animated:YES completion:Nil];
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN01;
+    [self pushNextViewController];
 }
 
 -(IBAction)mainscreenScreenEControlSelected:(id)sender;
 {
-    EViewController *eViewController=[[EViewController alloc] init];
-    eViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-
-    [self presentViewController:eViewController animated:YES completion:Nil];
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN02;
+    [self pushNextViewController];
 }
 
 - (IBAction)mainscreenScreen01ControlSelected:(id)sender;
@@ -225,6 +235,12 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
     [self pushNextViewController];
 }
 
+- (IBAction)mainscreenScreen03ControlSelected:(id)sender;
+{
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN03;
+    [self pushNextViewController];
+}
+
 - (IBAction)mainscreenScreen04ControlSelected:(id)sender;
 {
     nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN02;
@@ -233,71 +249,63 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 - (IBAction)mainscreenScreen06_07ControlSelected:(id)sender;
 {
-    Screen06_07ViewController *screen06_07ViewController=[[Screen06_07ViewController alloc] init];
-    screen06_07ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:(UIViewController *)screen06_07ViewController animated:YES completion:nil];
-    
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE03_SCREEN01;
+    [self pushNextViewController];
 }
 
 - (IBAction)mainscreenScreen08ControlSelected:(id)sender;
 {
-    Screen08ViewController *screen08ViewController=[[Screen08ViewController alloc] init];
-    screen08ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:(UIViewController *)screen08ViewController animated:YES completion:nil];
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE03_SCREEN02;
+    [self pushNextViewController];
 }
 
 
 - (IBAction)mainscreenScreen09ControlSelected:(id)sender;
 {
-    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN03;
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN04;
     [self pushNextViewController];
 }
 
 - (IBAction)mainscreenScreen10ControlSelected:(id)sender;
 {
-    Screen10ViewController *screen10ViewController=[[Screen10ViewController alloc] init];
-    screen10ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:(UIViewController *)screen10ViewController animated:YES completion:nil];
-    
-}
-
-- (IBAction)mainscreenScreen11ControlSelected:(id)sender;
-{
-    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN04;
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE04_SCREEN01;
     [self pushNextViewController];
 }
 
--(IBAction)mainscreenScreen12ControlSelected:(id)sender;
-{
-    Screen12ViewController *screen12ViewController=[[Screen12ViewController alloc] init];
-    screen12ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:(UIViewController *)screen12ViewController animated:YES completion:nil];
-}
-
--(IBAction)mainscreenScreen13ControlSelected:(id)sender;
-{
-    Screen13ViewController *screen13ViewController=[[Screen13ViewController alloc] init];
-    screen13ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:(UIViewController *)screen13ViewController animated:YES completion:nil];
-}
-
--(IBAction)mainscreenScreen14ControlSelected:(id)sender;
+- (IBAction)mainscreenScreen11ControlSelected:(id)sender;
 {
     nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN05;
     [self pushNextViewController];
 }
 
-- (IBAction)mainscreenScreen15_16ControlSelected:(id)sender;
+-(IBAction)mainscreenScreen12ControlSelected:(id)sender;
+{
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE04_SCREEN02;
+    [self pushNextViewController];
+}
+
+-(IBAction)mainscreenScreen13ControlSelected:(id)sender;
+{
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE05_SCREEN01;
+    [self pushNextViewController];
+}
+
+-(IBAction)mainscreenScreen14ControlSelected:(id)sender;
 {
     nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN06;
     [self pushNextViewController];
 }
 
+- (IBAction)mainscreenScreen15_16ControlSelected:(id)sender;
+{
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN07;
+    [self pushNextViewController];
+}
+
 - (IBAction)mainscreenScrollingPagesControlSelected:(id)sender;
 {
-    ScrollingPagesViewController *scrollingPagesViewController=[[ScrollingPagesViewController alloc] init];
-    scrollingPagesViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:(UIViewController *)scrollingPagesViewController animated:YES completion:nil];
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE05_SCREEN02;
+    [self pushNextViewController];
 }
 
 - (IBAction)mainscreenScreenFontsSelected:(id)sender;
@@ -383,76 +391,179 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
     {
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN01:
         {
-            Inori_InorisFatherIsPrayingViewController *screen01ViewController=[[Inori_InorisFatherIsPrayingViewController alloc] init];
-            screen01ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            Inori_InorisFatherIsPrayingViewController *newScreenViewController=[[Inori_InorisFatherIsPrayingViewController alloc] init];
             
-            [self.navigationController pushViewController:screen01ViewController animated:NO];
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
             
             break;
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN02:
         {
-            Screen04ViewController *screen04ViewController=[[Screen04ViewController alloc] init];
-            screen04ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController *newScreenViewController=[[Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController alloc] init];
             
-            [self.navigationController pushViewController:screen04ViewController animated:NO];
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
             
             break;
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN03:
         {
-            Screen09ViewController *screen09ViewController=[[Screen09ViewController alloc] init];
-            screen09ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-
-            [self.navigationController pushViewController:screen09ViewController animated:NO];
+            //Go to theScreenFonts that is on the MainStoryboard
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+            Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"FatherAndSonSwimInTheSea"];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController =nil;
             
             break;
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN04:
         {
-            Screen11ViewController *screen11ViewController=[[Screen11ViewController alloc] init];
-            screen11ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            Inori_FatherAndSonPatchUpAFishnetViewController *newScreenViewController=[[Inori_FatherAndSonPatchUpAFishnetViewController alloc] init];
             
-            [self.navigationController pushViewController:screen11ViewController animated:NO];
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
             
             break;
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN05:
         {
-            Screen14ViewController *screen14ViewController=[[Screen14ViewController alloc] init];
-            screen14ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            Screen11ViewController *newScreenViewController=[[Screen11ViewController alloc] init];
             
-            [self.navigationController pushViewController:screen14ViewController animated:NO];
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
             
             break;
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN06:
         {
-            Screen15_16ViewController *screen15_16ViewController=[[Screen15_16ViewController alloc] init];
-            screen15_16ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            Screen14ViewController *newScreenViewController=[[Screen14ViewController alloc] init];
             
-            [self.navigationController pushViewController:screen15_16ViewController animated:NO];
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
             
             break;
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN07:
         {
-            nextViewController=0;
+            Screen15_16ViewController *newScreenViewController=[[Screen15_16ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN01:
+        {
+            A1ViewController *newScreenViewController=[[A1ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN02:
+        {
+            EViewController *newScreenViewController=[[EViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
             break;
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN03:
         {
-            Screen02_03ViewController *screen02_03ViewController=[[Screen02_03ViewController alloc] init];
-            screen02_03ViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self presentViewController:(UIViewController *)screen02_03ViewController animated:YES completion:nil];
+            Screen02_03ViewController *newScreenViewController=[[Screen02_03ViewController alloc] init];
 
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE03_SCREEN01:
+        {
+            Screen06_07ViewController *newScreenViewController=[[Screen06_07ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE03_SCREEN02:
+        {
+            Screen08ViewController *newScreenViewController=[[Screen08ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE04_SCREEN01:
+        {
+            Screen10ViewController *newScreenViewController=[[Screen10ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE04_SCREEN02:
+        {
+            Screen12ViewController *newScreenViewController=[[Screen12ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE05_SCREEN01:
+        {
+            Screen13ViewController *newScreenViewController=[[Screen13ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE05_SCREEN02:
+        {
+            ScrollingPagesViewController *newScreenViewController=[[ScrollingPagesViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
             break;
         }
             

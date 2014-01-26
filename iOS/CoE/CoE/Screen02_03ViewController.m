@@ -7,6 +7,7 @@
 //
 
 #import "Screen02_03ViewController.h"
+#import "ViewController.h"
 
 @interface Screen02_03ViewController ()
 
@@ -14,14 +15,44 @@
 
 @implementation Screen02_03ViewController
 
--(IBAction)screen02_03BackToMainMenu:(id)sender;
+-(void)goToNextScreen;
 {
-    //    ViewController *mainViewController=[[ViewController alloc] init];
-    //    [self presentViewController:mainViewController animated:NO completion:Nil];
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
     
-    [self dismissViewControllerAnimated:YES completion:Nil];
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+- (IBAction)screen02_03BackToMainMenu:(id)sender;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController=0;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (IBAction)screen02_03NextScreenButtonTouched:(id)sender
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController++;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (IBAction)screen02_03PreviousScreenButtonTouched:(id)sender
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController--;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

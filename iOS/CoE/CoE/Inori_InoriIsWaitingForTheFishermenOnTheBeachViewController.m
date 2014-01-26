@@ -14,7 +14,7 @@
  5. hajok: fent indulnak kicsiben a hatter szellemhajoin, alapbol a transparency 100%-on. Ahogy huzod at a rakot jobbra, ugy jonnek szepen lefele, s nagyobbodnak az overview-n lathato allapotba, illetve a transparency is lemegy 0%-ra. A hajok alapbol magukhoz kepest ringanak is (jobbra, balra dulongelnek kicsit, kozeppontjuk is mozog egy kis lapos ovalis menten lassan).
 */
 
-#import "Screen04ViewController.h"
+#import "Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h"
 #import "ViewController.h"
 
 #define WAVE_1_START_CENTER_Y      300
@@ -71,7 +71,7 @@
 #define SMALL_SHIP_ROTATE_SHIFT      25
 #define BIG_SHIP_ROTATE_SHIFT        10
 
-@implementation Screen04ViewController
+@implementation Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController
 
 @synthesize screen04StoryTextView, screen04InoriSitting, screen04InoriStanding, screen04Wave1ImageView, screen04Wave2ImageView, screen04Wave3ImageView, screen04Wave4ImageView, screen04SnailImageView, screen04SnailControl, screen04BigShipView, screen04SmallShipView, screen04BigShipControl, screen04SmallShipControl, screen04InoriControl, screen04BigShipImageView, screen04SmallShipImageView, screen04MusicControl, screen04NextScreenControl, screen04PreviousScreenContol, screen04CompassContol;
 

@@ -109,6 +109,10 @@
     
 	[backgroundMusic setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
     [backgroundMusic play];
+    
+    viewContoller = nil;
+    backgroundMusicPath = nil;
+    viewContoller = nil;
 }
 
 -(void)startBackgroundMusic2nd;
@@ -553,8 +557,15 @@
 {
     [self stopMusicAndSfx];
 
+    backgroundMusic.delegate=nil;
+    sfxFather.delegate = nil;
+    sfxHouse.delegate = nil;
+    sfxTeaPot.delegate = nil;
+
     backgroundMusic = nil;
-    
+    sfxFather = nil;
+    sfxHouse = nil;
+    sfxTeaPot = nil;
     
     phase01Timer=nil;
     phase02Timer=nil;
@@ -562,6 +573,32 @@
     teaPotTimer=nil;
     fatherTimer=nil;
     
+    [riceFieldBaseImageView removeFromSuperview];
+    [windowImageView removeFromSuperview];
+    [bedImageView removeFromSuperview];
+    [baseImageView removeFromSuperview];
+    [fatherImageView removeFromSuperview];
+    [night1ImageView removeFromSuperview];
+    [night2ImageView removeFromSuperview];
+    [teaPotImageView removeFromSuperview];
+    [frameImageView removeFromSuperview];
+    [fireImageView removeFromSuperview];
+    [transitionToPhase02ImageView removeFromSuperview];
+    [riceFieldBaseImageView removeFromSuperview];
+    [phase01View removeFromSuperview];
+    [phase02View removeFromSuperview];
+    [bedImageView removeFromSuperview];
+    [baseImageView removeFromSuperview];
+    [fatherImageView removeFromSuperview];
+    [night1ImageView removeFromSuperview];
+    [night2ImageView removeFromSuperview];
+    [teaPotImageView removeFromSuperview];
+    [frameImageView removeFromSuperview];
+    [fireImageView removeFromSuperview];
+    [transitionToPhase02ImageView removeFromSuperview];
+    [fatherControl removeFromSuperview];
+    [teaPotControl removeFromSuperview];
+
     riceFieldBaseImageView.image=nil;
     windowImageView.image=nil;
     bedImageView.image=nil;
@@ -573,6 +610,21 @@
     frameImageView.image=nil;
     fireImageView.image=nil;
     transitionToPhase02ImageView.image=nil;
+    riceFieldBaseImageView=nil;
+    phase01View=nil;
+    phase02View=nil;
+    bedImageView=nil;
+    baseImageView=nil;
+    fatherImageView=nil;
+    night1ImageView=nil;
+    night2ImageView=nil;
+    teaPotImageView=nil;
+    frameImageView=nil;
+    fireImageView=nil;
+    transitionToPhase02ImageView=nil;
+    fatherControl=nil;
+    teaPotControl=nil;
+    ;
 }
 
 - (void)didReceiveMemoryWarning

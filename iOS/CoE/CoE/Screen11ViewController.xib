@@ -98,13 +98,13 @@
                     <rect key="frame" x="338" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_1k.png" id="Oy1-Lx-QzD" userLabel="MenuImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="Oy1-Lx-QzD" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="36X-FC-gKh" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="488" width="45" height="80"/>
+                    <rect key="frame" x="979" y="431" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -112,7 +112,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="3IH-WF-2Qb" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="571" width="45" height="80"/>
+                    <rect key="frame" x="979" y="513" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -189,6 +189,6 @@
         <image name="11_1k_hozzavalo-6.png" width="1024" height="768"/>
         <image name="11_1k_hozzavalo-7.png" width="1024" height="768"/>
         <image name="11_1k_tanyer.png" width="1024" height="768"/>
-        <image name="menu_set_1k.png" width="1024" height="768"/>
+        <image name="menu_set_4k.png" width="2048" height="1536"/>
     </resources>
 </document>

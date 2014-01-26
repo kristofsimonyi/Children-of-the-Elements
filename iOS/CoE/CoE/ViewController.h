@@ -44,6 +44,7 @@
 - (IBAction)mainscreenScreenEControlSelected:(id)sender;
 - (IBAction)mainscreenScreen01ControlSelected:(id)sender;
 - (IBAction)mainscreenScreen02_03ControlSelected:(id)sender;
+- (IBAction)mainscreenScreen03ControlSelected:(id)sender;
 - (IBAction)mainscreenScreen04ControlSelected:(id)sender;
 - (IBAction)mainscreenScreen06_07ControlSelected:(id)sender;
 - (IBAction)mainscreenScreen08ControlSelected:(id)sender;

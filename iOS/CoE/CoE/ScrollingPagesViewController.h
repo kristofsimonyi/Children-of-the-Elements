@@ -6,9 +6,7 @@
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
 
-#import "ViewController.h"
-
-@interface ScrollingPagesViewController : ViewController
+@interface ScrollingPagesViewController : UIViewController
 {
     NSArray *imageNames;
     CGPoint firstTranslatedPoint;
@@ -17,6 +15,6 @@
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scroll;
 
--(IBAction)scrollingPaesBackToMainMenu:(id)sender;
+-(IBAction)scrollingPagesBackToMainMenu:(id)sender;
 
 @end

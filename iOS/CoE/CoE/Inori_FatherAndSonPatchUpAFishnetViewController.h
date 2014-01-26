@@ -10,7 +10,7 @@
 #import "CommonLibrary.h"
 #import <AVFoundation/AVAudioPlayer.h>
 
-@interface Screen09ViewController : UIViewController <AVAudioPlayerDelegate>
+@interface Inori_FatherAndSonPatchUpAFishnetViewController : UIViewController <AVAudioPlayerDelegate>
 {
     NSTimer *seaChangeTimer, *netMovingTimer;
     CGFloat netMovingTimerClock, netMovingTimerClockChange;

@@ -84,6 +84,7 @@
 #define TELESCOPE_ORIGINAL_INORI_IMAGE   @"e_1k_inorix0.50.png"
 //#define TELESCOPE_ORIGINAL_INORI_IMAGE   @"e_1k_inorix0.25.png"
 
+#import "ViewController.h"
 #import "EViewController.h"
 #import "UIImage+StackBlur.h"
 
@@ -94,6 +95,45 @@
 @implementation EViewController
 
 @synthesize screenEBackgroundViewImageView, screenEcloud01ImageView, screenEcloud02ImageView, screenEcloud03ImageView, screenEAmihanImageView, screenEKusiniImageView, screenETalamhImageView, screenEZiemeluImageView, screenECarouselView, screenECarouselTightImageView, screenECarouselRisenImageView, screenEAmihanHangImageView, screenEKusiniHangImageView, screenETalamhHangImageView, screenEZiemeluHangImageView, screenECarouselTouchView, screenECarouselSliderView, screenECompassControl, screenETelescopeImageView, screenETelescopeView,screenETelescopeTouchControl, screenETelescopeViewView, screenETelescopeViewImageView, screenEInoriTelescopeViewImageView;
+
+-(void)goToNextScreen;
+{
+    CATransition* transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+    //transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+- (IBAction)screenEBackToMainMenu:(id)sender;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController=0;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (IBAction)screenENextScreenButtonTouched:(id)sender
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController++;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
+
+- (IBAction)screenEPreviousScreenButtonTouched:(id)sender
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    viewContoller.nextViewController--;
+    viewContoller = nil;
+    
+    [self goToNextScreen];
+}
 
 - (CGPoint)rotatePoint:(CGPoint)pointToRotate around:(CGPoint)center withDegree:(float)degree
 {
@@ -130,36 +170,6 @@
         [screenEKusiniHangImageView setCenter:[self rotatePoint:CGPointMake(KUSINI_HANG_CENTER_RISEN_CAROUSEL) around:[screenECarouselRisenImageView center] withDegree:carouselAccelerationX]];
         [screenETalamhHangImageView setCenter:[self rotatePoint:CGPointMake(TALAMH_HANG_CENTER_RISEN_CAROUSEL) around:[screenECarouselRisenImageView center] withDegree:carouselAccelerationX]];
         [screenEZiemeluHangImageView setCenter:[self rotatePoint:CGPointMake(ZIEMELU_HANG_CENTER_RISEN_CAROUSEL) around:[screenECarouselRisenImageView center] withDegree:carouselAccelerationX]];
-    }
-}
-
--(IBAction)screenEBackToMainMenu:(id)sender;
-{
-    //    ViewController *mainViewController=[[ViewController alloc] init];
-    //    [self presentViewController:mainViewController animated:NO completion:Nil];
-    
-    if (isInoriTelescopeViewModeActive)
-    {
-        [self.view addSubview:screenETelescopeViewView];
-        isInoriTelescopeViewModeActive=false;
-
-        [UIView animateWithDuration: 2.0
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveLinear
-                         animations:^
-         {
-             [screenECarouselView setCenter:CGPointMake(512, 374)];
-             [screenETelescopeViewView setCenter:CGPointMake(1536, 374)];
-             [screenEBackgroundViewImageView setAlpha:1];
-             [screenEcloud01ImageView setAlpha:1];
-             [screenEcloud02ImageView setAlpha:1];
-             [screenEcloud03ImageView setAlpha:1];
-         }
-                         completion:nil];
-    }
-    else
-    {
-        [self dismissViewControllerAnimated:YES completion:Nil];
     }
 }
 
