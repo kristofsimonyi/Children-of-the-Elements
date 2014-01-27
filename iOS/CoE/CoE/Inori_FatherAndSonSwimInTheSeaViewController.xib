@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Screen06_07ViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Inori_FatherAndSonSwimInTheSeaViewController">
             <connections>
                 <outlet property="screen06_07FatherControl" destination="124" id="135"/>
                 <outlet property="screen06_07FatherControlView" destination="123" id="127"/>
@@ -104,6 +104,38 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="5C5-xL-kQt" userLabel="MenuImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <view contentMode="scaleToFill" id="CbQ-Iq-9x5" userLabel="PreviousScreenControl" customClass="UIControl">
+                    <rect key="frame" x="980" y="514" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="gam-VC-ZIJ" appends="YES" id="RuV-bu-7p8"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="zQT-b5-6SH" userLabel="NextScreenControl" customClass="UIControl">
+                    <rect key="frame" x="979" y="430" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="YK8-L1-hBL" appends="YES" id="QPP-FY-kge"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="MBe-IQ-Yfq" userLabel="MusicControl" customClass="UIControl">
+                    <rect key="frame" x="980" y="654" width="45" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="lZL-jP-nIG" appends="YES" id="ZaX-7r-MtB"/>
+                    </connections>
+                </view>
                 <view contentMode="scaleToFill" id="102" userLabel="CompassControl" customClass="UIControl">
                     <rect key="frame" x="5" y="710" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,6 +154,21 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
+        <tapGestureRecognizer id="YK8-L1-hBL" userLabel="NextScreenTap Gesture Recognizer">
+            <connections>
+                <action selector="screen06_07NextScreenControlTapped:" destination="-1" id="lZJ-Qf-xYP"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="gam-VC-ZIJ" userLabel="PreviousScreenTap Gesture Recognizer">
+            <connections>
+                <action selector="screen06_07PreviousScreenControlTapped:" destination="-1" id="rok-2B-h3V"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="lZL-jP-nIG" userLabel="MusicControlTap Gesture Recognizer">
+            <connections>
+                <action selector="screen06_07MusicControlTapped" destination="-1" id="2fF-pN-vKa"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="6-7_1k_apa.png" width="1024" height="768"/>
@@ -135,5 +182,6 @@
         <image name="6-7_1k_nagyhullam7.png" width="1024" height="768"/>
         <image name="6-7_1k_nagyhullam8.png" width="1024" height="768"/>
         <image name="6-7_1k_nagyhullam9.png" width="1024" height="768"/>
+        <image name="menu_set_4k.png" width="2048" height="1536"/>
     </resources>
 </document>

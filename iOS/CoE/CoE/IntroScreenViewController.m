@@ -30,7 +30,7 @@
 
     //For the continuous music we need to pass the current introMusic as backgroundMusic of ViewController.
     mainViewController.backgroundMusic=introMusic;
-    mainViewController.nextViewController=11;
+    mainViewController.nextViewController=101;
     mainViewController.musicIsOn=YES;
 
     [viewControllers replaceObjectAtIndex:0 withObject:mainViewController];

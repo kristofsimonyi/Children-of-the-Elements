@@ -89,7 +89,6 @@
 		E24AF5601783720300C9EF11 /* Screen15_16ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */; };
 		E253741418940C7C00EFC01B /* menu_set_4k.png in Resources */ = {isa = PBXBuildFile; fileRef = E253741318940C7C00EFC01B /* menu_set_4k.png */; };
 		E253741E1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E253741D1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg */; };
-		E253742B18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E253742A18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m */; };
 		E25745F2184D40B8001E98FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25745F1184D40B8001E98FB /* Images.xcassets */; };
 		E258B96B151665880094C4F7 /* A1-overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E258B96A151665880094C4F7 /* A1-overview.png */; };
 		E262C490173008590001BD41 /* 2-3_1k_base.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E262C48E173008590001BD41 /* 2-3_1k_base.jpg */; };
@@ -329,8 +328,8 @@
 		E2FA493716D431F00044816A /* 6-7_1k_nagyhullam2.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA491B16D431F00044816A /* 6-7_1k_nagyhullam2.png */; };
 		E2FA493816D431F00044816A /* 6-7_1k_nagyhullam1.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA491C16D431F00044816A /* 6-7_1k_nagyhullam1.png */; };
 		E2FA493916D431F00044816A /* 6-7-overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA491D16D431F00044816A /* 6-7-overview.png */; };
-		E2FA493D16D434620044816A /* Screen06_07ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA493B16D434620044816A /* Screen06_07ViewController.m */; };
-		E2FA493E16D434620044816A /* Screen06_07ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FA493C16D434620044816A /* Screen06_07ViewController.xib */; };
+		E2FA493D16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA493B16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m */; };
+		E2FA493E16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FA493C16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib */; };
 		E2FA494316D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA494116D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m */; };
 		E2FA494416D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FA494216D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib */; };
 		E2FA494E16D43F7F0044816A /* 9_1k_alakok.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FA494616D43F7F0044816A /* 9_1k_alakok.png */; };
@@ -443,8 +442,6 @@
 		E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen15_16ViewController.xib; sourceTree = "<group>"; };
 		E253741318940C7C00EFC01B /* menu_set_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_set_4k.png; path = Resources/menu_set_4k.png; sourceTree = "<group>"; };
 		E253741D1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "the-perfect-fantasy-sunset.jpg"; path = "Resources/the-perfect-fantasy-sunset.jpg"; sourceTree = "<group>"; };
-		E253742918943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_FatherAndSonSwimInTheSeaViewController.h; sourceTree = "<group>"; };
-		E253742A18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_FatherAndSonSwimInTheSeaViewController.m; sourceTree = "<group>"; };
 		E25745F1184D40B8001E98FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E258B96A151665880094C4F7 /* A1-overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "A1-overview.png"; path = "Resources/A1/A1-overview.png"; sourceTree = "<group>"; };
 		E262C48E173008590001BD41 /* 2-3_1k_base.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2-3_1k_base.jpg"; path = "Resources/02-03/2-3_1k_base.jpg"; sourceTree = "<group>"; };
@@ -703,9 +700,9 @@
 		E2FA491B16D431F00044816A /* 6-7_1k_nagyhullam2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "6-7_1k_nagyhullam2.png"; path = "Resources/06-07/6-7_1k/6-7_1k_nagyhullam2.png"; sourceTree = "<group>"; };
 		E2FA491C16D431F00044816A /* 6-7_1k_nagyhullam1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "6-7_1k_nagyhullam1.png"; path = "Resources/06-07/6-7_1k/6-7_1k_nagyhullam1.png"; sourceTree = "<group>"; };
 		E2FA491D16D431F00044816A /* 6-7-overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "6-7-overview.png"; path = "Resources/06-07/6-7-overview.png"; sourceTree = "<group>"; };
-		E2FA493A16D434620044816A /* Screen06_07ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen06_07ViewController.h; sourceTree = "<group>"; };
-		E2FA493B16D434620044816A /* Screen06_07ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen06_07ViewController.m; sourceTree = "<group>"; };
-		E2FA493C16D434620044816A /* Screen06_07ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen06_07ViewController.xib; sourceTree = "<group>"; };
+		E2FA493A16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_FatherAndSonSwimInTheSeaViewController.h; sourceTree = "<group>"; };
+		E2FA493B16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_FatherAndSonSwimInTheSeaViewController.m; sourceTree = "<group>"; };
+		E2FA493C16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inori_FatherAndSonSwimInTheSeaViewController.xib; sourceTree = "<group>"; };
 		E2FA494016D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_FatherAndSonPatchUpAFishnetViewController.h; sourceTree = "<group>"; };
 		E2FA494116D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_FatherAndSonPatchUpAFishnetViewController.m; sourceTree = "<group>"; };
 		E2FA494216D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inori_FatherAndSonPatchUpAFishnetViewController.xib; sourceTree = "<group>"; };
@@ -847,21 +844,12 @@
 			name = Screen04;
 			sourceTree = "<group>";
 		};
-		E25374161894353500EFC01B /* Screen03 */ = {
-			isa = PBXGroup;
-			children = (
-				E253742918943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.h */,
-				E253742A18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m */,
-			);
-			name = Screen03;
-			sourceTree = "<group>";
-		};
 		E25374171894358400EFC01B /* MiniEpisode01 */ = {
 			isa = PBXGroup;
 			children = (
 				E20A7C3B16C99D660036748A /* Screen01 */,
 				E222CEDF1524B8C8008FA949 /* Screen02 */,
-				E25374161894353500EFC01B /* Screen03 */,
+				E2FA48F616D431660044816A /* Screen03 */,
 				E2537415189434FC00EFC01B /* Screen04 */,
 				E27309461700FD50003B955F /* Screen05 */,
 				E2B8D85117816C7200F058D6 /* Screen06 */,
@@ -884,7 +872,6 @@
 		E2537419189435DD00EFC01B /* MiniEpisode03 */ = {
 			isa = PBXGroup;
 			children = (
-				E2FA48F616D431660044816A /* Screen06_07 */,
 				E2B8AF6216AB5F68004238A9 /* Screen08 */,
 			);
 			name = MiniEpisode03;
@@ -1482,14 +1469,14 @@
 			name = E;
 			sourceTree = "<group>";
 		};
-		E2FA48F616D431660044816A /* Screen06_07 */ = {
+		E2FA48F616D431660044816A /* Screen03 */ = {
 			isa = PBXGroup;
 			children = (
-				E2FA493A16D434620044816A /* Screen06_07ViewController.h */,
-				E2FA493B16D434620044816A /* Screen06_07ViewController.m */,
-				E2FA493C16D434620044816A /* Screen06_07ViewController.xib */,
+				E2FA493A16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.h */,
+				E2FA493B16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m */,
+				E2FA493C16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib */,
 			);
-			name = Screen06_07;
+			name = Screen03;
 			sourceTree = "<group>";
 		};
 		E2FA490116D431CF0044816A /* Screen06_07 */ = {
@@ -1822,7 +1809,7 @@
 				E2FA493816D431F00044816A /* 6-7_1k_nagyhullam1.png in Resources */,
 				E2FA493916D431F00044816A /* 6-7-overview.png in Resources */,
 				E2C6B0AE185E35A6002862EA /* RugeBoogie-Regular.ttf in Resources */,
-				E2FA493E16D434620044816A /* Screen06_07ViewController.xib in Resources */,
+				E2FA493E16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib in Resources */,
 				E2C6B0EA185E3E79002862EA /* 004_sohaj.mp3 in Resources */,
 				E2FA494416D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib in Resources */,
 				E2C6B0D5185E3E79002862EA /* 001_Atm_tucsok.mp3 in Resources */,
@@ -1957,13 +1944,12 @@
 				E2B8AF6716AB5FC3004238A9 /* Screen08ViewController.m in Sources */,
 				E2EF912A16AC098500FEA0A3 /* DesatView.m in Sources */,
 				E20A7C3F16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m in Sources */,
-				E2FA493D16D434620044816A /* Screen06_07ViewController.m in Sources */,
+				E2FA493D16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */,
 				E2FA494316D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m in Sources */,
 				E23C51B116D6C989000D5958 /* CommonLibrary.m in Sources */,
 				E273094A1700FD7A003B955F /* Screen11ViewController.m in Sources */,
 				E262C49617300A7A0001BD41 /* Screen02_03ViewController.m in Sources */,
 				E2A34AE318551A5C006446F4 /* PurchaseMiniEpisodesViewController.m in Sources */,
-				E253742B18943F4C00EFC01B /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */,
 				E2376406173143DF006B1232 /* ScrollingPagesViewController.m in Sources */,
 				E2B8D84B1781692600F058D6 /* Screen10ViewController.m in Sources */,
 				E2B8D85517816CD100F058D6 /* Screen14ViewController.m in Sources */,

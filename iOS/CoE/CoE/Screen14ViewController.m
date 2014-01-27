@@ -30,11 +30,13 @@
 
 - (IBAction)screen14NextScreenButtonTouched:(id)sender
 {
+/*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController++;
     viewContoller = nil;
     
     [self goToNextScreen];
+ */
 }
 
 - (IBAction)screen1PreviousScreenButtonTouched:(id)sender
@@ -64,11 +66,13 @@
         
         if (CGRectContainsPoint(compassControl.frame, translatedPoint))
         {
+            /*
             ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
             viewContoller.nextViewController=0;
             viewContoller = nil;
             
             [self goToNextScreen];
+             */
         }
         touchCount++;
     }

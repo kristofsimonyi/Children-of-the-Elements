@@ -44,10 +44,9 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 #import "Inori_InorisFatherIsPrayingViewController.h"
 #import "Screen02_03ViewController.h"
 #import "Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h"
-#import "Screen06_07ViewController.h"
+#import "Inori_FatherAndSonSwimInTheSeaViewController.h"
 #import "Screen08ViewController.h"
 #import "Inori_FatherAndSonPatchUpAFishnetViewController.h"
-#import "Inori_FatherAndSonSwimInTheSeaViewController.h"
 #import "Screen10ViewController.h"
 #import "Screen11ViewController.h"
 #import "Screen12ViewController.h"
@@ -413,9 +412,13 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN03:
         {
+            /*
             //Go to theScreenFonts that is on the MainStoryboard
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
             Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"FatherAndSonSwimInTheSea"];
+            */
+            Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController=[[Inori_FatherAndSonSwimInTheSeaViewController alloc] init];
+            
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -503,7 +506,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
             
         case NEXT_SCREEN_INORI_MINIEPISODE03_SCREEN01:
         {
-            Screen06_07ViewController *newScreenViewController=[[Screen06_07ViewController alloc] init];
+            Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController=[[Inori_FatherAndSonSwimInTheSeaViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             

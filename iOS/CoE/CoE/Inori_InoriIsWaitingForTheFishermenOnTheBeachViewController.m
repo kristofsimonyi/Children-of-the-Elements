@@ -89,11 +89,13 @@
 
 - (void) screen04BackToMainMenu;
 {
+/*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
+ */
 }
 
 - (void)screen04NextScreenControlTapped;

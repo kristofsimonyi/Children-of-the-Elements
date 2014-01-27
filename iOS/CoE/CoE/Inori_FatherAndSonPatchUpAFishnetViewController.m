@@ -79,11 +79,13 @@
 
 -(IBAction)screen09BackToMainMenu:(id)sender;
 {
+    /*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
+     */
 }
 
 - (IBAction)screen09NextScreenButtonTouched:(id)sender

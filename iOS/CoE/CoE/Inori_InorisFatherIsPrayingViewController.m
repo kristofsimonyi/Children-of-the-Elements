@@ -65,11 +65,13 @@
 
 -(IBAction)screen01BackToMainMenu:(id)sender;
 {
+/*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
+ */
 }
 
 - (IBAction)Screen01nextScreenButtonTouched:(id)sender
@@ -83,11 +85,13 @@
 
 - (IBAction)screen01PreviousButtonTouched:(id)sender
 {
+/*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController--;
     viewContoller = nil;
     
     [self goToNextScreen];
+ */
 }
 
 -(void)startBackgroundMusic1st;

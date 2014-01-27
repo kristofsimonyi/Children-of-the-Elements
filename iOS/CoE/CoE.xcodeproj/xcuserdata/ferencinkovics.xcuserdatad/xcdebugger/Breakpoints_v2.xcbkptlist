@@ -193,11 +193,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen06_07ViewController.m"
-            timestampString = "412454167.693976"
+            timestampString = "412550808.178916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-screen06_07CreaturesMovingActionMethod"
             landmarkType = "5">
          </BreakpointContent>
@@ -209,11 +209,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen06_07ViewController.m"
-            timestampString = "412454167.693976"
+            timestampString = "412550808.178916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
             landmarkName = "-screen06_07InoriTouched"
             landmarkType = "5">
          </BreakpointContent>
@@ -225,11 +225,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen06_07ViewController.m"
-            timestampString = "412454167.693976"
+            timestampString = "412550808.178916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "-screen06_07InoriTouched"
             landmarkType = "5">
          </BreakpointContent>
@@ -241,11 +241,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen06_07ViewController.m"
-            timestampString = "412454167.693976"
+            timestampString = "412550808.178916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
             landmarkName = "-screen06_07FatherTouched"
             landmarkType = "5">
          </BreakpointContent>
@@ -257,11 +257,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InorisFatherIsPrayingViewController.m"
-            timestampString = "412460411.791056"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "417"
+            endingLineNumber = "417"
             landmarkName = "-teaPotTimerActionMethod"
             landmarkType = "5">
          </BreakpointContent>
@@ -305,11 +305,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen11ViewController.m"
-            timestampString = "410735200.890933"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -321,11 +321,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen11ViewController.m"
-            timestampString = "410735200.890933"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "-touchesMoved:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -337,11 +337,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen11ViewController.m"
-            timestampString = "410735200.890933"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "-touchesEnded:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -559,11 +559,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/ViewController.m"
-            timestampString = "412454944.611788"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
+            startingLineNumber = "588"
+            endingLineNumber = "588"
             landmarkName = "-emptyViewControllers"
             landmarkType = "5">
          </BreakpointContent>
@@ -575,11 +575,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m"
-            timestampString = "411227824.099776"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "527"
-            endingLineNumber = "527"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "-handleTappingBigShip"
             landmarkType = "5">
          </BreakpointContent>
@@ -591,11 +591,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m"
-            timestampString = "411227824.099776"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "532"
-            endingLineNumber = "532"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
             landmarkName = "-handleTappingSmallShip"
             landmarkType = "5">
          </BreakpointContent>
@@ -607,11 +607,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m"
-            timestampString = "411222420.99658"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "-screen04Move:"
             landmarkType = "5">
          </BreakpointContent>
@@ -623,76 +623,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InorisFatherIsPrayingViewController.m"
-            timestampString = "412460411.791056"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "557"
-            endingLineNumber = "557"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
             landmarkName = "-viewWillDisappear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoE/Inori_FatherAndSonSwimInTheSeaViewController.m"
-            timestampString = "412450130.433386"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "-fishImageViewTapped:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoE/Inori_FatherAndSonSwimInTheSeaViewController.m"
-            timestampString = "412450130.433386"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-inoriOrFatherImageViewTapped:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoE/ViewController.m"
-            timestampString = "412454944.611788"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "495"
-            endingLineNumber = "495"
-            landmarkName = "-pushNextViewController"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoE/ViewController.m"
-            timestampString = "412454944.611788"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "-mainscreenScreen02_03ControlSelected:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -719,13 +655,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InorisFatherIsPrayingViewController.m"
-            timestampString = "412460411.791056"
+            timestampString = "412558672.030675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "626"
-            endingLineNumber = "626"
+            startingLineNumber = "630"
+            endingLineNumber = "630"
             landmarkName = "-viewWillDisappear:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoE/Inori_FatherAndSonSwimInTheSeaViewController.m"
+            timestampString = "412558862.59151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "@implementation Inori_FatherAndSonSwimInTheSeaViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
