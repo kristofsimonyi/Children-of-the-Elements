@@ -13,6 +13,11 @@
 
 //http://www.youtube.com/watch?v=vY8tQQn4evo
 
+//read for a better memory management
+//http://stackoverflow.com/questions/9402061/high-virtual-memory-usage-low-allocations-on-ios
+//http://stackoverflow.com/questions/14979742/releasing-memory-in-ios-5-under-arc
+
+
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVAudioPlayer.h>

@@ -58,14 +58,16 @@
 
 - (void)screen12BackToMainMenu;
 {
+    /*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
+     */
 }
 
-- (void)screen12NextScreenButtonTouched;
+- (IBAction)screen12NextScreenButtonTouched:(id) sender;
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController++;
@@ -74,7 +76,7 @@
     [self goToNextScreen];
 }
 
-- (void)screen12PreviousScreenButtonTouched;
+- (IBAction)screen12PreviousScreenButtonTouched:(id)sender;
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController--;

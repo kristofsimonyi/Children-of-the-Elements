@@ -24,6 +24,12 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN05 105
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN06 106
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN07 107
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN08 108
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN09 109
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN10 110
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN11 111
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN12 112
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN13 113
 
 #define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN01 201
 #define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN02 202
@@ -51,10 +57,12 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 #import "Screen11ViewController.h"
 #import "Screen12ViewController.h"
 #import "Screen13ViewController.h"
-#import "Screen14ViewController.h"
+#import "Screen12ViewController.h"
 #import "Screen15_16ViewController.h"
 #import "ScrollingPagesViewController.h"
 #import "FontsViewController.h"
+#import "FeedbackScreenViewController.h"
+#import "StaticScreenViewController.h"
 
 @implementation ViewController
 
@@ -390,7 +398,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
     {
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN01:
         {
-            Inori_InorisFatherIsPrayingViewController *newScreenViewController=[[Inori_InorisFatherIsPrayingViewController alloc] init];
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -401,7 +409,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN02:
         {
-            Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController *newScreenViewController=[[Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController alloc] init];
+            Inori_InorisFatherIsPrayingViewController *newScreenViewController=[[Inori_InorisFatherIsPrayingViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -411,6 +419,39 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN03:
+        {
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN04:
+        {
+            Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController *newScreenViewController=[[Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN05:
+        {
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN06:
         {
             /*
             //Go to theScreenFonts that is on the MainStoryboard
@@ -427,7 +468,18 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
             break;
         }
             
-        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN04:
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN07:
+        {
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN08:
         {
             Inori_FatherAndSonPatchUpAFishnetViewController *newScreenViewController=[[Inori_FatherAndSonPatchUpAFishnetViewController alloc] init];
             
@@ -438,7 +490,18 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
             break;
         }
             
-        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN05:
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN09:
+        {
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN10:
         {
             Screen11ViewController *newScreenViewController=[[Screen11ViewController alloc] init];
             
@@ -449,9 +512,9 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
             break;
         }
             
-        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN06:
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN11:
         {
-            Screen14ViewController *newScreenViewController=[[Screen14ViewController alloc] init];
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -460,9 +523,21 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
             break;
         }
             
-        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN07:
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN12:
         {
-            Screen15_16ViewController *newScreenViewController=[[Screen15_16ViewController alloc] init];
+            Screen12ViewController *newScreenViewController=[[Screen12ViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN13:
+        {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+            Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"FeedbackScreen"];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             

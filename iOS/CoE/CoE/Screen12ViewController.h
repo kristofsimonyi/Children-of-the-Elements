@@ -29,5 +29,7 @@
 -(CGPoint)rotatePoint:(CGPoint)centre around:(CGPoint)point withDegree:(float)degree;
 - (void) screen12IsBigMedusaReachesFish;
 - (UIImageView *)screen12CreateWhiteKelpOf:(UIImageView *)kelpImageView;
+- (IBAction)screen12NextScreenButtonTouched:(id) sender;
+- (IBAction)screen12PreviousScreenButtonTouched:(id)sender;
 
 @end

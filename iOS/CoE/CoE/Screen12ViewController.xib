@@ -45,6 +45,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="oiy-gC-e3a" userLabel="MenuImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
                 <view contentMode="scaleToFill" id="65" userLabel="OtherMedusasView">
                     <rect key="frame" x="0.0" y="-10" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,10 +159,38 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                 </imageView>
+                <view contentMode="scaleToFill" id="mRo-fb-RVo" userLabel="PreviousScreenControl" customClass="UIControl">
+                    <rect key="frame" x="977" y="513" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="WMY-Fe-dhv" appends="YES" id="2mS-xg-T33"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="PhA-Ox-g7I" userLabel="NextScreenControl" customClass="UIControl">
+                    <rect key="frame" x="978" y="431" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="2qa-eY-ZLc" appends="YES" id="ZWh-Xx-Y8I"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
+        <tapGestureRecognizer id="2qa-eY-ZLc" userLabel="NextScreenTap Gesture Recognizer">
+            <connections>
+                <action selector="screen12NextScreenButtonTouched:" destination="-1" id="rCS-9g-KLh"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="WMY-Fe-dhv" userLabel="PreviousScreenTap Gesture Recognizer">
+            <connections>
+                <action selector="screen12PreviousScreenButtonTouched:" destination="-1" id="tpq-NN-YpZ"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="12_1k_alap.png" width="1024" height="768"/>
@@ -181,5 +214,6 @@
         <image name="12_1k_meduza_kar_2.png" width="498" height="140"/>
         <image name="12_1k_meduza_kar_3.png" width="605" height="251"/>
         <image name="12_1k_meduza_kar_4.png" width="980" height="65"/>
+        <image name="menu_set_4k.png" width="2048" height="1536"/>
     </resources>
 </document>
