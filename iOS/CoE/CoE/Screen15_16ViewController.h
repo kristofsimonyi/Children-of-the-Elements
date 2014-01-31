@@ -35,15 +35,15 @@
     AVAudioPlayer *backgroundMusic;
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView *screen15BackgroundImageView, *screen15Wave1ImageView, *screen15Wave2ImageView, *screen15Wave3ImageView, *screen15NightImageView, *screen15Cloud01ImageView, *screen15Cloud02ImageView, *screen15Cloud03ImageView, *screen15StarImageView, *screen15BlackImageView;
-@property (nonatomic, retain) IBOutlet UIControl *screen15StarControl;
+@property (nonatomic, weak) IBOutlet UIImageView *screen15BackgroundImageView, *screen15Wave1ImageView, *screen15Wave2ImageView, *screen15Wave3ImageView, *screen15NightImageView, *screen15Cloud01ImageView, *screen15Cloud02ImageView, *screen15Cloud03ImageView, *screen15StarImageView, *screen15BlackImageView;
+@property (nonatomic, weak) IBOutlet UIControl *screen15StarControl;
 
-@property (nonatomic, retain) IBOutlet UIView *screen16View;
+@property (nonatomic, weak) IBOutlet UIView *screen16View;
 
 
-@property (nonatomic, retain) IBOutlet UIView *screen16CarouselView, *screen16CarouselTouchView, *screen16ButterfliesView;
-@property (nonatomic, retain) IBOutlet UIImageView *screen16AmihanHangImageView, *screen16KusiniHangImageView, *screen16TalamhHangImageView, *screen16ZiemeluHangImageView, *screen16CarouselRisenImageView, *screen16CarouselTightImageView, *screen16CloudImageView, *screen16NightImageView;
-@property (nonatomic, retain) IBOutlet UIView *screen16InoriControl;
+@property (nonatomic, weak) IBOutlet UIView *screen16CarouselView, *screen16CarouselTouchView, *screen16ButterfliesView;
+@property (nonatomic, weak) IBOutlet UIImageView *screen16AmihanHangImageView, *screen16KusiniHangImageView, *screen16TalamhHangImageView, *screen16ZiemeluHangImageView, *screen16CarouselRisenImageView, *screen16CarouselTightImageView, *screen16CloudImageView, *screen16NightImageView;
+@property (nonatomic, weak) IBOutlet UIView *screen16InoriControl;
 
 - (IBAction)screen15_16BackToMainMenu:(id)sender;
 - (IBAction)screen15_16StarControlTouched:(id)sender;

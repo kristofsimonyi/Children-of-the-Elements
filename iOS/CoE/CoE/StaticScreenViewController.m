@@ -224,7 +224,14 @@
     
     [filter setValue:[NSNumber numberWithFloat:contrastAmount] forKey:@"inputContrast"];
     
-    return [UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]];
+    UIImage *image = [UIImage imageWithCGImage:[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent]];
+    
+    context = nil;
+    filter = nil;
+    inputImage = nil;
+
+    return image;
+    
 }
 
 - (void) Screen10SmallShipRockingAction;
@@ -289,6 +296,7 @@
         }
         
         [staticTextView setText:newText];
+        [staticTextView setFont:[UIFont systemFontOfSize:20]];
         
     }
 }

@@ -22,10 +22,9 @@
     CGFloat boatsAreCloseVolumePercentage;
 }
 
-@property (nonatomic, retain) IBOutlet UIView *screen04StoryTextView;
-@property (weak, nonatomic) IBOutlet UIView *screen04BigShipView, *screen04SmallShipView, *screen04BigShipControl;
-@property (nonatomic, retain) IBOutlet UIImageView *screen04InoriSitting, *screen04InoriStanding, *screen04Wave1ImageView, *screen04Wave2ImageView, *screen04Wave3ImageView, *screen04Wave4ImageView, *screen04SnailImageView, *screen04BigShipImageView, *screen04SmallShipImageView;
-@property (nonatomic, retain) IBOutlet UIControl *screen04SnailControl, *screen04SmallShipControl, *screen04InoriControl, *screen04MusicControl, *screen04NextScreenControl, *screen04PreviousScreenContol, *screen04CompassContol;
+@property (nonatomic, weak) IBOutlet UIView *screen04BigShipView, *screen04SmallShipView, *screen04BigShipControl;
+@property (nonatomic, weak) IBOutlet UIImageView *screen04InoriSitting, *screen04InoriStanding, *screen04Wave1ImageView, *screen04Wave2ImageView, *screen04Wave3ImageView, *screen04Wave4ImageView, *screen04SnailImageView, *screen04BigShipImageView, *screen04SmallShipImageView;
+@property (nonatomic, weak) IBOutlet UIControl *screen04SnailControl, *screen04SmallShipControl, *screen04InoriControl, *screen04MusicControl, *screen04NextScreenControl, *screen04PreviousScreenContol, *screen04CompassContol;
 
 - (void) setSmallShipRockingState;
 - (void) setBigShipRockingState;

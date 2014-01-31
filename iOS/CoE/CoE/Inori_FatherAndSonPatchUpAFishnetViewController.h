@@ -21,8 +21,8 @@
     AVAudioPlayer *backgroundMusic;
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView *screen09Sea01ImageView, *screen09Sea02ImageView, *screen09NetImageView;
-@property (nonatomic, retain) IBOutlet WavingImageView *screen09Fish01ImageView, *screen09Fish02ImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *screen09Sea01ImageView, *screen09Sea02ImageView, *screen09NetImageView;
+@property (nonatomic, weak) IBOutlet WavingImageView *screen09Fish01ImageView, *screen09Fish02ImageView;
 -(IBAction)screen09BackToMainMenu:(id)sender;
 - (IBAction)screen09NextScreenButtonTouched:(id)sender;
 - (IBAction)screen09PreviousButtonTouched:(id)sender;

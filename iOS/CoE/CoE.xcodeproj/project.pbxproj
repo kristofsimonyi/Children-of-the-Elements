@@ -87,7 +87,6 @@
 		E24129A6159598E30094E53B /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = E24129A5159598E30094E53B /* UIImage+StackBlur.m */; };
 		E24AF55F1783720300C9EF11 /* Screen15_16ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */; };
 		E24AF5601783720300C9EF11 /* Screen15_16ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */; };
-		E253741418940C7C00EFC01B /* menu_set_4k.png in Resources */ = {isa = PBXBuildFile; fileRef = E253741318940C7C00EFC01B /* menu_set_4k.png */; };
 		E253741E1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E253741D1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg */; };
 		E25745F2184D40B8001E98FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25745F1184D40B8001E98FB /* Images.xcassets */; };
 		E258B96B151665880094C4F7 /* A1-overview.png in Resources */ = {isa = PBXBuildFile; fileRef = E258B96A151665880094C4F7 /* A1-overview.png */; };
@@ -299,6 +298,8 @@
 		E2E67F80186F646E00B455A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E67F7F186F646E00B455A5 /* QuartzCore.framework */; };
 		E2EF912A16AC098500FEA0A3 /* DesatView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF912916AC098500FEA0A3 /* DesatView.m */; };
 		E2EF913516AC11CC00FEA0A3 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF913416AC11CC00FEA0A3 /* CoreImage.framework */; };
+		E2F38184189B165E00FF03EA /* menu_set-top-g.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F38182189B165E00FF03EA /* menu_set-top-g.png */; };
+		E2F38185189B165E00FF03EA /* menu_set-top-w.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F38183189B165E00FF03EA /* menu_set-top-w.png */; };
 		E2F9C84C18999E7000E60D0F /* StaticScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F9C84A18999E7000E60D0F /* StaticScreenViewController.m */; };
 		E2F9C84D18999E7000E60D0F /* StaticScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F9C84B18999E7000E60D0F /* StaticScreenViewController.xib */; };
 		E2F9C84F1899A93C00E60D0F /* StaticScreenTexts.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2F9C84E1899A93C00E60D0F /* StaticScreenTexts.txt */; };
@@ -442,7 +443,6 @@
 		E24AF55C1783720300C9EF11 /* Screen15_16ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen15_16ViewController.h; sourceTree = "<group>"; };
 		E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen15_16ViewController.m; sourceTree = "<group>"; };
 		E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen15_16ViewController.xib; sourceTree = "<group>"; };
-		E253741318940C7C00EFC01B /* menu_set_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_set_4k.png; path = Resources/menu_set_4k.png; sourceTree = "<group>"; };
 		E253741D1894370A00EFC01B /* the-perfect-fantasy-sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "the-perfect-fantasy-sunset.jpg"; path = "Resources/the-perfect-fantasy-sunset.jpg"; sourceTree = "<group>"; };
 		E25745F1184D40B8001E98FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E258B96A151665880094C4F7 /* A1-overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "A1-overview.png"; path = "Resources/A1/A1-overview.png"; sourceTree = "<group>"; };
@@ -673,6 +673,8 @@
 		E2EF912816AC098500FEA0A3 /* DesatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesatView.h; sourceTree = "<group>"; };
 		E2EF912916AC098500FEA0A3 /* DesatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesatView.m; sourceTree = "<group>"; };
 		E2EF913416AC11CC00FEA0A3 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E2F38182189B165E00FF03EA /* menu_set-top-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_set-top-g.png"; path = "Resources/menu_set-top-g.png"; sourceTree = "<group>"; };
+		E2F38183189B165E00FF03EA /* menu_set-top-w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_set-top-w.png"; path = "Resources/menu_set-top-w.png"; sourceTree = "<group>"; };
 		E2F9C84918999E7000E60D0F /* StaticScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticScreenViewController.h; sourceTree = "<group>"; };
 		E2F9C84A18999E7000E60D0F /* StaticScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticScreenViewController.m; sourceTree = "<group>"; };
 		E2F9C84B18999E7000E60D0F /* StaticScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticScreenViewController.xib; sourceTree = "<group>"; };
@@ -1391,7 +1393,8 @@
 			children = (
 				E2C6B0AF185E3E56002862EA /* Music, SFX */,
 				E2657B33185DE8110099018E /* Fonts */,
-				E253741318940C7C00EFC01B /* menu_set_4k.png */,
+				E2F38182189B165E00FF03EA /* menu_set-top-g.png */,
+				E2F38183189B165E00FF03EA /* menu_set-top-w.png */,
 				E2A34ADE18550341006446F4 /* PadlockClosed.png */,
 				E2E5F8AE187CBE8500996FA5 /* Speaker.png */,
 				E253741F189438CD00EFC01B /* MiniEpisode01 */,
@@ -1831,6 +1834,7 @@
 				E2C6B0EA185E3E79002862EA /* 004_sohaj.mp3 in Resources */,
 				E2FA494416D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.xib in Resources */,
 				E2C6B0D5185E3E79002862EA /* 001_Atm_tucsok.mp3 in Resources */,
+				E2F38185189B165E00FF03EA /* menu_set-top-w.png in Resources */,
 				E2C6B0DA185E3E79002862EA /* 001_rakozelithazra2OK.mp3 in Resources */,
 				E2FA494E16D43F7F0044816A /* 9_1k_alakok.png in Resources */,
 				E2FA494F16D43F7F0044816A /* 9_1k_hal1.png in Resources */,
@@ -1895,7 +1899,6 @@
 				E232917A17837911006B2A77 /* 15-16_1k_15bg.jpg in Resources */,
 				E232917B17837911006B2A77 /* 15-16_1k_15csillag.png in Resources */,
 				E232917C17837911006B2A77 /* 15-16_1k_15ejszaka.png in Resources */,
-				E253741418940C7C00EFC01B /* menu_set_4k.png in Resources */,
 				E2C6B0D9185E3E79002862EA /* 001_rakozelithazra.mp3 in Resources */,
 				E2C6B0E5185E3E79002862EA /* 003_rovidhalak.mp3 in Resources */,
 				E2C6B0EB185E3E79002862EA /* 006_hal1.mp3 in Resources */,
@@ -1907,6 +1910,7 @@
 				E232918017837911006B2A77 /* 15-16_1k_15hullam3.png in Resources */,
 				E232918117837911006B2A77 /* 15-16_1k_16bg.jpg in Resources */,
 				E232918217837911006B2A77 /* 15-16_1k_16dune.png in Resources */,
+				E2F38184189B165E00FF03EA /* menu_set-top-g.png in Resources */,
 				E232918317837911006B2A77 /* 15-16_1k_16ejszaka.png in Resources */,
 				E232918417837911006B2A77 /* 15-16_1k_16felho.png in Resources */,
 				E232918517837911006B2A77 /* 15-16_1k_szita1.png in Resources */,

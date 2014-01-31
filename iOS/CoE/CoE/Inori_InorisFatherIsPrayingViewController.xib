@@ -118,13 +118,13 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="vDS-Kv-CYk" userLabel="MenuImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="vDS-Kv-CYk" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="TXg-ie-1Si" userLabel="MusicControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="652" width="45" height="56"/>
+                    <rect key="frame" x="486" y="0.0" width="54" height="46"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -132,7 +132,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="Xwv-mI-KAO" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="430" width="45" height="80"/>
+                    <rect key="frame" x="979" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -140,7 +140,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="FaG-No-zOu" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="513" width="45" height="80"/>
+                    <rect key="frame" x="-1" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -178,6 +178,6 @@
         <image name="1_2k_riszfoldalap.png" width="1024" height="768"/>
         <image name="1_2k_rizsfold-ejszaka.png" width="1024" height="768"/>
         <image name="1_2k_tuz.png" width="1024" height="768"/>
-        <image name="menu_set_4k.png" width="2048" height="1536"/>
+        <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

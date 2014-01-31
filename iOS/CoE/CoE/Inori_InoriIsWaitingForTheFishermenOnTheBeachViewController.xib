@@ -22,7 +22,6 @@
                 <outlet property="screen04SmallShipView" destination="uqj-dB-Zf1" id="0m5-Zn-wRI"/>
                 <outlet property="screen04SnailControl" destination="30" id="31"/>
                 <outlet property="screen04SnailImageView" destination="28" id="29"/>
-                <outlet property="screen04StoryTextView" destination="26" id="27"/>
                 <outlet property="screen04Wave1ImageView" destination="16" id="22"/>
                 <outlet property="screen04Wave2ImageView" destination="19" id="23"/>
                 <outlet property="screen04Wave3ImageView" destination="20" id="24"/>
@@ -101,7 +100,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="N33-kv-Zh4" userLabel="MenuImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="N33-kv-Zh4" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -112,27 +111,22 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="8L2-5D-CXW" userLabel="MusicControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="654" width="45" height="52"/>
+                    <rect key="frame" x="486" y="1" width="49" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="j92-he-kcd" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="430" width="45" height="80"/>
+                    <rect key="frame" x="980" y="29" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="3pY-2U-LLo" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="514" width="45" height="80"/>
+                    <rect key="frame" x="-2" y="29" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="11" userLabel="InoriControl" customClass="UIControl">
                     <rect key="frame" x="209" y="384" width="154" height="188"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" id="26" userLabel="Screen04StoryTextView">
-                    <rect key="frame" x="20" y="20" width="351" height="251"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -172,6 +166,6 @@
         <image name="4_1k_inori_ul.png" width="1024" height="768"/>
         <image name="4_1k_kishajo.png" width="1024" height="768"/>
         <image name="4_1k_nagyhajo.png" width="1024" height="768"/>
-        <image name="menu_set_4k.png" width="2048" height="1536"/>
+        <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

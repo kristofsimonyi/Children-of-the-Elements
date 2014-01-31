@@ -30,9 +30,22 @@
     AVAudioPlayer *backgroundMusic;
     int nextViewController;
 }
-@property (strong, nonatomic) AVAudioPlayer *backgroundMusic;
+@property (retain, nonatomic) AVAudioPlayer *backgroundMusic;
 @property int nextViewController;
 @property BOOL musicIsOn;
+
+@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode02Padlock;
+@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode03Padlock;
+@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode04Padlock;
+@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode05Padlock;
+
+@property (weak, nonatomic) IBOutlet UIView *miniEpisode01View;
+@property (weak, nonatomic) IBOutlet UIView *miniEpisode02View;
+@property (weak, nonatomic) IBOutlet UIView *miniEpisode03View;
+@property (weak, nonatomic) IBOutlet UIView *miniEpisode04View;
+@property (weak, nonatomic) IBOutlet UIView *miniEpisode05View;
+
+@property (weak, nonatomic) PurchaseMiniEpisodesViewController *purchaseMiniEpisodesViewController;
 
 - (IBAction)mainscreenScreenMiniEpisode01Selected:(id)sender;
 - (IBAction)mainscreenScreenMiniEpisode02Selected:(id)sender;
@@ -63,18 +76,5 @@
 - (IBAction)mainscreenScrollingPagesControlSelected:(id)sender;
 - (IBAction)mainscreenScreenFontsSelected:(id)sender;
 - (IBAction)mainscreenMusicButtonTouched:(id)sender;
-
-@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode02Padlock;
-@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode03Padlock;
-@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode04Padlock;
-@property (weak, nonatomic) IBOutlet UIImageView *miniEpisode05Padlock;
-
-@property (weak, nonatomic) IBOutlet UIView *miniEpisode01View;
-@property (weak, nonatomic) IBOutlet UIView *miniEpisode02View;
-@property (weak, nonatomic) IBOutlet UIView *miniEpisode03View;
-@property (weak, nonatomic) IBOutlet UIView *miniEpisode04View;
-@property (weak, nonatomic) IBOutlet UIView *miniEpisode05View;
-
-@property (strong, nonatomic) PurchaseMiniEpisodesViewController *purchaseMiniEpisodesViewController;
 
 @end

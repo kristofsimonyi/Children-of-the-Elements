@@ -73,7 +73,7 @@
 
 @implementation Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController
 
-@synthesize screen04StoryTextView, screen04InoriSitting, screen04InoriStanding, screen04Wave1ImageView, screen04Wave2ImageView, screen04Wave3ImageView, screen04Wave4ImageView, screen04SnailImageView, screen04SnailControl, screen04BigShipView, screen04SmallShipView, screen04BigShipControl, screen04SmallShipControl, screen04InoriControl, screen04BigShipImageView, screen04SmallShipImageView, screen04MusicControl, screen04NextScreenControl, screen04PreviousScreenContol, screen04CompassContol;
+@synthesize screen04InoriSitting, screen04InoriStanding, screen04Wave1ImageView, screen04Wave2ImageView, screen04Wave3ImageView, screen04Wave4ImageView, screen04SnailImageView, screen04SnailControl, screen04BigShipView, screen04SmallShipView, screen04BigShipControl, screen04SmallShipControl, screen04InoriControl, screen04BigShipImageView, screen04SmallShipImageView, screen04MusicControl, screen04NextScreenControl, screen04PreviousScreenContol, screen04CompassContol;
 
 -(void)goToNextScreen;
 {
@@ -184,7 +184,7 @@
     if ([self.view window] == nil)
         self.view = nil;
 }
-
+/*
 - (void) textAppear;
 {
     for (UIView *view in screen04StoryTextView.subviews) {
@@ -193,7 +193,7 @@
     
     UILabel *newLabel;
     NSString *string;
-    
+ 
     UILabel *origLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 500, 10, 12)];
     [origLabel setText:@" abcd efgh ijkl mnopqr stuvxyz valaminek jonnie kell..."];
     
@@ -228,7 +228,7 @@
             
         }
 }
-
+*/
 -(void)screen04Move:(id)sender
 {
     CGPoint locatedPoint = [(UIPanGestureRecognizer*)sender locationInView:self.view];

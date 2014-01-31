@@ -47,12 +47,12 @@
                     <rect key="frame" x="-488" y="81" width="2000" height="585"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="Str-gm-Rlv" userLabel="MenuImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="Str-gm-Rlv" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="TXe-yt-wKJ" userLabel="Static Text View">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" id="TXe-yt-wKJ" userLabel="Static Text View">
                     <rect key="frame" x="162" y="260" width="700" height="360"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -61,7 +61,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <view contentMode="scaleToFill" id="7SZ-ut-Mrr" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="982" y="430" width="45" height="80"/>
+                    <rect key="frame" x="979" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -70,7 +70,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="7BC-JF-Blx" userLabel="MusicControl" customClass="UIControl">
-                    <rect key="frame" x="978" y="654" width="45" height="56"/>
+                    <rect key="frame" x="486" y="1" width="52" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -79,7 +79,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="GUc-wD-aFW" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="978" y="512" width="45" height="80"/>
+                    <rect key="frame" x="-1" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -122,6 +122,6 @@
         <image name="8_1k_dune.png" width="1024" height="768"/>
         <image name="8_1k_hatter.png" width="1024" height="768"/>
         <image name="8_1k_nagyhajo.png" width="1024" height="768"/>
-        <image name="menu_set_4k.png" width="2048" height="1536"/>
+        <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

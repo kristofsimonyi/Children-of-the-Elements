@@ -27,7 +27,6 @@
                 <outlet property="screen12Kelp4ImageView" destination="19" id="105"/>
                 <outlet property="screen12Kelp5ImageView" destination="20" id="106"/>
                 <outlet property="screen12Kelp6ImageView" destination="21" id="107"/>
-                <outlet property="screen12StoryTextView" destination="13" id="108"/>
                 <outlet property="screen12WavesImageView" destination="11" id="109"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -45,7 +44,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set_4k.png" id="oiy-gC-e3a" userLabel="MenuImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="oiy-gC-e3a" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -87,11 +86,6 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" id="13" userLabel="Screen12StoryTextView">
-                    <rect key="frame" x="676" y="43" width="293" height="640"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="15" userLabel="KelpsView">
@@ -159,22 +153,22 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                 </imageView>
-                <view contentMode="scaleToFill" id="mRo-fb-RVo" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="977" y="513" width="45" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <gestureRecognizers/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="WMY-Fe-dhv" appends="YES" id="2mS-xg-T33"/>
-                    </connections>
-                </view>
                 <view contentMode="scaleToFill" id="PhA-Ox-g7I" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="978" y="431" width="45" height="80"/>
+                    <rect key="frame" x="979" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="2qa-eY-ZLc" appends="YES" id="ZWh-Xx-Y8I"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="mRo-fb-RVo" userLabel="PreviousScreenControl" customClass="UIControl">
+                    <rect key="frame" x="0.0" y="28" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="WMY-Fe-dhv" appends="YES" id="2mS-xg-T33"/>
                     </connections>
                 </view>
             </subviews>
@@ -214,6 +208,6 @@
         <image name="12_1k_meduza_kar_2.png" width="498" height="140"/>
         <image name="12_1k_meduza_kar_3.png" width="605" height="251"/>
         <image name="12_1k_meduza_kar_4.png" width="980" height="65"/>
-        <image name="menu_set_4k.png" width="2048" height="1536"/>
+        <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

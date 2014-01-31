@@ -17,9 +17,9 @@
     
 }
 
-@property (nonatomic, retain) IBOutlet UIControl *compassControl;
-@property (nonatomic, retain) IBOutlet UIImageView *Screen10BackgroundImageView, *Screen10DuneImageView, *Screen10SmallShipImageView, *Screen10BigShipImageView, *Screen10CloudImageView, *Screen10InoriImageView;
-@property (nonatomic, retain) IBOutlet UITextView *staticTextView;
+@property (nonatomic, weak) IBOutlet UIControl *compassControl;
+@property (nonatomic, weak) IBOutlet UIImageView *Screen10BackgroundImageView, *Screen10DuneImageView, *Screen10SmallShipImageView, *Screen10BigShipImageView, *Screen10CloudImageView, *Screen10InoriImageView;
+@property (nonatomic, weak) IBOutlet UITextView *staticTextView;
 
 - (void) setSmallShipRockingState;
 - (void) setBigShipRockingState;

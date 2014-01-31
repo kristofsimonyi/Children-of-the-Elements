@@ -20,10 +20,10 @@
     AVAudioPlayer *backgroundMusic, *sfxHouse, *sfxTeaPot, *sfxFather;
 }
 
-@property (nonatomic, retain) IBOutlet UIView *phase01View, *phase02View;
-@property (nonatomic, retain) IBOutlet UIImageView *riceFieldBaseImageView, *windowImageView, *bedImageView, *baseImageView, *fatherImageView, *night1ImageView, *night2ImageView, *teaPotImageView, *frameImageView, *fireImageView, *transitionToPhase02ImageView;
+@property (nonatomic, weak) IBOutlet UIView *phase01View, *phase02View;
+@property (nonatomic, weak) IBOutlet UIImageView *riceFieldBaseImageView, *windowImageView, *bedImageView, *baseImageView, *fatherImageView, *night1ImageView, *night2ImageView, *teaPotImageView, *frameImageView, *fireImageView, *transitionToPhase02ImageView;
 
-@property (nonatomic, retain) IBOutlet UIControl *fatherControl, *teaPotControl;
+@property (nonatomic, weak) IBOutlet UIControl *fatherControl, *teaPotControl;
 
 - (IBAction)screen01BackToMainMenu:(id)sender;
 - (IBAction)fatherTouched:(id)sender;

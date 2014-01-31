@@ -28,11 +28,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "412642561.273729"
+            timestampString = "412818179.14683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
             landmarkName = "-touchesMoved:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -45,11 +45,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "412642561.273729"
+            timestampString = "412818179.14683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "447"
-            endingLineNumber = "447"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
             landmarkName = "-bigMedusaSlowsDownAction"
             landmarkType = "5">
          </BreakpointContent>
@@ -62,11 +62,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "412642561.273729"
+            timestampString = "412818179.14683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "-touchesEnded:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -79,11 +79,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "412642561.273729"
+            timestampString = "412818179.14683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "433"
-            endingLineNumber = "433"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "-touchesEnded:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -96,28 +96,28 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "412642561.273729"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
-            landmarkName = "-bigMedusaSlowsDownAction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            isPathRelative = "1"
-            filePath = "CoE/Screen12ViewController.m"
-            timestampString = "412642561.273729"
+            timestampString = "412818179.14683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "453"
             endingLineNumber = "453"
+            landmarkName = "-bigMedusaSlowsDownAction"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            isPathRelative = "1"
+            filePath = "CoE/Screen12ViewController.m"
+            timestampString = "412818179.14683"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
             landmarkName = "-bigMedusaSlowsDownAction"
             landmarkType = "5">
          </BreakpointContent>
@@ -686,13 +686,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CoE/StaticScreenViewController.m"
-            timestampString = "412726763.587474"
+            filePath = "CoE/ViewController.m"
+            timestampString = "412813851.333461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "-loadStaticText"
+            startingLineNumber = "726"
+            endingLineNumber = "726"
+            landmarkName = "-viewWillDisappear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoE/Screen10ViewController.m"
+            timestampString = "412815925.108573"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "-Screen10ItIsWavingAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -703,11 +719,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/StaticScreenViewController.m"
-            timestampString = "412726763.587474"
+            timestampString = "412816577.741572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "-loadStaticText"
             landmarkType = "5">
          </BreakpointContent>
