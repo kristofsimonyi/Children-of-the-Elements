@@ -203,15 +203,6 @@
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(void)getProductIDTimerAction;
 {
     if (getProductIDTimerCanBeIncreased)
@@ -325,48 +316,7 @@
     }
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-
-    buyButton2.enabled = NO;
-    buyButton3.enabled = NO;
-    buyButton4.enabled = NO;
-    buyButton5.enabled = NO;
-
-    //in order to avoid a restore event while other Product information are still loading from server restore buttons needs to be disabled
-    restoreButton2.enabled = NO;
-    restoreButton3.enabled = NO;
-    restoreButton4.enabled = NO;
-    restoreButton5.enabled = NO;
-
-    getProductIDTimerCanBeIncreased=TRUE;
-    getProductIDTimer = [NSTimer scheduledTimerWithTimeInterval:WAIT_TIME_BETWEEN_GETPRODUCTIDS target:self selector:@selector(getProductIDTimerAction) userInfo:nil repeats:YES];
-    getProductIDTimercount=1;
-	[getProductIDTimer fire];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    
-    if ([self.view window] == nil)
-        self.view = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
-        return YES;
-    } else {
-        return FALSE;
-    }
-}
-
-#pragma mark _
-#pragma mark SKProductsRequestDelegate
+#pragma mark - SKProductsRequestDelegate
 
 -(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
@@ -487,6 +437,70 @@
             
         default:
             break;
+    }
+}
+
+#pragma mark - View lifecycle
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
+        return YES;
+    } else {
+        return FALSE;
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated;
+{
+    self.view=nil;
+    
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    buyButton2.enabled = NO;
+    buyButton3.enabled = NO;
+    buyButton4.enabled = NO;
+    buyButton5.enabled = NO;
+    
+    //in order to avoid a restore event while other Product information are still loading from server restore buttons needs to be disabled
+    restoreButton2.enabled = NO;
+    restoreButton3.enabled = NO;
+    restoreButton4.enabled = NO;
+    restoreButton5.enabled = NO;
+    
+    getProductIDTimerCanBeIncreased=TRUE;
+    getProductIDTimer = [NSTimer scheduledTimerWithTimeInterval:WAIT_TIME_BETWEEN_GETPRODUCTIDS target:self selector:@selector(getProductIDTimerAction) userInfo:nil repeats:YES];
+    getProductIDTimercount=1;
+	[getProductIDTimer fire];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+    
+    if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
     }
 }
 

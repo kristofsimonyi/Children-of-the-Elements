@@ -17,11 +17,11 @@
     CGFloat fatherTimerClock, fatherTimerClockChange;
     CGAffineTransform teaPotOriginalTransform;
     CGFloat teaPotTimerClock, teaPotTimerChangeCurrentMax, teaPotTimerClockMax, teaPotTimerClockMin, teaPotTimerClockChange;
-    AVAudioPlayer *backgroundMusic, *sfxHouse, *sfxTeaPot, *sfxFather;
+    AVAudioPlayer *backgroundMusic, *sfxHouse, *sfxTeaPot, *sfxFather, *narration;
 }
 
 @property (nonatomic, weak) IBOutlet UIView *phase01View, *phase02View;
-@property (nonatomic, weak) IBOutlet UIImageView *riceFieldBaseImageView, *windowImageView, *bedImageView, *baseImageView, *fatherImageView, *night1ImageView, *night2ImageView, *teaPotImageView, *frameImageView, *fireImageView, *transitionToPhase02ImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *riceFieldBaseImageView, *windowImageView, *bedImageView, *baseImageView, *fatherImageView, *night1ImageView, *night2ImageView, *teaPotImageView, *frameImageView, *fireImageView, *transitionToPhase02ImageView, *hintLayerImageView;
 
 @property (nonatomic, weak) IBOutlet UIControl *fatherControl, *teaPotControl;
 
@@ -31,5 +31,7 @@
 - (IBAction)Screen01nextScreenButtonTouched:(id)sender;
 - (IBAction)screen01PreviousButtonTouched:(id)sender;
 - (IBAction)screen01MusicButtonTouched:(id)sender;
+- (IBAction)hintButtonTapped;
+- (IBAction)narrationButtonTapped;
 
 @end

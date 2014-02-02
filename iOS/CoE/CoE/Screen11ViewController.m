@@ -230,6 +230,7 @@
     CGFloat nGreen=BACKGROUND_GREEN_VALUE/255.0;
     UIColor *myColor=[[UIColor alloc]initWithRed:nRed green:nBlue blue:nGreen alpha:1];
     [self.view setBackgroundColor:myColor];
+    myColor=nil;
 
 }
 
@@ -318,7 +319,14 @@
     // Dispose of any resources that can be recreated.
     
     if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
         self.view = nil;
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

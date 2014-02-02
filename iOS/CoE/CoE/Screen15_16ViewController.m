@@ -550,6 +550,7 @@
     [screen16ButterfliesView addSubview:newButterflyImageView];
     originalButterflyTransform=[newButterflyImageView transform];
     
+    newButterflyImageView=nil;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -762,7 +763,14 @@
     // Dispose of any resources that can be recreated.
     
     if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
         self.view = nil;
+    }
 }
 
 - (void)viewDidLoad

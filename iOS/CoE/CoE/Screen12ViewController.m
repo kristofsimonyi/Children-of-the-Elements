@@ -147,6 +147,15 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+    if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
+    }
 }
 
 #pragma mark - View lifecycle
@@ -361,7 +370,7 @@
             newBigMedusaRotation=newBigMedusaRotation+2*M_PI;
         }
 
-        NSLog(@"new:%f actual:%f",RADIANS_TO_DEGREES(newBigMedusaRotation),RADIANS_TO_DEGREES(bigMedusaRotation));
+//        NSLog(@"new:%f actual:%f",RADIANS_TO_DEGREES(newBigMedusaRotation),RADIANS_TO_DEGREES(bigMedusaRotation));
         
         if (fabs(bigMedusaRotation-newBigMedusaRotation)>DEGREES_TO_RADIANS(BIG_MEDUSA_MAX_ROTATION_AT_A_TIME)) {
             if (fabs(bigMedusaRotation-newBigMedusaRotation)>M_PI) 
@@ -632,6 +641,8 @@
     //Release our hold on the image
     CGImageRelease(newImg);
     
+    rawData=nil;
+    
     //return new image!
     return image;
     
@@ -728,7 +739,8 @@
         [fishes1Array addObject:fish]; 
         fishSpeed = ((arc4random()%(FISHES1_MAX_SPEED-FISHES1_MIN_SPEED))+FISHES1_MIN_SPEED)/10.00;
         [fishes1SpeedArray addObject:[NSNumber numberWithFloat:fishSpeed]];   
-
+        fish=nil;
+        
         randomFish = arc4random()%9+1;
         fish = [[UIImageView alloc] init];
         switch (randomFish) {
@@ -788,6 +800,7 @@
         [fishes1Array addObject:fish];           
         fishSpeed = ((arc4random()%(FISHES1_MAX_SPEED-FISHES1_MIN_SPEED))+FISHES1_MIN_SPEED)/10.00;
         [fishes1SpeedArray addObject:[NSNumber numberWithFloat:fishSpeed]];   
+        fish=nil;
     }
  
     for (int i=(MAX_FISHES_2/12)*4; i<(MAX_FISHES_2/12)*9; i++) {
@@ -857,6 +870,7 @@
 
         fishSpeed = ((arc4random()%(FISHES2_MAX_SPEED-FISHES2_MIN_SPEED))+FISHES2_MIN_SPEED)/10.00;
         [fishes2SpeedArray addObject:[NSNumber numberWithFloat:fishSpeed]];   
+        fish=nil;
 
         fish = [[UIImageView alloc] init];
         [fish setFrame:CGRectMake(0, 0, 89, 57)];
@@ -887,6 +901,7 @@
         fishSpeed = ((arc4random()%(FISHES2_MAX_SPEED-FISHES2_MIN_SPEED))+FISHES2_MIN_SPEED)/10.00;
         [fishes2SpeedArray addObject:[NSNumber numberWithFloat:fishSpeed]];   
         
+        fish=nil;
     }
 
 }
@@ -1124,6 +1139,19 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated;
+{
+    [fishes1Array removeAllObjects];
+    [fishes2Array removeAllObjects];
+    [fishes1SpeedArray removeAllObjects];
+    [fishes2SpeedArray removeAllObjects];
+    
+    fishes1Array=nil;
+    fishes2Array=nil;
+    fishes1SpeedArray=nil;
+    fishes2SpeedArray=nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

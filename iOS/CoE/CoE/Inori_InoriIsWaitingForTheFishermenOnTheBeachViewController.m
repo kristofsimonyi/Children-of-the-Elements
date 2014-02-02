@@ -165,25 +165,6 @@
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-    
-    if ([self.view window] == nil)
-        self.view = nil;
-}
 /*
 - (void) textAppear;
 {
@@ -308,11 +289,12 @@
                 [screen04BigShipView setAlpha:sliderPercentage];
                 [screen04SmallShipView setAlpha:sliderPercentage];
 
+                /*
                 CGRect frame = self.screen04BigShipControl.frame;
                 CGRect frame1 = self.screen04BigShipImageView.frame;
                 CGRect frame2 = self.screen04BigShipView.frame;
-                NSLog(@"%@",[NSString stringWithFormat:@"\n\nControl: %f,%f,%f,%f \nImage: %f,%f,%f,%f \nView %f,%f,%f,%f\n\n",frame.origin.x,frame.origin.y,frame.size.width,frame.size.height,frame1.origin.x,frame1.origin.y,frame1.size.width,frame1.size.height,frame2.origin.x,frame2.origin.y,frame2.size.width,frame2.size.height]);
-
+//                NSLog(@"%@",[NSString stringWithFormat:@"\n\nControl: %f,%f,%f,%f \nImage: %f,%f,%f,%f \nView %f,%f,%f,%f\n\n",frame.origin.x,frame.origin.y,frame.size.width,frame.size.height,frame1.origin.x,frame1.origin.y,frame1.size.width,frame1.size.height,frame2.origin.x,frame2.origin.y,frame2.size.width,frame2.size.height]);
+//*/
             }
         }
         else
@@ -644,6 +626,30 @@
 
 #pragma mark - View lifecycle
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
+        return YES;
+    }
+    // Return YES for supported orientations
+	return NO;
+}
+
+- (void)viewDidDisappear:(BOOL)animated;
+{
+    [self stopMusicAndSfx];
+    
+    self.view=nil;
+}
 
 - (void)viewDidLoad
 {
@@ -673,31 +679,29 @@
     [panRecognizer setMaximumNumberOfTouches:1];
     [panRecognizer setDelegate:self];
     [self.view addGestureRecognizer:panRecognizer];
-
+    panRecognizer = nil;
+    
     [self startBackgroundMusic];
     boatsAreCloseVolumePercentage=0;
     [self startsfxBoatsAreClose];
 }
 
-- (void)viewWillDisappear:(BOOL)animated;
+- (void)didReceiveMemoryWarning
 {
-    [self stopMusicAndSfx];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
-        return YES;
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+    
+    if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
     }
-    // Return YES for supported orientations
-	return NO;
 }
 
 @end

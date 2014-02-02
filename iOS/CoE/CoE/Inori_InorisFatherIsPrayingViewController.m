@@ -5,22 +5,22 @@
 //  Created by Ferenc INKOVICS on 11/02/2013.
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
-#define PHASE_01_PERIOD                 300.00  //300, 3 sec long
-#define PHASE_01_DISSOLVE_START         200.00  //200, after 2 sec
-#define PHASE_01_TIMER_STEP             1.00
+#define PHASE_01_PERIOD                                 300.00  //300, 3 sec long
+#define PHASE_01_DISSOLVE_START                         200.00  //200, after 2 sec
+#define PHASE_01_TIMER_STEP                             1.00
 
-#define PHASE_02_PERIOD                 40.00  //40, 2 sec long
+#define PHASE_02_PERIOD                                 40.00  //40, 2 sec long
 
-#define NIGHT_01_OPACITY_START          0.89
-#define NIGHT_01_OPACITY_FINISH         0.75
+#define NIGHT_01_OPACITY_START                          0.89
+#define NIGHT_01_OPACITY_FINISH                         0.75
 
-#define NIGHT_02_OPACITY_START          0.89
-#define NIGHT_02_OPACITY_FINISH         0.00
-#define NIGHT_02_OPACITY_RANDOM_MIN     0.00
-#define NIGHT_02_OPACITY_RANDOM_MAX     0.35
-#define NIGHT_02_OPACITY_RANDOM_CHANGE_MIN  0.03
-#define NIGHT_02_OPACITY_RANDOM_CHANGE_MAX  0.08
-#define NIGHT_02_TIMER_FREQUENCY        1.00/10 //10 times in a second
+#define NIGHT_02_OPACITY_START                          0.89
+#define NIGHT_02_OPACITY_FINISH                         0.00
+#define NIGHT_02_OPACITY_RANDOM_MIN                     0.00
+#define NIGHT_02_OPACITY_RANDOM_MAX                     0.35
+#define NIGHT_02_OPACITY_RANDOM_CHANGE_MIN              0.03
+#define NIGHT_02_OPACITY_RANDOM_CHANGE_MAX              0.08
+#define NIGHT_02_TIMER_FREQUENCY                        1.00/10 //10 times in a second
 
 #define FIRE_OPACITY_START                              0.00
 #define FIRE_OPACITY_FINISH                             100.00
@@ -39,6 +39,8 @@
 #define FATHER_TIMER_CLOCK_CHANGE_START                 0.1
 #define FATHER_TIMER_CLOCK_CHANGE_INCREMENT             1.05
 
+#define HINT_TIME                                       1.0
+
 #import "Inori_InorisFatherIsPrayingViewController.h"
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -49,7 +51,7 @@
 
 @implementation Inori_InorisFatherIsPrayingViewController
 
-@synthesize riceFieldBaseImageView, phase01View, phase02View, windowImageView, bedImageView, baseImageView, fatherImageView, night1ImageView, night2ImageView, teaPotImageView, frameImageView, fireImageView, transitionToPhase02ImageView, fatherControl, teaPotControl;
+@synthesize riceFieldBaseImageView, phase01View, phase02View, windowImageView, bedImageView, baseImageView, fatherImageView, night1ImageView, night2ImageView, teaPotImageView, frameImageView, fireImageView, transitionToPhase02ImageView, fatherControl, teaPotControl, hintLayerImageView;
 
 -(void)goToNextScreen;
 {
@@ -65,13 +67,13 @@
 
 -(IBAction)screen01BackToMainMenu:(id)sender;
 {
-/*
+//*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
- */
+// */
 }
 
 - (IBAction)Screen01nextScreenButtonTouched:(id)sender
@@ -120,6 +122,7 @@
 -(void)startBackgroundMusic2nd;
 {
     //set the Music for intro then start playing
+    backgroundMusic = nil;
 	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"001_Atm_tucsok_tuz_zene" ofType:@"mp3"];
 	backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:backgroundMusicPath] error:NULL];
 	backgroundMusic.delegate = self;
@@ -231,6 +234,46 @@
         viewContoller.musicIsOn=TRUE;
     }
     viewContoller = nil;
+}
+
+- (IBAction)hintButtonTapped
+{
+    if (hintLayerImageView.alpha==0.0)
+    {
+//        [hintLayerImageView removeFromSuperview];
+//        [self.view addSubview:hintLayerImageView];
+        [UIView animateWithDuration:HINT_TIME animations:^{
+            [hintLayerImageView setAlpha:1.0];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:HINT_TIME animations:^{
+                [hintLayerImageView setAlpha:0.01];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:HINT_TIME animations:^{
+                    [hintLayerImageView setAlpha:1.0];
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:HINT_TIME animations:^{
+                        [hintLayerImageView setAlpha:0.0];
+                    }];
+                }];
+            }];
+        }];
+    }
+}
+
+- (IBAction)narrationButtonTapped
+{
+    if (narration==nil)
+    {
+        [self startNarration];
+    } else
+    {
+        if ([narration isPlaying])
+        {
+            [self stopNarration];
+        } else {
+            [self startNarration];
+        }
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -525,14 +568,75 @@
     
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(void)startNarration;
 {
-    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
-        return YES;
+    //set the Music for intro then start playing
+    if (narration==nil)
+    {
+        ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+        NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
+        viewContoller = nil;
+        
+        //name the file to read
+        NSString* aPath = [[NSBundle mainBundle] pathForResource:@"ScreenNarrations" ofType:@"txt"];
+        //pull the content from the file into memory
+        NSData* data = [NSData dataWithContentsOfFile:aPath];
+        //convert the bytes from the file into a string
+        NSString* string = [[NSString alloc] initWithBytes:[data bytes]
+                                                    length:[data length]
+                                                  encoding:NSUTF8StringEncoding];
+        //split the string around newline characters to create an array
+        NSString* delimiter = @"\n";
+        NSArray* lines = [string componentsSeparatedByString:delimiter];
+        string = nil;
+        
+        //find the screen identifier
+        int i=0;
+        while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
+        {
+            i++;
+        }
+        
+        NSString *narrationFileName = [lines objectAtIndex:i+1];
+        NSString *narrationFileExt = [lines objectAtIndex:i+1];
+        narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        
+        NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
+        narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
+        narration.delegate = self;
+        [narration setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        narrationFileName=nil;
+        narrationFileExt=nil;
+        narrationPath = nil;
+        lines=nil;
+    } else
+    {
+        [narration setCurrentTime:0];
     }
-    // Return YES for supported orientations
-	return NO;
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [narration setVolume:1.0];
+    }
+    else
+    {
+        [narration setVolume:0.0];
+    }
+    
+    [narration play];
+    
+    viewContoller = nil;
+    viewContoller = nil;
 }
+
+- (void)stopNarration;
+{
+    [narration stop];
+}
+
+#pragma mark - View lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -543,31 +647,31 @@
     return self;
 }
 
-- (void)viewDidLoad
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    phase01TimerClock=0;
-    phase02TimerClock=0;
-    teaPotTimerClockChange=0;
-    
-    [self startBackgroundMusic1st];
+    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
+        return YES;
+    }
+    // Return YES for supported orientations
+	return NO;
 }
 
-- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 {
     [self stopMusicAndSfx];
+    [self stopNarration];
 
     backgroundMusic.delegate=nil;
     sfxFather.delegate = nil;
     sfxHouse.delegate = nil;
     sfxTeaPot.delegate = nil;
+    narration.delegate =nil;
 
     backgroundMusic = nil;
     sfxFather = nil;
     sfxHouse = nil;
     sfxTeaPot = nil;
+    narration = nil;
     
     phase01Timer=nil;
     phase02Timer=nil;
@@ -600,6 +704,7 @@
     [transitionToPhase02ImageView removeFromSuperview];
     [fatherControl removeFromSuperview];
     [teaPotControl removeFromSuperview];
+    [hintLayerImageView removeFromSuperview];
 
     riceFieldBaseImageView.image=nil;
     windowImageView.image=nil;
@@ -626,7 +731,22 @@
     transitionToPhase02ImageView=nil;
     fatherControl=nil;
     teaPotControl=nil;
-    ;
+    hintLayerImageView=nil;
+
+    [self.view removeFromSuperview];
+    self.view=nil;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    phase01TimerClock=0;
+    phase02TimerClock=0;
+    teaPotTimerClockChange=0;
+    
+    [self startBackgroundMusic1st];
 }
 
 - (void)didReceiveMemoryWarning
@@ -635,7 +755,14 @@
     // Dispose of any resources that can be recreated.
 
     if ([self.view window] == nil)
-            self.view = nil;
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
+    }
 }
 
 @end

@@ -12,6 +12,7 @@
                 <outlet property="Screen10CloudImageView" destination="221" id="229"/>
                 <outlet property="Screen10DuneImageView" destination="225" id="230"/>
                 <outlet property="Screen10InoriImageView" destination="220" id="231"/>
+                <outlet property="Screen10MenuImageView" destination="Str-gm-Rlv" id="Uhq-Kh-D5R"/>
                 <outlet property="Screen10SmallShipImageView" destination="204" id="232"/>
                 <outlet property="compassControl" destination="4" id="158"/>
                 <outlet property="staticTextView" destination="TXe-yt-wKJ" id="vsc-8x-HjF"/>
@@ -60,13 +61,22 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <view contentMode="scaleToFill" id="7SZ-ut-Mrr" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="28" width="45" height="80"/>
+                <view contentMode="scaleToFill" id="GUc-wD-aFW" userLabel="PreviousScreenControl" customClass="UIControl">
+                    <rect key="frame" x="-1" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="Ow1-xz-B4K" appends="YES" id="e4c-oU-seT"/>
+                        <outletCollection property="gestureRecognizers" destination="4Uq-FO-Qby" appends="YES" id="Lz7-PK-j9B"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="yh5-iR-b90" userLabel="TalkControl" customClass="UIControl">
+                    <rect key="frame" x="428" y="0.0" width="52" height="43"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="DEF-8x-nco" appends="YES" id="vwe-Ka-Cy7"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="7BC-JF-Blx" userLabel="MusicControl" customClass="UIControl">
@@ -75,16 +85,22 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="WRy-KV-AHC" appends="YES" id="L9U-IY-Q8b"/>
+                        <outletCollection property="gestureRecognizers" destination="WRy-KV-AHC" appends="YES" id="B1B-4Z-4u3"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="GUc-wD-aFW" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="-1" y="28" width="45" height="80"/>
+                <view contentMode="scaleToFill" id="ph0-Zs-2bz" userLabel="HintControl" customClass="UIControl">
+                    <rect key="frame" x="544" y="-1" width="52" height="43"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                </view>
+                <view contentMode="scaleToFill" id="7SZ-ut-Mrr" userLabel="NextScreenControl" customClass="UIControl">
+                    <rect key="frame" x="979" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="4Uq-FO-Qby" appends="YES" id="Lz7-PK-j9B"/>
+                        <outletCollection property="gestureRecognizers" destination="Ow1-xz-B4K" appends="YES" id="e4c-oU-seT"/>
                     </connections>
                 </view>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" id="4" userLabel="CompassControl" customClass="UIControl">
@@ -113,7 +129,16 @@
                 <action selector="screen10PreviousScreenButtonTouched:" destination="-1" id="FsT-Rr-gDV"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="WRy-KV-AHC" userLabel="MusicButtonTap Gesture Recognizer"/>
+        <tapGestureRecognizer id="DEF-8x-nco" userLabel="NarrationButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen10NarrationButtonTouched:" destination="-1" id="VUV-5N-hYL"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="WRy-KV-AHC" userLabel="MusicButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen10MusicButtonTouched:" destination="-1" id="G3e-fQ-oAn"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="16_1k_felho.png" width="1000" height="195"/>

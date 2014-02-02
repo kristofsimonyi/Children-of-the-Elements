@@ -30,6 +30,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN11 111
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN12 112
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN13 113
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN14 114
 
 #define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN01 201
 #define NEXT_SCREEN_INORI_MINIEPISODE02_SCREEN02 202
@@ -86,15 +87,6 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
     }
     
 }
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
 
 -(void)hideAllMiniEpisodeViews;
 {
@@ -232,7 +224,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 - (IBAction)mainscreenScreen01ControlSelected:(id)sender;
 {
-    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN01;
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN02;
     [self pushNextViewController];
 }
 
@@ -244,13 +236,13 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 - (IBAction)mainscreenScreen03ControlSelected:(id)sender;
 {
-    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN03;
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN06;
     [self pushNextViewController];
 }
 
 - (IBAction)mainscreenScreen04ControlSelected:(id)sender;
 {
-    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN02;
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN08;
     [self pushNextViewController];
 }
 
@@ -287,7 +279,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 -(IBAction)mainscreenScreen12ControlSelected:(id)sender;
 {
-    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE04_SCREEN02;
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN12;
     [self pushNextViewController];
 }
 
@@ -305,7 +297,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 - (IBAction)mainscreenScreen15_16ControlSelected:(id)sender;
 {
-    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN07;
+    nextViewController = NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN14;
     [self pushNextViewController];
 }
 
@@ -663,25 +655,6 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
 
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    [self loadAppSavedStatus];
-    
-    //MiniSeries1 can be viewed
-    [self hideAllMiniEpisodeViews];
-    miniEpisode01View.hidden = NO;    
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -719,20 +692,7 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-    
-    if ([backgroundMusic isPlaying])
-    {
-        [backgroundMusic stop];
-    }
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
+#pragma mark - View lifecycle
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -740,6 +700,46 @@ http://www.youtube.com/watch?v=vLUQz7TeE7w
         return YES;
     } else {
         return FALSE;
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+
+    if ([backgroundMusic isPlaying])
+    {
+        [backgroundMusic stop];
+    }
+
+    self.view=nil;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self loadAppSavedStatus];
+    
+    //MiniSeries1 can be viewed
+    [self hideAllMiniEpisodeViews];
+    miniEpisode01View.hidden = NO;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Release any cached data, images, etc that aren't in use.
+    
+    if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
     }
 }
 

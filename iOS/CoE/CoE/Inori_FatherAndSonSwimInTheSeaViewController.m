@@ -341,6 +341,7 @@
     
     [smallFishSwarmArcImageView setCenter:newCenter];
     [screen06_07SmallFishSwarmView addSubview:smallFishSwarmArcImageView];
+    smallFishSwarmArcImageView=nil;
 }
 
 -(void)screen06_07InoriTouched;
@@ -381,6 +382,7 @@
     CGAffineTransform newTransform = CGAffineTransformMakeRotation(rotation);
     [smallFishSwarmStraightImageView setTransform:newTransform];
     [screen06_07SmallFishSwarmView addSubview:smallFishSwarmStraightImageView];
+    smallFishSwarmStraightImageView=nil;
 }
 
 -(void)screen06_07WavesTouched;
@@ -488,6 +490,7 @@
     randomCreatureImageView.normalCenter=newCenter;
     [randomCreatureImageView setCalculatedCenterBasedOnDirection];
     [self.view addSubview:randomCreatureImageView];
+    randomCreatureImageView = nil;
     
     newCreatureTimerClock++;
     if (newCreatureTimerClock==NUMBER_OF_CREATURES_APPEAR_AFTER_EACHOTHER)
@@ -498,14 +501,7 @@
 
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
-        return YES;
-    }
-    // Return YES for supported orientations
-	return NO;
-}
+#pragma mark - View lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -514,6 +510,15 @@
         // Custom initialization
     }
     return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
+        return YES;
+    }
+    // Return YES for supported orientations
+	return NO;
 }
 
 - (void)viewDidLoad
@@ -528,6 +533,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
+    }
 }
 
 @end

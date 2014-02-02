@@ -98,7 +98,7 @@
 
 @implementation StaticScreenViewController
 
-@synthesize compassControl, Screen10BackgroundImageView, Screen10DuneImageView, Screen10BigShipImageView, Screen10SmallShipImageView, Screen10CloudImageView, Screen10InoriImageView, staticTextView;
+@synthesize compassControl, Screen10BackgroundImageView, Screen10DuneImageView, Screen10BigShipImageView, Screen10SmallShipImageView, Screen10CloudImageView, Screen10InoriImageView, staticTextView, Screen10MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -142,15 +142,6 @@
         [self goToNextScreen];
     }
     viewContoller = nil;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void) setSmallShipRockingState;
@@ -231,6 +222,7 @@
     inputImage = nil;
 
     return image;
+    image = nil;
     
 }
 
@@ -254,75 +246,78 @@
 
 - (void)loadStaticText;
 {
-    @autoreleasepool
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
+    viewContoller = nil;
+    
+    //name the file to read
+    NSString* aPath = [[NSBundle mainBundle] pathForResource:@"StaticScreenTexts" ofType:@"txt"];
+    //pull the content from the file into memory
+    NSData* data = [NSData dataWithContentsOfFile:aPath];
+    //convert the bytes from the file into a string
+    NSString* string = [[NSString alloc] initWithBytes:[data bytes]
+                                                length:[data length]
+                                              encoding:NSUTF8StringEncoding];
+    //split the string around newline characters to create an array
+    NSString* delimiter = @"\n";
+    NSArray* lines = [string componentsSeparatedByString:delimiter];
+    string = nil;
+    
+    //find the screen identifier
+    int i=0;
+    while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
     {
-
-        ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
-        NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
-        viewContoller = nil;
-        
-        //name the file to read
-        NSString* aPath = [[NSBundle mainBundle] pathForResource:@"StaticScreenTexts" ofType:@"txt"];
-        //pull the content from the file into memory
-        NSData* data = [NSData dataWithContentsOfFile:aPath];
-        //convert the bytes from the file into a string
-        NSString* string = [[NSString alloc] initWithBytes:[data bytes]
-                                                     length:[data length]
-                                                   encoding:NSUTF8StringEncoding];
-        //split the string around newline characters to create an array
-        NSString* delimiter = @"\n";
-        NSArray* lines = [string componentsSeparatedByString:delimiter];
-        
-        //find the screen identifier
-        int i=0;
-        while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
-        {
-            i++;
-        }
-        
-        NSString *newText = nil;
         i++;
-        while ((i!=[lines count])&&(![[lines objectAtIndex:i] isEqual:@"***"]))
-        {
-            if (newText==nil)
-            {
-                newText=[NSString stringWithFormat:@"%@",[lines objectAtIndex:i]];
-            }
-            else
-            {
-                newText=[NSString stringWithFormat:@"%@\n%@",newText, [lines objectAtIndex:i]];
-            }
-            i++;
-        }
-        
-        [staticTextView setText:newText];
-        [staticTextView setFont:[UIFont systemFontOfSize:20]];
-        
     }
+    
+    NSString *newText = nil;
+    i++;
+    while ((i!=[lines count])&&(![[lines objectAtIndex:i] isEqual:@"***"]))
+    {
+        if (newText==nil)
+        {
+            newText=[NSString stringWithFormat:@"%@",[lines objectAtIndex:i]];
+        }
+        else
+        {
+            newText=[NSString stringWithFormat:@"%@\n%@",newText, [lines objectAtIndex:i]];
+        }
+        i++;
+    }
+    
+    lines=nil;
+    [staticTextView setText:newText];
+    [staticTextView setFont:[UIFont systemFontOfSize:20]];
 }
 
-- (void)viewDidLoad
+-(void)setImageEffects;
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
     UIImage *newImage;
     
     newImage=[self adjustImage:Screen10BackgroundImageView.image saturation:BACKGROUND_DESATURIZATION brightness:BACKGROUND_BRIGHTNESS contrast:BACKGROUND_CONTRAST];
     Screen10BackgroundImageView.image=newImage;
-
+    newImage=nil;
+    //    newImage=[self adjustImage:nil saturation:DUNE_DESATURIZATION brightness:DUNE_BRIGHTNESS contrast:DUNE_CONTRAST];
+    
     newImage=[self adjustImage:Screen10DuneImageView.image saturation:DUNE_DESATURIZATION brightness:DUNE_BRIGHTNESS contrast:DUNE_CONTRAST];
     Screen10DuneImageView.image=newImage;
+    newImage=nil;
     
     newImage=[self adjustImage:Screen10SmallShipImageView.image saturation:SMALL_SHIP_DESATURIZATION brightness:SMALL_SHIP_BRIGHTNESS contrast:SMALL_SHIP_CONTRAST];
     Screen10SmallShipImageView.image=newImage;
+    newImage=nil;
     
     newImage=[self adjustImage:Screen10BigShipImageView.image saturation:BIG_SHIP_DESATURIZATION brightness:BIG_SHIP_BRIGHTNESS contrast:BIG_SHIP_CONTRAST];;
     Screen10BigShipImageView.image=newImage;
+    newImage=nil;
     
     newImage=[self adjustImage:Screen10InoriImageView.image saturation:INORI_DESATURIZATION brightness:INORI_BRIGHTNESS contrast:INORI_CONTRAST];
     Screen10InoriImageView.image=newImage;
-        
+    newImage=nil;
+}
+
+-(void)setSettingsForShipRocking;
+{
     smallShipOriginalTransform = [Screen10SmallShipImageView transform];
     smallShipRockingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(Screen10SmallShipRockingAction) userInfo:nil repeats:YES];
     smallShipRockingClock=0;
@@ -334,14 +329,140 @@
     bigShipRockingClock=0;
     bigShipRockingClockChange=BIG_SHIP_ROTATE_SHIFT;
 	[bigShipRockingTimer fire];
-    
-    [self startCloud];
-    
-    [self loadStaticText];
 }
 
--(void) viewWillDisappear:(BOOL)animated;
+-(void)startNarration;
 {
+    //set the Music for intro then start playing
+    if (narration==nil)
+    {
+        ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+        NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
+        viewContoller = nil;
+        
+        //name the file to read
+        NSString* aPath = [[NSBundle mainBundle] pathForResource:@"ScreenNarrations" ofType:@"txt"];
+        //pull the content from the file into memory
+        NSData* data = [NSData dataWithContentsOfFile:aPath];
+        //convert the bytes from the file into a string
+        NSString* string = [[NSString alloc] initWithBytes:[data bytes]
+                                                    length:[data length]
+                                                  encoding:NSUTF8StringEncoding];
+        //split the string around newline characters to create an array
+        NSString* delimiter = @"\n";
+        NSArray* lines = [string componentsSeparatedByString:delimiter];
+        string = nil;
+        
+        //find the screen identifier
+        int i=0;
+        while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
+        {
+            i++;
+        }
+        
+        NSString *narrationFileName = [lines objectAtIndex:i+1];
+        NSString *narrationFileExt = [lines objectAtIndex:i+1];
+        narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        
+        NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
+        narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
+        narration.delegate = self;
+        [narration setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        narrationFileName=nil;
+        narrationFileExt=nil;
+        narrationPath = nil;
+        lines=nil;
+    } else
+    {
+        [narration setCurrentTime:0];
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [narration setVolume:1.0];
+    }
+    else
+    {
+        [narration setVolume:0.0];
+    }
+    
+    [narration play];
+    
+    viewContoller = nil;
+    viewContoller = nil;
+}
+
+- (void)stopNarration;
+{
+    [narration stop];
+}
+
+- (IBAction)screen10MusicButtonTouched:(id)sender;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [narration setVolume:0.0];
+        
+        viewContoller.musicIsOn=FALSE;
+    }
+    else
+    {
+        [narration setVolume:1.0];
+        
+        viewContoller.musicIsOn=TRUE;
+    }
+    viewContoller = nil;
+}
+
+- (IBAction)screen10NarrationButtonTouched:(id)sender;
+{
+    if ([narration isPlaying])
+    {
+        [self stopNarration];
+    } else {
+        [self startNarration];
+    }
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag;
+{
+    if (player==narration)
+    {
+        if (flag)
+        {
+            [Screen10MenuImageView setImage:[UIImage imageNamed:@"menu_set-top-g.png"]];
+        }
+    }
+}
+
+#pragma mark - View lifecycle
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
+        return YES;
+    } else {
+        return FALSE;
+    }
+}
+
+-(void) viewDidDisappear:(BOOL)animated;
+{
+    [self stopNarration];
+    narration=nil;
+    
     [bigShipRockingTimer invalidate];
     [smallShipRockingTimer invalidate];
     [cloudMovingTimer invalidate];
@@ -349,6 +470,7 @@
     smallShipRockingTimer=nil;
     cloudMovingTimer=nil;
     
+    [Screen10MenuImageView removeFromSuperview];
     [compassControl removeFromSuperview];
     [Screen10BackgroundImageView removeFromSuperview];
     [Screen10DuneImageView removeFromSuperview];
@@ -358,7 +480,14 @@
     [Screen10InoriImageView removeFromSuperview];
     [staticTextView removeFromSuperview];
 
-    compassControl=nil;
+    Screen10MenuImageView.image=nil;
+    Screen10MenuImageView.image=nil;
+    Screen10BackgroundImageView.image=nil;
+    Screen10DuneImageView.image=nil;
+    Screen10SmallShipImageView.image=nil;
+    Screen10BigShipImageView.image=nil;
+    Screen10CloudImageView.image=nil;
+    Screen10InoriImageView.image=nil;
     Screen10BackgroundImageView=nil;
     Screen10DuneImageView=nil;
     Screen10SmallShipImageView=nil;
@@ -366,12 +495,41 @@
     Screen10CloudImageView=nil;
     Screen10InoriImageView=nil;
     staticTextView=nil;
+    
+    [self.view removeFromSuperview];
+    self.view=nil;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+//    [self setImageEffects];
+    
+    [self setSettingsForShipRocking];
+
+    [self startCloud];
+    
+    [self loadStaticText];
+    
+    [self startNarration];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    if ([self.view window] == nil)
+    {
+        // Add code to preserve data stored in the views that might be
+        // needed later.
+        
+        // Add code to clean up other strong references to the view in
+        // the view hierarchy.
+        self.view = nil;
+    }
 }
 
 @end
