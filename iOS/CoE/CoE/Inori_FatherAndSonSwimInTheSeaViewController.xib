@@ -10,9 +10,11 @@
                 <outlet property="screen06_07FatherControl" destination="124" id="135"/>
                 <outlet property="screen06_07FatherControlView" destination="123" id="127"/>
                 <outlet property="screen06_07FatherImageView" destination="52" id="107"/>
+                <outlet property="screen06_07HintLayerImageView" destination="vuW-jR-lQj" id="2gB-Ra-uU1"/>
                 <outlet property="screen06_07InoriControl" destination="122" id="136"/>
                 <outlet property="screen06_07InoriControlView" destination="121" id="128"/>
                 <outlet property="screen06_07InoriImageView" destination="57" id="108"/>
+                <outlet property="screen06_07MenuImageView" destination="5C5-xL-kQt" id="FSS-tp-tlD"/>
                 <outlet property="screen06_07SmallFishSwarmView" destination="139" id="140"/>
                 <outlet property="screen06_07Wave01ImageView" destination="7" id="109"/>
                 <outlet property="screen06_07Wave02ImageView" destination="62" id="110"/>
@@ -104,6 +106,10 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_HintLayer.png" id="vuW-jR-lQj" userLabel="HintLayerImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="5C5-xL-kQt" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,16 +121,16 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="gam-VC-ZIJ" appends="YES" id="RuV-bu-7p8"/>
+                        <outletCollection property="gestureRecognizers" destination="gam-VC-ZIJ" appends="YES" id="niB-MS-6Du"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="zQT-b5-6SH" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="28" width="45" height="80"/>
+                <view contentMode="scaleToFill" id="Inp-bI-5eL" userLabel="NarrationControl" customClass="UIControl">
+                    <rect key="frame" x="431" y="0.0" width="48" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="YK8-L1-hBL" appends="YES" id="QPP-FY-kge"/>
+                        <outletCollection property="gestureRecognizers" destination="Oet-uc-5rj" appends="YES" id="cmX-Ue-koD"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="MBe-IQ-Yfq" userLabel="MusicControl" customClass="UIControl">
@@ -134,6 +140,24 @@
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="lZL-jP-nIG" appends="YES" id="ZaX-7r-MtB"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="cV5-nE-pbG" userLabel="HintControl" customClass="UIControl">
+                    <rect key="frame" x="546" y="2" width="48" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="l2B-Le-08g" appends="YES" id="VlZ-6u-gql"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="zQT-b5-6SH" userLabel="NextScreenControl" customClass="UIControl">
+                    <rect key="frame" x="979" y="28" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="YK8-L1-hBL" appends="YES" id="Nep-Um-pBN"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="102" userLabel="CompassControl" customClass="UIControl">
@@ -154,23 +178,34 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
-        <tapGestureRecognizer id="YK8-L1-hBL" userLabel="NextScreenTap Gesture Recognizer">
-            <connections>
-                <action selector="screen06_07NextScreenControlTapped:" destination="-1" id="lZJ-Qf-xYP"/>
-            </connections>
-        </tapGestureRecognizer>
         <tapGestureRecognizer id="gam-VC-ZIJ" userLabel="PreviousScreenTap Gesture Recognizer">
             <connections>
-                <action selector="screen06_07PreviousScreenControlTapped:" destination="-1" id="rok-2B-h3V"/>
+                <action selector="screen06_07PreviousScreenControlTapped:" destination="-1" id="cI1-A5-JUW"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Oet-uc-5rj" userLabel="NarrationButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen06_07NarrationButtonTapped:" destination="-1" id="1EC-ks-4Wr"/>
             </connections>
         </tapGestureRecognizer>
         <tapGestureRecognizer id="lZL-jP-nIG" userLabel="MusicControlTap Gesture Recognizer">
             <connections>
-                <action selector="screen06_07MusicControlTapped" destination="-1" id="2fF-pN-vKa"/>
+                <action selector="screen06_07MusicButtonTapped:" destination="-1" id="aAq-Hw-m4P"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="l2B-Le-08g" userLabel="HintButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen06_07HintButtonTapped:" destination="-1" id="vuX-wL-yIp"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="YK8-L1-hBL" userLabel="NextScreenTap Gesture Recognizer">
+            <connections>
+                <action selector="screen06_07NextScreenControlTapped:" destination="-1" id="oOJ-Tx-C3O"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="1_HintLayer.png" width="800" height="799"/>
         <image name="6-7_1k_apa.png" width="1024" height="768"/>
         <image name="6-7_1k_inori.png" width="1024" height="768"/>
         <image name="6-7_1k_nagyhullam1.png" width="1024" height="768"/>

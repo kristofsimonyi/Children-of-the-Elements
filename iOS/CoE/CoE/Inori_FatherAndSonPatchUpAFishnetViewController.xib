@@ -9,6 +9,12 @@
             <connections>
                 <outlet property="screen09Fish01ImageView" destination="27" id="29"/>
                 <outlet property="screen09Fish02ImageView" destination="28" id="30"/>
+                <outlet property="screen09Fish03ImageView" destination="9IQ-p6-Z7r" id="DBl-FO-MYL"/>
+                <outlet property="screen09Fish04ImageView" destination="UHc-ZP-bHZ" id="a2p-dE-9Zj"/>
+                <outlet property="screen09Fish05ImageView" destination="Ka4-md-BYc" id="bFe-SA-qbj"/>
+                <outlet property="screen09HintLayerImageView" destination="1JF-IX-QWP" id="0Yn-If-YdD"/>
+                <outlet property="screen09InoriAndFatherControl" destination="BYp-Sd-FWp" id="gdP-ra-RZ9"/>
+                <outlet property="screen09MenuImageView" destination="nwD-FM-GPp" id="MVQ-kx-l7o"/>
                 <outlet property="screen09NetImageView" destination="24" id="31"/>
                 <outlet property="screen09Sea01ImageView" destination="22" id="32"/>
                 <outlet property="screen09Sea02ImageView" destination="23" id="33"/>
@@ -40,6 +46,15 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_HintLayer.png" id="1JF-IX-QWP" userLabel="HintLayerImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="nwD-FM-GPp" userLabel="MenuImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal1.png" id="27" customClass="WavingImageView">
                     <rect key="frame" x="900" y="300" width="53" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -48,25 +63,64 @@
                     <rect key="frame" x="700" y="400" width="42" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="nwD-FM-GPp" userLabel="MenuImageView">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal1.png" id="9IQ-p6-Z7r" userLabel="Waving Image View - 9_1k_hal3.png" customClass="WavingImageView">
+                    <rect key="frame" x="138" y="515" width="53" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <view contentMode="scaleToFill" id="ioh-db-zm9" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="29" width="45" height="80"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal2.png" id="UHc-ZP-bHZ" userLabel="Waving Image View - 9_1k_hal4.png" customClass="WavingImageView">
+                    <rect key="frame" x="278" y="277" width="42" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal1.png" id="Ka4-md-BYc" userLabel="Waving Image View - 9_1k_hal5.png" customClass="WavingImageView">
+                    <rect key="frame" x="420" y="648" width="53" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" id="BYp-Sd-FWp" userLabel="InoriAndFatherControl" customClass="UIControl">
+                    <rect key="frame" x="480" y="120" width="78" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <action selector="screen09NextScreenButtonTouched:" destination="-1" eventType="touchUpInside" id="XB8-g4-Pwl"/>
-                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="iey-uO-jxr" userLabel="PreviousScreenControl" customClass="UIControl">
                     <rect key="frame" x="0.0" y="29" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <action selector="screen09PreviousButtonTouched:" destination="-1" eventType="touchUpInside" id="exW-ts-Jew"/>
+                        <action selector="screen09PreviousButtonTouched:" destination="-1" eventType="touchUpInside" id="4M1-ZJ-xQB"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="GBj-4r-hSb" userLabel="NarrationControl" customClass="UIControl">
+                    <rect key="frame" x="427" y="-1" width="54" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Cou-kN-14K" appends="YES" id="dr7-j5-LKf"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="QaJ-xw-cOo" userLabel="MusicControl" customClass="UIControl">
+                    <rect key="frame" x="487" y="1" width="50" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="ied-7T-dQ0" appends="YES" id="tEi-Yu-Cd0"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="xE7-3Q-oDf" userLabel="HintControl" customClass="UIControl">
+                    <rect key="frame" x="545" y="2" width="49" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="lFu-H8-7Am" appends="YES" id="Ie0-Tr-0aX"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="ioh-db-zm9" userLabel="NextScreenControl" customClass="UIControl">
+                    <rect key="frame" x="979" y="29" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="screen09NextScreenButtonTouched:" destination="-1" eventType="touchUpInside" id="DX1-Xx-aLM"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="4" userLabel="CompassControl" customClass="UIControl">
@@ -87,8 +141,24 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
+        <tapGestureRecognizer id="Cou-kN-14K" userLabel="NarrationButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen09NarrationButtonTapped:" destination="-1" id="LVM-9d-LpM"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="ied-7T-dQ0" userLabel="MusicButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen09MusicButtonTapped:" destination="-1" id="YfD-eJ-h0c"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="lFu-H8-7Am" userLabel="HintButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen09HintButtonTapped:" destination="-1" id="jcz-JF-yo1"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="1_HintLayer.png" width="800" height="799"/>
         <image name="9_1k_alakok.png" width="1024" height="768"/>
         <image name="9_1k_hal1.png" width="53" height="37"/>
         <image name="9_1k_hal2.png" width="42" height="33"/>

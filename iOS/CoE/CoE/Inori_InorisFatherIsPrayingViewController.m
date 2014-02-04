@@ -139,11 +139,14 @@
 
 	[backgroundMusic setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
     [backgroundMusic play];
+
+    backgroundMusicPath=nil;
 }
 
 - (void)stopMusicAndSfx;
 {
     [backgroundMusic stop];
+    [narration stop];
     [sfxFather stop];
     [sfxHouse stop];
     [sfxTeaPot stop];
@@ -218,6 +221,7 @@
     if (viewContoller.musicIsOn)
     {
         [backgroundMusic setVolume:0.0];
+        [narration setVolume:0.0];
         [sfxTeaPot setVolume:0.0];
         [sfxHouse setVolume:0.0];
         [sfxFather setVolume:0.0];
@@ -227,6 +231,7 @@
     else
     {
         [backgroundMusic setVolume:1.0];
+        [narration setVolume:1.0];
         [sfxTeaPot setVolume:1.0];
         [sfxHouse setVolume:1.0];
         [sfxFather setVolume:1.0];
@@ -257,22 +262,6 @@
                 }];
             }];
         }];
-    }
-}
-
-- (IBAction)narrationButtonTapped
-{
-    if (narration==nil)
-    {
-        [self startNarration];
-    } else
-    {
-        if ([narration isPlaying])
-        {
-            [self stopNarration];
-        } else {
-            [self startNarration];
-        }
     }
 }
 
@@ -323,6 +312,9 @@
 
 -(IBAction)fatherTouched:(id)sender;
 {
+    fatherInteractionFound = true;
+    [self allInteractionFound];
+    
     [fatherControl setUserInteractionEnabled:false];
     fatherTimerClock=0;
     fatherTimerClockChange=FATHER_TIMER_CLOCK_CHANGE_START;
@@ -413,6 +405,7 @@
     [night2ImageView setAlpha:newRandomValue];
 }
 
+/*
 -(IBAction)teaPotTouched_old:(id)sender;
 {
     [teaPotControl setUserInteractionEnabled:false];
@@ -426,6 +419,7 @@
     teaPotTimer = [NSTimer scheduledTimerWithTimeInterval:TEAPOT_TIMER_FREQUENCY target:self selector:@selector(teaPotTimerActionMethod) userInfo:nil repeats:YES];
     [teaPotTimer fire];
 }
+*/
 
 - (void)teaPotTimerActionMethodOld;
 {
@@ -510,6 +504,9 @@
 
 -(IBAction)teaPotTouched:(id)sender;
 {
+    teaPotInteractionFound = true;
+    [self allInteractionFound ];
+    
     [teaPotControl setUserInteractionEnabled:false];
     teaPotTimerClock=0;
     teaPotTimerClockChange=TEAPOT_ROTATION_STEP;
@@ -559,6 +556,15 @@
     }
 }
 
+- (void)allInteractionFound;
+{
+    if (fatherInteractionFound&&teaPotInteractionFound)
+    {
+        self.menuImageView.image=nil;
+        [self.menuImageView setImage:[UIImage imageNamed:@"menu_set-top-g.png"]];
+    }
+}
+
 -(void)startPhase03;
 {
     night02Timer = [NSTimer scheduledTimerWithTimeInterval:NIGHT_02_TIMER_FREQUENCY target:self selector:@selector(night02TimerActionMethod) userInfo:nil repeats:YES];
@@ -566,6 +572,22 @@
     [fatherControl setUserInteractionEnabled:true];
     [teaPotControl setUserInteractionEnabled:true];
     
+}
+
+- (IBAction)narrationButtonTapped
+{
+    if (narration==nil)
+    {
+        [self startNarration];
+    } else
+    {
+        if ([narration isPlaying])
+        {
+            [self stopNarration];
+        } else {
+            [self startNarration];
+        }
+    }
 }
 
 -(void)startNarration;
@@ -659,7 +681,6 @@
 - (void)viewDidDisappear:(BOOL)animated;
 {
     [self stopMusicAndSfx];
-    [self stopNarration];
 
     backgroundMusic.delegate=nil;
     sfxFather.delegate = nil;
@@ -673,6 +694,12 @@
     sfxTeaPot = nil;
     narration = nil;
     
+    [phase01Timer invalidate];
+    [phase02Timer invalidate];
+    [night02Timer invalidate];
+    [teaPotTimer invalidate];
+    [fatherTimer invalidate];
+
     phase01Timer=nil;
     phase02Timer=nil;
     night02Timer=nil;
@@ -745,6 +772,8 @@
     phase01TimerClock=0;
     phase02TimerClock=0;
     teaPotTimerClockChange=0;
+    teaPotInteractionFound=false;
+    fatherInteractionFound=false;
     
     [self startBackgroundMusic1st];
 }

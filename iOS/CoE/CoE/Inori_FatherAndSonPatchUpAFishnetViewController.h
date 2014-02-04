@@ -18,13 +18,19 @@
     NSTimer *wavingFishTimer;
     CGFloat wavingFishTimerClock, wavingFishTimerClockChange;
 
-    AVAudioPlayer *backgroundMusic;
+    AVAudioPlayer *backgroundMusic, *narration, *sfxInoriAndFather, *sfxFish1, *sfxFish2;
+    
+    BOOL fish1InteractionFound, fish2InteractionFound, fish3InteractionFound, fish4InteractionFound, fish5InteractionFound, inoriAndFatherInteractionFound;
 }
 
-@property (nonatomic, weak) IBOutlet UIImageView *screen09Sea01ImageView, *screen09Sea02ImageView, *screen09NetImageView;
-@property (nonatomic, weak) IBOutlet WavingImageView *screen09Fish01ImageView, *screen09Fish02ImageView;
--(IBAction)screen09BackToMainMenu:(id)sender;
+@property (nonatomic, weak) IBOutlet UIControl *screen09InoriAndFatherControl;
+@property (nonatomic, weak) IBOutlet UIImageView *screen09Sea01ImageView, *screen09Sea02ImageView, *screen09NetImageView, *screen09MenuImageView, *screen09HintLayerImageView;
+@property (nonatomic, weak) IBOutlet WavingImageView *screen09Fish01ImageView, *screen09Fish02ImageView, *screen09Fish03ImageView, *screen09Fish04ImageView, *screen09Fish05ImageView;
+- (IBAction)screen09BackToMainMenu:(id)sender;
 - (IBAction)screen09NextScreenButtonTouched:(id)sender;
 - (IBAction)screen09PreviousButtonTouched:(id)sender;
+- (IBAction)screen09NarrationButtonTapped:(UITapGestureRecognizer *)sender;
+- (IBAction)screen09MusicButtonTapped:(UITapGestureRecognizer *) sender;
+- (IBAction)screen09HintButtonTapped:(UITapGestureRecognizer *)sender;
 
 @end

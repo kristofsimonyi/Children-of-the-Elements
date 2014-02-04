@@ -44,6 +44,8 @@
 #define CREATURE_POSITION_CHANGE_INCREMENT          0.995
 #define CREATURE_POSITION_CHANGE_DECREMENT          1.005
 
+#define HINT_TIME                                       1.0
+
 #import "Inori_FatherAndSonSwimInTheSeaViewController.h"
 #import "ViewController.h"
 
@@ -53,7 +55,7 @@
 
 @implementation Inori_FatherAndSonSwimInTheSeaViewController
 
-@synthesize screen06_07FatherImageView, screen06_07InoriImageView, screen06_07Wave01ImageView, screen06_07Wave02ImageView, screen06_07Wave03ImageView, screen06_07Wave04ImageView, screen06_07Wave05ImageView, screen06_07Wave06ImageView, screen06_07Wave07ImageView, screen06_07Wave08ImageView, screen06_07Wave09ImageView, screen06_07FatherControlView, screen06_07InoriControlView, screen06_07FatherControl, screen06_07InoriControl, screen06_07SmallFishSwarmView;
+@synthesize screen06_07FatherImageView, screen06_07InoriImageView, screen06_07Wave01ImageView, screen06_07Wave02ImageView, screen06_07Wave03ImageView, screen06_07Wave04ImageView, screen06_07Wave05ImageView, screen06_07Wave06ImageView, screen06_07Wave07ImageView, screen06_07Wave08ImageView, screen06_07Wave09ImageView, screen06_07FatherControlView, screen06_07InoriControlView, screen06_07FatherControl, screen06_07InoriControl, screen06_07SmallFishSwarmView, screen06_07HintLayerImageView, screen06_07MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -96,22 +98,196 @@
     [self goToNextScreen];
 }
 
-- (IBAction)screen06_07MusicControlTapped;
+- (IBAction)screen06_07MusicButtonTapped:(UITapGestureRecognizer *) sender;
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     if (viewContoller.musicIsOn)
     {
         [backgroundMusic setVolume:0.0];
+        [sfx2Swimmwers setVolume:0.0];
+        [sfxCreatures setVolume:0.0];
+        [sfxFishSwarmArc setVolume:0.0];
+        [sfxFishSwarmStraight setVolume:0.0];
+        [narration setVolume:0.0];
         
         viewContoller.musicIsOn=FALSE;
     }
     else
     {
         [backgroundMusic setVolume:1.0];
+        [sfx2Swimmwers setVolume:1.0];
+        [sfxCreatures setVolume:1.0];
+        [sfxFishSwarmArc setVolume:1.0];
+        [sfxFishSwarmStraight setVolume:1.0];
+        [narration setVolume:1.0];
         
         viewContoller.musicIsOn=TRUE;
     }
     viewContoller = nil;
+}
+
+-(void)startBackgroundMusic;
+{
+    //set the Music for intro then start playing
+	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"003_vizalatt" ofType:@"mp3"];
+	backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:backgroundMusicPath] error:NULL];
+	backgroundMusic.delegate = self;
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [backgroundMusic setVolume:1.0];
+    }
+    else
+    {
+        [backgroundMusic setVolume:0.0];
+    }
+    
+	[backgroundMusic setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
+    [backgroundMusic play];
+    
+    backgroundMusicPath=nil;
+}
+
+- (void) start2Swimmers;
+{
+    //set the Music for screen then start playing
+	NSString *twoSwimmersMusicPath = [[NSBundle mainBundle] pathForResource:@"003_ketten usznak" ofType:@"mp3"];
+	sfx2Swimmwers = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:twoSwimmersMusicPath] error:NULL];
+	sfx2Swimmwers.delegate = self;
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [sfx2Swimmwers setVolume:1.0];
+    }
+    else
+    {
+        [sfx2Swimmwers setVolume:0.0];
+    }
+    
+	[sfx2Swimmwers setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+    [sfx2Swimmwers play];
+    
+    twoSwimmersMusicPath=nil;
+}
+
+-(void)stopMusicAndSfx;
+{
+    [backgroundMusic stop];
+    [sfx2Swimmwers stop];
+    [sfxCreatures stop];
+    [sfxFishSwarmArc stop];
+    [sfxFishSwarmStraight stop];
+    [narration stop];
+}
+
+- (IBAction)screen06_07HintButtonTapped:(UITapGestureRecognizer *)sender;
+{
+    if (screen06_07HintLayerImageView.alpha==0.0)
+    {
+        //        [hintLayerImageView removeFromSuperview];
+        //        [self.view addSubview:hintLayerImageView];
+        [UIView animateWithDuration:HINT_TIME animations:^{
+            [self.screen06_07HintLayerImageView setAlpha:1.0];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:HINT_TIME animations:^{
+                [self.screen06_07HintLayerImageView setAlpha:0.01];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:HINT_TIME animations:^{
+                    [self.screen06_07HintLayerImageView setAlpha:1.0];
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:HINT_TIME animations:^{
+                        [self.screen06_07HintLayerImageView setAlpha:0.0];
+                    }];
+                }];
+            }];
+        }];
+    }
+}
+
+- (IBAction)screen06_07NarrationButtonTapped:(UITapGestureRecognizer *)sender;
+{
+    if (narration==nil)
+    {
+        [self startNarration];
+    } else
+    {
+        if ([narration isPlaying])
+        {
+            [self stopNarration];
+        } else {
+            [self startNarration];
+        }
+    }
+}
+
+-(void)startNarration;
+{
+    //set the Music for intro then start playing
+    if (narration==nil)
+    {
+        ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+        NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
+        viewContoller = nil;
+        
+        //name the file to read
+        NSString* aPath = [[NSBundle mainBundle] pathForResource:@"ScreenNarrations" ofType:@"txt"];
+        //pull the content from the file into memory
+        NSData* data = [NSData dataWithContentsOfFile:aPath];
+        //convert the bytes from the file into a string
+        NSString* string = [[NSString alloc] initWithBytes:[data bytes]
+                                                    length:[data length]
+                                                  encoding:NSUTF8StringEncoding];
+        //split the string around newline characters to create an array
+        NSString* delimiter = @"\n";
+        NSArray* lines = [string componentsSeparatedByString:delimiter];
+        string = nil;
+        
+        //find the screen identifier
+        int i=0;
+        while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
+        {
+            i++;
+        }
+        
+        NSString *narrationFileName = [lines objectAtIndex:i+1];
+        NSString *narrationFileExt = [lines objectAtIndex:i+1];
+        narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        
+        NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
+        narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
+        narration.delegate = self;
+        [narration setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        narrationFileName=nil;
+        narrationFileExt=nil;
+        narrationPath = nil;
+        lines=nil;
+    } else
+    {
+        [narration setCurrentTime:0];
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [narration setVolume:1.0];
+    }
+    else
+    {
+        [narration setVolume:0.0];
+    }
+    
+    [narration play];
+    
+    viewContoller = nil;
+    viewContoller = nil;
+}
+
+- (void)stopNarration;
+{
+    [narration stop];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -342,6 +518,11 @@
     [smallFishSwarmArcImageView setCenter:newCenter];
     [screen06_07SmallFishSwarmView addSubview:smallFishSwarmArcImageView];
     smallFishSwarmArcImageView=nil;
+    
+    [self startsfxFishSwarmArc];
+    
+    fatherInteractionFound=true;
+    [self allInteractionFound];
 }
 
 -(void)screen06_07InoriTouched;
@@ -383,6 +564,11 @@
     [smallFishSwarmStraightImageView setTransform:newTransform];
     [screen06_07SmallFishSwarmView addSubview:smallFishSwarmStraightImageView];
     smallFishSwarmStraightImageView=nil;
+    
+    [self startsfxFishSwarmStraight];
+    
+    inoriInteractionFound=true;
+    [self allInteractionFound];
 }
 
 -(void)screen06_07WavesTouched;
@@ -399,7 +585,10 @@
         newCreatureTimerClock = 0;
         newCreatureTimer = [NSTimer scheduledTimerWithTimeInterval:DELAY_BETWEEN_CREATURES target:self selector:@selector(placeARandomCreatureAtNewX) userInfo:nil repeats:YES];
         [newCreatureTimer fire];
+        [self startsfxCreatures];
     }
+    wavesInteractionFound=true;
+    [self allInteractionFound];
 }
 
 -(void)placeARandomCreatureAtNewX;
@@ -501,6 +690,102 @@
 
 }
 
+- (void)startsfxCreatures;
+{
+    //set the SFX then start playing
+    if (sfxCreatures==nil)
+    {
+        NSString *creaturesSFXPath = [[NSBundle mainBundle] pathForResource:@"003_furalenyek" ofType:@"mp3"];
+        sfxCreatures = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:creaturesSFXPath] error:NULL];
+        sfxCreatures.delegate = self;
+        [sfxCreatures setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        creaturesSFXPath= nil;
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [sfxCreatures setVolume:1.0];
+    }
+    else
+    {
+        [sfxCreatures setVolume:0.0];
+    }
+    
+    if (![sfxCreatures isPlaying])
+    {
+        [sfxCreatures play];
+    }
+}
+
+- (void)startsfxFishSwarmArc;
+{
+    //set the SFX then start playing
+    if (sfxFishSwarmArc==nil)
+    {
+        NSString *fishSwarmArcSFXPath = [[NSBundle mainBundle] pathForResource:@"003_rovidhalak" ofType:@"mp3"];
+        sfxFishSwarmArc = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fishSwarmArcSFXPath] error:NULL];
+        sfxFishSwarmArc.delegate = self;
+        [sfxFishSwarmArc setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        fishSwarmArcSFXPath= nil;
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [sfxFishSwarmArc setVolume:1.0];
+    }
+    else
+    {
+        [sfxFishSwarmArc setVolume:0.0];
+    }
+    
+    if (![sfxFishSwarmArc isPlaying])
+    {
+        [sfxFishSwarmArc play];
+    }
+}
+
+- (void)startsfxFishSwarmStraight;
+{
+    //set the SFX then start playing
+    if (sfxFishSwarmStraight==nil)
+    {
+        NSString *fishSwarmStraightSFXPath = [[NSBundle mainBundle] pathForResource:@"003_hosszuhalak" ofType:@"mp3"];
+        sfxFishSwarmStraight = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fishSwarmStraightSFXPath] error:NULL];
+        sfxFishSwarmStraight.delegate = self;
+        [sfxFishSwarmStraight setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        fishSwarmStraightSFXPath= nil;
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [sfxFishSwarmStraight setVolume:1.0];
+    }
+    else
+    {
+        [sfxFishSwarmStraight setVolume:0.0];
+    }
+    
+    if (![sfxFishSwarmStraight isPlaying])
+    {
+        [sfxFishSwarmStraight play];
+    }
+}
+
+- (void)allInteractionFound;
+{
+    if (inoriInteractionFound&&fatherInteractionFound&&wavesInteractionFound)
+    {
+        self.screen06_07MenuImageView.image=nil;
+        [self.screen06_07MenuImageView setImage:[UIImage imageNamed:@"menu_set-top-g.png"]];
+    }
+}
+
 #pragma mark - View lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -521,12 +806,47 @@
 	return NO;
 }
 
+- (void) viewDidDisappear:(BOOL)animated;
+{
+    [self stopMusicAndSfx];
+    
+    backgroundMusic.delegate=nil;
+    sfx2Swimmwers.delegate=nil;
+    sfxCreatures.delegate=nil;
+    sfxFishSwarmArc.delegate=nil;
+    sfxFishSwarmStraight.delegate=nil;
+    narration.delegate=nil;
+    
+    backgroundMusic=nil;
+    sfx2Swimmwers=nil;
+    sfxCreatures=nil;
+    sfxFishSwarmArc=nil;
+    sfxFishSwarmStraight=nil;
+    narration=nil;
+
+    [wavingTimer invalidate];
+    [smallFishSwarmArcTimer invalidate];
+    [newCreatureTimer invalidate];
+
+    wavingTimer=nil;
+    smallFishSwarmArcTimer=nil;
+    newCreatureTimer=nil;
+
+    [self.view removeFromSuperview];
+    self.view = nil;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     [self screen06_07AppearWaves];
+    [self startBackgroundMusic];
+    [self start2Swimmers];
+    inoriInteractionFound=false;
+    fatherInteractionFound=false;
+    wavesInteractionFound=false;
 }
 
 - (void)didReceiveMemoryWarning

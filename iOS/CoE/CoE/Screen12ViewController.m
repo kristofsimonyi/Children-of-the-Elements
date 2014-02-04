@@ -40,9 +40,11 @@
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 
+#define HINT_TIME                                       1.0
+
 @implementation Screen12ViewController
 
-@synthesize screen12BackToMainMenuImageView, screen12WavesImageView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView;
+@synthesize screen12BackToMainMenuImageView, screen12WavesImageView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView, screen12HintLayerImageView, screen12MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -83,6 +85,114 @@
     viewContoller = nil;
     
     [self goToNextScreen];
+}
+
+- (IBAction)screen12HintButtonTapped:(UITapGestureRecognizer *)sender;
+{
+    if (screen12HintLayerImageView.alpha==0.0)
+    {
+        //        [hintLayerImageView removeFromSuperview];
+        //        [self.view addSubview:hintLayerImageView];
+        [UIView animateWithDuration:HINT_TIME animations:^{
+            [self.screen12HintLayerImageView setAlpha:1.0];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:HINT_TIME animations:^{
+                [self.screen12HintLayerImageView setAlpha:0.01];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:HINT_TIME animations:^{
+                    [self.screen12HintLayerImageView setAlpha:1.0];
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:HINT_TIME animations:^{
+                        [self.screen12HintLayerImageView setAlpha:0.0];
+                    }];
+                }];
+            }];
+        }];
+    }
+}
+
+- (IBAction)screen12NarrationButtonTapped:(UITapGestureRecognizer *)sender;
+{
+    if (narration==nil)
+    {
+        [self startNarration];
+    } else
+    {
+        if ([narration isPlaying])
+        {
+            [self stopNarration];
+        } else {
+            [self startNarration];
+        }
+    }
+}
+
+-(void)startNarration;
+{
+    //set the Music for intro then start playing
+    if (narration==nil)
+    {
+        ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+        NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
+        viewContoller = nil;
+        
+        //name the file to read
+        NSString* aPath = [[NSBundle mainBundle] pathForResource:@"ScreenNarrations" ofType:@"txt"];
+        //pull the content from the file into memory
+        NSData* data = [NSData dataWithContentsOfFile:aPath];
+        //convert the bytes from the file into a string
+        NSString* string = [[NSString alloc] initWithBytes:[data bytes]
+                                                    length:[data length]
+                                                  encoding:NSUTF8StringEncoding];
+        //split the string around newline characters to create an array
+        NSString* delimiter = @"\n";
+        NSArray* lines = [string componentsSeparatedByString:delimiter];
+        string = nil;
+        
+        //find the screen identifier
+        int i=0;
+        while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
+        {
+            i++;
+        }
+        
+        NSString *narrationFileName = [lines objectAtIndex:i+1];
+        NSString *narrationFileExt = [lines objectAtIndex:i+1];
+        narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        
+        NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
+        narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
+        narration.delegate = self;
+        [narration setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        narrationFileName=nil;
+        narrationFileExt=nil;
+        narrationPath = nil;
+        lines=nil;
+    } else
+    {
+        [narration setCurrentTime:0];
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [narration setVolume:1.0];
+    }
+    else
+    {
+        [narration setVolume:0.0];
+    }
+    
+    [narration play];
+    
+    viewContoller = nil;
+    viewContoller = nil;
+}
+
+- (void)stopNarration;
+{
+    [narration stop];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -452,6 +562,23 @@
     isBigMedusaPulse = false;                
     isBigMedusaMoving = false;
 
+}
+
+-(void)startBackgroundMusic;
+{
+    //set the Music for intro then start playing
+	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"006_melytenger" ofType:@"mp3"];
+	backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:backgroundMusicPath] error:NULL];
+	backgroundMusic.delegate = self;
+	[backgroundMusic setVolume:1.0];
+	[backgroundMusic setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
+    [backgroundMusic play];
+}
+
+-(void)stopMusicAndSfx;
+{
+    [backgroundMusic stop];
+    [narration stop];
 }
 
 - (void) bigMedusaSlowsDownAction;
@@ -1131,6 +1258,8 @@
 	[continuousKelpMovementTimer fire];
     
     [self screen12SetStartingPointForBackgroundMedusas];
+    
+    [self startBackgroundMusic];
 }
 
 - (void)viewDidUnload
@@ -1141,7 +1270,7 @@
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 {
     [fishes1Array removeAllObjects];
     [fishes2Array removeAllObjects];
@@ -1152,6 +1281,8 @@
     fishes2Array=nil;
     fishes1SpeedArray=nil;
     fishes2SpeedArray=nil;
+    
+    [self stopMusicAndSfx];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

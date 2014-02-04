@@ -17,18 +17,20 @@
     CGPoint previousSnailCenter;
     CGAffineTransform smallShipOriginalTransform, bigShipOriginalTransform;
 
-    AVAudioPlayer *backgroundMusic;
+    AVAudioPlayer *backgroundMusic, *narration;
     AVAudioPlayer *sfxInori, *sfxBoatsAreClose, *sfxBoat, *sfxSnail;
     CGFloat boatsAreCloseVolumePercentage;
+    
+    BOOL snailInteractionFound, inoriInteractionFound, shipsInteractionFound;
 }
 
 @property (nonatomic, weak) IBOutlet UIView *screen04BigShipView, *screen04SmallShipView, *screen04BigShipControl;
-@property (nonatomic, weak) IBOutlet UIImageView *screen04InoriSitting, *screen04InoriStanding, *screen04Wave1ImageView, *screen04Wave2ImageView, *screen04Wave3ImageView, *screen04Wave4ImageView, *screen04SnailImageView, *screen04BigShipImageView, *screen04SmallShipImageView;
-@property (nonatomic, weak) IBOutlet UIControl *screen04SnailControl, *screen04SmallShipControl, *screen04InoriControl, *screen04MusicControl, *screen04NextScreenControl, *screen04PreviousScreenContol, *screen04CompassContol;
+@property (nonatomic, weak) IBOutlet UIImageView *screen04InoriSitting, *screen04InoriStanding, *screen04Wave1ImageView, *screen04Wave2ImageView, *screen04Wave3ImageView, *screen04Wave4ImageView, *screen04SnailImageView, *screen04BigShipImageView, *screen04SmallShipImageView, *hintLayerImageView, *screen04MenuImageView;
+@property (nonatomic, weak) IBOutlet UIControl *screen04SnailControl, *screen04SmallShipControl, *screen04InoriControl, *screen04MusicButton, *screen04NarrationButton, *screen04HintButton, *screen04NextScreenButton, *screen04PreviousScreenButton, *screen04CompassContol;
 
 - (void) setSmallShipRockingState;
 - (void) setBigShipRockingState;
-- (void)startsfxBoat;
-- (IBAction)forwardTappingToUnderlayingView:(UITapGestureRecognizer *)sender;
+- (void) startsfxBoat;
+- (IBAction) forwardTappingToUnderlayingView:(UITapGestureRecognizer *)sender;
 
 @end

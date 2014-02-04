@@ -7,16 +7,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController">
             <connections>
+                <outlet property="hintLayerImageView" destination="Dly-db-Nnc" id="Z3O-zB-lPp"/>
                 <outlet property="screen04BigShipControl" destination="3HF-uo-lAw" id="oIr-L2-Ptx"/>
                 <outlet property="screen04BigShipImageView" destination="18" id="33"/>
                 <outlet property="screen04BigShipView" destination="62f-BE-1Wj" id="g5N-Az-AqD"/>
                 <outlet property="screen04CompassContol" destination="4" id="fRK-Sc-6f8"/>
+                <outlet property="screen04HintButton" destination="hVv-oz-ZqF" id="8i5-pU-9Ew"/>
                 <outlet property="screen04InoriControl" destination="11" id="6Vh-oa-PK7"/>
                 <outlet property="screen04InoriSitting" destination="9" id="15"/>
                 <outlet property="screen04InoriStanding" destination="10" id="13"/>
-                <outlet property="screen04MusicControl" destination="8L2-5D-CXW" id="7mz-t9-F1O"/>
-                <outlet property="screen04NextScreenControl" destination="j92-he-kcd" id="kcB-YM-l3f"/>
-                <outlet property="screen04PreviousScreenContol" destination="3pY-2U-LLo" id="dnv-S0-FSR"/>
+                <outlet property="screen04MenuImageView" destination="N33-kv-Zh4" id="eM8-aY-5UL"/>
+                <outlet property="screen04MusicButton" destination="8L2-5D-CXW" id="H1e-HB-v78"/>
+                <outlet property="screen04NarrationButton" destination="aOt-kC-rBb" id="bU7-Hl-qWa"/>
+                <outlet property="screen04NextScreenButton" destination="j92-he-kcd" id="4so-KM-y5i"/>
+                <outlet property="screen04PreviousScreenButton" destination="3pY-2U-LLo" id="aUV-5B-B9t"/>
                 <outlet property="screen04SmallShipControl" destination="em3-Qx-5vx" id="WLE-lS-IdI"/>
                 <outlet property="screen04SmallShipImageView" destination="17" id="kH4-n9-Zr0"/>
                 <outlet property="screen04SmallShipView" destination="uqj-dB-Zf1" id="0m5-Zn-wRI"/>
@@ -100,6 +104,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_HintLayer.png" id="Dly-db-Nnc" userLabel="HintLayerImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="N33-kv-Zh4" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,18 +118,28 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" id="3pY-2U-LLo" userLabel="PreviousScreenControl" customClass="UIControl">
+                    <rect key="frame" x="-2" y="29" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="aOt-kC-rBb" userLabel="NarrationControl" customClass="UIControl">
+                    <rect key="frame" x="426" y="1" width="52" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" id="8L2-5D-CXW" userLabel="MusicControl" customClass="UIControl">
                     <rect key="frame" x="486" y="1" width="49" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" id="j92-he-kcd" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="980" y="29" width="45" height="80"/>
+                <view contentMode="scaleToFill" id="hVv-oz-ZqF" userLabel="HintControl" customClass="UIControl">
+                    <rect key="frame" x="543" y="1" width="52" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" id="3pY-2U-LLo" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="-2" y="29" width="45" height="80"/>
+                <view contentMode="scaleToFill" id="j92-he-kcd" userLabel="NextScreenControl" customClass="UIControl">
+                    <rect key="frame" x="980" y="29" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -156,6 +174,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="1_HintLayer.png" width="800" height="799"/>
         <image name="4_1k_alap.png" width="1024" height="768"/>
         <image name="4_1k_csiga.png" width="1024" height="768"/>
         <image name="4_1k_hullam_1.png" width="1024" height="768"/>

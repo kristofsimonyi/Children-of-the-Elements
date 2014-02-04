@@ -21,12 +21,14 @@
                 <outlet property="screen12BigMedusaArm3ImageView" destination="37" id="99"/>
                 <outlet property="screen12BigMedusaArm4ImageView" destination="38" id="100"/>
                 <outlet property="screen12BigMedusaImageView" destination="31" id="101"/>
+                <outlet property="screen12HintLayerImageView" destination="Tvc-4T-2LG" id="els-kC-lmA"/>
                 <outlet property="screen12Kelp1ImageView" destination="16" id="102"/>
                 <outlet property="screen12Kelp2ImageView" destination="17" id="103"/>
                 <outlet property="screen12Kelp3ImageView" destination="18" id="104"/>
                 <outlet property="screen12Kelp4ImageView" destination="19" id="105"/>
                 <outlet property="screen12Kelp5ImageView" destination="20" id="106"/>
                 <outlet property="screen12Kelp6ImageView" destination="21" id="107"/>
+                <outlet property="screen12MenuImageView" destination="oiy-gC-e3a" id="2Z0-5z-65C"/>
                 <outlet property="screen12WavesImageView" destination="11" id="109"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -141,6 +143,10 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_HintLayer.png" id="Tvc-4T-2LG" userLabel="HintLayerImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="oiy-gC-e3a" userLabel="MenuImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,15 +159,6 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                 </imageView>
-                <view contentMode="scaleToFill" id="PhA-Ox-g7I" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="28" width="45" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <gestureRecognizers/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="2qa-eY-ZLc" appends="YES" id="ZWh-Xx-Y8I"/>
-                    </connections>
-                </view>
                 <view contentMode="scaleToFill" id="mRo-fb-RVo" userLabel="PreviousScreenControl" customClass="UIControl">
                     <rect key="frame" x="0.0" y="28" width="45" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,18 +168,65 @@
                         <outletCollection property="gestureRecognizers" destination="WMY-Fe-dhv" appends="YES" id="2mS-xg-T33"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" id="jlh-o4-EPe" userLabel="NarrationControl" customClass="UIControl">
+                    <rect key="frame" x="427" y="-2" width="54" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="4j3-uX-rgM" appends="YES" id="INb-nk-oqX"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="qcc-Cr-HyZ" userLabel="MusicControl" customClass="UIControl">
+                    <rect key="frame" x="487" y="0.0" width="50" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="XnV-XG-mpI" appends="YES" id="0ft-jD-my7"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="Xhk-K9-rZt" userLabel="HintControl" customClass="UIControl">
+                    <rect key="frame" x="545" y="0.0" width="49" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="g8I-sW-g3B" appends="YES" id="7is-mt-CJO"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="PhA-Ox-g7I" userLabel="NextScreenControl" customClass="UIControl">
+                    <rect key="frame" x="979" y="28" width="45" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="2qa-eY-ZLc" appends="YES" id="ZWh-Xx-Y8I"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
-        <tapGestureRecognizer id="2qa-eY-ZLc" userLabel="NextScreenTap Gesture Recognizer">
-            <connections>
-                <action selector="screen12NextScreenButtonTouched:" destination="-1" id="rCS-9g-KLh"/>
-            </connections>
-        </tapGestureRecognizer>
         <tapGestureRecognizer id="WMY-Fe-dhv" userLabel="PreviousScreenTap Gesture Recognizer">
             <connections>
                 <action selector="screen12PreviousScreenButtonTouched:" destination="-1" id="tpq-NN-YpZ"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="4j3-uX-rgM" userLabel="NarrationButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen12NarrationButtonTapped:" destination="-1" id="w9y-RP-sn2"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="XnV-XG-mpI" userLabel="MusicButtonTap Gesture Recognizer"/>
+        <tapGestureRecognizer id="g8I-sW-g3B" userLabel="HintButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen12HintButtonTapped:" destination="-1" id="JCs-vq-ksR"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="2qa-eY-ZLc" userLabel="NextScreenTap Gesture Recognizer">
+            <connections>
+                <action selector="screen12NextScreenButtonTouched:" destination="-1" id="rCS-9g-KLh"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
@@ -208,6 +252,7 @@
         <image name="12_1k_meduza_kar_2.png" width="498" height="140"/>
         <image name="12_1k_meduza_kar_3.png" width="605" height="251"/>
         <image name="12_1k_meduza_kar_4.png" width="980" height="65"/>
+        <image name="1_HintLayer.png" width="800" height="799"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

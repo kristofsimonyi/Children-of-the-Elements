@@ -71,9 +71,11 @@
 #define SMALL_SHIP_ROTATE_SHIFT      25
 #define BIG_SHIP_ROTATE_SHIFT        10
 
+#define HINT_TIME                                       1.0
+
 @implementation Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController
 
-@synthesize screen04InoriSitting, screen04InoriStanding, screen04Wave1ImageView, screen04Wave2ImageView, screen04Wave3ImageView, screen04Wave4ImageView, screen04SnailImageView, screen04SnailControl, screen04BigShipView, screen04SmallShipView, screen04BigShipControl, screen04SmallShipControl, screen04InoriControl, screen04BigShipImageView, screen04SmallShipImageView, screen04MusicControl, screen04NextScreenControl, screen04PreviousScreenContol, screen04CompassContol;
+@synthesize screen04InoriSitting, screen04InoriStanding, screen04Wave1ImageView, screen04Wave2ImageView, screen04Wave3ImageView, screen04Wave4ImageView, screen04SnailImageView, screen04SnailControl, screen04BigShipView, screen04SmallShipView, screen04BigShipControl, screen04SmallShipControl, screen04InoriControl, screen04BigShipImageView, screen04SmallShipImageView, screen04MusicButton, screen04NextScreenButton, screen04PreviousScreenButton, screen04CompassContol, screen04HintButton, screen04MenuImageView, screen04NarrationButton, hintLayerImageView;
 
 -(void)goToNextScreen;
 {
@@ -116,9 +118,21 @@
     [self goToNextScreen];
 }
 
+- (void)allInteractionFound;
+{
+    if (snailInteractionFound&&inoriInteractionFound&&shipsInteractionFound)
+    {
+        self.screen04MenuImageView.image=nil;
+        [self.screen04MenuImageView setImage:[UIImage imageNamed:@"menu_set-top-g.png"]];
+    }
+}
+
 - (void)screen04InoriTapped;
 {
-    if (screen04InoriSitting.alpha == 0) 
+    inoriInteractionFound = true;
+    [self allInteractionFound];
+
+    if (screen04InoriSitting.alpha == 0)
     {
         [UIView animateWithDuration: 1.0
                               delay: 0.0
@@ -240,6 +254,8 @@
                 if (calculatedCenter.x>SNAIL_RIGHT_X) 
                 {
                     calculatedCenter.x=SNAIL_RIGHT_X;
+                    snailInteractionFound = true;
+                    [self allInteractionFound];
                 }
                 sliderPercentage=(calculatedCenter.x-SNAIL_LEFT_X)/(SNAIL_RIGHT_X-SNAIL_LEFT_X);
                 calculatedCenter.y=SNAIL_LEFT_Y+sliderPercentage*(SNAIL_RIGHT_Y-SNAIL_LEFT_Y);
@@ -413,12 +429,13 @@
     [self setBigShipRockingState];
 }
 
-- (IBAction)screen04MusicControlTapped;
+- (void)screen04MusicButtonTapped;
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     if (viewContoller.musicIsOn)
     {
         [backgroundMusic setVolume:0.0];
+        [narration setVolume:0.0];
         [sfxInori setVolume:0.0];
         [sfxBoatsAreClose setVolume:0.0];
         [sfxBoat setVolume:0.0];
@@ -429,6 +446,7 @@
     else
     {
         [backgroundMusic setVolume:1.0];
+        [narration setVolume:1.0];
         [sfxInori setVolume:1.0];
         [sfxBoatsAreClose setVolume:boatsAreCloseVolumePercentage];
         [sfxBoat setVolume:1.0];
@@ -442,14 +460,16 @@
 - (void)startsfxBoatsAreClose;
 {
     //set the SFX then start playing
-	NSString *teapotSFXPath = [[NSBundle mainBundle] pathForResource:@"002_hajohajo" ofType:@"mp3"];
-	sfxBoatsAreClose = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:teapotSFXPath] error:NULL];
+	NSString *boatsAreCloseSFXPath = [[NSBundle mainBundle] pathForResource:@"002_hajohajo" ofType:@"mp3"];
+	sfxBoatsAreClose = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:boatsAreCloseSFXPath] error:NULL];
 	sfxBoatsAreClose.delegate = self;
 	[sfxBoatsAreClose setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
     
     [sfxBoatsAreClose setVolume:boatsAreCloseVolumePercentage];
     
     [sfxBoatsAreClose play];
+    
+    boatsAreCloseSFXPath=nil;
 }
 
 - (void)startsfxInori;
@@ -457,10 +477,12 @@
     //set the SFX then start playing
     if (sfxInori==nil)
     {
-        NSString *teapotSFXPath = [[NSBundle mainBundle] pathForResource:@"002_hello" ofType:@"mp3"];
-        sfxInori = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:teapotSFXPath] error:NULL];
+        NSString *inoriSFXPath = [[NSBundle mainBundle] pathForResource:@"002_hello" ofType:@"mp3"];
+        sfxInori = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:inoriSFXPath] error:NULL];
         sfxInori.delegate = self;
         [sfxInori setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        inoriSFXPath= nil;
     }
     
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -484,10 +506,12 @@
     //set the SFX then start playing
     if (sfxBoat==nil)
     {
-        NSString *teapotSFXPath = [[NSBundle mainBundle] pathForResource:@"002_wooohooooK" ofType:@"mp3"];
-        sfxBoat = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:teapotSFXPath] error:NULL];
+        NSString *boatSFXPath = [[NSBundle mainBundle] pathForResource:@"002_wooohooooK" ofType:@"mp3"];
+        sfxBoat = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:boatSFXPath] error:NULL];
         sfxBoat.delegate = self;
         [sfxBoat setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        boatSFXPath = nil;
     }
     
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -508,11 +532,17 @@
 
 - (void)handleTappingBigShip;
 {
+    shipsInteractionFound=true;
+    [self allInteractionFound];
+
     [self startsfxBoat];
 }
 
 - (void)handleTappingSmallShip;
 {
+    shipsInteractionFound=true;
+    [self allInteractionFound];
+    
     [self startsfxBoat];
 }
 
@@ -528,17 +558,17 @@
     smallShipFrame.origin.x=smallShipFrame.origin.x+screen04SmallShipView.frame.origin.x;
     smallShipFrame.origin.y=smallShipFrame.origin.y+screen04SmallShipView.frame.origin.y;
     
-    if (CGRectContainsPoint(self.screen04MusicControl.frame, tapLocation))
+    if (CGRectContainsPoint(self.screen04MusicButton.frame, tapLocation))
     {
-        [self screen04MusicControlTapped];
+        [self screen04MusicButtonTapped];
     }
     else
-        if (CGRectContainsPoint(self.screen04NextScreenControl.frame, tapLocation))
+        if (CGRectContainsPoint(self.screen04NextScreenButton.frame, tapLocation))
         {
             [self screen04NextScreenControlTapped];
         }
         else
-            if (CGRectContainsPoint(self.screen04PreviousScreenContol.frame, tapLocation))
+            if (CGRectContainsPoint(self.screen04PreviousScreenButton.frame, tapLocation))
             {
                 [self screen04PreviousScreenControlTapped];
             }
@@ -562,6 +592,16 @@
                             {
                                 [self screen04BackToMainMenu];
                             }
+                            else
+                                if (CGRectContainsPoint(self.screen04HintButton.frame, tapLocation))
+                                {
+                                    [self hintButtonTapped];
+                                }
+                                else
+                                    if (CGRectContainsPoint(self.screen04NarrationButton.frame, tapLocation))
+                                    {
+                                        [self narrationButtonTapped];
+                                    }
     
 }
 
@@ -570,10 +610,12 @@
     //set the SFX then start playing
     if (sfxSnail==nil)
     {
-        NSString *teapotSFXPath = [[NSBundle mainBundle] pathForResource:@"002_csiga1" ofType:@"mp3"];
-        sfxSnail = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:teapotSFXPath] error:NULL];
+        NSString *snailSFXPath = [[NSBundle mainBundle] pathForResource:@"002_csiga1" ofType:@"mp3"];
+        sfxSnail = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:snailSFXPath] error:NULL];
         sfxSnail.delegate = self;
         [sfxSnail setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        snailSFXPath=nil;
     }
     
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -612,16 +654,126 @@
 	[backgroundMusic setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
     [backgroundMusic play];
     
-    
+    backgroundMusicPath=nil;
 }
 
 -(void)stopMusicAndSfx;
 {
     [backgroundMusic stop];
+    [narration stop];
     [sfxInori stop];
     [sfxBoatsAreClose stop];
     [sfxBoat stop];
     [sfxSnail stop];
+    [narration stop];
+}
+
+- (void)hintButtonTapped;
+{
+    if (self.hintLayerImageView.alpha==0.0)
+    {
+        //        [hintLayerImageView removeFromSuperview];
+        //        [self.view addSubview:hintLayerImageView];
+        [UIView animateWithDuration:HINT_TIME animations:^{
+            [self.hintLayerImageView setAlpha:1.0];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:HINT_TIME animations:^{
+                [self.hintLayerImageView setAlpha:0.01];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:HINT_TIME animations:^{
+                    [self.hintLayerImageView setAlpha:1.0];
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:HINT_TIME animations:^{
+                        [self.hintLayerImageView setAlpha:0.0];
+                    }];
+                }];
+            }];
+        }];
+    }
+}
+
+- (void)narrationButtonTapped;
+{
+    if (narration==nil)
+    {
+        [self startNarration];
+    } else
+    {
+        if ([narration isPlaying])
+        {
+            [self stopNarration];
+        } else {
+            [self startNarration];
+        }
+    }
+}
+
+-(void)startNarration;
+{
+    //set the Music for intro then start playing
+    if (narration==nil)
+    {
+        ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+        NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
+        viewContoller = nil;
+        
+        //name the file to read
+        NSString* aPath = [[NSBundle mainBundle] pathForResource:@"ScreenNarrations" ofType:@"txt"];
+        //pull the content from the file into memory
+        NSData* data = [NSData dataWithContentsOfFile:aPath];
+        //convert the bytes from the file into a string
+        NSString* string = [[NSString alloc] initWithBytes:[data bytes]
+                                                    length:[data length]
+                                                  encoding:NSUTF8StringEncoding];
+        //split the string around newline characters to create an array
+        NSString* delimiter = @"\n";
+        NSArray* lines = [string componentsSeparatedByString:delimiter];
+        string = nil;
+        
+        //find the screen identifier
+        int i=0;
+        while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
+        {
+            i++;
+        }
+        
+        NSString *narrationFileName = [lines objectAtIndex:i+1];
+        NSString *narrationFileExt = [lines objectAtIndex:i+1];
+        narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        
+        NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
+        narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
+        narration.delegate = self;
+        [narration setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        narrationFileName=nil;
+        narrationFileExt=nil;
+        narrationPath = nil;
+        lines=nil;
+    } else
+    {
+        [narration setCurrentTime:0];
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [narration setVolume:1.0];
+    }
+    else
+    {
+        [narration setVolume:0.0];
+    }
+    
+    [narration play];
+    
+    viewContoller = nil;
+    viewContoller = nil;
+}
+
+- (void)stopNarration;
+{
+    [narration stop];
 }
 
 #pragma mark - View lifecycle
@@ -648,6 +800,77 @@
 {
     [self stopMusicAndSfx];
     
+    backgroundMusic.delegate=nil;
+    narration.delegate =nil;
+    sfxInori.delegate=nil;
+    sfxBoatsAreClose.delegate=nil;
+    sfxBoat.delegate=nil;
+    sfxSnail.delegate=nil;
+    
+    backgroundMusic = nil;
+    narration = nil;
+    sfxInori = nil;
+    sfxBoatsAreClose = nil;
+    sfxBoat = nil;
+    sfxSnail = nil;
+
+    [itIsWavingTimer invalidate];
+    [bigShipRockingTimer invalidate];
+    [smallShipRockingTimer invalidate];
+
+    itIsWavingTimer=nil;
+    bigShipRockingTimer=nil;
+    smallShipRockingTimer=nil;
+    
+    [screen04BigShipView removeFromSuperview];
+    [screen04SmallShipView removeFromSuperview];
+    [screen04BigShipControl removeFromSuperview];
+    [screen04SnailControl removeFromSuperview];
+    [screen04SmallShipControl removeFromSuperview];
+    [screen04InoriControl removeFromSuperview];
+    [screen04MusicButton removeFromSuperview];
+    [screen04NarrationButton removeFromSuperview];
+    [screen04HintButton removeFromSuperview];
+    [screen04NextScreenButton removeFromSuperview];
+    [screen04PreviousScreenButton removeFromSuperview];
+    [screen04CompassContol removeFromSuperview];
+    [screen04InoriSitting removeFromSuperview];
+    [screen04InoriStanding removeFromSuperview];
+    [screen04Wave1ImageView removeFromSuperview];
+    [screen04Wave2ImageView removeFromSuperview];
+    [screen04Wave3ImageView removeFromSuperview];
+    [screen04Wave4ImageView removeFromSuperview];
+    [screen04SnailImageView removeFromSuperview];
+    [screen04BigShipImageView removeFromSuperview];
+    [screen04SmallShipImageView removeFromSuperview];
+    [hintLayerImageView removeFromSuperview];
+    [screen04MenuImageView removeFromSuperview];
+
+    screen04BigShipView=nil;
+    screen04SmallShipView=nil;
+    screen04BigShipControl=nil;
+    screen04SnailControl=nil;
+    screen04SmallShipControl=nil;
+    screen04InoriControl=nil;
+    screen04MusicButton=nil;
+    screen04NarrationButton=nil;
+    screen04HintButton=nil;
+    screen04NextScreenButton=nil;
+    screen04PreviousScreenButton=nil;
+    screen04CompassContol=nil;
+    screen04InoriSitting=nil;
+    screen04InoriStanding=nil;
+    screen04Wave1ImageView=nil;
+    screen04Wave2ImageView=nil;
+    screen04Wave3ImageView=nil;
+    screen04Wave4ImageView=nil;
+    screen04SnailImageView=nil;
+    screen04BigShipImageView=nil;
+    screen04SmallShipImageView=nil;
+    hintLayerImageView=nil;
+    screen04MenuImageView=nil;
+    
+    [self.view removeFromSuperview];
     self.view=nil;
 }
 
@@ -684,6 +907,10 @@
     [self startBackgroundMusic];
     boatsAreCloseVolumePercentage=0;
     [self startsfxBoatsAreClose];
+    
+    inoriInteractionFound= false;
+    snailInteractionFound= false;
+    shipsInteractionFound= false;
 }
 
 - (void)didReceiveMemoryWarning

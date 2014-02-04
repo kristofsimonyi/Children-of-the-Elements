@@ -25,6 +25,8 @@
 
 #define PLATE_COMES_IN_TIME              2.0
 
+#define HINT_TIME                                       1.0
+
 #import "Screen11ViewController.h"
 #import "ViewController.h"
 
@@ -34,7 +36,7 @@
 
 @implementation Screen11ViewController
 
-@synthesize screen11CookingPotImageView, screen11CookingPotIngredient01ImageView, screen11Ingredient01ImageView, screen11Ingredient01TouchView, screen11CookingPotIngredient02ImageView, screen11CookingPotIngredient03ImageView, screen11CookingPotIngredient04ImageView, screen11CookingPotIngredient05ImageView, screen11CookingPotIngredient06ImageView, screen11Ingredient02ImageView, screen11Ingredient02TouchView, screen11Ingredient03ImageView, screen11Ingredient03TouchView, screen11Ingredient04ImageView, screen11Ingredient04TouchView, screen11Ingredient05ImageView, screen11Ingredient05TouchView, screen11Ingredient06ImageView, screen11Ingredient06TouchView, screen11PlateImageView, screen11Ingredient07ImageView, screen11Ingredient07TouchView;
+@synthesize screen11CookingPotImageView, screen11CookingPotIngredient01ImageView, screen11Ingredient01ImageView, screen11Ingredient01TouchView, screen11CookingPotIngredient02ImageView, screen11CookingPotIngredient03ImageView, screen11CookingPotIngredient04ImageView, screen11CookingPotIngredient05ImageView, screen11CookingPotIngredient06ImageView, screen11Ingredient02ImageView, screen11Ingredient02TouchView, screen11Ingredient03ImageView, screen11Ingredient03TouchView, screen11Ingredient04ImageView, screen11Ingredient04TouchView, screen11Ingredient05ImageView, screen11Ingredient05TouchView, screen11Ingredient06ImageView, screen11Ingredient06TouchView, screen11PlateImageView, screen11Ingredient07ImageView, screen11Ingredient07TouchView, screen11HintLayerImageView, screen11MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -271,10 +273,118 @@
      }];
 }
 
+- (IBAction)screen11HintButtonTapped:(UITapGestureRecognizer *)sender;
+{
+    if (screen11HintLayerImageView.alpha==0.0)
+    {
+        //        [hintLayerImageView removeFromSuperview];
+        //        [self.view addSubview:hintLayerImageView];
+        [UIView animateWithDuration:HINT_TIME animations:^{
+            [self.screen11HintLayerImageView setAlpha:1.0];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:HINT_TIME animations:^{
+                [self.screen11HintLayerImageView setAlpha:0.01];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:HINT_TIME animations:^{
+                    [self.screen11HintLayerImageView setAlpha:1.0];
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:HINT_TIME animations:^{
+                        [self.screen11HintLayerImageView setAlpha:0.0];
+                    }];
+                }];
+            }];
+        }];
+    }
+}
+
+- (IBAction)screen11NarrationButtonTapped:(UITapGestureRecognizer *)sender;
+{
+    if (narration==nil)
+    {
+        [self startNarration];
+    } else
+    {
+        if ([narration isPlaying])
+        {
+            [self stopNarration];
+        } else {
+            [self startNarration];
+        }
+    }
+}
+
+-(void)startNarration;
+{
+    //set the Music for intro then start playing
+    if (narration==nil)
+    {
+        ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+        NSString *screenName = [NSString stringWithFormat:@"%i:", viewContoller.nextViewController ];
+        viewContoller = nil;
+        
+        //name the file to read
+        NSString* aPath = [[NSBundle mainBundle] pathForResource:@"ScreenNarrations" ofType:@"txt"];
+        //pull the content from the file into memory
+        NSData* data = [NSData dataWithContentsOfFile:aPath];
+        //convert the bytes from the file into a string
+        NSString* string = [[NSString alloc] initWithBytes:[data bytes]
+                                                    length:[data length]
+                                                  encoding:NSUTF8StringEncoding];
+        //split the string around newline characters to create an array
+        NSString* delimiter = @"\n";
+        NSArray* lines = [string componentsSeparatedByString:delimiter];
+        string = nil;
+        
+        //find the screen identifier
+        int i=0;
+        while ((i!=[lines count])&&(![screenName isEqual:[lines objectAtIndex:i]]))
+        {
+            i++;
+        }
+        
+        NSString *narrationFileName = [lines objectAtIndex:i+1];
+        NSString *narrationFileExt = [lines objectAtIndex:i+1];
+        narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        
+        NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
+        narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
+        narration.delegate = self;
+        [narration setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        narrationFileName=nil;
+        narrationFileExt=nil;
+        narrationPath = nil;
+        lines=nil;
+    } else
+    {
+        [narration setCurrentTime:0];
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [narration setVolume:1.0];
+    }
+    else
+    {
+        [narration setVolume:0.0];
+    }
+    
+    [narration play];
+    
+    viewContoller = nil;
+    viewContoller = nil;
+}
+
+- (void)stopNarration;
+{
+    [narration stop];
+}
+
 -(void)startBackgroundMusic;
 {
     //set the Music for intro then start playing
-	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"003_ketten usznak" ofType:@"mp3"];
+	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"005_Marketok" ofType:@"mp3"];
 	backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:backgroundMusicPath] error:NULL];
 	backgroundMusic.delegate = self;
 	[backgroundMusic setVolume:1.0];
@@ -285,6 +395,7 @@
 -(void)stopMusicAndSfx;
 {
     [backgroundMusic stop];
+    [narration stop];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -308,9 +419,18 @@
     [self startBackgroundMusic];
 }
 
-- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 {
     [self stopMusicAndSfx];
+    
+    backgroundMusic.delegate=nil;
+    narration.delegate=nil;
+    
+    backgroundMusic=nil;
+    narration=nil;
+    
+    [self.view removeFromSuperview];
+    self.view = nil;
 }
 
 - (void)didReceiveMemoryWarning

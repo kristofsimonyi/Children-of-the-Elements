@@ -433,6 +433,7 @@
     {
         if (flag)
         {
+            Screen10MenuImageView.image=nil;
             [Screen10MenuImageView setImage:[UIImage imageNamed:@"menu_set-top-g.png"]];
         }
     }
