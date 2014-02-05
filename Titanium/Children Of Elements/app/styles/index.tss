@@ -10,13 +10,6 @@
 	
 	
 },
-"#south":{
-	width: 250,
-	height: 250,
-	backgroundImage:'/home/home_planet_south.png',
-	bottom:-100
-
-},
 "#east":{
 	width: 250,
 	height: 250,
@@ -30,5 +23,13 @@
 	backgroundImage:'/home/home_planet_west.png',
 	right:-100,
 	transform: Alloy.Globals.rotateLeft,
-}
+},
+"#south":{
+	width: 250,
+	height: 250,
+	backgroundImage:'/home/home_planet_south.png',
+	bottom:-100
+
+},
+
 

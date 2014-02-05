@@ -33,15 +33,26 @@ function Controller() {
             curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
             duration: 2e3
         });
-        Titanium.UI.createAnimation({
-            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
-            duration: 2e3
-        });
         e.source.animate(animation);
         var selectedElement = e.source.id.toString();
         if ($.index.children) for (var c = 0; $.index.children.length > c; c++) {
-            var identificacion = $.index.children[c].id.toString();
-            identificacion != selectedElement ? $.index.children[c].visible = "0" : Ti.API.info($.index.children[c].id + " " + e.source.id);
+            var currentItem = $.index.children[c];
+            var itemID = currentItem.id.toString();
+            var matrix = Ti.UI.create2DMatrix();
+            matrix = matrix.rotate(currentItem.preferedRotationBase);
+            matrix = matrix.scale(1, 1);
+            Ti.API.info(currentItem.preferedRightPosition);
+            itemID != selectedElement ? currentItem.animate({
+                top: 500,
+                left: 500,
+                right: currentItem.preferedRightPosition,
+                bottom: currentItem.peferedBottomPosition,
+                transform: matrix,
+                curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+                duration: 1e3
+            }) : Ti.API.info($.index.children[c].id + " " + e.source.id);
+            currentItem = null;
+            matrix = null;
         }
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
@@ -66,7 +77,11 @@ function Controller() {
         top: -130,
         transform: Alloy.Globals.rotateTop,
         id: "north",
-        preferedRotationBase: "-180"
+        preferedRotationBase: "-180",
+        preferedTopPosition: "-130",
+        preferedRightPosition: "",
+        preferedLeftPosition: "",
+        peferedBottomPosition: ""
     });
     $.__views.index.add($.__views.north);
     selectPlanet ? $.__views.north.addEventListener("click", selectPlanet) : __defers["$.__views.north!click!selectPlanet"] = true;
@@ -77,7 +92,11 @@ function Controller() {
         left: -100,
         transform: Alloy.Globals.rotateRight,
         id: "east",
-        preferedRotationBase: "90"
+        preferedRotationBase: "90",
+        preferedTopPosition: "",
+        preferedRightPosition: "",
+        preferedLeftPosition: "-100",
+        peferedBottomPosition: ""
     });
     $.__views.index.add($.__views.east);
     selectPlanet ? $.__views.east.addEventListener("click", selectPlanet) : __defers["$.__views.east!click!selectPlanet"] = true;
@@ -88,7 +107,11 @@ function Controller() {
         right: -100,
         transform: Alloy.Globals.rotateLeft,
         id: "west",
-        preferedRotationBase: "-90"
+        preferedRotationBase: "-90",
+        preferedTopPosition: "",
+        preferedRightPosition: "-100",
+        preferedLeftPosition: "",
+        peferedBottomPosition: ""
     });
     $.__views.index.add($.__views.west);
     selectPlanet ? $.__views.west.addEventListener("click", selectPlanet) : __defers["$.__views.west!click!selectPlanet"] = true;
@@ -98,7 +121,11 @@ function Controller() {
         backgroundImage: "/home/home_planet_south.png",
         bottom: -100,
         id: "south",
-        preferedRotationBase: "0"
+        preferedRotationBase: "0",
+        preferedTopPosition: "",
+        preferedRightPosition: "",
+        preferedLeftPosition: "",
+        peferedBottomPosition: "-100"
     });
     $.__views.index.add($.__views.south);
     selectPlanet ? $.__views.south.addEventListener("click", selectPlanet) : __defers["$.__views.south!click!selectPlanet"] = true;

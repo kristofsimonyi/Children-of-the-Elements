@@ -126,10 +126,7 @@ function hidePlanets(e){
 	});
 	
 	
-	var animationOtherPlanets = Titanium.UI.createAnimation({
-		curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
-		duration: 2000
-	});
+ 
 	
 	var animationHandler = function() {
 	  //animation.removeEventListener('complete',animationHandler);
@@ -157,16 +154,40 @@ function hidePlanets(e){
          
         for (var c = 0; c < $.index.children.length ; c++) {
         
-        		
-  				var identificacion = $.index.children[c].id.toString(); 
+        		// object cache
+        		var currentItem = $.index.children[c];
+
+        		//retrieve info from object
+  				var itemID = currentItem.id.toString();
   				 
+
+  				var matrix = Ti.UI.create2DMatrix();
+					matrix = matrix.rotate(currentItem.preferedRotationBase);
+					matrix = matrix.scale(1,1);
+  				
+
+  				 Ti.API.info(currentItem.preferedRightPosition)
   				      
-		        if( identificacion != selectedElement  ){
-		         		 $.index.children[c].visible = "0";
+		        if( itemID != selectedElement  ){
+
+
+		         		 currentItem.animate({
+		         		 	top: 500,
+		         		 	left: 500,
+		         		 	right: currentItem.preferedRightPosition,
+		         		 	bottom: currentItem.peferedBottomPosition,
+		         		 	transform:matrix,
+		         		 	curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+		         		 	duration:1000});
+
 		         		 
 		        }else{
 		        	Ti.API.info( $.index.children[c].id + " " + e.source.id );
 		        }
+
+
+		        currentItem = null;
+		        matrix = null;
         
            
         }

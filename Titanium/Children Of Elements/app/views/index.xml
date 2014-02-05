@@ -1,8 +1,8 @@
 <Alloy>
 	<Window class="container" onOpen="playLoopAudio" onClose="stopLoopAudio">
-		<View id="north" onClick="selectPlanet" preferedRotationBase="-180"></View>
-		<View id="east"  onClick="selectPlanet" preferedRotationBase="90"></View>
-		<View id="west"  onClick="selectPlanet" preferedRotationBase="-90" ></View>
-		<View id="south" onClick="selectPlanet" preferedRotationBase="0"></View>
+		<View id="north" onClick="selectPlanet" preferedRotationBase="-180" preferedTopPosition="-130" preferedRightPosition="" preferedLeftPosition="" peferedBottomPosition=""></View>
+		<View id="east"  onClick="selectPlanet" preferedRotationBase="90" preferedTopPosition="" preferedRightPosition="" preferedLeftPosition="-100" peferedBottomPosition=""></View>
+		<View id="west"  onClick="selectPlanet" preferedRotationBase="-90" preferedTopPosition="" preferedRightPosition="-100" preferedLeftPosition="" peferedBottomPosition=""></View>
+		<View id="south" onClick="selectPlanet" preferedRotationBase="0" preferedTopPosition="" preferedRightPosition="" preferedLeftPosition="" peferedBottomPosition="-100"></View>
 	</Window>
 </Alloy>
