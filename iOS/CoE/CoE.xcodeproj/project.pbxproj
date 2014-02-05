@@ -81,6 +81,7 @@
 		E2376406173143DF006B1232 /* ScrollingPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2376404173143DE006B1232 /* ScrollingPagesViewController.m */; };
 		E2376407173143DF006B1232 /* ScrollingPagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2376405173143DF006B1232 /* ScrollingPagesViewController.xib */; };
 		E23C51B116D6C989000D5958 /* CommonLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C51B016D6C989000D5958 /* CommonLibrary.m */; };
+		E240C9D318A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E240C9D218A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 */; };
 		E24129A6159598E30094E53B /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = E24129A5159598E30094E53B /* UIImage+StackBlur.m */; };
 		E24AF55F1783720300C9EF11 /* Screen15_16ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */; };
 		E24AF5601783720300C9EF11 /* Screen15_16ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */; };
@@ -459,6 +460,7 @@
 		E2376405173143DF006B1232 /* ScrollingPagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollingPagesViewController.xib; sourceTree = "<group>"; };
 		E23C51AF16D6C989000D5958 /* CommonLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonLibrary.h; sourceTree = "<group>"; };
 		E23C51B016D6C989000D5958 /* CommonLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLibrary.m; sourceTree = "<group>"; };
+		E240C9D218A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_sonkas_mandala_thEnd.mp3; path = "Music, SFX/005_sonkas_mandala_thEnd.mp3"; sourceTree = "<group>"; };
 		E24129A4159598E30094E53B /* UIImage+StackBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StackBlur.h"; sourceTree = "<group>"; };
 		E24129A5159598E30094E53B /* UIImage+StackBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+StackBlur.m"; sourceTree = "<group>"; };
 		E24AF55C1783720300C9EF11 /* Screen15_16ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen15_16ViewController.h; sourceTree = "<group>"; };
@@ -1328,6 +1330,7 @@
 				E2C6F33C189F032C00FA167D /* 005_nov5.mp3 */,
 				E2C6F33D189F032C00FA167D /* 005_nov6.mp3 */,
 				E2C6F33E189F032C00FA167D /* 005_nov7.mp3 */,
+				E240C9D218A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 */,
 				E2C6B0C9185E3E79002862EA /* 006_hal1.mp3 */,
 				E2C6B0CA185E3E79002862EA /* 006_hal2.mp3 */,
 				E2C6B0CB185E3E79002862EA /* 006_hal3.mp3 */,
@@ -1709,6 +1712,7 @@
 				E271EA74188DC07000C2286F /* BackgoundIslands.jpg in Resources */,
 				E2C6F326189E98B500FA167D /* 03 Story of the Sea 3.mp3 in Resources */,
 				E2C07225150D30AA00D78BA7 /* a1-1k_cica4.png in Resources */,
+				E240C9D318A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 in Resources */,
 				E2C07226150D30AA00D78BA7 /* a1-1k_cica5.png in Resources */,
 				E2C07227150D30AA00D78BA7 /* a1-1k_cica6.png in Resources */,
 				E2C07228150D30AA00D78BA7 /* a1-1k_hab-paca.png in Resources */,

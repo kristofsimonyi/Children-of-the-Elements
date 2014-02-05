@@ -176,6 +176,8 @@
             newCenter.x=newCenter.x-firstTranslatedPoint.x+startCenter.x;
             newCenter.y=newCenter.y-firstTranslatedPoint.y+startCenter.y;
             [movingTouchView setCenter:newCenter];
+
+            [self startSfxForIngredient:movingImageView];
         }
 		touchCount++;
 	}
@@ -193,6 +195,7 @@
         {
             if (CGRectContainsRect(screen11CookingPotImageView.frame, movingTouchView.frame))
             {
+                [self startSfxForGrowing:movingImageView];
                 ingredientsRemained--;
                 [movingTouchView setCenter:CGPointMake(1000, 1000)];
                 CGAffineTransform newTransform = CGAffineTransformMakeScale(0.2, 0.2);
@@ -208,6 +211,7 @@
                 if (ingredientsRemained==0)
                 {
                     [self plateComesIn];
+                    [self allInteractionFound];
                 }
             }
             else
@@ -223,6 +227,170 @@
 	}
     movingImageView=nil;
     movingTouchView=nil;    
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag;
+{
+    if (ingredientsRemained==0)
+    {
+        sfxPlateComeIn=[self startsfx:sfxPlateComeIn named:@"005_sonkas_mandala_thEnd"];
+        ingredientsRemained=-1;
+    }
+    
+}
+
+- (void)allInteractionFound;
+{
+    if (ingredientsRemained==0)
+    {
+        self.screen11MenuImageView.image=nil;
+        [self.screen11MenuImageView setImage:[UIImage imageNamed:@"menu_set-top-g.png"]];
+    }
+}
+
+- (IBAction)screen11MusicButtonTapped:(UITapGestureRecognizer *) sender;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [backgroundMusic setVolume:0.0];
+        [sfxPotGrowing1 setVolume:0.0];
+        [sfxPotGrowing2 setVolume:0.0];
+        [sfxPotGrowing3 setVolume:0.0];
+        [sfxPotGrowing4 setVolume:0.0];
+        [sfxPotGrowing5 setVolume:0.0];
+        [sfxPotGrowing6 setVolume:0.0];
+        [sfxPotGrowing7 setVolume:0.0];
+        [sfxIngredient1 setVolume:0.0];
+        [sfxIngredient2 setVolume:0.0];
+        [sfxIngredient3 setVolume:0.0];
+        [sfxIngredient4 setVolume:0.0];
+        [sfxIngredient5 setVolume:0.0];
+        [sfxIngredient6 setVolume:0.0];
+        [sfxIngredient7 setVolume:0.0];
+        [narration setVolume:0.0];
+        
+        viewContoller.musicIsOn=FALSE;
+    }
+    else
+    {
+        [backgroundMusic setVolume:1.0];
+        [sfxPotGrowing1 setVolume:1.0];
+        [sfxPotGrowing2 setVolume:1.0];
+        [sfxPotGrowing3 setVolume:1.0];
+        [sfxPotGrowing4 setVolume:1.0];
+        [sfxPotGrowing5 setVolume:1.0];
+        [sfxPotGrowing6 setVolume:1.0];
+        [sfxPotGrowing7 setVolume:1.0];
+        [sfxIngredient1 setVolume:1.0];
+        [sfxIngredient2 setVolume:1.0];
+        [sfxIngredient3 setVolume:1.0];
+        [sfxIngredient4 setVolume:1.0];
+        [sfxIngredient5 setVolume:1.0];
+        [sfxIngredient6 setVolume:1.0];
+        [sfxIngredient7 setVolume:1.0];
+        [narration setVolume:1.0];
+        
+        viewContoller.musicIsOn=TRUE;
+    }
+    viewContoller = nil;
+}
+
+-(void)startSfxForIngredient:(UIImageView *)ingredient;
+{
+    if (ingredient==screen11Ingredient01ImageView)
+    {
+        sfxIngredient1=[self startsfx:sfxIngredient1 named:@"005_nov1"];
+    }
+    if (ingredient==screen11Ingredient02ImageView)
+    {
+        sfxIngredient2=[self startsfx:sfxIngredient2 named:@"005_nov2"];
+    }
+    if (ingredient==screen11Ingredient03ImageView)
+    {
+        sfxIngredient3=[self startsfx:sfxIngredient3 named:@"005_nov3"];
+    }
+    if (ingredient==screen11Ingredient04ImageView)
+    {
+        sfxIngredient4=[self startsfx:sfxIngredient4 named:@"005_nov4"];
+    }
+    if (ingredient==screen11Ingredient05ImageView)
+    {
+        sfxIngredient5=[self startsfx:sfxIngredient5 named:@"005_nov5"];
+    }
+    if (ingredient==screen11Ingredient06ImageView)
+    {
+        sfxIngredient6=[self startsfx:sfxIngredient6 named:@"005_nov6"];
+    }
+    if (ingredient==screen11Ingredient07ImageView)
+    {
+        sfxIngredient7=[self startsfx:sfxIngredient7 named:@"005_nov7"];
+    }
+}
+
+-(void)startSfxForGrowing:(UIImageView *)ingredient;
+{
+    if (ingredient==screen11Ingredient01ImageView)
+    {
+        sfxPotGrowing1=[self startsfx:sfxPotGrowing1 named:@"005_edeny_novekszik_1OK"];
+    }
+    if (ingredient==screen11Ingredient02ImageView)
+    {
+        sfxPotGrowing2=[self startsfx:sfxPotGrowing2 named:@"005_edeny_novekszik_2OK"];
+    }
+    if (ingredient==screen11Ingredient03ImageView)
+    {
+        sfxPotGrowing3=[self startsfx:sfxPotGrowing3 named:@"005_edeny_novekszik_3OK"];
+    }
+    if (ingredient==screen11Ingredient04ImageView)
+    {
+        sfxPotGrowing4=[self startsfx:sfxPotGrowing4 named:@"005_edeny_novekszik_4OK"];
+    }
+    if (ingredient==screen11Ingredient05ImageView)
+    {
+        sfxPotGrowing5=[self startsfx:sfxPotGrowing5 named:@"005_edeny_novekszik_5OK"];
+    }
+    if (ingredient==screen11Ingredient06ImageView)
+    {
+        sfxPotGrowing6=[self startsfx:sfxPotGrowing6 named:@"005_edeny_novekszik_6OK"];
+    }
+    if (ingredient==screen11Ingredient07ImageView)
+    {
+        sfxPotGrowing7=[self startsfx:sfxPotGrowing7 named:@"005_edeny_novekszik_7OK"];
+    }
+}
+
+- (AVAudioPlayer *)startsfx:(AVAudioPlayer *)audioplayer named:(NSString *)sfxFileName;
+{
+    //set the SFX then start playing
+    if (audioplayer==nil)
+    {
+        NSString *audiplayerSFXPath = [[NSBundle mainBundle] pathForResource:sfxFileName ofType:@"mp3"];
+        audioplayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audiplayerSFXPath] error:NULL];
+        audioplayer.delegate = self;
+        [audioplayer setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        audiplayerSFXPath= nil;
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [audioplayer setVolume:1.0];
+    }
+    else
+    {
+        [audioplayer setVolume:0.0];
+    }
+    
+    if (![audioplayer isPlaying])
+    {
+        [audioplayer play];
+    }
+    
+    viewContoller=nil;
+    
+    return audioplayer;
 }
 
 -(void)setBackgroundColorForView;
@@ -395,6 +563,20 @@
 -(void)stopMusicAndSfx;
 {
     [backgroundMusic stop];
+    [sfxPotGrowing1 stop];
+    [sfxPotGrowing2 stop];
+    [sfxPotGrowing3 stop];
+    [sfxPotGrowing4 stop];
+    [sfxPotGrowing5 stop];
+    [sfxPotGrowing6 stop];
+    [sfxPotGrowing7 stop];
+    [sfxIngredient1 stop];
+    [sfxIngredient2 stop];
+    [sfxIngredient3 stop];
+    [sfxIngredient4 stop];
+    [sfxIngredient5 stop];
+    [sfxIngredient6 stop];
+    [sfxIngredient7 stop];
     [narration stop];
 }
 
@@ -425,9 +607,37 @@
     
     backgroundMusic.delegate=nil;
     narration.delegate=nil;
+    sfxPotGrowing1.delegate=nil;
+    sfxPotGrowing2.delegate=nil;
+    sfxPotGrowing3.delegate=nil;
+    sfxPotGrowing4.delegate=nil;
+    sfxPotGrowing5.delegate=nil;
+    sfxPotGrowing6.delegate=nil;
+    sfxPotGrowing7.delegate=nil;
+    sfxIngredient1.delegate=nil;
+    sfxIngredient2.delegate=nil;
+    sfxIngredient3.delegate=nil;
+    sfxIngredient4.delegate=nil;
+    sfxIngredient5.delegate=nil;
+    sfxIngredient6.delegate=nil;
+    sfxIngredient7.delegate=nil;
     
     backgroundMusic=nil;
     narration=nil;
+    sfxPotGrowing1=nil;
+    sfxPotGrowing2=nil;
+    sfxPotGrowing3=nil;
+    sfxPotGrowing4=nil;
+    sfxPotGrowing5=nil;
+    sfxPotGrowing6=nil;
+    sfxPotGrowing7=nil;
+    sfxIngredient1=nil;
+    sfxIngredient2=nil;
+    sfxIngredient3=nil;
+    sfxIngredient4=nil;
+    sfxIngredient5=nil;
+    sfxIngredient6=nil;
+    sfxIngredient7=nil;
     
     [self.view removeFromSuperview];
     self.view = nil;

@@ -45,11 +45,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "413168010.677656"
+            timestampString = "413250889.87906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
             landmarkName = "-bigMedusaSlowsDownAction"
             landmarkType = "5">
          </BreakpointContent>
@@ -96,11 +96,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "413168010.677656"
+            timestampString = "413250889.87906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "589"
-            endingLineNumber = "589"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "-bigMedusaSlowsDownAction"
             landmarkType = "5">
          </BreakpointContent>
@@ -113,11 +113,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/Screen12ViewController.m"
-            timestampString = "413168010.677656"
+            timestampString = "413250889.87906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "591"
-            endingLineNumber = "591"
+            startingLineNumber = "639"
+            endingLineNumber = "639"
             landmarkName = "-bigMedusaSlowsDownAction"
             landmarkType = "5">
          </BreakpointContent>
@@ -321,11 +321,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Screen11ViewController.m"
-            timestampString = "413167673.04183"
+            timestampString = "413248240.373996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "-touchesEnded:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -677,6 +677,22 @@
             startingLineNumber = "511"
             endingLineNumber = "511"
             landmarkName = "-startBackgroundMusic"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoE/Screen11ViewController.m"
+            timestampString = "413248240.373996"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "-audioPlayerDidFinishPlaying:successfully:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

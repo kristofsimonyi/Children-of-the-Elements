@@ -210,7 +210,11 @@
                 <action selector="screen11NarrationButtonTapped:" destination="-1" id="8y2-26-SWI"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="msn-MG-omc" userLabel="MusicButtonTap Gesture Recognizer"/>
+        <tapGestureRecognizer id="msn-MG-omc" userLabel="MusicButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen11MusicButtonTapped:" destination="-1" id="Owr-Ur-3fy"/>
+            </connections>
+        </tapGestureRecognizer>
         <tapGestureRecognizer id="HkT-HQ-Agb" userLabel="HintButtonTap Gesture Recognizer">
             <connections>
                 <action selector="screen11HintButtonTapped:" destination="-1" id="wxj-VL-05u"/>

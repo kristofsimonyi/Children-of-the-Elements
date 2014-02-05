@@ -218,7 +218,11 @@
                 <action selector="screen12NarrationButtonTapped:" destination="-1" id="w9y-RP-sn2"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="XnV-XG-mpI" userLabel="MusicButtonTap Gesture Recognizer"/>
+        <tapGestureRecognizer id="XnV-XG-mpI" userLabel="MusicButtonTap Gesture Recognizer">
+            <connections>
+                <action selector="screen12MusicButtonTapped:" destination="-1" id="N4z-Qf-ngp"/>
+            </connections>
+        </tapGestureRecognizer>
         <tapGestureRecognizer id="g8I-sW-g3B" userLabel="HintButtonTap Gesture Recognizer">
             <connections>
                 <action selector="screen12HintButtonTapped:" destination="-1" id="JCs-vq-ksR"/>

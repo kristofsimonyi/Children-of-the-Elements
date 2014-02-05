@@ -17,7 +17,7 @@
     CGPoint firstTranslatedPoint;
     NSInteger ingredientsRemained;
     
-    AVAudioPlayer *backgroundMusic, *narration;
+    AVAudioPlayer *backgroundMusic, *narration, *sfxPlateComeIn, *sfxIngredient1, *sfxIngredient2, *sfxIngredient3, *sfxIngredient4, *sfxIngredient5, *sfxIngredient6, *sfxIngredient7, *sfxPotGrowing1, *sfxPotGrowing2, *sfxPotGrowing3, *sfxPotGrowing4, *sfxPotGrowing5, *sfxPotGrowing6, *sfxPotGrowing7;
 }
 @property (nonatomic, weak) IBOutlet UIImageView *screen11CookingPotImageView, *screen11HintLayerImageView, *screen11MenuImageView;
 @property (nonatomic, weak) IBOutlet UIView *screen11Ingredient01TouchView, *screen11Ingredient02TouchView, *screen11Ingredient03TouchView, *screen11Ingredient04TouchView, *screen11Ingredient05TouchView, *screen11Ingredient06TouchView, *screen11Ingredient07TouchView;
@@ -30,5 +30,6 @@
 - (IBAction)screen11PreviousScreenButtonTouched:(id)sender;
 - (IBAction)screen11NarrationButtonTapped:(UITapGestureRecognizer *)sender;
 - (IBAction)screen11HintButtonTapped:(UITapGestureRecognizer *)sender;
+- (IBAction)screen11MusicButtonTapped:(UITapGestureRecognizer *) sender;
 
 @end

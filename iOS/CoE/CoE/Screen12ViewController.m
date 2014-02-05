@@ -566,19 +566,67 @@
 
 -(void)startBackgroundMusic;
 {
-    //set the Music for intro then start playing
+    //set the Music then start playing
 	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"006_melytenger" ofType:@"mp3"];
 	backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:backgroundMusicPath] error:NULL];
 	backgroundMusic.delegate = self;
 	[backgroundMusic setVolume:1.0];
 	[backgroundMusic setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
     [backgroundMusic play];
+    backgroundMusicPath=nil;
+
+    //set the Music then start playing
+	NSString *fishMusicPath = [[NSBundle mainBundle] pathForResource:@"006_halraj" ofType:@"mp3"];
+	sfxFishesMoving = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fishMusicPath] error:NULL];
+	sfxFishesMoving.delegate = self;
+	[sfxFishesMoving setVolume:1.0];
+	[sfxFishesMoving setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
+    [sfxFishesMoving play];
+    fishMusicPath=nil;
 }
 
 -(void)stopMusicAndSfx;
 {
     [backgroundMusic stop];
+    [sfxFishesMoving stop];
+    [sfxFishReached1 stop];
+    [sfxFishReached2 stop];
+    [sfxFishReached3 stop];
+    [sfxFishReached4 stop];
+    [sfxFishReached5 stop];
     [narration stop];
+}
+
+- (IBAction)screen12MusicButtonTapped:(UITapGestureRecognizer *) sender;
+{
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [backgroundMusic setVolume:0.0];
+        [sfxFishesMoving setVolume:0.0];
+        [sfxFishReached1 setVolume:0.0];
+        [sfxFishReached2 setVolume:0.0];
+        [sfxFishReached3 setVolume:0.0];
+        [sfxFishReached4 setVolume:0.0];
+        [sfxFishReached5 setVolume:0.0];
+        [narration setVolume:0.0];
+        
+        viewContoller.musicIsOn=FALSE;
+    }
+    else
+    {
+        [backgroundMusic setVolume:1.0];
+        [sfxFishesMoving setVolume:0.0];//volume is adjusted by the function screen12FishesMovingAction
+        [sfxFishReached1 setVolume:1.0];
+        [sfxFishReached2 setVolume:1.0];
+        [sfxFishReached3 setVolume:1.0];
+        [sfxFishReached4 setVolume:1.0];
+        [sfxFishReached5 setVolume:1.0];
+        [narration setVolume:1.0];
+        
+        viewContoller.musicIsOn=TRUE;
+    }
+    viewContoller = nil;
 }
 
 - (void) bigMedusaSlowsDownAction;
@@ -676,7 +724,6 @@
                              completion:nil];
         }
     }
-
 }
 
 - (void)screen12BigMedusaPulseAction;
@@ -1030,7 +1077,8 @@
         
         fish=nil;
     }
-
+    fish1Orig=[fishes1Array count];
+    fish2Orig=[fishes2Array count];
 }
 
 - (void) screen12FishesMovingAction:(id)sender ;
@@ -1097,11 +1145,25 @@
         }
         
     }
+
+    if (backgroundMusic.volume!=0)
+    {
+        CGFloat soundPercentage = (0.001+visibleFishes)/(0.0+fish1Orig+fish2Orig);
+        [sfxFishesMoving setVolume:soundPercentage];
+    }
+    
     [self screen12IsBigMedusaReachesFish];
     if (visibleFishes==0) {
         [fishesMovingTimer invalidate];
         [self screen12BackgroundMedusasComeIn];
+        [self allInteractionFound];
     }
+}
+
+- (void)allInteractionFound;
+{
+        self.screen12MenuImageView.image=nil;
+        [self.screen12MenuImageView setImage:[UIImage imageNamed:@"menu_set-top-g.png"]];
 }
 
 - (CGPoint)rotatePoint:(CGPoint)pointToRotate around:(CGPoint)center withDegree:(float)degree
@@ -1283,6 +1345,23 @@
     fishes2SpeedArray=nil;
     
     [self stopMusicAndSfx];
+    
+    [movingWavesTimer invalidate];
+    [bigMedusaAppearsTimer invalidate];
+    [bigMedusaPulseTimer invalidate];
+    [bigMedusaArmsMoveTimer invalidate];
+    [fishesMovingTimer invalidate];
+    [bigMedusaSlowsDownTimer invalidate];
+    [continuousKelpMovementTimer invalidate];
+
+    movingWavesTimer=nil;
+    bigMedusaAppearsTimer=nil;
+    bigMedusaPulseTimer=nil;
+    bigMedusaArmsMoveTimer=nil;
+    fishesMovingTimer=nil;
+    bigMedusaSlowsDownTimer=nil;
+    continuousKelpMovementTimer=nil;
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
