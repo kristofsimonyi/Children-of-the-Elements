@@ -1,35 +1,38 @@
 ".container": {
-	backgroundImage:'/home/background_home.png'
+	backgroundImage:'/home/background_home.png',
+	layout:"center"
 },
 "#north":{
 	width: 250,
 	height: 250,
 	backgroundImage:'/home/home_planet_north.png',
-	top:-130,
+
 	transform: Alloy.Globals.rotateTop,
 	
 	
 },
+"#south":{
+	width: 250,
+	height: 250,
+	backgroundImage:'/home/home_planet_south.png',
+
+
+},
+
+
 "#east":{
 	width: 250,
 	height: 250,
 	backgroundImage:'/home/home_planet_east.png',
-	left:-100,
+
 	transform: Alloy.Globals.rotateRight
 }
 "#west":{
 	width: 250,
 	height: 250,
 	backgroundImage:'/home/home_planet_west.png',
-	right:-100,
-	transform: Alloy.Globals.rotateLeft,
-},
-"#south":{
-	width: 250,
-	height: 250,
-	backgroundImage:'/home/home_planet_south.png',
-	bottom:-100
 
-},
+	transform: Alloy.Globals.rotateLeft,
+}
 
 
