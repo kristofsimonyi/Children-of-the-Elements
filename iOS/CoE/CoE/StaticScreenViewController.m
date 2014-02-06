@@ -482,7 +482,6 @@
     [staticTextView removeFromSuperview];
 
     Screen10MenuImageView.image=nil;
-    Screen10MenuImageView.image=nil;
     Screen10BackgroundImageView.image=nil;
     Screen10DuneImageView.image=nil;
     Screen10SmallShipImageView.image=nil;

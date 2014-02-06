@@ -204,6 +204,39 @@
     return self;
 }
 
+- (AVAudioPlayer *)startsfx:(AVAudioPlayer *)audioplayer named:(NSString *)sfxFileName;
+{
+    //set the SFX then start playing
+    if (audioplayer==nil)
+    {
+        NSString *audiplayerSFXPath = [[NSBundle mainBundle] pathForResource:sfxFileName ofType:@"mp3"];
+        audioplayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audiplayerSFXPath] error:NULL];
+        audioplayer.delegate = self;
+        [audioplayer setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        audiplayerSFXPath= nil;
+    }
+    
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        [audioplayer setVolume:1.0];
+    }
+    else
+    {
+        [audioplayer setVolume:0.0];
+    }
+    
+    if (![audioplayer isPlaying])
+    {
+        [audioplayer play];
+    }
+    
+    viewContoller=nil;
+    
+    return audioplayer;
+}
+
 /*
 - (void) textAppear;
 {
@@ -331,6 +364,8 @@
 
     if (CGRectContainsPoint(screen12BigMedusaImageView.frame, translatedPoint)) 
     {
+        sfxMedusaPulsing=[self startsfx:sfxMedusaPulsing named:@"006_pulzalo"];
+        
         isBigMedusaMoving = true;
         if (![bigMedusaPulseTimer isValid]) 
         {
@@ -562,6 +597,7 @@
     isBigMedusaPulse = false;                
     isBigMedusaMoving = false;
 
+    [sfxMedusaPulsing stop];
 }
 
 -(void)startBackgroundMusic;
@@ -594,6 +630,18 @@
     [sfxFishReached3 stop];
     [sfxFishReached4 stop];
     [sfxFishReached5 stop];
+    [sfxMedusaPulsing stop];
+
+    for (AVAudioPlayer *sfxMedusaReachesFish in sfxMedusaReachesFishArray)
+    {
+        [sfxMedusaReachesFish stop];
+    }
+
+    for (AVAudioPlayer *sfxMedusaComeIn in sfxMedusasComeInArray)
+    {
+        [sfxMedusaComeIn stop];
+    }
+
     [narration stop];
 }
 
@@ -609,6 +657,15 @@
         [sfxFishReached3 setVolume:0.0];
         [sfxFishReached4 setVolume:0.0];
         [sfxFishReached5 setVolume:0.0];
+        [sfxMedusaPulsing setVolume:0.0];
+        for (AVAudioPlayer *sfxMedusaReachesFish in sfxMedusaReachesFishArray)
+        {
+            [sfxMedusaReachesFish setVolume:0.0];
+        }
+        for (AVAudioPlayer *sfxMedusaComeIn in sfxMedusasComeInArray)
+        {
+            [sfxMedusaComeIn setVolume:0.0];
+        }
         [narration setVolume:0.0];
         
         viewContoller.musicIsOn=FALSE;
@@ -622,6 +679,15 @@
         [sfxFishReached3 setVolume:1.0];
         [sfxFishReached4 setVolume:1.0];
         [sfxFishReached5 setVolume:1.0];
+        [sfxMedusaPulsing setVolume:1.0];
+        for (AVAudioPlayer *sfxMedusaReachesFish in sfxMedusaReachesFishArray)
+        {
+            [sfxMedusaReachesFish setVolume:1.0];
+        }
+        for (AVAudioPlayer *sfxMedusaComeIn in sfxMedusasComeInArray)
+        {
+            [sfxMedusaComeIn setVolume:1.0];
+        }
         [narration setVolume:1.0];
         
         viewContoller.musicIsOn=TRUE;
@@ -650,6 +716,27 @@
             }
         }
     }
+    
+    if ([timingOfMedusasArray count]!=0)
+    {
+        for (int i=[timingOfMedusasArray count]-1; i>-1; i--)
+        {
+            if ([[timingOfMedusasArray objectAtIndex:i] integerValue]<medusasComeInClock)
+            {
+                [timingOfMedusasArray removeObjectAtIndex:i];
+            }
+        }
+    }
+    if ([sfxMedusasComeInArray count] != 0)
+    {
+        for (int i=[sfxMedusasComeInArray count]-1; i>-1; i--)
+        {
+            if (![[sfxMedusasComeInArray objectAtIndex:i] isPlaying])
+            {
+                [sfxMedusasComeInArray removeObjectAtIndex:i];
+            }
+        }
+    }
 }
 
 - (void) screen12IsBigMedusaReachesFish;
@@ -663,7 +750,36 @@
     while (obj = [enumerator nextObject]) 
     {
         fish = obj;
-        if (CGRectIntersectsRect(fish.frame, screen12BigMedusaImageView.frame)==1) {
+        if (CGRectIntersectsRect(fish.frame, screen12BigMedusaImageView.frame)==1)
+        {
+            AVAudioPlayer *sfxMedusaReachesFish;
+            switch (arc4random()%5)
+            {
+                case 0:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal1"];
+                    break;
+                    
+                case 1:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal2"];
+                    break;
+                    
+                case 2:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal3"];
+                    break;
+                    
+                case 3:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal4"];
+                    break;
+                    
+                case 4:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal5"];
+                    break;
+                    
+                default:
+                    break;
+            }
+            [sfxMedusaReachesFishArray addObject:sfxMedusaReachesFish];
+            
             fishNewX = fish.center.x+(fish.center.x-screen12BigMedusaImageView.center.x)*2;
             fishNewY = fish.center.y+(fish.center.y-screen12BigMedusaImageView.center.y)*2;
             fishEscapeRotation = atanf((fish.center.y-fishNewY)/(fish.center.x-fishNewX));
@@ -696,7 +812,36 @@
     while (obj = [enumerator nextObject]) 
     {
         fish = obj;
-        if (CGRectIntersectsRect(fish.frame, screen12BigMedusaImageView.frame)==1) {
+        if (CGRectIntersectsRect(fish.frame, screen12BigMedusaImageView.frame)==1)
+        {
+            AVAudioPlayer *sfxMedusaReachesFish;
+            switch (arc4random()%5)
+            {
+                case 0:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal1"];
+                    break;
+                    
+                case 1:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal2"];
+                    break;
+                    
+                case 2:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal3"];
+                    break;
+                    
+                case 3:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal4"];
+                    break;
+                    
+                case 4:
+                    sfxMedusaReachesFish=[self startsfx:sfxMedusaReachesFish named:@"006_hal5"];
+                    break;
+                    
+                default:
+                    break;
+            }
+            [sfxMedusaReachesFishArray addObject:sfxMedusaReachesFish];
+
             fishNewX = fish.center.x+(fish.center.x-screen12BigMedusaImageView.center.x)*2;
             fishNewY = fish.center.y+(fish.center.y-screen12BigMedusaImageView.center.y)*2;
             fishEscapeRotation = atanf((fish.center.y-fishNewY)/(fish.center.x-fishNewX));
@@ -1158,6 +1303,7 @@
         [self screen12BackgroundMedusasComeIn];
         [self allInteractionFound];
     }
+    
 }
 
 - (void)allInteractionFound;
@@ -1187,10 +1333,33 @@
     [screen12BackgroundMedusa8ImageView setCenter:CGPointMake(600, -100)];
 }
 
+- (void)screen12BackgroundMedusasComeInAction;
+{
+    medusasComeInClock++;
+    
+    for (NSNumber *number in timingOfMedusasArray)
+    {
+        int delay=[number integerValue];
+        if (medusasComeInClock==delay)
+        {
+            AVAudioPlayer *sfxMedusaComeIn=[self startsfx:nil named:@"006_jellyfishappear"];
+            [sfxMedusaReachesFishArray addObject:sfxMedusaComeIn];
+        }
+    }
+    if (medusasComeInClock>1100)
+    {
+        [medusasComeInTimer invalidate];
+    }
+}
+
 - (void)screen12BackgroundMedusasComeIn;
 {
+    int delay;
+    
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
@@ -1198,8 +1367,10 @@
      }
                      completion:nil];
 
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
@@ -1207,8 +1378,10 @@
      }
                      completion:nil];
 
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
@@ -1216,8 +1389,10 @@
      }
                      completion:nil];
     
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
@@ -1225,8 +1400,10 @@
      }
                      completion:nil];
     
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
@@ -1234,8 +1411,10 @@
      }
                      completion:nil];
     
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
@@ -1243,8 +1422,10 @@
      }
                      completion:nil];
     
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
@@ -1252,14 +1433,20 @@
      }
                      completion:nil];
     
+    delay=1+arc4random()%10;
+    [timingOfMedusasArray addObject:[NSNumber numberWithInteger:100*delay]];
     [UIView animateWithDuration: 5.00
-                          delay: 1+arc4random()%10
+                          delay: delay
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^
      {
          [screen12BackgroundMedusa8ImageView setCenter:CGPointMake(512, 374)];
      }
                      completion:nil];
+    
+    medusasComeInTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(screen12BackgroundMedusasComeInAction) userInfo:nil repeats:YES];
+    medusasComeInClock=0;
+	[medusasComeInTimer fire];
     
 
 }
@@ -1285,6 +1472,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
+    sfxMedusaReachesFishArray=[[NSMutableArray alloc] init];
+    sfxMedusasComeInArray=[[NSMutableArray alloc] init];
+    timingOfMedusasArray=[[NSMutableArray alloc] init];
+    
     movingWavesTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(movingWavesAction) userInfo:nil repeats:YES];
     movingWavesClock=0;
 	[movingWavesTimer fire];
@@ -1338,11 +1529,15 @@
     [fishes2Array removeAllObjects];
     [fishes1SpeedArray removeAllObjects];
     [fishes2SpeedArray removeAllObjects];
-    
+    [sfxMedusaReachesFishArray removeAllObjects];
+    [sfxMedusasComeInArray removeAllObjects];
+
     fishes1Array=nil;
     fishes2Array=nil;
     fishes1SpeedArray=nil;
     fishes2SpeedArray=nil;
+    sfxMedusaReachesFishArray=nil;
+    sfxMedusasComeInArray=nil;
     
     [self stopMusicAndSfx];
     
@@ -1361,7 +1556,7 @@
     fishesMovingTimer=nil;
     bigMedusaSlowsDownTimer=nil;
     continuousKelpMovementTimer=nil;
-
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
