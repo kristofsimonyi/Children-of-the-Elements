@@ -1,7 +1,18 @@
 ".container": {
-	backgroundColor:"#ffffff",
+	backgroundImage:'/home/background_home.png',
 	layout:"center"
 },
-"#label":{
-	color:"#000000",
+"#planetImage":{
+	top: '80%',
+	left: '10', 
+	width:250,
+	height:250,
+	transform: Alloy.Globals.rotateInterno,
+	backgroundImage:'/home/home_planet_north.png',
+
+},
+"Label":{
+	color:"#ffffff",
 }
+
+

@@ -6,7 +6,8 @@ function doClick(e) {
 
 
 var player;
-var _flagPlanetIsMoving;
+var _flagPlanetIsMoving = false;
+var controlActivePlanet;
 
 
 
@@ -28,23 +29,25 @@ function stopLoopAudio(){
 // handle tap events on planets
 function onSelectPlanet(e){
 	
+	
 
 	if(!_flagPlanetIsMoving){
 			
-			_flagPlanetIsMoving = true;
+			
 			
 			/// this only runs when the planet is active
 			if( e.source.activePlanet == true){
 				//showPlanets(e); 
 				openBookshelf(e.source);
-				e.source.activePlanet = false;
+				//e.source.activePlanet = false;
 			}else{
 				
 				hidePlanets(e);	
 			}
 			
+			_flagPlanetIsMoving = true;
 			
-			e.source.activePlanet = !e.source.activePlanet;
+			
 
 			/// rise flag, planet is moving *see PositionMainPlanet()
 			
@@ -54,31 +57,42 @@ function onSelectPlanet(e){
 /// manage the planets animation onscreen
 function hidePlanets(e){
 
-
-	positionMainPlanet(e.source);
-
-	/// now move other planets off the screen
 	
 	var selectedElement = e.source.id.toString();
+	
+	if(controlActivePlanet){
+		controlPlanetID = controlActivePlanet.id.toString();
+	} else{
+		controlPlanetID  = "none";
+	}
+	
+	if(controlPlanetID  != selectedElement  ){
+		
+		
+			positionMainPlanet(e.source);	
+			/// now move other planets off the screen
+			
 
-	if ($.index.children) {
-
-		// loop across screen elements 
-		for (var c = 0; c < $.index.children.length ; c++) {
-
-			// object cache
-			var currentItem = $.index.children[c];
-
-			//retrieve info from object
-			var itemID = currentItem.id.toString();
-
-			/// check is not the active planet     
-			if( itemID != selectedElement  ){
-				positionSecondaryPlanet(currentItem);  		 
+			if ($.index.children) {
+		
+				// loop across screen elements 
+				for (var c = 0; c < $.index.children.length ; c++) {
+		
+					// object cache
+					var currentItem = $.index.children[c];
+		
+					//retrieve info from object
+					var itemID = currentItem.id.toString();
+		
+					/// check is not the active planet     
+					if( itemID != selectedElement  ){
+						positionSecondaryPlanet(currentItem);  		 
+					}
+		
+				}
+		
 			}
-
-		}
-
+		
 	}
 }
 
@@ -118,7 +132,7 @@ function positionSecondaryPlanet(_target){
 	}
 	
 	if(_target.preferedBottomPosition){
-		planetAnimation.bottom = _target.preferedBottomPosition.toString();
+		planetAnimation.bottom = _target.preferedBottomPosition;
 	}
 	
 	if(_target.preferedRightPosition){
@@ -134,6 +148,7 @@ function positionSecondaryPlanet(_target){
 /// handle the main planet position
 function positionMainPlanet(_target){
 
+	controlActivePlanet = _target;
 
 	var matrix = Ti.UI.create2DMatrix();
 		matrix = matrix.rotate(0);
@@ -155,8 +170,15 @@ function positionMainPlanet(_target){
 	animation.addEventListener('complete',animationHandler);
 	
 	function animationHandler() {
+		
+		var wait = setTimeout(function(){
+			
 			_flagPlanetIsMoving = false;
 			_target.activePlanet = true;
+			
+			
+		}, 200);
+			
 	};
 }
 
@@ -174,9 +196,32 @@ function alignPlanets(){
 
 	/// store position values
 	$.north.preferedTopPosition 	= -($.north.height / 3) *2;
-	$.south.preferedBottomPosition 	= -($.south.height / 3) *2;
 	$.east.preferedLeftPosition 	= -($.east.width / 3) *2;
-	$.west.preferedRightPosition 	= -($.west.width / 3) *2;
+	
+	  
+	
+	
+	
+	
+	
+	
+	
+	
+	/// due conflicts with screen measures
+	//// Open the next page
+				if(Ti.Platform.name == 'android'){
+					$.south.preferedBottomPosition 	= -($.south.height / 3) *2;
+					$.west.preferedRightPosition 	= -($.west.width / 3) *2;
+				
+				}else if(Ti.Platform.name == 'iPhone OS'){
+					
+					$.south.preferedTopPosition 	= (Titanium.Platform.displayCaps.platformHeight - ( ( $.south.height / 3) *1) ) ;
+					
+					$.west.preferedLeftPosition 	= (Titanium.Platform.displayCaps.platformWidth - ( ( $.south.width / 3) *1) ) ;
+					
+				}
+	
+	
 	
 
 }
@@ -195,6 +240,7 @@ function  openBookshelf(_target){
 
  	/// clean memory
 
+	
  	// reset elements
  	currentID = _target.id.toString();
  	var seleccionado  = _target;
@@ -205,8 +251,9 @@ function  openBookshelf(_target){
 		//// transition to next page
 
 		//// hide other planets
+		cleanUp("hide");
 
-
+	
 		/// zoom current planet
 		var xPosition = Titanium.Platform.displayCaps.platformWidth - 100;
 		var matrix = Ti.UI.create2DMatrix();
@@ -224,21 +271,28 @@ function  openBookshelf(_target){
 		});
 
 		
-		_target.animate(animationFinal);
 		
-		cleanUp("hide", _target);
+		//// wait for other planets are hidden (TODO attach this to a listener)
+		var planetDelayedAnimation = setTimeout( function(){
+			_target.animate(animationFinal);
+			animationFinal.addEventListener('complete',animationHandlerOpenBookshelf);	
+		}, 400);
+		
+		
 
 		
 
 		
 		
-		var bookshelfx = Alloy.createController('bookshelf', {currentItem: _target}).getView();
 		
-		animationFinal.addEventListener('complete',animationHandler);
 		
-		function animationHandler() {
+		
+		
+		function animationHandlerOpenBookshelf() {
 				//_flagPlanetIsMoving = false;
 				//positionMainPlanet(_target)
+				
+				var bookshelfx = Alloy.createController('bookshelf', {currentItem: _target, prev:$.index}).getView();
 				
 				
 				//// Open the next page
@@ -247,8 +301,9 @@ function  openBookshelf(_target){
 					bookshelfx.open({
 						fullscreen:true,
 						navBarHidden : true,
+						modal: true,
 						activityEnterAnimation: Ti.Android.R.anim.fade_in,
-	    				activityExitAnimation: Ti.Android.R.anim.fade_out
+    					activityExitAnimation: Ti.Android.R.anim.fade_out
 					});
 				
 				}else if(Ti.Platform.name == 'iPhone OS')
@@ -264,15 +319,18 @@ function  openBookshelf(_target){
 				///listen when the window us back
 				$.index.addEventListener('focus', function(e){
 					
-					//$.index.removeEventListener('focus');
+					$.index.removeEventListener('focus', function(){});
+					cleanUp("show");
 					
-					cleanUp("show", _target);
+					///after proces are done, enable this view
+					_flagPlanetIsMoving = true;
+					
+					
 					
 				});
 				
 				
-				///after proces are done, enable this view
-				_flagPlanetIsMoving = false;
+				
 		};
 		
 
@@ -285,11 +343,15 @@ function  openBookshelf(_target){
 
 
 /// clean the mess
-function cleanUp(_action, _target){
+function cleanUp(_action){
 
 	var clipsVisible = (_action=="show")? 1:0;
 	 
-
+	var animation = Titanium.UI.createAnimation({
+						opacity: clipsVisible,
+						curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+						duration: 400
+					});
 	// hide/show other planets
 	if ($.index.children) {
 
@@ -300,18 +362,14 @@ function cleanUp(_action, _target){
 			var currentItem = $.index.children[c];
 
 				//currentItem.activePlanet = false;
-				
+				 
 				if(currentItem.activePlanet != true){
 
-					var animation = Titanium.UI.createAnimation({
-						opacity: clipsVisible,
-						curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
-						duration: 1000
-					});
+					
 					currentItem.animate(animation);
 
 				}
-
+				 
 
 		}
 
@@ -320,13 +378,10 @@ function cleanUp(_action, _target){
 	//send main planets
 	if(_action == "show"){
 
-		positionMainPlanet(_target);
+		positionMainPlanet(controlActivePlanet);
 
 	}
 }
-
-
-
 
 
 alignPlanets();
@@ -336,7 +391,6 @@ alignPlanets();
 $.index.open({
 	fullscreen:true,
 	navBarHidden : true,
-	exitOnClose : true
+	exitOnClose : false
 });
-
-Ti.API.info("width 2: " + Titanium.Platform.displayCaps.platformHeight);
+ 

@@ -1,6 +1,11 @@
 <Alloy>
-	<Window class="container"> 
-		<Label id="inicio"></Label>
+	<Window class="container" onOpen="playLoopAudio" onClose="stopLoopAudio"> 
+		
+		<View backgroundColor="#000000" opacity="0.6" width="50%" height="40%" top="15%" right="5%" borderRadius="10"></View>
+			<Label id="inicio" top="18%" left="46%" width="40%">Legend of the north</Label>
+			<Label id="texto"  top="25%" left="46%" width="40%"> Lorem Ipsum</Label>
+			
+		
 		<View id="planetImage"></View>
 	</Window>
 </Alloy>

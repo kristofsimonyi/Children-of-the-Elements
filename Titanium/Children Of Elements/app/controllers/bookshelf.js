@@ -1,44 +1,52 @@
 var args = arguments[0] || {};
 // $.label.text = args.foobar;
-var currentItem = args.currentItem
+var currentItem = args.currentItem;
 
 
 function init(){
 
 	$.inicio.text = args.currentItem.id;
+	$.texto.text = "This is a placeholder for the  >" + args.currentItem.id.toUpperCase() + "< planet. There is no layout yet...use your imagination in here :)  ";
 
-	setPlanetPosition()
+	setPlanet();
 
 }
 
 
-function setPlanetPosition(){
+function setPlanet(){
 
 
+		//$.planetImage.animate(animationFinal);
+		var object = $.planetImage;
+		var argsObj = args.currentItem;
+		
+		object.backgroundImage = argsObj.backgroundImage;
 
-	/// zoom current planet
-		var xPosition = Titanium.Platform.displayCaps.platformWidth - 100;
-		var matrix = Ti.UI.create2DMatrix();
-			matrix = matrix.rotate(-45);
-			matrix = matrix.scale(3, 3);
+		
 
+}
+
+
+/// play sound on load
+function playLoopAudio(){
 	
+	player = Ti.Media.createSound({url:"/audio/storyOfTheSea.mp3", looping:true});
+	player.looping = true; 
+	player.play();	
+}
 
-		var animationFinal = Titanium.UI.createAnimation({
-			top: '80%',
-			left: '10', 
-			transform: matrix,
-			curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
-			duration: 1000
-		});
+function stopLoopAudio(){
 
-		
-		$.planetImage.animate(animationFinal);
-		
-
+	player.stop();
+	
 }
 
 
 
 init();
 
+
+
+///cancelar el back
+
+ 

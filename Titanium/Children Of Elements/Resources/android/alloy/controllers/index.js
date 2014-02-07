@@ -12,21 +12,20 @@ function Controller() {
     }
     function onSelectPlanet(e) {
         if (!_flagPlanetIsMoving) {
+            true == e.source.activePlanet ? openBookshelf(e.source) : hidePlanets(e);
             _flagPlanetIsMoving = true;
-            if (true == e.source.activePlanet) {
-                openBookshelf(e.source);
-                e.source.activePlanet = false;
-            } else hidePlanets(e);
-            e.source.activePlanet = !e.source.activePlanet;
         }
     }
     function hidePlanets(e) {
-        positionMainPlanet(e.source);
         var selectedElement = e.source.id.toString();
-        if ($.index.children) for (var c = 0; $.index.children.length > c; c++) {
-            var currentItem = $.index.children[c];
-            var itemID = currentItem.id.toString();
-            itemID != selectedElement && positionSecondaryPlanet(currentItem);
+        controlPlanetID = controlActivePlanet ? controlActivePlanet.id.toString() : "none";
+        if (controlPlanetID != selectedElement) {
+            positionMainPlanet(e.source);
+            if ($.index.children) for (var c = 0; $.index.children.length > c; c++) {
+                var currentItem = $.index.children[c];
+                var itemID = currentItem.id.toString();
+                itemID != selectedElement && positionSecondaryPlanet(currentItem);
+            }
         }
     }
     function positionSecondaryPlanet(_target) {
@@ -43,15 +42,18 @@ function Controller() {
         });
         _target.preferedTopPosition && (planetAnimation.top = _target.preferedTopPosition.toString());
         _target.preferedLeftPosition && (planetAnimation.left = _target.preferedLeftPosition.toString());
-        _target.preferedBottomPosition && (planetAnimation.bottom = _target.preferedBottomPosition.toString());
+        _target.preferedBottomPosition && (planetAnimation.bottom = _target.preferedBottomPosition);
         _target.preferedRightPosition && (planetAnimation.right = _target.preferedRightPosition.toString());
         currentItem.animate(planetAnimation);
     }
     function positionMainPlanet(_target) {
         function animationHandler() {
-            _flagPlanetIsMoving = false;
-            _target.activePlanet = true;
+            setTimeout(function() {
+                _flagPlanetIsMoving = false;
+                _target.activePlanet = true;
+            }, 200);
         }
+        controlActivePlanet = _target;
         var matrix = Ti.UI.create2DMatrix();
         matrix = matrix.rotate(0);
         matrix = matrix.scale(2, 2);
@@ -71,24 +73,31 @@ function Controller() {
         $.east.left = -($.east.width / 3);
         $.west.right = -($.west.width / 3);
         $.north.preferedTopPosition = 2 * -($.north.height / 3);
-        $.south.preferedBottomPosition = 2 * -($.south.height / 3);
         $.east.preferedLeftPosition = 2 * -($.east.width / 3);
+        $.south.preferedBottomPosition = 2 * -($.south.height / 3);
         $.west.preferedRightPosition = 2 * -($.west.width / 3);
     }
     function openBookshelf(_target) {
-        function animationHandler() {
+        function animationHandlerOpenBookshelf() {
+            var bookshelfx = Alloy.createController("bookshelf", {
+                currentItem: _target,
+                prev: $.index
+            }).getView();
             bookshelfx.open({
                 fullscreen: true,
                 navBarHidden: true,
+                modal: true,
                 activityEnterAnimation: Ti.Android.R.anim.fade_in,
                 activityExitAnimation: Ti.Android.R.anim.fade_out
             });
             $.index.addEventListener("focus", function() {
-                cleanUp("show", _target);
+                $.index.removeEventListener("focus", function() {});
+                cleanUp("show");
+                _flagPlanetIsMoving = true;
             });
-            _flagPlanetIsMoving = false;
         }
         currentID = _target.id.toString();
+        cleanUp("hide");
         Titanium.Platform.displayCaps.platformWidth - 100;
         var matrix = Ti.UI.create2DMatrix();
         matrix = matrix.rotate(-45);
@@ -100,27 +109,23 @@ function Controller() {
             curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
             duration: 500
         });
-        _target.animate(animationFinal);
-        cleanUp("hide", _target);
-        var bookshelfx = Alloy.createController("bookshelf", {
-            currentItem: _target
-        }).getView();
-        animationFinal.addEventListener("complete", animationHandler);
+        setTimeout(function() {
+            _target.animate(animationFinal);
+            animationFinal.addEventListener("complete", animationHandlerOpenBookshelf);
+        }, 400);
     }
-    function cleanUp(_action, _target) {
+    function cleanUp(_action) {
         var clipsVisible = "show" == _action ? 1 : 0;
+        var animation = Titanium.UI.createAnimation({
+            opacity: clipsVisible,
+            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+            duration: 400
+        });
         if ($.index.children) for (var c = 0; $.index.children.length > c; c++) {
             var currentItem = $.index.children[c];
-            if (true != currentItem.activePlanet) {
-                var animation = Titanium.UI.createAnimation({
-                    opacity: clipsVisible,
-                    curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
-                    duration: 1e3
-                });
-                currentItem.animate(animation);
-            }
+            true != currentItem.activePlanet && currentItem.animate(animation);
         }
-        "show" == _action && positionMainPlanet(_target);
+        "show" == _action && positionMainPlanet(controlActivePlanet);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -180,14 +185,14 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     var player;
-    var _flagPlanetIsMoving;
+    var _flagPlanetIsMoving = false;
+    var controlActivePlanet;
     alignPlanets();
     $.index.open({
         fullscreen: true,
         navBarHidden: true,
-        exitOnClose: true
+        exitOnClose: false
     });
-    Ti.API.info("width 2: " + Titanium.Platform.displayCaps.platformHeight);
     __defers["$.__views.index!open!playLoopAudio"] && $.__views.index.addEventListener("open", playLoopAudio);
     __defers["$.__views.index!close!stopLoopAudio"] && $.__views.index.addEventListener("close", stopLoopAudio);
     __defers["$.__views.north!click!onSelectPlanet"] && $.__views.north.addEventListener("click", onSelectPlanet);
