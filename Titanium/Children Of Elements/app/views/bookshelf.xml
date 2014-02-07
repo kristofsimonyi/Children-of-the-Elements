@@ -1,5 +1,6 @@
 <Alloy>
 	<Window class="container"> 
 		<Label id="inicio"></Label>
+		<View id="planetImage"></View>
 	</Window>
 </Alloy>

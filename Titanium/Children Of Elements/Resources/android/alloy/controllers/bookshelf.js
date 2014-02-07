@@ -3,7 +3,14 @@ function Controller() {
         $.inicio.text = args.currentItem.id;
         setPlanetPosition();
     }
-    function setPlanetPosition() {}
+    function setPlanetPosition() {
+        $.planetImage.top = args.currentItem.top;
+        $.planetImage.left = args.currentItem.left;
+        $.planetImage.transform = args.currentItem.transform;
+        $.planetImage.width = args.currentItem.width;
+        $.planetImage.height = args.currentItem.height;
+        $.planetImage.backgroundImage = args.currentItem.backgroundImage;
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "bookshelf";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -21,6 +28,10 @@ function Controller() {
         id: "inicio"
     });
     $.__views.bookshelf.add($.__views.inicio);
+    $.__views.planetImage = Ti.UI.createView({
+        id: "planetImage"
+    });
+    $.__views.bookshelf.add($.__views.planetImage);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};

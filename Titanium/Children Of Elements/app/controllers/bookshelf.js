@@ -13,6 +13,13 @@ function init(){
 
 
 function setPlanetPosition(){
+
+	$.planetImage.top = args.currentItem.top;
+	$.planetImage.left = args.currentItem.left;
+	$.planetImage.transform = args.currentItem.transform;
+	$.planetImage.width = args.currentItem.width;
+	$.planetImage.height = args.currentItem.height;
+	$.planetImage.backgroundImage = args.currentItem.backgroundImage;
 	
 }
 
