@@ -31,13 +31,15 @@ function onSelectPlanet(e){
 
 	if(!_flagPlanetIsMoving){
 			
+			_flagPlanetIsMoving = true;
+			
 			/// this only runs when the planet is active
 			if( e.source.activePlanet == true){
 				//showPlanets(e); 
 				openBookshelf(e.source);
 				e.source.activePlanet = false;
 			}else{
-				_flagPlanetIsMoving = true;
+				
 				hidePlanets(e);	
 			}
 			
@@ -103,15 +105,27 @@ function positionSecondaryPlanet(_target){
 		transform:matrix,
 		curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
 		duration:600
-	})
-
+	});
+	
+	
+	/// set planet on it's default position
 	if(_target.preferedTopPosition){
-		planetAnimation.top = _target.preferedTopPosition.toString() 
+		planetAnimation.top = _target.preferedTopPosition.toString();
 	}
 
 	if(_target.preferedLeftPosition){
-		planetAnimation.left = _target.preferedLeftPosition.toString() 
+		planetAnimation.left = _target.preferedLeftPosition.toString();
 	}
+	
+	if(_target.preferedBottomPosition){
+		planetAnimation.bottom = _target.preferedBottomPosition.toString();
+	}
+	
+	if(_target.preferedRightPosition){
+		planetAnimation.right = _target.preferedRightPosition.toString();
+	}
+	
+	
 	
 
 	currentItem.animate(planetAnimation);
@@ -149,19 +163,22 @@ function positionMainPlanet(_target){
 /// align all planets to the orignal position settings (based on current screen size)
 function alignPlanets(){
 
+
 	/// place the planets
-	$.north.top = - ( ($.north.height / 3)*1 );
-	$.south.top = ( Titanium.Platform.displayCaps.platformHeight - (($.south.height / 3) *2));
-	$.east.left = - ( ($.east.width / 3)*1 );
-	$.west.left = ( Titanium.Platform.displayCaps.platformWidth - (($.west.width / 3) *2 ) );
+	$.north.top 	= -($.north.height / 3)  ;
+	$.south.bottom 	= -($.south.height / 3) ;
+	$.east.left 	= -($.east.width / 3)  ;
+	$.west.right 	= -($.west.width / 3) ;
 
 
 
 	/// store position values
-	$.north.preferedTopPosition = - ( ($.north.height / 3)*2 );
-	$.south.preferedTopPosition = ( Titanium.Platform.displayCaps.platformHeight - ($.south.height / 3) );
-	$.east.preferedLeftPosition = - ( ($.east.width / 3)*2 );
-	$.west.preferedLeftPosition = ( Titanium.Platform.displayCaps.platformWidth - ($.west.width / 3) );
+	$.north.preferedTopPosition 	= -($.north.height / 3) *2;
+	$.south.preferedBottomPosition 	= -($.south.height / 3) *2;
+	$.east.preferedLeftPosition 	= -($.east.width / 3) *2;
+	$.west.preferedRightPosition 	= -($.west.width / 3) *2;
+	
+
 }
 
 
@@ -203,7 +220,7 @@ function  openBookshelf(_target){
 			left: '10', 
 			transform: matrix,
 			curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
-			duration: 1000
+			duration: 500
 		});
 
 		
@@ -222,7 +239,9 @@ function  openBookshelf(_target){
 		function animationHandler() {
 				//_flagPlanetIsMoving = false;
 				//positionMainPlanet(_target)
-
+				
+				
+				//// Open the next page
 				if(Ti.Platform.name == 'android'){
 					
 					bookshelfx.open({
@@ -232,20 +251,28 @@ function  openBookshelf(_target){
 	    				activityExitAnimation: Ti.Android.R.anim.fade_out
 					});
 				
-				}else if(Ti.Platform.name == 'iPhone OS'){
+				}else if(Ti.Platform.name == 'iPhone OS')
+				{
+						
+						bookshelfx.open({
+							fullscreen:true,
+							navBarHidden : true
+						});
 					
-					bookshelfx.open({
-						fullscreen:true,
-						navBarHidden : true
-					});
+					}
 				
-				}
-				
-				//$.index.close();
-
+				///listen when the window us back
 				$.index.addEventListener('focus', function(e){
+					
+					//$.index.removeEventListener('focus');
+					
 					cleanUp("show", _target);
+					
 				});
+				
+				
+				///after proces are done, enable this view
+				_flagPlanetIsMoving = false;
 		};
 		
 
@@ -311,3 +338,5 @@ $.index.open({
 	navBarHidden : true,
 	exitOnClose : true
 });
+
+Ti.API.info("width 2: " + Titanium.Platform.displayCaps.platformHeight);

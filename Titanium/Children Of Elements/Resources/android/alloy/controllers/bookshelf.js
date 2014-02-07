@@ -4,12 +4,18 @@ function Controller() {
         setPlanetPosition();
     }
     function setPlanetPosition() {
-        $.planetImage.top = args.currentItem.top;
-        $.planetImage.left = args.currentItem.left;
-        $.planetImage.transform = args.currentItem.transform;
-        $.planetImage.width = args.currentItem.width;
-        $.planetImage.height = args.currentItem.height;
-        $.planetImage.backgroundImage = args.currentItem.backgroundImage;
+        Titanium.Platform.displayCaps.platformWidth - 100;
+        var matrix = Ti.UI.create2DMatrix();
+        matrix = matrix.rotate(-45);
+        matrix = matrix.scale(3, 3);
+        var animationFinal = Titanium.UI.createAnimation({
+            top: "80%",
+            left: "10",
+            transform: matrix,
+            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+            duration: 1e3
+        });
+        $.planetImage.animate(animationFinal);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "bookshelf";

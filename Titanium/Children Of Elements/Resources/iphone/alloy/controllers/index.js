@@ -82,7 +82,7 @@ function Controller() {
                 navBarHidden: true
             });
             $.index.addEventListener("focus", function() {
-                cleanUp("show");
+                cleanUp("show", _target);
             });
         }
         currentID = _target.id.toString();
@@ -98,18 +98,26 @@ function Controller() {
             duration: 1e3
         });
         _target.animate(animationFinal);
-        cleanUp("hide");
+        cleanUp("hide", _target);
         var bookshelfx = Alloy.createController("bookshelf", {
             currentItem: _target
         }).getView();
         animationFinal.addEventListener("complete", animationHandler);
     }
-    function cleanUp(_action) {
+    function cleanUp(_action, _target) {
         var clipsVisible = "show" == _action ? 1 : 0;
         if ($.index.children) for (var c = 0; $.index.children.length > c; c++) {
             var currentItem = $.index.children[c];
-            currentItem.opacity = clipsVisible;
+            if (true != currentItem.activePlanet) {
+                var animation = Titanium.UI.createAnimation({
+                    opacity: clipsVisible,
+                    curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+                    duration: 1e3
+                });
+                currentItem.animate(animation);
+            }
         }
+        "show" == _action && positionMainPlanet(_target);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -170,12 +178,15 @@ function Controller() {
     _.extend($, $.__views);
     var player;
     var _flagPlanetIsMoving;
-    alignPlanets();
+    Ti.API.info("Width 1" + Ti.Platform.displayCaps.platformWidth);
     $.index.open({
         fullscreen: true,
         navBarHidden: true,
+        orientationModes: [ Titanium.UI.LANDSCAPE ],
         exitOnClose: true
     });
+    alignPlanets();
+    Ti.API.info("Width 2: " + Ti.Platform.displayCaps.platformWidth);
     __defers["$.__views.index!open!playLoopAudio"] && $.__views.index.addEventListener("open", playLoopAudio);
     __defers["$.__views.index!close!stopLoopAudio"] && $.__views.index.addEventListener("close", stopLoopAudio);
     __defers["$.__views.north!click!onSelectPlanet"] && $.__views.north.addEventListener("click", onSelectPlanet);

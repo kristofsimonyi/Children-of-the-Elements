@@ -12,13 +12,11 @@ function Controller() {
     }
     function onSelectPlanet(e) {
         if (!_flagPlanetIsMoving) {
+            _flagPlanetIsMoving = true;
             if (true == e.source.activePlanet) {
                 openBookshelf(e.source);
                 e.source.activePlanet = false;
-            } else {
-                _flagPlanetIsMoving = true;
-                hidePlanets(e);
-            }
+            } else hidePlanets(e);
             e.source.activePlanet = !e.source.activePlanet;
         }
     }
@@ -45,6 +43,8 @@ function Controller() {
         });
         _target.preferedTopPosition && (planetAnimation.top = _target.preferedTopPosition.toString());
         _target.preferedLeftPosition && (planetAnimation.left = _target.preferedLeftPosition.toString());
+        _target.preferedBottomPosition && (planetAnimation.bottom = _target.preferedBottomPosition.toString());
+        _target.preferedRightPosition && (planetAnimation.right = _target.preferedRightPosition.toString());
         currentItem.animate(planetAnimation);
     }
     function positionMainPlanet(_target) {
@@ -66,14 +66,14 @@ function Controller() {
         animation.addEventListener("complete", animationHandler);
     }
     function alignPlanets() {
-        $.north.top = -(1 * ($.north.height / 3));
-        $.south.top = Titanium.Platform.displayCaps.platformHeight - 2 * ($.south.height / 3);
-        $.east.left = -(1 * ($.east.width / 3));
-        $.west.left = Titanium.Platform.displayCaps.platformWidth - 2 * ($.west.width / 3);
-        $.north.preferedTopPosition = -(2 * ($.north.height / 3));
-        $.south.preferedTopPosition = Titanium.Platform.displayCaps.platformHeight - $.south.height / 3;
-        $.east.preferedLeftPosition = -(2 * ($.east.width / 3));
-        $.west.preferedLeftPosition = Titanium.Platform.displayCaps.platformWidth - $.west.width / 3;
+        $.north.top = -($.north.height / 3);
+        $.south.bottom = -($.south.height / 3);
+        $.east.left = -($.east.width / 3);
+        $.west.right = -($.west.width / 3);
+        $.north.preferedTopPosition = 2 * -($.north.height / 3);
+        $.south.preferedBottomPosition = 2 * -($.south.height / 3);
+        $.east.preferedLeftPosition = 2 * -($.east.width / 3);
+        $.west.preferedRightPosition = 2 * -($.west.width / 3);
     }
     function openBookshelf(_target) {
         function animationHandler() {
@@ -86,6 +86,7 @@ function Controller() {
             $.index.addEventListener("focus", function() {
                 cleanUp("show", _target);
             });
+            _flagPlanetIsMoving = false;
         }
         currentID = _target.id.toString();
         Titanium.Platform.displayCaps.platformWidth - 100;
@@ -97,7 +98,7 @@ function Controller() {
             left: "10",
             transform: matrix,
             curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
-            duration: 1e3
+            duration: 500
         });
         _target.animate(animationFinal);
         cleanUp("hide", _target);
@@ -186,6 +187,7 @@ function Controller() {
         navBarHidden: true,
         exitOnClose: true
     });
+    Ti.API.info("width 2: " + Titanium.Platform.displayCaps.platformHeight);
     __defers["$.__views.index!open!playLoopAudio"] && $.__views.index.addEventListener("open", playLoopAudio);
     __defers["$.__views.index!close!stopLoopAudio"] && $.__views.index.addEventListener("close", stopLoopAudio);
     __defers["$.__views.north!click!onSelectPlanet"] && $.__views.north.addEventListener("click", onSelectPlanet);
