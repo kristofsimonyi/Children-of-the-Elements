@@ -21,6 +21,7 @@ function playLoopAudio(){
 function stopLoopAudio(){
 
 	player.stop();
+	
 }
 
 
@@ -34,17 +35,17 @@ function onSelectPlanet(e){
 			if( e.source.activePlanet == true){
 				//showPlanets(e); 
 				openBookshelf(e.source);
+				e.source.activePlanet = false;
 			}else{
-				//hidePlanets(e);		
+				_flagPlanetIsMoving = true;
+				hidePlanets(e);	
 			}
 			
 			
-			//e.source.activePlanet = !e.source.activePlanet;
+			e.source.activePlanet = !e.source.activePlanet;
 
 			/// rise flag, planet is moving *see PositionMainPlanet()
-			_flagPlanetIsMoving = true;
-
-			hidePlanets(e);
+			
 	}
 }
 
@@ -120,52 +121,6 @@ function positionSecondaryPlanet(_target){
 function positionMainPlanet(_target){
 
 
-	/// store element properties
-	// verfi if this is still neded after next iteration
-	_target.originalHeight = _target.height;
-	_target.originalWidth = _target.width;
-	_target.originalTop = _target.top;
-	_target.originalTransform = _target.transform;
-	_target.originalBottom = _target.bottom;
-	_target.originalLeft = _target.left;
-	_target.originalRight = _target.right;
-
-
-	/* 
-
-			e.source.width = 564;
-			e.source.height = 500;
-			e.source.top = "5%";
-			e.source.layout = "center";
-			e.source.left = '25%';
-			e.source.right = null;
-
-
-			regularRotation = Ti.UI.create2DMatrix().rotate(0);	
-			e.source.transform = regularRotation;
-
-
-			var posX = ( Titanium.Platform.displayCaps.platformWidth - (e.source.width) ) / 2;
-
-			var matrix = Ti.UI.create2DMatrix();
-			matrix = matrix.rotate(0);
-			matrix = matrix.scale(2, 2);
-
-			var a = Ti.UI.createAnimation({
-			transform : matrix,
-			duration : 2000
-			});
-
-
-
-			var animationHandler = function() {
-			//animation.removeEventListener('complete',animationHandler);
-			//animation.backgroundColor = 'orange';
-			//view.animate(animation);
-			};
-			//animation.addEventListener('complete',animationHandler);
-	*/
-
 	var matrix = Ti.UI.create2DMatrix();
 		matrix = matrix.rotate(0);
 		matrix = matrix.scale(2, 2);
@@ -200,6 +155,8 @@ function alignPlanets(){
 	$.east.left = - ( ($.east.width / 3)*1 );
 	$.west.left = ( Titanium.Platform.displayCaps.platformWidth - (($.west.width / 3) *2 ) );
 
+
+
 	/// store position values
 	$.north.preferedTopPosition = - ( ($.north.height / 3)*2 );
 	$.south.preferedTopPosition = ( Titanium.Platform.displayCaps.platformHeight - ($.south.height / 3) );
@@ -210,9 +167,9 @@ function alignPlanets(){
 
 
 /// open the next screen
- function  openBookshelf(_target){
+function  openBookshelf(_target){
 
-
+	
  	/// stop all animations
 
  	// stop sound
@@ -223,18 +180,123 @@ function alignPlanets(){
 
  	// reset elements
  	currentID = _target.id.toString();
+ 	var seleccionado  = _target;
 
 
-	var bookshelfx = Alloy.createController('bookshelf', {currentItem: currentID}).getView();
-	// For Alloy projects, you can pass context
-	// to the controller in the Alloy.createController method.
-	// var win2 = Alloy.createController('win2', {foobar: 42}).getView();
-	bookshelfx.open();
+
+	
+		//// transition to next page
+
+		//// hide other planets
+
+
+		/// zoom current planet
+		var xPosition = Titanium.Platform.displayCaps.platformWidth - 100;
+		var matrix = Ti.UI.create2DMatrix();
+			matrix = matrix.rotate(-45);
+			matrix = matrix.scale(3, 3);
+
+	
+
+		var animationFinal = Titanium.UI.createAnimation({
+			top: '80%',
+			left: '10', 
+			transform: matrix,
+			curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+			duration: 1000
+		});
+
+		
+		_target.animate(animationFinal);
+		
+		cleanUp("hide", _target);
+
+		
+
+		
+		
+		var bookshelfx = Alloy.createController('bookshelf', {currentItem: _target}).getView();
+		
+		animationFinal.addEventListener('complete',animationHandler);
+		
+		function animationHandler() {
+				//_flagPlanetIsMoving = false;
+				//positionMainPlanet(_target)
+
+				if(Ti.Platform.name == 'android'){
+					
+					bookshelfx.open({
+						fullscreen:true,
+						navBarHidden : true,
+						activityEnterAnimation: Ti.Android.R.anim.fade_in,
+	    				activityExitAnimation: Ti.Android.R.anim.fade_out
+					});
+				
+				}else if(Ti.Platform.name == 'iPhone OS'){
+					
+					bookshelfx.open({
+						fullscreen:true,
+						navBarHidden : true
+					});
+				
+				}
+				
+				//$.index.close();
+
+				$.index.addEventListener('focus', function(e){
+					cleanUp("show", _target);
+				});
+		};
+		
+
+
+	/// once finalized close all
 
 
 
  }
 
+
+/// clean the mess
+function cleanUp(_action, _target){
+
+	var clipsVisible = (_action=="show")? 1:0;
+	 
+
+	// hide/show other planets
+	if ($.index.children) {
+
+		// loop across screen elements 
+		for (var c = 0; c < $.index.children.length ; c++) {
+
+			// object cache
+			var currentItem = $.index.children[c];
+
+				//currentItem.activePlanet = false;
+				
+				if(currentItem.activePlanet != true){
+
+					var animation = Titanium.UI.createAnimation({
+						opacity: clipsVisible,
+						curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+						duration: 1000
+					});
+					currentItem.animate(animation);
+
+				}
+
+
+		}
+
+	}
+
+	//send main planets
+	if(_action == "show"){
+
+		positionMainPlanet(_target);
+
+	}
+}
 
 
 
@@ -246,5 +308,6 @@ alignPlanets();
 //// OPEN THE VIEW
 $.index.open({
 	fullscreen:true,
-	navBarHidden : true
+	navBarHidden : true,
+	exitOnClose : true
 });

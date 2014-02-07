@@ -12,9 +12,14 @@ function Controller() {
     }
     function onSelectPlanet(e) {
         if (!_flagPlanetIsMoving) {
-            true == e.source.activePlanet && openBookshelf(e.source);
-            _flagPlanetIsMoving = true;
-            hidePlanets(e);
+            if (true == e.source.activePlanet) {
+                openBookshelf(e.source);
+                e.source.activePlanet = false;
+            } else {
+                _flagPlanetIsMoving = true;
+                hidePlanets(e);
+            }
+            e.source.activePlanet = !e.source.activePlanet;
         }
     }
     function hidePlanets(e) {
@@ -47,13 +52,6 @@ function Controller() {
             _flagPlanetIsMoving = false;
             _target.activePlanet = true;
         }
-        _target.originalHeight = _target.height;
-        _target.originalWidth = _target.width;
-        _target.originalTop = _target.top;
-        _target.originalTransform = _target.transform;
-        _target.originalBottom = _target.bottom;
-        _target.originalLeft = _target.left;
-        _target.originalRight = _target.right;
         var matrix = Ti.UI.create2DMatrix();
         matrix = matrix.rotate(0);
         matrix = matrix.scale(2, 2);
@@ -78,11 +76,50 @@ function Controller() {
         $.west.preferedLeftPosition = Titanium.Platform.displayCaps.platformWidth - $.west.width / 3;
     }
     function openBookshelf(_target) {
+        function animationHandler() {
+            bookshelfx.open({
+                fullscreen: true,
+                navBarHidden: true,
+                activityEnterAnimation: Ti.Android.R.anim.fade_in,
+                activityExitAnimation: Ti.Android.R.anim.fade_out
+            });
+            $.index.addEventListener("focus", function() {
+                cleanUp("show", _target);
+            });
+        }
         currentID = _target.id.toString();
+        Titanium.Platform.displayCaps.platformWidth - 100;
+        var matrix = Ti.UI.create2DMatrix();
+        matrix = matrix.rotate(-45);
+        matrix = matrix.scale(3, 3);
+        var animationFinal = Titanium.UI.createAnimation({
+            top: "80%",
+            left: "10",
+            transform: matrix,
+            curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+            duration: 1e3
+        });
+        _target.animate(animationFinal);
+        cleanUp("hide", _target);
         var bookshelfx = Alloy.createController("bookshelf", {
-            currentItem: currentID
+            currentItem: _target
         }).getView();
-        bookshelfx.open();
+        animationFinal.addEventListener("complete", animationHandler);
+    }
+    function cleanUp(_action, _target) {
+        var clipsVisible = "show" == _action ? 1 : 0;
+        if ($.index.children) for (var c = 0; $.index.children.length > c; c++) {
+            var currentItem = $.index.children[c];
+            if (true != currentItem.activePlanet) {
+                var animation = Titanium.UI.createAnimation({
+                    opacity: clipsVisible,
+                    curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+                    duration: 1e3
+                });
+                currentItem.animate(animation);
+            }
+        }
+        "show" == _action && positionMainPlanet(_target);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -146,7 +183,8 @@ function Controller() {
     alignPlanets();
     $.index.open({
         fullscreen: true,
-        navBarHidden: true
+        navBarHidden: true,
+        exitOnClose: true
     });
     __defers["$.__views.index!open!playLoopAudio"] && $.__views.index.addEventListener("open", playLoopAudio);
     __defers["$.__views.index!close!stopLoopAudio"] && $.__views.index.addEventListener("close", stopLoopAudio);
