@@ -312,6 +312,7 @@
         movingWavesClock=0;
     }
     [screen12WavesImageView setCenter:CGPointMake((20.00*sin(M_PI/180*movingWavesClock*2))+512,(20.00*cos(M_PI/180*movingWavesClock))+374)];
+    
 }
 
 - (void)screen12BigMedusaAppears;
@@ -1347,10 +1348,37 @@
             [sfxMedusaReachesFishArray addObject:sfxMedusaComeIn];
         }
     }
-    if (medusasComeInClock>1100)
+    
+    medusa1ComeInClock=[self rotateMedusa:screen12BackgroundMedusa1ImageView withDegree:0.7 currentClock:medusa1ComeInClock];
+    medusa2ComeInClock=[self rotateMedusa:screen12BackgroundMedusa2ImageView withDegree:-0.7 currentClock:medusa2ComeInClock];
+    medusa3ComeInClock=[self rotateMedusa:screen12BackgroundMedusa3ImageView withDegree:1.3 currentClock:medusa3ComeInClock];
+    medusa4ComeInClock=[self rotateMedusa:screen12BackgroundMedusa4ImageView withDegree:-1.3 currentClock:medusa4ComeInClock];
+    medusa5ComeInClock=[self rotateMedusa:screen12BackgroundMedusa5ImageView withDegree:2 currentClock:medusa5ComeInClock];
+    medusa6ComeInClock=[self rotateMedusa:screen12BackgroundMedusa6ImageView withDegree:-2 currentClock:medusa6ComeInClock];
+    medusa7ComeInClock=[self rotateMedusa:screen12BackgroundMedusa7ImageView withDegree:1.6 currentClock:medusa7ComeInClock];
+    medusa8ComeInClock=[self rotateMedusa:screen12BackgroundMedusa8ImageView withDegree:-1.6 currentClock:medusa8ComeInClock];
+}
+
+- (CGFloat)rotateMedusa:(UIImageView *)medusa withDegree:(CGFloat)degree currentClock:(CGFloat)clock;
+{
+    CGPoint center=CGPointMake(512, 374);
+    if (clock==1000000)
     {
-        [medusasComeInTimer invalidate];
+        if (CGPointEqualToPoint(center, screen12BackgroundMedusa1ImageView.center))
+        {
+            clock=0;
+        }
+    } else
+    {
+        clock=clock+degree;
+        if ((clock>=360.00)||(clock<=-360.00))
+        {
+            clock=0;
+        }
+        [medusa setCenter:CGPointMake((20.00*sin(M_PI/180*clock))+512,(20.00*cos(M_PI/180*clock))+374)];
     }
+    
+    return clock;
 }
 
 - (void)screen12BackgroundMedusasComeIn;
@@ -1445,6 +1473,14 @@
      }
                      completion:nil];
     
+    medusa1ComeInClock=1000000;
+    medusa2ComeInClock=1000000;
+    medusa3ComeInClock=1000000;
+    medusa4ComeInClock=1000000;
+    medusa5ComeInClock=1000000;
+    medusa6ComeInClock=1000000;
+    medusa7ComeInClock=1000000;
+    medusa8ComeInClock=1000000;
     medusasComeInTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(screen12BackgroundMedusasComeInAction) userInfo:nil repeats:YES];
     medusasComeInClock=0;
 	[medusasComeInTimer fire];

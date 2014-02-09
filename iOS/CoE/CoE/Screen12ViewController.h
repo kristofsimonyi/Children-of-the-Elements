@@ -11,9 +11,9 @@
 
 @interface Screen12ViewController : UIViewController<UIGestureRecognizerDelegate, AVAudioPlayerDelegate>{
     NSTimer *movingWavesTimer, *bigMedusaAppearsTimer, *bigMedusaPulseTimer, *bigMedusaArmsMoveTimer, *fishesMovingTimer, *bigMedusaSlowsDownTimer, *continuousKelpMovementTimer, *medusasComeInTimer;
-    int movingWavesClock, bigMedusaAppearsClock, bigMedusaPulseClock, bigMedusaPulseClockChange, bigMedusaArmsMoveClock, fishesMovingClock, bigMedusaSlowsDownClock, continuousKelpMovementClock, medusasComeInClock;
+    int movingWavesClock, bigMedusaAppearsClock, bigMedusaPulseClock, bigMedusaPulseClockChange, bigMedusaArmsMoveClock, fishesMovingClock, bigMedusaSlowsDownClock, continuousKelpMovementClock;
     CGPoint previousTranslatedPoint, bigMedusaSlowsDownValues;
-    CGFloat bigMedusaRotation, fish1Orig, fish2Orig;
+    CGFloat bigMedusaRotation, fish1Orig, fish2Orig, medusasComeInClock, medusa1ComeInClock, medusa2ComeInClock, medusa3ComeInClock, medusa4ComeInClock, medusa5ComeInClock, medusa6ComeInClock, medusa7ComeInClock, medusa8ComeInClock;
     BOOL isBigMedusaPulse, medusaPulseDirection, isBigMedusaMoving, isBigMedusaSlowsDown;
     CGAffineTransform previousTransformMatrix;
     NSMutableArray *fishes1Array, *fishes2Array, *fishes1SpeedArray, *fishes2SpeedArray;

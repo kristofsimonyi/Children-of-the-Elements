@@ -50,42 +50,52 @@
         inoriAndFatherInteractionFound=true;
         [self allInteractionFound];
     }
+    else
+        if (CGRectContainsPoint(screen09Fish01ImageView.frame, translatedPoint))
+        {
+            touchedFish = screen09Fish01ImageView;
+            
+            fish1InteractionFound=true;
+            [self allInteractionFound];
+        }
+        else
+            if (CGRectContainsPoint(screen09Fish02ImageView.frame, translatedPoint))
+            {
+                touchedFish = screen09Fish02ImageView;
+                
+                fish2InteractionFound=true;
+                [self allInteractionFound];
+            }
+            else
+                if (CGRectContainsPoint(screen09Fish03ImageView.frame, translatedPoint))
+                {
+                    touchedFish = screen09Fish03ImageView;
+                    
+                    fish3InteractionFound=true;
+                    [self allInteractionFound];
+                }
+                else
+                    if (CGRectContainsPoint(screen09Fish04ImageView.frame, translatedPoint))
+                    {
+                        touchedFish = screen09Fish04ImageView;
+                        
+                        fish4InteractionFound=true;
+                        [self allInteractionFound];
+                    }
+                    else
+                        if (CGRectContainsPoint(screen09Fish05ImageView.frame, translatedPoint))
+                        {
+                            touchedFish = screen09Fish05ImageView;
+                            
+                            fish5InteractionFound=true;
+                            [self allInteractionFound];
+                        }
+                        else
+                            if (CGRectContainsPoint(CGRectMake(0, 34, 1024, 200), translatedPoint))
+                            {
+                                [screen09NetImageView setAlpha:1-screen09NetImageView.alpha];
+                            }
 
-    if (CGRectContainsPoint(screen09Fish01ImageView.frame, translatedPoint))
-    {
-        touchedFish = screen09Fish01ImageView;
-        
-        fish1InteractionFound=true;
-        [self allInteractionFound];
-    }
-    if (CGRectContainsPoint(screen09Fish02ImageView.frame, translatedPoint))
-    {
-        touchedFish = screen09Fish02ImageView;
-
-        fish2InteractionFound=true;
-        [self allInteractionFound];
-    }
-    if (CGRectContainsPoint(screen09Fish03ImageView.frame, translatedPoint))
-    {
-        touchedFish = screen09Fish03ImageView;
-
-        fish3InteractionFound=true;
-        [self allInteractionFound];
-    }
-    if (CGRectContainsPoint(screen09Fish04ImageView.frame, translatedPoint))
-    {
-        touchedFish = screen09Fish04ImageView;
-
-        fish4InteractionFound=true;
-        [self allInteractionFound];
-    }
-    if (CGRectContainsPoint(screen09Fish05ImageView.frame, translatedPoint))
-    {
-        touchedFish = screen09Fish05ImageView;
-
-        fish5InteractionFound=true;
-        [self allInteractionFound];
-    }
     if (touchedFish!=nil)
     {
         touchedFish.actualCirclingRotationChange=0;
@@ -214,6 +224,14 @@
             }];
         }];
     }
+}
+
+- (IBAction)netPanGestureRecognizer:(UIPanGestureRecognizer *)sender
+{
+/*
+    CGPoint newCenter=CGPointMake(screen09NetImageView.center.x, screen09NetImageView.center.y);
+    [screen09NetImageView setCenter:newCenter];
+ */
 }
 
 - (IBAction)screen09NarrationButtonTapped:(UITapGestureRecognizer *)sender;
@@ -475,12 +493,9 @@
             i++;
         }
     }
-    
 
     wavingFishTimer = [NSTimer scheduledTimerWithTimeInterval:WAVING_FISH_TIMER_CLOCK_INTERVAL target:self selector:@selector(screen09WavingFishActionMethod) userInfo:nil repeats:YES];
     [wavingFishTimer fire];
-    
-
 }
 
 -(void)screen09WavingFishActionMethod;
