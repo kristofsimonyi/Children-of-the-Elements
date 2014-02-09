@@ -14,7 +14,6 @@
                 <outlet property="Screen10InoriImageView" destination="220" id="231"/>
                 <outlet property="Screen10MenuImageView" destination="Str-gm-Rlv" id="Uhq-Kh-D5R"/>
                 <outlet property="Screen10SmallShipImageView" destination="204" id="232"/>
-                <outlet property="compassControl" destination="4" id="158"/>
                 <outlet property="staticTextView" destination="TXe-yt-wKJ" id="vsc-8x-HjF"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -24,27 +23,27 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_1k_hatter.png" id="199" userLabel="BackgroundImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="199" userLabel="BackgroundImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_1k_dune.png" id="225" userLabel="DuneImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="225" userLabel="DuneImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="4_1k_kishajo.png" id="204" userLabel="SmallShipImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="204" userLabel="SmallShipImageView">
                     <rect key="frame" x="420" y="60" width="384" height="280"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_1k_nagyhajo.png" id="205" userLabel="BigShipImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="205" userLabel="BigShipImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="4_1k_inori_ul.png" id="220" userLabel="InoriImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="220" userLabel="InoriImageView">
                     <rect key="frame" x="77" y="420" width="512" height="374"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.15000000596046448" contentMode="scaleToFill" image="16_1k_felho.png" id="221" userLabel="CloudImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.15000000596046448" contentMode="scaleToFill" id="221" userLabel="CloudImageView">
                     <rect key="frame" x="-488" y="81" width="2000" height="585"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -103,18 +102,6 @@
                         <outletCollection property="gestureRecognizers" destination="Ow1-xz-B4K" appends="YES" id="e4c-oU-seT"/>
                     </connections>
                 </view>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" id="4" userLabel="CompassControl" customClass="UIControl">
-                    <rect key="frame" x="5" y="710" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -141,12 +128,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="16_1k_felho.png" width="1000" height="195"/>
-        <image name="4_1k_inori_ul.png" width="1024" height="768"/>
-        <image name="4_1k_kishajo.png" width="1024" height="768"/>
-        <image name="8_1k_dune.png" width="1024" height="768"/>
-        <image name="8_1k_hatter.png" width="1024" height="768"/>
-        <image name="8_1k_nagyhajo.png" width="1024" height="768"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

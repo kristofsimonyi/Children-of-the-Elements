@@ -75,7 +75,7 @@
 
 @implementation Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController
 
-@synthesize screen04InoriSitting, screen04InoriStanding, screen04Wave1ImageView, screen04Wave2ImageView, screen04Wave3ImageView, screen04Wave4ImageView, screen04SnailImageView, screen04SnailControl, screen04BigShipView, screen04SmallShipView, screen04BigShipControl, screen04SmallShipControl, screen04InoriControl, screen04BigShipImageView, screen04SmallShipImageView, screen04MusicButton, screen04NextScreenButton, screen04PreviousScreenButton, screen04CompassContol, screen04HintButton, screen04MenuImageView, screen04NarrationButton, hintLayerImageView;
+@synthesize screen04BaseImageView, screen04InoriSitting, screen04InoriStanding, screen04Wave1ImageView, screen04Wave2ImageView, screen04Wave3ImageView, screen04Wave4ImageView, screen04SnailImageView, screen04SnailControl, screen04BigShipView, screen04SmallShipView, screen04BigShipControl, screen04SmallShipControl, screen04InoriControl, screen04BigShipImageView, screen04SmallShipImageView, screen04MusicButton, screen04NextScreenButton, screen04PreviousScreenButton, screen04HintButton, screen04MenuImageView, screen04NarrationButton, hintLayerImageView;
 
 -(void)goToNextScreen;
 {
@@ -588,20 +588,15 @@
                             [self screen04InoriTapped];
                         }
                         else
-                            if (CGRectContainsPoint(self.screen04CompassContol.frame, tapLocation))
+                            if (CGRectContainsPoint(self.screen04HintButton.frame, tapLocation))
                             {
-                                [self screen04BackToMainMenu];
+                                [self hintButtonTapped];
                             }
                             else
-                                if (CGRectContainsPoint(self.screen04HintButton.frame, tapLocation))
+                                if (CGRectContainsPoint(self.screen04NarrationButton.frame, tapLocation))
                                 {
-                                    [self hintButtonTapped];
+                                    [self narrationButtonTapped];
                                 }
-                                else
-                                    if (CGRectContainsPoint(self.screen04NarrationButton.frame, tapLocation))
-                                    {
-                                        [self narrationButtonTapped];
-                                    }
     
 }
 
@@ -740,7 +735,7 @@
         NSString *narrationFileName = [lines objectAtIndex:i+1];
         NSString *narrationFileExt = [lines objectAtIndex:i+1];
         narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
-        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location+1];
         
         NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
         narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
@@ -774,6 +769,40 @@
 - (void)stopNarration;
 {
     [narration stop];
+}
+
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_alap" ofType:@"png"];
+    [screen04BaseImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_inori_ul" ofType:@"png"];
+    [screen04InoriSitting setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_inori_all" ofType:@"png"];
+    [screen04InoriStanding setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_hullam_1" ofType:@"png"];
+    [screen04Wave1ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_hullam_2" ofType:@"png"];
+    [screen04Wave2ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_hullam_3" ofType:@"png"];
+    [screen04Wave3ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_hullam_4" ofType:@"png"];
+    [screen04Wave4ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_csiga" ofType:@"png"];
+    [screen04SnailImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_nagyhajo" ofType:@"png"];
+    [screen04BigShipImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_kishajo" ofType:@"png"];
+    [screen04SmallShipImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
 }
 
 #pragma mark - View lifecycle
@@ -833,7 +862,6 @@
     [screen04HintButton removeFromSuperview];
     [screen04NextScreenButton removeFromSuperview];
     [screen04PreviousScreenButton removeFromSuperview];
-    [screen04CompassContol removeFromSuperview];
     [screen04InoriSitting removeFromSuperview];
     [screen04InoriStanding removeFromSuperview];
     [screen04Wave1ImageView removeFromSuperview];
@@ -857,7 +885,6 @@
     screen04HintButton=nil;
     screen04NextScreenButton=nil;
     screen04PreviousScreenButton=nil;
-    screen04CompassContol=nil;
     screen04InoriSitting=nil;
     screen04InoriStanding=nil;
     screen04Wave1ImageView=nil;
@@ -878,6 +905,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self loadImages];
     
     itIsWavingTimer = [NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(screen04ItIsWavingAction) userInfo:nil repeats:YES];
     itIsWavingClock=0;

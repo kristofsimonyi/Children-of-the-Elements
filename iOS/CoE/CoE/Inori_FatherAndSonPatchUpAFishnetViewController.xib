@@ -16,8 +16,10 @@
                 <outlet property="screen09InoriAndFatherControl" destination="BYp-Sd-FWp" id="gdP-ra-RZ9"/>
                 <outlet property="screen09MenuImageView" destination="nwD-FM-GPp" id="MVQ-kx-l7o"/>
                 <outlet property="screen09NetImageView" destination="24" id="31"/>
+                <outlet property="screen09PeopleImageView" destination="26" id="LvH-Ij-nVE"/>
                 <outlet property="screen09Sea01ImageView" destination="22" id="32"/>
                 <outlet property="screen09Sea02ImageView" destination="23" id="33"/>
+                <outlet property="screen09ShoreImageView" destination="25" id="OQl-qy-iVL"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -26,23 +28,23 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_tenger1.png" id="22">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="22" userLabel="Sea1ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="9_1k_tenger2.png" id="23">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="23" userLabel="Sea2ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_halo.png" id="24">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="24" userLabel="NetImageView">
                     <rect key="frame" x="0.0" y="-350" width="1024" height="1110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_part.png" id="25">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="25" userLabel="ShoreImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_alakok.png" id="26">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="26" userLabel="PeopleImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -55,23 +57,23 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal1.png" id="27" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="27" userLabel="Fish1ImageView" customClass="WavingImageView">
                     <rect key="frame" x="900" y="300" width="53" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal2.png" id="28" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="28" userLabel="Fish2ImageView" customClass="WavingImageView">
                     <rect key="frame" x="700" y="400" width="42" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal1.png" id="9IQ-p6-Z7r" userLabel="Waving Image View - 9_1k_hal3.png" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="9IQ-p6-Z7r" userLabel="Fish3ImageView" customClass="WavingImageView">
                     <rect key="frame" x="138" y="515" width="53" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal2.png" id="UHc-ZP-bHZ" userLabel="Waving Image View - 9_1k_hal4.png" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="UHc-ZP-bHZ" userLabel="Fish4ImageView" customClass="WavingImageView">
                     <rect key="frame" x="278" y="277" width="42" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9_1k_hal1.png" id="Ka4-md-BYc" userLabel="Waving Image View - 9_1k_hal5.png" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Ka4-md-BYc" userLabel="Fish5ImageView" customClass="WavingImageView">
                     <rect key="frame" x="420" y="648" width="53" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -123,20 +125,6 @@
                         <action selector="screen09NextScreenButtonTouched:" destination="-1" eventType="touchUpInside" id="DX1-Xx-aLM"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="4" userLabel="CompassControl" customClass="UIControl">
-                    <rect key="frame" x="5" y="710" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <action selector="screen09BackToMainMenu:" destination="-1" eventType="touchUpInside" id="19"/>
-                    </connections>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -159,13 +147,6 @@
     </objects>
     <resources>
         <image name="1_HintLayer.png" width="800" height="799"/>
-        <image name="9_1k_alakok.png" width="1024" height="768"/>
-        <image name="9_1k_hal1.png" width="53" height="37"/>
-        <image name="9_1k_hal2.png" width="42" height="33"/>
-        <image name="9_1k_halo.png" width="1024" height="1110"/>
-        <image name="9_1k_part.png" width="1024" height="768"/>
-        <image name="9_1k_tenger1.png" width="1024" height="768"/>
-        <image name="9_1k_tenger2.png" width="1024" height="768"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

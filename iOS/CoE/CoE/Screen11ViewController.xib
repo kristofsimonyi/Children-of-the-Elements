@@ -39,64 +39,64 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_fazek-0.png" id="19" userLabel="CookingPotImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="19" userLabel="CookingPotImageView">
                     <rect key="frame" x="0.0" y="0.0" width="765" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="11_1k_fazek-1.png" id="20" userLabel="CookingPotInregient01ImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="20" userLabel="CookingPotInregient01ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="765" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="11_1k_fazek-2.png" id="21" userLabel="CookingPotInregient02ImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="21" userLabel="CookingPotInregient02ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="765" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="11_1k_fazek-3.png" id="22" userLabel="CookingPotInregient03ImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="22" userLabel="CookingPotInregient03ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="765" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="11_1k_fazek-4.png" id="23" userLabel="CookingPotInregient04ImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="23" userLabel="CookingPotInregient04ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="765" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="11_1k_fazek-5.png" id="24" userLabel="CookingPotInregient05ImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="24" userLabel="CookingPotInregient05ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="765" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="11_1k_fazek-6.png" id="25" userLabel="CookingPotInregient06ImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="25" userLabel="CookingPotInregient06ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="765" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_hozzavalo-1.png" id="27" userLabel="Inregient01ImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="27" userLabel="Inregient01ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_hozzavalo-2.png" id="28" userLabel="Inregient02ImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="28" userLabel="Inregient02ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_hozzavalo-3.png" id="29" userLabel="Inregient03ImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="29" userLabel="Inregient03ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_hozzavalo-4.png" id="30" userLabel="Inregient04ImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="30" userLabel="Inregient04ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_hozzavalo-5.png" id="31" userLabel="Inregient05ImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="31" userLabel="Inregient05ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_hozzavalo-6.png" id="32" userLabel="Inregient06ImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="32" userLabel="Inregient06ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_hozzavalo-7.png" id="62" userLabel="Inregient07ImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="62" userLabel="Inregient07ImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11_1k_tanyer.png" id="26" userLabel="PlateImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="26" userLabel="PlateImageView">
                     <rect key="frame" x="338" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -187,20 +187,6 @@
                         <action selector="screen11NextScreenButtonTouched:" destination="-1" eventType="touchUpInside" id="96c-kt-sC8"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="4" userLabel="CompassControl" customClass="UIControl">
-                    <rect key="frame" x="5" y="710" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <action selector="screen11BackToMainMenu:" destination="-1" eventType="touchUpInside" id="18"/>
-                    </connections>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -222,21 +208,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="11_1k_fazek-0.png" width="765" height="768"/>
-        <image name="11_1k_fazek-1.png" width="765" height="768"/>
-        <image name="11_1k_fazek-2.png" width="765" height="768"/>
-        <image name="11_1k_fazek-3.png" width="765" height="768"/>
-        <image name="11_1k_fazek-4.png" width="765" height="768"/>
-        <image name="11_1k_fazek-5.png" width="765" height="768"/>
-        <image name="11_1k_fazek-6.png" width="765" height="768"/>
-        <image name="11_1k_hozzavalo-1.png" width="1024" height="768"/>
-        <image name="11_1k_hozzavalo-2.png" width="1024" height="768"/>
-        <image name="11_1k_hozzavalo-3.png" width="1024" height="768"/>
-        <image name="11_1k_hozzavalo-4.png" width="1024" height="768"/>
-        <image name="11_1k_hozzavalo-5.png" width="1024" height="768"/>
-        <image name="11_1k_hozzavalo-6.png" width="1024" height="768"/>
-        <image name="11_1k_hozzavalo-7.png" width="1024" height="768"/>
-        <image name="11_1k_tanyer.png" width="1024" height="768"/>
         <image name="1_HintLayer.png" width="800" height="799"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>

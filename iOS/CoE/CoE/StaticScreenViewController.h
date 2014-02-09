@@ -19,7 +19,6 @@
     AVAudioPlayer *narration;
 }
 
-@property (nonatomic, weak) IBOutlet UIControl *compassControl;
 @property (nonatomic, weak) IBOutlet UIImageView *Screen10BackgroundImageView, *Screen10DuneImageView, *Screen10SmallShipImageView, *Screen10BigShipImageView, *Screen10CloudImageView, *Screen10InoriImageView, *Screen10MenuImageView;
 @property (nonatomic, weak) IBOutlet UITextView *staticTextView;
 

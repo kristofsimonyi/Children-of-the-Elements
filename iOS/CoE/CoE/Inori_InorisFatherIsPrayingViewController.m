@@ -65,16 +65,16 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+/*
 -(IBAction)screen01BackToMainMenu:(id)sender;
 {
-//*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
-// */
 }
+*/
 
 - (IBAction)Screen01nextScreenButtonTouched:(id)sender
 {
@@ -343,7 +343,9 @@
     
     CGRect cropRect = CGRectMake(512-(1024*newScale/2), phase01TimerClock/5, 1024*newScale, 748*newScale);
     
-    CGImageRef imageRef = CGImageCreateWithImageInRect([[UIImage imageNamed:@"1_2k_riszfoldalap.png"] CGImage], cropRect);
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
+    CGImageRef imageRef = CGImageCreateWithImageInRect([[UIImage imageWithContentsOfFile:imagePath] CGImage], cropRect);
     UIImage *newImage = [UIImage imageWithCGImage:imageRef scale:1.00 orientation:riceFieldBaseImageView.image.imageOrientation];
     [riceFieldBaseImageView setImage:newImage];
     CGImageRelease(imageRef);
@@ -622,7 +624,7 @@
         NSString *narrationFileName = [lines objectAtIndex:i+1];
         NSString *narrationFileExt = [lines objectAtIndex:i+1];
         narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
-        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location+1];
         
         NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
         narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
@@ -656,6 +658,40 @@
 - (void)stopNarration;
 {
     [narration stop];
+}
+
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
+    [riceFieldBaseImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_ablak" ofType:@"png"];
+    [windowImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_agy" ofType:@"png"];
+    [bedImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_alap" ofType:@"png"];
+    [baseImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_apa" ofType:@"png"];
+    [fatherImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_kanna" ofType:@"png"];
+    [teaPotImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_ejszaka1" ofType:@"png"];
+    [night1ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_ejszaka2" ofType:@"png"];
+    [night2ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_keret" ofType:@"png"];
+    [frameImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_tuz" ofType:@"png"];
+    [fireImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];    
 }
 
 #pragma mark - View lifecycle
@@ -768,6 +804,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self loadImages];
     
     phase01TimerClock=0;
     phase02TimerClock=0;

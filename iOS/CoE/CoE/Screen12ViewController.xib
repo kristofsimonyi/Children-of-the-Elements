@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Screen12ViewController">
             <connections>
-                <outlet property="screen12BackToMainMenuImageView" destination="7" id="VjP-gh-Q6E"/>
+                <outlet property="screen12BackgroundImageView" destination="9" id="g0F-W0-E5A"/>
                 <outlet property="screen12BackgroundMedusa1ImageView" destination="67" id="87"/>
                 <outlet property="screen12BackgroundMedusa2ImageView" destination="71" id="88"/>
                 <outlet property="screen12BackgroundMedusa3ImageView" destination="72" id="89"/>
@@ -38,11 +38,11 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_alap.png" id="9" userLabel="BackgroundImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="9" userLabel="BackgroundImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hullamok.png" id="11" userLabel="WavesImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="11" userLabel="WavesImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -50,35 +50,35 @@
                     <rect key="frame" x="0.0" y="-10" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_1.png" id="67" userLabel="BackgroundMedusa1ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="67" userLabel="BackgroundMedusa1ImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_2.png" id="71" userLabel="BackgroundMedusa2ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="71" userLabel="BackgroundMedusa2ImageView">
                             <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_3.png" id="72" userLabel="BackgroundMedusa3ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="72" userLabel="BackgroundMedusa3ImageView">
                             <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_4.png" id="73" userLabel="BackgroundMedusa4ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="73" userLabel="BackgroundMedusa4ImageView">
                             <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_5.png" id="74" userLabel="BackgroundMedusa5ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="74" userLabel="BackgroundMedusa5ImageView">
                             <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_6.png" id="75" userLabel="BackgroundMedusa6ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="75" userLabel="BackgroundMedusa6ImageView">
                             <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_7.png" id="76" userLabel="BackgroundMedusa7ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="76" userLabel="BackgroundMedusa7ImageView">
                             <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_hatter_meduza_8.png" id="77" userLabel="BackgroundMedusa8ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="77" userLabel="BackgroundMedusa8ImageView">
                             <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -89,27 +89,27 @@
                     <rect key="frame" x="-1" y="0.0" width="1024" height="748"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="12_1k_hinar_1.png" id="16" userLabel="Kelp1ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" id="16" userLabel="Kelp1ImageView">
                             <rect key="frame" x="87" y="609" width="98" height="256"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="12_1k_hinar_2.png" id="17" userLabel="Kelp2ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" id="17" userLabel="Kelp2ImageView">
                             <rect key="frame" x="210" y="561" width="76" height="352"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="12_1k_hinar_3.png" id="18" userLabel="Kelp3ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" id="18" userLabel="Kelp3ImageView">
                             <rect key="frame" x="280" y="580" width="60" height="314"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="12_1k_hinar_4.png" id="19" userLabel="Kelp4ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" id="19" userLabel="Kelp4ImageView">
                             <rect key="frame" x="424" y="604" width="55" height="266"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="12_1k_hinar_5.png" id="20" userLabel="Kelp5ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" id="20" userLabel="Kelp5ImageView">
                             <rect key="frame" x="503" y="609" width="85" height="257"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" image="12_1k_hinar_6.png" id="21" userLabel="Kelp6ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" id="21" userLabel="Kelp6ImageView">
                             <rect key="frame" x="575" y="632" width="45" height="210"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -120,23 +120,23 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_meduza_kar_1.png" id="35" userLabel="BigMedusaArm1ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="35" userLabel="BigMedusaArm1ImageView">
                             <rect key="frame" x="645" y="336" width="205" height="95"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_meduza_kar_2.png" id="36" userLabel="BigMedusaArm2ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="36" userLabel="BigMedusaArm2ImageView">
                             <rect key="frame" x="500" y="196" width="498" height="140"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_meduza_kar_3.png" id="37" userLabel="BigMedusaArm3ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="37" userLabel="BigMedusaArm3ImageView">
                             <rect key="frame" x="460" y="213" width="605" height="251"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_meduza_kar_4.png" id="38" userLabel="BigMedusaArm4ImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="38" userLabel="BigMedusaArm4ImageView">
                             <rect key="frame" x="270" y="289" width="980" height="65"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="12_1k_meduza_fej.png" id="31" userLabel="BigMedusaImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="31" userLabel="BigMedusaImageView">
                             <rect key="frame" x="717" y="175" width="156" height="299"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -151,13 +151,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="7">
-                    <rect key="frame" x="5" y="710" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <accessibility key="accessibilityConfiguration">
-                        <bool key="isElement" value="YES"/>
-                    </accessibility>
                 </imageView>
                 <view contentMode="scaleToFill" id="mRo-fb-RVo" userLabel="PreviousScreenControl" customClass="UIControl">
                     <rect key="frame" x="0.0" y="28" width="45" height="80"/>
@@ -235,27 +228,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="12_1k_alap.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_1.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_2.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_3.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_4.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_5.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_6.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_7.png" width="1024" height="768"/>
-        <image name="12_1k_hatter_meduza_8.png" width="1024" height="768"/>
-        <image name="12_1k_hinar_1.png" width="98" height="256"/>
-        <image name="12_1k_hinar_2.png" width="76" height="352"/>
-        <image name="12_1k_hinar_3.png" width="60" height="314"/>
-        <image name="12_1k_hinar_4.png" width="55" height="266"/>
-        <image name="12_1k_hinar_5.png" width="85" height="257"/>
-        <image name="12_1k_hinar_6.png" width="45" height="210"/>
-        <image name="12_1k_hullamok.png" width="1024" height="768"/>
-        <image name="12_1k_meduza_fej.png" width="156" height="299"/>
-        <image name="12_1k_meduza_kar_1.png" width="205" height="95"/>
-        <image name="12_1k_meduza_kar_2.png" width="498" height="140"/>
-        <image name="12_1k_meduza_kar_3.png" width="605" height="251"/>
-        <image name="12_1k_meduza_kar_4.png" width="980" height="65"/>
         <image name="1_HintLayer.png" width="800" height="799"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>

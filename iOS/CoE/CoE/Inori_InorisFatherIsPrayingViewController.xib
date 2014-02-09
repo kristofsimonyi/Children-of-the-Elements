@@ -35,12 +35,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1_2k_riszfoldalap.png" id="22" userLabel="RiceFieldBaseImageView">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="1_2k_rizsfold-ejszaka.png" id="32" userLabel="RiceFieldAtNightImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="22" userLabel="RiceFieldBaseImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -56,51 +51,47 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="IH3-tn-557">
-                            <rect key="frame" x="392" y="320" width="240" height="128"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1_2k_ablak.png" id="53" userLabel="WindowImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="53" userLabel="WindowImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="1_2k_tuz.png" id="49" userLabel="FireImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="49" userLabel="FireImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1_2k_kanna.png" id="54" userLabel="TeaPotImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="54" userLabel="TeaPotImageView">
                             <rect key="frame" x="120" y="-50" width="139" height="658"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1_2k_apa.png" id="55" userLabel="FatherImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="55" userLabel="FatherImageView">
                             <rect key="frame" x="380" y="410" width="438" height="507"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1_2k_agy.png" id="56" userLabel="BedImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="56" userLabel="BedImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1_2k_alap.png" id="52" userLabel="BaseImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="52" userLabel="BaseImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1_2k_keret.png" id="57" userLabel="FrameImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="57" userLabel="FrameImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="1_2k_ejszaka1.png" id="44" userLabel="Night01ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" id="44" userLabel="Night01ImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="1_2k_ejszaka2.png" id="45" userLabel="Nigh02ImageView">
+                        <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" id="45" userLabel="Nigh02ImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -173,37 +164,12 @@
                         <action selector="Screen01nextScreenButtonTouched:" destination="-1" eventType="touchUpInside" id="GGw-s7-MQ2"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="4" userLabel="CompassControl" customClass="UIControl">
-                    <rect key="frame" x="5" y="710" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <action selector="screen01BackToMainMenu:" destination="-1" eventType="touchUpInside" id="76"/>
-                    </connections>
-                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
     </objects>
     <resources>
-        <image name="1_2k_ablak.png" width="1024" height="768"/>
-        <image name="1_2k_agy.png" width="1024" height="768"/>
-        <image name="1_2k_alap.png" width="1024" height="768"/>
-        <image name="1_2k_apa.png" width="438" height="507"/>
-        <image name="1_2k_ejszaka1.png" width="1024" height="768"/>
-        <image name="1_2k_ejszaka2.png" width="1024" height="768"/>
-        <image name="1_2k_kanna.png" width="139" height="658"/>
-        <image name="1_2k_keret.png" width="1024" height="768"/>
-        <image name="1_2k_riszfoldalap.png" width="1024" height="768"/>
-        <image name="1_2k_rizsfold-ejszaka.png" width="1024" height="768"/>
-        <image name="1_2k_tuz.png" width="1024" height="768"/>
         <image name="1_HintLayer.png" width="800" height="799"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>

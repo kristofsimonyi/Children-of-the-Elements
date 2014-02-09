@@ -149,7 +149,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen Selection:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tbT-CP-h9V">
-                                <rect key="frame" x="313" y="348" width="400" height="29"/>
+                                <rect key="frame" x="313" y="351" width="400" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,7 +241,7 @@
                                         <rect key="frame" x="187" y="197" width="100" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="14_1k_base_overview.jpg" id="fxQ-Uc-Nho">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="fxQ-Uc-Nho">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -936,7 +936,6 @@
         <image name="12-overview.png" width="200" height="150"/>
         <image name="12_1k_hal5.png" width="87" height="58"/>
         <image name="13_overview.jpg" width="200" height="150"/>
-        <image name="14_1k_base_overview.jpg" width="200" height="150"/>
         <image name="15-16_1k_szita1.png" width="184" height="143"/>
         <image name="15-16_overview15.jpg" width="200" height="150"/>
         <image name="6-7-overview.png" width="200" height="150"/>

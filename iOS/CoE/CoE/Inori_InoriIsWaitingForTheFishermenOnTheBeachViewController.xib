@@ -8,10 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController">
             <connections>
                 <outlet property="hintLayerImageView" destination="Dly-db-Nnc" id="Z3O-zB-lPp"/>
+                <outlet property="screen04BaseImageView" destination="8" id="eJp-Pg-2Dw"/>
                 <outlet property="screen04BigShipControl" destination="3HF-uo-lAw" id="oIr-L2-Ptx"/>
                 <outlet property="screen04BigShipImageView" destination="18" id="33"/>
                 <outlet property="screen04BigShipView" destination="62f-BE-1Wj" id="g5N-Az-AqD"/>
-                <outlet property="screen04CompassContol" destination="4" id="fRK-Sc-6f8"/>
                 <outlet property="screen04HintButton" destination="hVv-oz-ZqF" id="8i5-pU-9Ew"/>
                 <outlet property="screen04InoriControl" destination="11" id="6Vh-oa-PK7"/>
                 <outlet property="screen04InoriSitting" destination="9" id="15"/>
@@ -38,31 +38,31 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="4_1k_alap.png" id="8">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="8" userLabel="BaseImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="4_1k_hullam_1.png" id="16" userLabel="Wave1">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="16" userLabel="Wave1">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="4_1k_hullam_2.png" id="19" userLabel="Wave2">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="19" userLabel="Wave2">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="4_1k_hullam_3.png" id="20" userLabel="Wave3">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="20" userLabel="Wave3">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="4_1k_hullam_4.png" id="21" userLabel="Wave4">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="21" userLabel="Wave4">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="4_1k_inori_ul.png" id="9" userLabel="InoriSittingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="9" userLabel="InoriSittingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="4_1k_inori_all.png" id="10" userLabel="InoriStandingImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="10" userLabel="InoriStandingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -70,7 +70,7 @@
                     <rect key="frame" x="1024" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" image="4_1k_kishajo.png" id="17" userLabel="SmallShipImageView">
+                        <imageView contentMode="scaleToFill" id="17" userLabel="SmallShipImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -87,7 +87,7 @@
                     <rect key="frame" x="1024" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" image="4_1k_nagyhajo.png" id="18" userLabel="BigShipImageView">
+                        <imageView contentMode="scaleToFill" id="18" userLabel="BigShipImageView">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -100,7 +100,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="4_1k_csiga.png" id="28" userLabel="SnailImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="28" userLabel="SnailImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -148,17 +148,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" id="4" userLabel="CompassControl" customClass="UIControl">
-                    <rect key="frame" x="5" y="710" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
@@ -175,16 +164,6 @@
     </objects>
     <resources>
         <image name="1_HintLayer.png" width="800" height="799"/>
-        <image name="4_1k_alap.png" width="1024" height="768"/>
-        <image name="4_1k_csiga.png" width="1024" height="768"/>
-        <image name="4_1k_hullam_1.png" width="1024" height="768"/>
-        <image name="4_1k_hullam_2.png" width="1024" height="768"/>
-        <image name="4_1k_hullam_3.png" width="1024" height="768"/>
-        <image name="4_1k_hullam_4.png" width="1024" height="768"/>
-        <image name="4_1k_inori_all.png" width="1024" height="768"/>
-        <image name="4_1k_inori_ul.png" width="1024" height="768"/>
-        <image name="4_1k_kishajo.png" width="1024" height="768"/>
-        <image name="4_1k_nagyhajo.png" width="1024" height="768"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

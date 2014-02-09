@@ -26,7 +26,6 @@
 
 @property (nonatomic, weak) IBOutlet UIControl *fatherControl, *teaPotControl;
 
-- (IBAction)screen01BackToMainMenu:(id)sender;
 - (IBAction)fatherTouched:(id)sender;
 - (IBAction)teaPotTouched:(id)sender;
 - (IBAction)Screen01nextScreenButtonTouched:(id)sender;

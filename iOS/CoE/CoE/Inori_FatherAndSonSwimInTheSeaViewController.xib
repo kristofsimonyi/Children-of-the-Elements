@@ -33,39 +33,39 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam2.png" id="62" userLabel="Wave02Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="62" userLabel="Wave02Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam4.png" id="72" userLabel="Wave04Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="72" userLabel="Wave04Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam1.png" id="7" userLabel="Wave01Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="7" userLabel="Wave01Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam3.png" id="67" userLabel="Wave03Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="67" userLabel="Wave03Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam6.png" id="82" userLabel="Wave06Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="82" userLabel="Wave06Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam5.png" id="77" userLabel="Wave05Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="77" userLabel="Wave05Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam7.png" id="87" userLabel="Wave07Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="87" userLabel="Wave07Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam8.png" id="92" userLabel="Wave08Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="92" userLabel="Wave08Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_nagyhullam9.png" id="97" userLabel="Wave09Imageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="97" userLabel="Wave09Imageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -74,11 +74,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_apa.png" id="52" userLabel="FatherImageview" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="52" userLabel="FatherImageview" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="6-7_1k_inori.png" id="57" userLabel="InoriImageView" customClass="WavingImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="57" userLabel="InoriImageView" customClass="WavingImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -160,20 +160,6 @@
                         <outletCollection property="gestureRecognizers" destination="YK8-L1-hBL" appends="YES" id="Nep-Um-pBN"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="102" userLabel="CompassControl" customClass="UIControl">
-                    <rect key="frame" x="5" y="710" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="103">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <action selector="screen06_07BackToMainMenu:" destination="-1" eventType="touchUpInside" id="106"/>
-                    </connections>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -206,17 +192,6 @@
     </objects>
     <resources>
         <image name="1_HintLayer.png" width="800" height="799"/>
-        <image name="6-7_1k_apa.png" width="1024" height="768"/>
-        <image name="6-7_1k_inori.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam1.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam2.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam3.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam4.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam5.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam6.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam7.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam8.png" width="1024" height="768"/>
-        <image name="6-7_1k_nagyhullam9.png" width="1024" height="768"/>
         <image name="menu_set-top-w.png" width="2048" height="1536"/>
     </resources>
 </document>

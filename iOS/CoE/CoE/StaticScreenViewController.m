@@ -98,7 +98,7 @@
 
 @implementation StaticScreenViewController
 
-@synthesize compassControl, Screen10BackgroundImageView, Screen10DuneImageView, Screen10BigShipImageView, Screen10SmallShipImageView, Screen10CloudImageView, Screen10InoriImageView, staticTextView, Screen10MenuImageView;
+@synthesize Screen10BackgroundImageView, Screen10DuneImageView, Screen10BigShipImageView, Screen10SmallShipImageView, Screen10CloudImageView, Screen10InoriImageView, staticTextView, Screen10MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -112,17 +112,17 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+/*
 - (void)screen10BackToMainMenu;
 {
-    /*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
-     */
-}
 
+}
+*/
 - (IBAction)screen10NextScreenButtonTouched:(id)sender;
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -183,6 +183,7 @@
     }
 }
 
+/*
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
 	NSUInteger touchCount = 0;
@@ -197,6 +198,7 @@
         touchCount++;
     }
 }
+*/
 
 - (UIImage*)adjustImage:(UIImage *)sourceImage saturation:(CGFloat)saturationAmount brightness:(CGFloat) brightnessAmount contrast:(CGFloat) contrastAmount;
 {
@@ -363,7 +365,7 @@
         NSString *narrationFileName = [lines objectAtIndex:i+1];
         NSString *narrationFileExt = [lines objectAtIndex:i+1];
         narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
-        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location+1];
         
         NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
         narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
@@ -439,6 +441,28 @@
     }
 }
 
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"8_1k_hatter" ofType:@"png"];
+    [Screen10BackgroundImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"8_1k_dune" ofType:@"png"];
+    [Screen10DuneImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_kishajo" ofType:@"png"];
+    [Screen10SmallShipImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"8_1k_nagyhajo" ofType:@"png"];
+    [Screen10BigShipImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"16_1k_felho" ofType:@"png"];
+    [Screen10CloudImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_inori_ul" ofType:@"png"];
+    [Screen10InoriImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+}
+
 #pragma mark - View lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -472,7 +496,6 @@
     cloudMovingTimer=nil;
     
     [Screen10MenuImageView removeFromSuperview];
-    [compassControl removeFromSuperview];
     [Screen10BackgroundImageView removeFromSuperview];
     [Screen10DuneImageView removeFromSuperview];
     [Screen10SmallShipImageView removeFromSuperview];
@@ -506,6 +529,8 @@
     // Do any additional setup after loading the view from its nib.
     
 //    [self setImageEffects];
+
+    [self loadImages];
     
     [self setSettingsForShipRocking];
 

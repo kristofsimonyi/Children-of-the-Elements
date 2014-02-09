@@ -50,16 +50,16 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+/*
 -(IBAction)screen11BackToMainMenu:(id)sender;
 {
-    /*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
-     */
 }
+ */
 
 - (IBAction)screen11NextScreenButtonTouched:(id)sender
 {
@@ -513,7 +513,7 @@
         NSString *narrationFileName = [lines objectAtIndex:i+1];
         NSString *narrationFileExt = [lines objectAtIndex:i+1];
         narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
-        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location+1];
         
         NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
         narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
@@ -547,6 +547,55 @@
 - (void)stopNarration;
 {
     [narration stop];
+}
+
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_fazek-0" ofType:@"png"];
+    [screen11CookingPotImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_hozzavalo-1" ofType:@"png"];
+    [screen11Ingredient01ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_hozzavalo-2" ofType:@"png"];
+    [screen11Ingredient02ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_hozzavalo-3" ofType:@"png"];
+    [screen11Ingredient03ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_hozzavalo-4" ofType:@"png"];
+    [screen11Ingredient04ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_hozzavalo-5" ofType:@"png"];
+    [screen11Ingredient05ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_hozzavalo-6" ofType:@"png"];
+    [screen11Ingredient06ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_hozzavalo-7" ofType:@"png"];
+    [screen11Ingredient07ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_fazek-1" ofType:@"png"];
+    [screen11CookingPotIngredient01ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_fazek-2" ofType:@"png"];
+    [screen11CookingPotIngredient02ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_fazek-3" ofType:@"png"];
+    [screen11CookingPotIngredient03ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_fazek-4" ofType:@"png"];
+    [screen11CookingPotIngredient04ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_fazek-5" ofType:@"png"];
+    [screen11CookingPotIngredient05ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_fazek-6" ofType:@"png"];
+    [screen11CookingPotIngredient06ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_tanyer" ofType:@"png"];
+    [screen11PlateImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
 }
 
 -(void)startBackgroundMusic;
@@ -593,6 +642,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self loadImages];
     
     [self setBackgroundColorForView];
     [self setFirstCookingPotScale];

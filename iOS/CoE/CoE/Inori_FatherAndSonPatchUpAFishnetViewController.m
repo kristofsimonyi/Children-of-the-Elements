@@ -34,7 +34,7 @@
 
 @implementation Inori_FatherAndSonPatchUpAFishnetViewController
 
-@synthesize screen09Fish01ImageView, screen09Fish02ImageView, screen09Fish03ImageView, screen09Fish04ImageView, screen09Fish05ImageView, screen09NetImageView, screen09Sea01ImageView, screen09Sea02ImageView, screen09MenuImageView, screen09InoriAndFatherControl, screen09HintLayerImageView;
+@synthesize screen09ShoreImageView, screen09PeopleImageView, screen09Fish01ImageView, screen09Fish02ImageView, screen09Fish03ImageView, screen09Fish04ImageView, screen09Fish05ImageView, screen09NetImageView, screen09Sea01ImageView, screen09Sea02ImageView, screen09MenuImageView, screen09InoriAndFatherControl, screen09HintLayerImageView;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
@@ -290,7 +290,7 @@
         NSString *narrationFileName = [lines objectAtIndex:i+1];
         NSString *narrationFileExt = [lines objectAtIndex:i+1];
         narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
-        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location+1];
         
         NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
         narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
@@ -338,16 +338,16 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+/*
 -(IBAction)screen09BackToMainMenu:(id)sender;
 {
-    /*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
-     */
 }
+ */
 
 - (IBAction)screen09NextScreenButtonTouched:(id)sender
 {
@@ -527,10 +527,46 @@
     [backgroundMusic stop];
 }
 
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_part" ofType:@"png"];
+    [screen09ShoreImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_alakok" ofType:@"png"];
+    [screen09PeopleImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_tenger1" ofType:@"png"];
+    [screen09Sea01ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_tenger2" ofType:@"png"];
+    [screen09Sea02ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_halo" ofType:@"png"];
+    [screen09NetImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_hal1" ofType:@"png"];
+    [screen09Fish01ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_hal2" ofType:@"png"];
+    [screen09Fish02ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_hal1" ofType:@"png"];
+    [screen09Fish03ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_hal2" ofType:@"png"];
+    [screen09Fish04ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_hal1" ofType:@"png"];
+    [screen09Fish05ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self loadImages];
     
     [self screen09SeaChangeStart];
     [self screen09NetMovingStart];

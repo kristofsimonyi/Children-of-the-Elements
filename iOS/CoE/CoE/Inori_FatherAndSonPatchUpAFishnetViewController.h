@@ -24,9 +24,9 @@
 }
 
 @property (nonatomic, weak) IBOutlet UIControl *screen09InoriAndFatherControl;
-@property (nonatomic, weak) IBOutlet UIImageView *screen09Sea01ImageView, *screen09Sea02ImageView, *screen09NetImageView, *screen09MenuImageView, *screen09HintLayerImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *screen09ShoreImageView, *screen09PeopleImageView, *screen09Sea01ImageView, *screen09Sea02ImageView, *screen09NetImageView, *screen09MenuImageView, *screen09HintLayerImageView;
 @property (nonatomic, weak) IBOutlet WavingImageView *screen09Fish01ImageView, *screen09Fish02ImageView, *screen09Fish03ImageView, *screen09Fish04ImageView, *screen09Fish05ImageView;
-- (IBAction)screen09BackToMainMenu:(id)sender;
+
 - (IBAction)screen09NextScreenButtonTouched:(id)sender;
 - (IBAction)screen09PreviousButtonTouched:(id)sender;
 - (IBAction)screen09NarrationButtonTapped:(UITapGestureRecognizer *)sender;

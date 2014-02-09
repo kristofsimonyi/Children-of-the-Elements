@@ -25,7 +25,6 @@
 @property (nonatomic, weak) IBOutlet WavingImageView *screen06_07Wave01ImageView, *screen06_07Wave02ImageView,*screen06_07Wave03ImageView,*screen06_07Wave04ImageView,*screen06_07Wave05ImageView,*screen06_07Wave06ImageView,*screen06_07Wave07ImageView,*screen06_07Wave08ImageView,*screen06_07Wave09ImageView, *screen06_07FatherImageView, *screen06_07InoriImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *screen06_07HintLayerImageView, *screen06_07MenuImageView;
 
-- (IBAction)screen06_07BackToMainMenu:(id)sender;
 - (IBAction)screen06_07NextScreenControlTapped:(id) sender;
 - (IBAction)screen06_07PreviousScreenControlTapped:(id) sender;
 - (IBAction)screen06_07MusicButtonTapped:(UITapGestureRecognizer *) sender;

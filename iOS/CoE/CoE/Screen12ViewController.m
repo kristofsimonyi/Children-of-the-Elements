@@ -44,7 +44,7 @@
 
 @implementation Screen12ViewController
 
-@synthesize screen12BackToMainMenuImageView, screen12WavesImageView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView, screen12HintLayerImageView, screen12MenuImageView;
+@synthesize screen12BackgroundImageView, screen12WavesImageView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView, screen12HintLayerImageView, screen12MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -58,16 +58,17 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+
+/*
 - (void)screen12BackToMainMenu;
 {
-    /*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
-     */
 }
+ */
 
 - (IBAction)screen12NextScreenButtonTouched:(id) sender;
 {
@@ -159,7 +160,7 @@
         NSString *narrationFileName = [lines objectAtIndex:i+1];
         NSString *narrationFileExt = [lines objectAtIndex:i+1];
         narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
-        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location+1];
         
         NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
         narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
@@ -378,12 +379,7 @@
     
     UIImageView *selectedKelp;
     
-    if (CGRectContainsPoint(screen12BackToMainMenuImageView.frame, translatedPoint)) 
-    {
-        [self screen12BackToMainMenu];
-    }
-    
-    if (CGRectContainsPoint(screen12Kelp1ImageView.frame, translatedPoint)) 
+    if (CGRectContainsPoint(screen12Kelp1ImageView.frame, translatedPoint))
     {
         selectedKelp = screen12Kelp1ImageView;
         screen12Kelp1ImageView = [self screen12CreateWhiteKelpOf:screen12Kelp1ImageView];
@@ -913,7 +909,9 @@
         return screen12Kelp1ImageView.image;
     }
     
-    CGImageRef imgRef = [[UIImage imageNamed:@"12_1k_hinar_1.png"] CGImage];
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hinar_1" ofType:@"png"];
+    CGImageRef imgRef = [[UIImage imageWithContentsOfFile:imagePath] CGImage];
     
     size_t width = CGImageGetWidth(imgRef);
     size_t height = CGImageGetHeight(imgRef);
@@ -1033,7 +1031,10 @@
                 [fish setFrame:CGRectMake(0, 0, 89, 57)];
                 break;
         }
-        fish.image = [UIImage imageNamed:[NSString stringWithFormat:@"12_1k_hal%i.png",randomFish]];
+
+        NSString* imagePath;
+        imagePath = [ [ NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"12_1k_hal%i",randomFish] ofType:@"png"];
+        fish.image = [UIImage imageWithContentsOfFile:imagePath];
         
         fishOriginalDegree = 2.00*M_PI/MAX_FISHES_1*i;
         fishRadius = FISHES_1_RADIUS2+((arc4random()%(FISHES_1_RADIUS-FISHES_1_RADIUS2))+1);
@@ -1467,10 +1468,80 @@
     }
 }
 
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_alap" ofType:@"png"];
+    [screen12BackgroundImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hullamok" ofType:@"png"];
+    [screen12WavesImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hinar_1" ofType:@"png"];
+    [screen12Kelp1ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hinar_2" ofType:@"png"];
+    [screen12Kelp2ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hinar_3" ofType:@"png"];
+    [screen12Kelp3ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hinar_4" ofType:@"png"];
+    [screen12Kelp4ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hinar_5" ofType:@"png"];
+    [screen12Kelp5ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hinar_6" ofType:@"png"];
+    [screen12Kelp6ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_meduza_fej" ofType:@"png"];
+    [screen12BigMedusaImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_meduza_kar_1" ofType:@"png"];
+    [screen12BigMedusaArm1ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_meduza_kar_2" ofType:@"png"];
+    [screen12BigMedusaArm2ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_meduza_kar_3" ofType:@"png"];
+    [screen12BigMedusaArm3ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_meduza_kar_4" ofType:@"png"];
+    [screen12BigMedusaArm4ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_1" ofType:@"png"];
+    [screen12BackgroundMedusa1ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_2" ofType:@"png"];
+    [screen12BackgroundMedusa2ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_3" ofType:@"png"];
+    [screen12BackgroundMedusa3ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_4" ofType:@"png"];
+    [screen12BackgroundMedusa4ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_5" ofType:@"png"];
+    [screen12BackgroundMedusa5ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_6" ofType:@"png"];
+    [screen12BackgroundMedusa6ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_7" ofType:@"png"];
+    [screen12BackgroundMedusa7ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_8" ofType:@"png"];
+    [screen12BackgroundMedusa8ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self loadImages];
 
     sfxMedusaReachesFishArray=[[NSMutableArray alloc] init];
     sfxMedusasComeInArray=[[NSMutableArray alloc] init];

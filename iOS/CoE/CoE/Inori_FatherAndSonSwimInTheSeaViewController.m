@@ -69,16 +69,16 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
+/*
 - (IBAction)screen06_07BackToMainMenu:(id)sender;
 {
-    /*
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     viewContoller.nextViewController=0;
     viewContoller = nil;
     
     [self goToNextScreen];
-     */
 }
+     */
 
 - (IBAction)screen06_07NextScreenControlTapped:(id)sender
 {
@@ -254,7 +254,7 @@
         NSString *narrationFileName = [lines objectAtIndex:i+1];
         NSString *narrationFileExt = [lines objectAtIndex:i+1];
         narrationFileName = [narrationFileName substringToIndex:[narrationFileName rangeOfString:@"."].location];
-        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location];
+        narrationFileExt = [narrationFileExt substringFromIndex:[narrationFileExt rangeOfString:@"."].location+1];
         
         NSString *narrationPath = [[NSBundle mainBundle] pathForResource:narrationFileName ofType:narrationFileExt];
         narration = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:narrationPath] error:NULL];
@@ -786,6 +786,44 @@
     }
 }
 
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam1" ofType:@"png"];
+    [screen06_07Wave01ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam2" ofType:@"png"];
+    [screen06_07Wave02ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam3" ofType:@"png"];
+    [screen06_07Wave03ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam4" ofType:@"png"];
+    [screen06_07Wave04ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam5" ofType:@"png"];
+    [screen06_07Wave05ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam6" ofType:@"png"];
+    [screen06_07Wave06ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam7" ofType:@"png"];
+    [screen06_07Wave07ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam8" ofType:@"png"];
+    [screen06_07Wave08ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_nagyhullam9" ofType:@"png"];
+    [screen06_07Wave09ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_apa" ofType:@"png"];
+    [screen06_07FatherImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_inori" ofType:@"png"];
+    [screen06_07InoriImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+}
+
 #pragma mark - View lifecycle
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -840,6 +878,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self loadImages];
     
     [self screen06_07AppearWaves];
     [self startBackgroundMusic];

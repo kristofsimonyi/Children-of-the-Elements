@@ -25,8 +25,8 @@
 }
 
 @property (nonatomic, weak) IBOutlet UIView *screen04BigShipView, *screen04SmallShipView, *screen04BigShipControl;
-@property (nonatomic, weak) IBOutlet UIImageView *screen04InoriSitting, *screen04InoriStanding, *screen04Wave1ImageView, *screen04Wave2ImageView, *screen04Wave3ImageView, *screen04Wave4ImageView, *screen04SnailImageView, *screen04BigShipImageView, *screen04SmallShipImageView, *hintLayerImageView, *screen04MenuImageView;
-@property (nonatomic, weak) IBOutlet UIControl *screen04SnailControl, *screen04SmallShipControl, *screen04InoriControl, *screen04MusicButton, *screen04NarrationButton, *screen04HintButton, *screen04NextScreenButton, *screen04PreviousScreenButton, *screen04CompassContol;
+@property (nonatomic, weak) IBOutlet UIImageView *screen04BaseImageView, *screen04InoriSitting, *screen04InoriStanding, *screen04Wave1ImageView, *screen04Wave2ImageView, *screen04Wave3ImageView, *screen04Wave4ImageView, *screen04SnailImageView, *screen04BigShipImageView, *screen04SmallShipImageView, *hintLayerImageView, *screen04MenuImageView;
+@property (nonatomic, weak) IBOutlet UIControl *screen04SnailControl, *screen04SmallShipControl, *screen04InoriControl, *screen04MusicButton, *screen04NarrationButton, *screen04HintButton, *screen04NextScreenButton, *screen04PreviousScreenButton;
 
 - (void) setSmallShipRockingState;
 - (void) setBigShipRockingState;
