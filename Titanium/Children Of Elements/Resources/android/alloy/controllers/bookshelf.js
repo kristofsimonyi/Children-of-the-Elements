@@ -29,7 +29,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.bookshelf = Ti.UI.createWindow({
-        backgroundImage: "/home/background_home.png",
+        backgroundColor: "#ffffff",
         layout: "center",
         id: "bookshelf"
     });
@@ -75,6 +75,23 @@ function Controller() {
         id: "planetImage"
     });
     $.__views.bookshelf.add($.__views.planetImage);
+    $.__views.pedalMenuElement = Ti.UI.createView({
+        left: 0,
+        bottom: 0,
+        width: 624,
+        height: 634,
+        id: "pedalMenuElement"
+    });
+    $.__views.bookshelf.add($.__views.pedalMenuElement);
+    $.__views.pedal_circleContainer = Ti.UI.createImageView({
+        left: 0,
+        bottom: 0,
+        width: 1048,
+        height: 1068,
+        image: "/bookshelf/bookshelf_pedalMenu_container.png",
+        id: "pedal_circleContainer"
+    });
+    $.__views.pedalMenuElement.add($.__views.pedal_circleContainer);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};

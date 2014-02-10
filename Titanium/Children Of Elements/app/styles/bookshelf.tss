@@ -1,5 +1,5 @@
 ".container": {
-	backgroundImage:'/home/background_home.png',
+	backgroundColor:"#ffffff",
 	layout:"center"
 },
 "#planetImage":{
@@ -13,6 +13,19 @@
 },
 "Label":{
 	color:"#ffffff",
+},
+"#pedalMenuElement":{
+	left:0,
+	bottom:0,
+	width:624,
+	height:634
+},
+"#pedal_circleContainer":{
+	left:0,
+	bottom:0,
+	width:524,
+	height:534
 }
+
 
 

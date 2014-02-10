@@ -78,15 +78,17 @@ function Controller() {
         $.west.preferedLeftPosition = Titanium.Platform.displayCaps.platformWidth - 1 * ($.south.width / 3);
     }
     function openBookshelf(_target) {
-        function animationHandler() {
+        function animationHandlerOpenBookshelf() {
             var bookshelfx = Alloy.createController("bookshelf", {
-                currentItem: _target
+                currentItem: _target,
+                prev: $.index
             }).getView();
             bookshelfx.open({
                 fullscreen: true,
                 navBarHidden: true
             });
             $.index.addEventListener("focus", function() {
+                $.index.removeEventListener("focus", function() {});
                 cleanUp("show");
                 _flagPlanetIsMoving = true;
             });
@@ -104,10 +106,10 @@ function Controller() {
             curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
             duration: 500
         });
-        setInterval(function() {
+        setTimeout(function() {
             _target.animate(animationFinal);
-        }, 600);
-        animationFinal.addEventListener("complete", animationHandler);
+            animationFinal.addEventListener("complete", animationHandlerOpenBookshelf);
+        }, 400);
     }
     function cleanUp(_action) {
         var clipsVisible = "show" == _action ? 1 : 0;
@@ -186,7 +188,7 @@ function Controller() {
     $.index.open({
         fullscreen: true,
         navBarHidden: true,
-        exitOnClose: true
+        exitOnClose: false
     });
     __defers["$.__views.index!open!playLoopAudio"] && $.__views.index.addEventListener("open", playLoopAudio);
     __defers["$.__views.index!close!stopLoopAudio"] && $.__views.index.addEventListener("close", stopLoopAudio);
