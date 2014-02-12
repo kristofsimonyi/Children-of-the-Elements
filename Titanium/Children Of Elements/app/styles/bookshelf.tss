@@ -3,28 +3,51 @@
 	layout:"center"
 },
 "#planetImage":{
-	top: '80%',
-	left: '10', 
-	width:250,
-	height:250,
+	top:366,
+	left:-175, 
 	transform: Alloy.Globals.rotateInterno,
+	width:594,
+	height:520,
 	backgroundImage:'/home/home_planet_north.png',
 
 },
-"Label":{
-	color:"#ffffff",
+
+
+
+"#inicio":{
+	color:"#000000",
+	left:853,
+	top:120,
+	font: { fontSize:44 },
+},
+"#bookshelf_play":{
+	top:208,
+	left:1147,
+},
+"#bookshelf_slide":{
+	top:325,
+	left:849
+},
+"#texto":{
+	color:"#000000",
+	left:853,
+	top:208,
+	width:284,
+	font: { fontSize:13 },
 },
 "#pedalMenuElement":{
 	left:0,
 	bottom:0,
-	width:624,
-	height:634
+	borderWidth:1,
+	borderColor:"#ff0000",
+	width:747,
+	height:750,
 },
 "#pedal_circleContainer":{
 	left:0,
 	bottom:0,
-	width:524,
-	height:534
+	width:512,
+	height:517,
 }
 
 

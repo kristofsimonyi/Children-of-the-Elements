@@ -1,19 +1,28 @@
 <Alloy>
 	<Window class="container" onOpen="playLoopAudio" onClose="stopLoopAudio"> 
 		
-		
-		 
-		<View backgroundColor="#000000" opacity="0.6" width="50%" height="40%" top="15%" right="5%" borderRadius="10"></View>
-		<Label id="inicio" top="18%" left="46%" width="40%">Legend of the north</Label>
-		<Label id="texto"  top="25%" left="46%" width="40%"> Lorem Ipsum</Label>
+
+		<Label id="inicio">Legend of the north</Label>
+
+
+		<Label id="texto"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </Label>
 
 
 		<View id="planetImage"></View>
 
 
 		<View id="pedalMenuElement">
+
+			<View id="pedalItems"></View>
+
 			<ImageView image="/bookshelf/bookshelf_pedalMenu_container.png" id="pedal_circleContainer"> </ImageView>
+
 		</View>
+
+		<ImageView image="/bookshelf/bookshelf_buton_play.png" id="bookshelf_play"> </ImageView>
+
+		<ImageView  id="bookshelf_slide"> </ImageView>
+		
 
 	 
 		
