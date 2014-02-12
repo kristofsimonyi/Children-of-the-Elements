@@ -1,16 +1,19 @@
 var args = arguments[0] || {};
-// $.label.text = args.foobar;
 var currentItem = args.currentItem;
+
+var SlideShow = require('/common/SlideShow');
 
 
 function init(){
 
-	$.inicio.text = args.currentItem.id;
-	$.texto.text = "This is a placeholder for the  >" + args.currentItem.id.toUpperCase() + "< planet. There is no layout yet...use your imagination in here :)  ";
+	$.MainTitle.text = args.currentItem.id;
+	$.descriptionText.text = "This is a placeholder for the  >" + args.currentItem.id.toUpperCase() + "< planet. There is no layout yet...use your imagination in here :)  ";
 
 	setPlanet();
 	//addPedals()
-	showSlide();
+	var slideshow = new SlideShow();
+
+	$.bookshelf_slide.add(slideshow);
 
 }
 
@@ -85,24 +88,7 @@ function addPedals(){
 
 }
 
-function showSlide(){
-
-	var imageSlides = ["/bookshelf/bookshelf_imageslide_01.jpg", "/bookshelf/bookshelf_imageslide_02.jpg" , "/bookshelf/bookshelf_imageslide_03.jpg"]
-	$.bookshelf_slide.images = imageSlides;
-	$.bookshelf_slide.start();
-
-	//alert("start yo")
-}
-
-
-
-
 
 
 init();
 
-
-
-///cancelar el back
-
- 
