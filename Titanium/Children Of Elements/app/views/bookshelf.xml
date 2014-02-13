@@ -1,5 +1,12 @@
 <Alloy>
 	<Window class="container" onOpen="playLoopAudio" onClose="stopLoopAudio"> 
+
+
+		<View id="bookshelf_toolBar">
+			<ImageView id="toolbar_button_home" onClick="cerrar" image="/bookshelf/bookshelf_navigator_home.png"></ImageView>
+			<ImageView id="toolbar_button_mute" onClick="stopLoopAudio" image="/bookshelf/bookshelf_navigator_sound.png"></ImageView>
+			<ImageView id="toolbar_button_suscribe" onClick="suscribe" image="/bookshelf/bookshelf_navigator_suscribe.png"></ImageView>
+		</View>
 		
 
 		<Label id="MainTitle">Legend of the north</Label>
@@ -11,17 +18,24 @@
 		<View id="planetImage"></View>
 
 
+
+		<ImageView image="/bookshelf/bookshelf_buton_play.png" id="bookshelf_play" > </ImageView>
+
+		<View  id="bookshelf_slide"> </View>
+
+
+
 		<View id="pedalMenuElement">
+
+			
 
 			<View id="pedalItems"></View>
 
-			<ImageView image="/bookshelf/bookshelf_pedalMenu_container.png" id="pedal_circleContainer"> </ImageView>
+			
 
 		</View>
 
-		<ImageView image="/bookshelf/bookshelf_buton_play.png" id="bookshelf_play"> </ImageView>
-
-		<View  id="bookshelf_slide"> </View>
+		
 		
 
 	 

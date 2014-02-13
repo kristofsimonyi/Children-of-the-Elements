@@ -1,0 +1,3 @@
+function cerrar(){
+	$.soon.close();
+}

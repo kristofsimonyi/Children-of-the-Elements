@@ -87,11 +87,7 @@ function Controller() {
                 fullscreen: true,
                 navBarHidden: true
             });
-            $.index.addEventListener("focus", function() {
-                $.index.removeEventListener("focus", function() {});
-                cleanUp("show");
-                _flagPlanetIsMoving = true;
-            });
+            stopLoopAudio();
         }
         currentID = _target.id.toString();
         cleanUp("hide");
@@ -189,6 +185,11 @@ function Controller() {
         fullscreen: true,
         navBarHidden: true,
         exitOnClose: false
+    });
+    Ti.App.addEventListener("backPlanet", function() {
+        cleanUp("show");
+        playLoopAudio();
+        _flagPlanetIsMoving = true;
     });
     __defers["$.__views.index!open!playLoopAudio"] && $.__views.index.addEventListener("open", playLoopAudio);
     __defers["$.__views.index!close!stopLoopAudio"] && $.__views.index.addEventListener("close", stopLoopAudio);

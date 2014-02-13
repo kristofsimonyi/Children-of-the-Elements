@@ -1,4 +1,8 @@
 function SlideShow() {
+    Ti.App.addEventListener("stopSlideShow", function() {
+        clearInterval(SlideShow.prototype._slideInterval);
+        SlideShow.prototype._slideInterval = null;
+    });
     return this.createSlide();
 }
 
@@ -31,7 +35,7 @@ SlideShow.prototype.createSlide = function() {
 
 SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
     var val = _arrayTarget.length - 1;
-    setInterval(function() {
+    SlideShow.prototype._slideInterval = setInterval(function(e) {
         function reposition(e) {
             if (2 == e.source.parentView.children.length) {
                 e.source.parentView.children[0].opacity = 0;
@@ -39,20 +43,24 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
             }
             animation.removeEventListener("complete", reposition);
         }
-        0 > val && (val = _arrayTarget.length - 1);
+        if (0 > val) {
+            val = _arrayTarget.length - 1;
+            Ti.App.fireEvent("stopSlideShow", {
+                custom_data: e
+            });
+        }
         var animation = Titanium.UI.createAnimation({
             opacity: 1,
             duration: 1e3
         });
         animation._target = _arrayTarget[val];
         animation.parentView = _viewTarget;
-        _viewTarget.opacity = 0;
         _viewTarget.add(_arrayTarget[val]);
         _arrayTarget[val].animate(animation);
         val -= 1;
+        Ti.API.info("TOC");
         animation.addEventListener("complete", reposition);
-    }, 5e3);
-    SlideShow.prototype.slideShowStop = function() {};
+    }, 3e3);
 };
 
 module.exports = SlideShow;

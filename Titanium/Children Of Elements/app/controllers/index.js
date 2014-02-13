@@ -221,9 +221,6 @@ function alignPlanets(){
 					
 				}
 	
-	
-	
-
 }
 
 
@@ -307,6 +304,7 @@ function  openBookshelf(_target){
 					bookshelfx.open({
 						fullscreen:true,
 						navBarHidden : true,
+						exitOnClose:true,
 						modal: true,
 						activityEnterAnimation: Ti.Android.R.anim.fade_in,
     					activityExitAnimation: Ti.Android.R.anim.fade_out
@@ -322,7 +320,9 @@ function  openBookshelf(_target){
 					
 					}
 				
+				stopLoopAudio()
 				///listen when the window us back
+				/*
 				$.index.addEventListener('focus', function(e){
 					
 					$.index.removeEventListener('focus', function(){});
@@ -334,6 +334,7 @@ function  openBookshelf(_target){
 					
 					
 				});
+				*/
 				
 				
 				
@@ -399,4 +400,14 @@ $.index.open({
 	navBarHidden : true,
 	exitOnClose : false
 });
+
+ 
+
+Ti.App.addEventListener('backPlanet',function(e){
+	cleanUp("show");
+	playLoopAudio()
+	///after proces are done, enable this view
+	_flagPlanetIsMoving = true;
+})
+
  

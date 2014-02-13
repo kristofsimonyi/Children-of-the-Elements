@@ -1,6 +1,9 @@
 function SlideShow() {
 	
-	
+	Ti.App.addEventListener('stopSlideShow',function(e){
+		clearInterval(SlideShow.prototype._slideInterval)
+		SlideShow.prototype._slideInterval = null
+	})
 
 	return this.createSlide();
 
@@ -48,16 +51,18 @@ SlideShow.prototype.createSlide = function() {
 
 SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 	
+
+
 	
 
 	var val = _arrayTarget.length - 1;
 
 
-	var _slideInterval = setInterval(function(){
+	SlideShow.prototype._slideInterval = setInterval(function(e){
 
 		if(val<0){
 			val = _arrayTarget.length - 1;
-			//this.slideShowStop()
+			 Ti.App.fireEvent('stopSlideShow' , {custom_data:e});
 
 		}
 
@@ -75,7 +80,7 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 			animation.parentView = _viewTarget;
 
 
-			_viewTarget.opacity = 0
+		
 			_viewTarget.add(_arrayTarget[val])
 
 			_arrayTarget[val].animate(animation);
@@ -83,7 +88,7 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 
 			val -=1;
 
-
+			Ti.API.info("TOC")
 
 			animation.addEventListener('complete',reposition);
 
@@ -104,13 +109,8 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 		
 
 
-	},5000);
+	},3000);
 
-
-SlideShow.prototype.slideShowStop = function(first_argument) {
-	// body...
-};
-	
 
 };
 

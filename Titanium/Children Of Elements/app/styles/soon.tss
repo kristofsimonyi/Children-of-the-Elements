@@ -1,0 +1,8 @@
+".container":{
+	backgroundImage:'/bookshelf/bookshelf_pantallaFinal.png',
+},
+"Button":{
+	bottom:10,
+	backgroundColor:"#ffffff",
+	width:80
+}

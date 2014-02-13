@@ -18,7 +18,7 @@
 },
 "#bookshelf_play":{
 	top:208,
-	left:1147,
+	left:"88%",
 },
 "#bookshelf_slide":{
 	bottom: 0,
@@ -30,10 +30,11 @@
 "#pedalMenuElement":{
 	left:0,
 	bottom:0,
-	width:747,
-	height:750,
-	borderWidth:2,
-	borderColor:"#ff0000"
+	width:'85%',
+	height:'86%',
+	/*borderWidth:2,
+	borderColor:"#ff0000"*/
+	
 },
 "#pedal_circleContainer":{
 	left:0,
@@ -50,4 +51,30 @@
 
 	backgroundImage:'/home/home_planet_north.png',
 	 */
-}
+},
+"#bookshelf_toolBar":{
+	layout:'horizontal',
+	left: "40%"
+},
+"#toolbar_button_home" :{
+	width: 93,
+	height: 93,
+},
+"#toolbar_button_suscribe" :{
+	width: 101,
+	height: 91,
+},
+"#toolbar_button_mute":{
+	width: 98,
+	height: 97,
+},
+
+
+
+
+
+
+
+
+
+

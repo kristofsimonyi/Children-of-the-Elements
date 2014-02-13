@@ -2,7 +2,11 @@ var args = arguments[0] || {};
 var currentItem = args.currentItem;
 
 var SlideShow = require('/common/SlideShow');
+var PedalMenu = require('/common/PedalMenu');
 
+
+var _slideshow;
+var	_pedals
 
 function init(){
 
@@ -10,10 +14,31 @@ function init(){
 	$.descriptionText.text = "This is a placeholder for the  >" + args.currentItem.id.toUpperCase() + "< planet. There is no layout yet...use your imagination in here :)  ";
 
 	setPlanet();
-	//addPedals()
-	var slideshow = new SlideShow();
 
-	$.bookshelf_slide.add(slideshow);
+	_slideshow = new SlideShow();
+
+		$.bookshelf_slide.add(_slideshow);
+
+	_pedals = new PedalMenu( $.MainTitle , $.descriptionText );
+	
+		$.pedalMenuElement.add(_pedals);
+
+
+	$.bookshelf_play.addEventListener('click',function(){
+
+		var soonScreen = Alloy.createController('soon').getView();
+
+		soonScreen.open({
+			fullscreen:true,
+			navBarHidden : true,
+			exitOnClose:true,
+			modal: true,
+		});
+				
+
+	})
+
+	 
 
 }
 
@@ -44,54 +69,30 @@ function playLoopAudio(){
 function stopLoopAudio(){
 
 	player.stop();
+	//player = null;
+	//_slideshow = null
+
 	
+}
+
+function suscribe(){
+
+	alert("coming soon :)")
 }
 
 
 
 //// add pedals dynamically
 
-function addPedals(){
-
-	petalo1 = {"left":"-40.7", "top":"76" , "rotacion":"-340"};
-	 
-
-	var petalos = [petalo1, petalo2, petalo3, petalo4, petalo5];
 
 
-	
 
-	for (var i = 0; i < petalos.length; i++) {
-
-
-		var petalo = Ti.UI.createImageView({image:"/bookshelf/bookshelf_pedalMenu_pedal_normal.png"});
-	
-	
-
-			var matrix = Ti.UI.create2DMatrix();
-				matrix = matrix.rotate(-340); //340
-
-
-			petalo.width = 144;
-			petalo.height = 160;
-			petalo.left = petalos[i].left;
-			petalo.top = petalos[i].top;
-			petalo.transform = matrix;
-
-			petalo.addEventListener('click', function(){
-				alert("yolo");
-			});
-
-
-			$.pedalItems.add(petalo);
-
-			petalo.transform = matrix;
-
-
-	};
-
+function cerrar(){
+	Ti.App.fireEvent('stopSlideShow');
+	Ti.App.fireEvent('backPlanet');
+	$.bookshelf.close();
+ 
 }
-
 
 
 init();
