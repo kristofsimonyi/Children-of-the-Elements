@@ -85,9 +85,9 @@
 	// Do any additional setup after loading the view.
     
     //set custom font for labels
-    [introLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:45]];
-    [introStoryTitleLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:40]];
-    [continueLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:30]];
+//    [introLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:45]];
+//    [introStoryTitleLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:40]];
+//    [continueLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:30]];
     
     //start background music
     [self startMusic];

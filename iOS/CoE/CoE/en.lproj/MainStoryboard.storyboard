@@ -775,20 +775,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children Of The Elements" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N10-VR-r4n" userLabel="IntroLabel">
-                                <rect key="frame" x="62" y="20" width="900" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-Landscape.png" id="S9S-BQ-gEp" userLabel="CompassImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Story - The Story of the Sea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vyf-qc-Ejd" userLabel="IntroStoryTitleLabel">
-                                <rect key="frame" x="62" y="100" width="900" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the screen to continue ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cqC-Y8-0Pj" userLabel="ContinueLabel">
                                 <rect key="frame" x="212" y="700" width="600" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -796,26 +786,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoE_100x100.png" id="S9S-BQ-gEp" userLabel="CompassImageView">
-                                <rect key="frame" x="437" y="359" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e_1k_talamh_fly.png" id="fur-x9-QcR" userLabel="TalamhImageView">
-                                <rect key="frame" x="437" y="205" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e_1k_kusini_fly.png" id="mth-Gr-pw4" userLabel="KusiniImageView">
-                                <rect key="frame" x="437" y="513" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e_1k_ziemelu_fly.png" id="Dtg-8I-zTc" userLabel="ZiemeluImageView">
-                                <rect key="frame" x="133" y="359" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e_1k_amihan_fly.png" id="For-nR-CJH" userLabel="AmihanImageView">
-                                <rect key="frame" x="741" y="359" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" id="d2s-pf-QYk" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -833,8 +803,6 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="continueLabel" destination="cqC-Y8-0Pj" id="WVV-XU-mMk"/>
-                        <outlet property="introLabel" destination="N10-VR-r4n" id="I5F-uD-Fmn"/>
-                        <outlet property="introStoryTitleLabel" destination="Vyf-qc-Ejd" id="b3e-23-fLj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uus-5y-Vpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -943,15 +911,11 @@
         <image name="9_overview.png" width="200" height="150"/>
         <image name="A1-overview.png" width="200" height="150"/>
         <image name="BackgoundIslands.jpg" width="1254" height="739"/>
-        <image name="CoE_100x100.png" width="100" height="100"/>
+        <image name="Default-Landscape.png" width="1024" height="768"/>
         <image name="PadlockClosed.png" width="462" height="599"/>
         <image name="Speaker.png" width="32" height="32"/>
         <image name="a1-1k_tubus.png" width="96" height="100"/>
-        <image name="e_1k_amihan_fly.png" width="250" height="258"/>
         <image name="e_1k_inori.png" width="1024" height="768"/>
-        <image name="e_1k_kusini_fly.png" width="250" height="237"/>
-        <image name="e_1k_talamh_fly.png" width="161" height="250"/>
-        <image name="e_1k_ziemelu_fly.png" width="250" height="248"/>
         <image name="korhinta-overview.png" width="200" height="150"/>
         <image name="screen1-overview2.png" width="200" height="150"/>
         <image name="screen11-overview1.png" width="200" height="150"/>

@@ -15,6 +15,9 @@
     NSTimer *seaChangeTimer, *netMovingTimer;
     CGFloat netMovingTimerClock, netMovingTimerClockChange;
 
+    BOOL netIsOnTheMove;
+    CGPoint previousTranslatedPoint;
+
     NSTimer *wavingFishTimer;
     CGFloat wavingFishTimerClock, wavingFishTimerClockChange;
 
@@ -32,6 +35,6 @@
 - (IBAction)screen09NarrationButtonTapped:(UITapGestureRecognizer *)sender;
 - (IBAction)screen09MusicButtonTapped:(UITapGestureRecognizer *) sender;
 - (IBAction)screen09HintButtonTapped:(UITapGestureRecognizer *)sender;
-- (IBAction)netPanGestureRecognizer:(UIPanGestureRecognizer *)sender;
+//- (IBAction)netPanGestureRecognizer:(UIPanGestureRecognizer *)sender;
 
 @end

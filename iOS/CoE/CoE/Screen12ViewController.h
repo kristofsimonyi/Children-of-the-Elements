@@ -18,7 +18,7 @@
     CGAffineTransform previousTransformMatrix;
     NSMutableArray *fishes1Array, *fishes2Array, *fishes1SpeedArray, *fishes2SpeedArray;
     
-    AVAudioPlayer *backgroundMusic, *narration, *sfxFishesMoving, *sfxFishReached1, *sfxFishReached2, *sfxFishReached3, *sfxFishReached4, *sfxFishReached5, *sfxMedusaPulsing;
+    AVAudioPlayer *backgroundMusic, *narration, *sfxFishesMoving, *sfxFishReached1, *sfxFishReached2, *sfxFishReached3, *sfxFishReached4, *sfxFishReached5, *sfxMedusaPulsing, *sfxMedusaReachesFish;
     
     NSMutableArray *sfxMedusaReachesFishArray, *sfxMedusasComeInArray, *timingOfMedusasArray;
 }

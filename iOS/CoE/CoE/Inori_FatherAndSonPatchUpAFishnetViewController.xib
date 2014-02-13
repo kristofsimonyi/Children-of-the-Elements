@@ -40,9 +40,6 @@
                     <rect key="frame" x="0.0" y="-350" width="1024" height="1110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="wZt-Ph-Z0z" appends="YES" id="3pm-CW-N4v"/>
-                    </connections>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="25" userLabel="ShoreImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
@@ -149,11 +146,6 @@
                 <action selector="screen09HintButtonTapped:" destination="-1" id="jcz-JF-yo1"/>
             </connections>
         </tapGestureRecognizer>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="wZt-Ph-Z0z" userLabel="NetPan Gesture Recognizer">
-            <connections>
-                <action selector="netPanGestureRecognizer:" destination="-1" id="X8U-6U-igu"/>
-            </connections>
-        </panGestureRecognizer>
     </objects>
     <resources>
         <image name="1_HintLayer.png" width="800" height="799"/>

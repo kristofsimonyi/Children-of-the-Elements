@@ -12,7 +12,7 @@
 #define NET_MOVING_ACTION_METHOD_INTERVAL     0.01
 #define NET_MOVING_CLOCK_CHANGE               0.005
 #define NET_MOVING_CLOCK_CHANGE_INCREMENT     1.01
-#define NET_MOVING_CLOCK_MAX                  5.00
+#define NET_MOVING_CLOCK_MAX                  10.00
 
 #define WAVING_FISH_TIMER_CLOCK_INTERVAL         0.02
 #define WAVING_FISH_TIMER_CLOCK_CHANGE           1.00
@@ -91,9 +91,10 @@
                             [self allInteractionFound];
                         }
                         else
-                            if (CGRectContainsPoint(CGRectMake(0, 34, 1024, 200), translatedPoint))
+                            if (CGRectContainsPoint(CGRectMake(0, 220, 1024, 600), translatedPoint))
                             {
-                                [screen09NetImageView setAlpha:1-screen09NetImageView.alpha];
+                                previousTranslatedPoint=translatedPoint;
+                                netIsOnTheMove=true;
                             }
 
     if (touchedFish!=nil)
@@ -111,6 +112,69 @@
         [self startsfxFish];
     }
 
+}
+
+- (CGFloat) calculateDiffDegree: (CGFloat)diffDegree;
+{
+    diffDegree=netMovingTimerClock-diffDegree;
+    if (diffDegree<-NET_MOVING_CLOCK_MAX)
+    {
+        diffDegree=-NET_MOVING_CLOCK_MAX;
+    } else
+    {
+        if (diffDegree>NET_MOVING_CLOCK_MAX)
+        {
+            diffDegree=NET_MOVING_CLOCK_MAX;
+        }
+    }
+    return diffDegree;
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint translatedPoint = [touch locationInView:self.view];
+    
+    CGFloat diffDegree;
+    
+    if (netIsOnTheMove)
+    {
+        if (translatedPoint.y>220)
+        {
+            CGFloat previousDegree =atanf((previousTranslatedPoint.x-512.00) / (previousTranslatedPoint.y-220));
+            CGFloat newdegree = atanf((translatedPoint.x-512.00) / (translatedPoint.y-220));
+            diffDegree = (newdegree-previousDegree)*180/M_PI;
+            //        NSLog(@"%f, %f, %f", (previousDegree/M_PI) *180.00, (newdegree/M_PI)*180.00, diffDegree);
+            
+            diffDegree=[self calculateDiffDegree:diffDegree];
+            if (netMovingTimerClock>diffDegree)
+            {
+                while (netMovingTimerClock>diffDegree)
+                {
+                    [self netMovingTimerClockNextStep];
+                }
+            }
+            else
+            {
+                while (netMovingTimerClock<diffDegree)
+                {
+                    [self netMovingTimerClockNextStep];
+                }
+            }
+            
+            CGAffineTransform newTransform = CGAffineTransformMakeRotation(netMovingTimerClock/180*M_PI);
+            [screen09NetImageView setTransform:newTransform];
+        }
+        
+    }
+    
+    previousTranslatedPoint = translatedPoint;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+{
+    netIsOnTheMove=false;
+    
 }
 
 - (void)startsfxInoriAndFather;
@@ -226,13 +290,18 @@
     }
 }
 
+/*
 - (IBAction)netPanGestureRecognizer:(UIPanGestureRecognizer *)sender
 {
-/*
-    CGPoint newCenter=CGPointMake(screen09NetImageView.center.x, screen09NetImageView.center.y);
-    [screen09NetImageView setCenter:newCenter];
- */
+//    CGPoint newCenter=CGPointMake(screen09NetImageView.center.x, screen09NetImageView.center.y);
+//    [screen09NetImageView setCenter:newCenter];
+ 
+    CGPoint translation = [sender translationInView:screen09NetImageView];
+    CGPoint location = [sender locationInView:screen09NetImageView];
+    NSLog(@"%f, %f", translation.x, translation.y);
+    NSLog(@"%f, %f", location.x, location.y);
 }
+*/
 
 - (IBAction)screen09NarrationButtonTapped:(UITapGestureRecognizer *)sender;
 {
@@ -442,7 +511,7 @@
     
 }
 
--(void)screen09NetMovingActionMethod;
+-(void)netMovingTimerClockNextStep;
 {
     netMovingTimerClock=netMovingTimerClock+netMovingTimerClockChange;
     if (netMovingTimerClock<=0)
@@ -472,6 +541,12 @@
             netMovingTimerClock=-NET_MOVING_CLOCK_MAX;
         }
     }
+}
+
+-(void)screen09NetMovingActionMethod;
+{
+    [self netMovingTimerClockNextStep];
+    
     CGAffineTransform newTransform = CGAffineTransformMakeRotation(netMovingTimerClock/180*M_PI);
     
     [screen09NetImageView setTransform:newTransform];
