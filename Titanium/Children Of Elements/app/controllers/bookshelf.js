@@ -22,13 +22,17 @@ function setPlanet(){
 
 
 		//$.planetImage.animate(animationFinal);
-		var object = $.planetImage;
+		var planetObject = $.planetImage;
 		var argsObj = args.currentItem;
 		
-		object.backgroundImage = argsObj.backgroundImage;
+		planetObject.backgroundImage = argsObj.backgroundImage;
+		planetObject.bottom = -(planetObject.height/3);
+		planetObject.left = -200;
+		planetObject.transform = Ti.UI.create2DMatrix().rotate(49);
+		
 }
 
-
+ 
 /// play sound on load
 function playLoopAudio(){
 	
@@ -60,7 +64,7 @@ function addPedals(){
 	for (var i = 0; i < petalos.length; i++) {
 
 
-		var petalo = Ti.UI.createImageView({image:"/bookshelf/bookshelf_pedalMenu_pedal_normal.png"})
+		var petalo = Ti.UI.createImageView({image:"/bookshelf/bookshelf_pedalMenu_pedal_normal.png"});
 	
 	
 
@@ -75,8 +79,8 @@ function addPedals(){
 			petalo.transform = matrix;
 
 			petalo.addEventListener('click', function(){
-				alert("yolo")
-			})
+				alert("yolo");
+			});
 
 
 			$.pedalItems.add(petalo);

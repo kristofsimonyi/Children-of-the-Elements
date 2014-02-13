@@ -100,15 +100,15 @@ function Controller() {
         cleanUp("hide");
         Titanium.Platform.displayCaps.platformWidth - 100;
         var matrix = Ti.UI.create2DMatrix();
-        matrix = matrix.rotate(-45);
-        matrix = matrix.scale(3, 3);
+        matrix = matrix.rotate(49);
+        matrix = matrix.scale(2.3, 2.3);
         var animationFinal = Titanium.UI.createAnimation({
-            top: "80%",
-            left: "10",
+            left: -50,
             transform: matrix,
             curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
             duration: 500
         });
+        animationFinal.bottom = -60;
         setTimeout(function() {
             _target.animate(animationFinal);
             animationFinal.addEventListener("complete", animationHandlerOpenBookshelf);
@@ -144,8 +144,8 @@ function Controller() {
     playLoopAudio ? $.__views.index.addEventListener("open", playLoopAudio) : __defers["$.__views.index!open!playLoopAudio"] = true;
     stopLoopAudio ? $.__views.index.addEventListener("close", stopLoopAudio) : __defers["$.__views.index!close!stopLoopAudio"] = true;
     $.__views.north = Ti.UI.createView({
-        width: 250,
-        height: 250,
+        width: 297,
+        height: 260,
         backgroundImage: "/home/home_planet_north.png",
         transform: Alloy.Globals.rotateTop,
         id: "north",
@@ -154,8 +154,8 @@ function Controller() {
     $.__views.index.add($.__views.north);
     onSelectPlanet ? $.__views.north.addEventListener("click", onSelectPlanet) : __defers["$.__views.north!click!onSelectPlanet"] = true;
     $.__views.east = Ti.UI.createView({
-        width: 250,
-        height: 250,
+        width: 297,
+        height: 260,
         backgroundImage: "/home/home_planet_east.png",
         transform: Alloy.Globals.rotateRight,
         id: "east",

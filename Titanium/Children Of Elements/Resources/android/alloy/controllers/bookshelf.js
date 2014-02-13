@@ -7,9 +7,12 @@ function Controller() {
         $.bookshelf_slide.add(slideshow);
     }
     function setPlanet() {
-        var object = $.planetImage;
+        var planetObject = $.planetImage;
         var argsObj = args.currentItem;
-        object.backgroundImage = argsObj.backgroundImage;
+        planetObject.backgroundImage = argsObj.backgroundImage;
+        planetObject.bottom = -(planetObject.height / 3);
+        planetObject.left = -200;
+        planetObject.transform = Ti.UI.create2DMatrix().rotate(49);
     }
     function playLoopAudio() {
         player = Ti.Media.createSound({
@@ -63,12 +66,8 @@ function Controller() {
     });
     $.__views.bookshelf.add($.__views.descriptionText);
     $.__views.planetImage = Ti.UI.createView({
-        top: 366,
-        left: -175,
-        transform: Alloy.Globals.rotateInterno,
         width: 594,
         height: 520,
-        backgroundImage: "/home/home_planet_north.png",
         id: "planetImage"
     });
     $.__views.bookshelf.add($.__views.planetImage);
@@ -77,6 +76,8 @@ function Controller() {
         bottom: 0,
         width: 747,
         height: 750,
+        borderWidth: 2,
+        borderColor: "#ff0000",
         id: "pedalMenuElement"
     });
     $.__views.bookshelf.add($.__views.pedalMenuElement);

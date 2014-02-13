@@ -23,12 +23,17 @@
 "#bookshelf_slide":{
 	bottom: 0,
 	right:0,
+	width : 431,
+	height :426
+
 },
 "#pedalMenuElement":{
 	left:0,
 	bottom:0,
 	width:747,
 	height:750,
+	borderWidth:2,
+	borderColor:"#ff0000"
 },
 "#pedal_circleContainer":{
 	left:0,
@@ -37,10 +42,12 @@
 	height:517,
 },
 "#planetImage":{
-	top:366,
-	left:-175, 
-	transform: Alloy.Globals.rotateInterno,
 	width:594,
 	height:520,
+	/*
+	 * left:-175, 
+	transform: Alloy.Globals.rotateInterno,
+
 	backgroundImage:'/home/home_planet_north.png',
-},
+	 */
+}

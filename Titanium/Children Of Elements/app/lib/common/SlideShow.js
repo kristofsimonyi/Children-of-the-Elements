@@ -8,13 +8,16 @@ function SlideShow() {
 }
 
 SlideShow.prototype._slideContainer;
+SlideShow.prototype._slideInterval;
 
 SlideShow.prototype.createSlide = function() {
 
 	this._slideContainer =  Titanium.UI.createView();
 
-	this._slideContainer.top=325;
-	this._slideContainer.left=849;
+	//this._slideContainer.top=325;
+	//this._slideContainer.left=849;
+	this._slideContainer.width = 431
+	this._slideContainer.height = 426
 
 	var imageSlides = ["/bookshelf/bookshelf_imageslide_01.jpg", "/bookshelf/bookshelf_imageslide_02.jpg" , "/bookshelf/bookshelf_imageslide_03.jpg"]
 	var slideViews=[]	
@@ -22,10 +25,13 @@ SlideShow.prototype.createSlide = function() {
 	for (var i = 0; i < imageSlides.length; i++) {
 		
 		var imageItem = Ti.UI.createImageView({image: imageSlides[i] });
+			imageItem.width = 431
+			imageItem.height = 426
 			imageItem.bottom = 0
 			imageItem.right = 0
 			imageItem.zIndex = 1
 			imageItem.opacity = 0
+
 			imageItem.id = "elemento"+ [i] 
 
 		///store slides in array
@@ -46,24 +52,22 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 
 	var val = _arrayTarget.length - 1;
 
-	var anterior
 
-
-	var intervalo = setInterval(function(){
+	var _slideInterval = setInterval(function(){
 
 		if(val<0){
 			val = _arrayTarget.length - 1;
+			//this.slideShowStop()
 
 		}
 
 		//alert("val = "+val +"  arraypos - "+ _arrayTarget[val].id )
 	
 
-			_arrayTarget[val].zIndex = _arrayTarget[val].zIndex+1
+			//_arrayTarget[val].zIndex = _arrayTarget[val].zIndex+1
 
 			var animation = Titanium.UI.createAnimation({
 				opacity:1,
-				curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
 				duration: 1000
 			});
 
@@ -71,7 +75,7 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 			animation.parentView = _viewTarget;
 
 
-
+			_viewTarget.opacity = 0
 			_viewTarget.add(_arrayTarget[val])
 
 			_arrayTarget[val].animate(animation);
@@ -90,6 +94,7 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 					//alert(e.source.parentView.children.length) 
 
 					if(e.source.parentView.children.length==2){
+						e.source.parentView.children[0].opacity=0;
 						e.source.parentView.remove(e.source.parentView.children[0]);
 					}
 
@@ -102,7 +107,9 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 	},5000);
 
 
-	
+SlideShow.prototype.slideShowStop = function(first_argument) {
+	// body...
+};
 	
 
 };

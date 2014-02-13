@@ -257,18 +257,24 @@ function  openBookshelf(_target){
 		/// zoom current planet
 		var xPosition = Titanium.Platform.displayCaps.platformWidth - 100;
 		var matrix = Ti.UI.create2DMatrix();
-			matrix = matrix.rotate(-45);
-			matrix = matrix.scale(3, 3);
+			matrix = matrix.rotate(49);
+			matrix = matrix.scale(2.3, 2.3);
 
 	
 
 		var animationFinal = Titanium.UI.createAnimation({
-			top: '80%',
-			left: '10', 
+			left: -50, 
 			transform: matrix,
 			curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
 			duration: 500
 		});
+		
+		if(Ti.Platform.name == "android"){
+			
+			animationFinal.bottom = -60;
+		}else{
+			animationFinal.top = "75%";
+		}
 
 		
 		
