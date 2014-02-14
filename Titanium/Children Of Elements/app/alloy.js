@@ -17,3 +17,10 @@ Alloy.Globals.rotateTop = Ti.UI.create2DMatrix().rotate(-180);
 
 Alloy.Globals.rotateInterno = Ti.UI.create2DMatrix().rotate(49).scale(3, 3);
 Alloy.Globals.rotateReset= Ti.UI.create2DMatrix().rotate(0);
+
+
+//if(1 = 1) {
+
+	Alloy.Globals.androidScaleFactor = Ti.UI.create2DMatrix().scale(0.9, 0.9);
+//}
+

@@ -1,0 +1,16 @@
+"#bookshelf_slide":{
+	bottom: -50,
+	right:'-50dp',
+	width : Ti.UI.SIZE,
+	height :Ti.UI.SIZE,
+	transform: Alloy.Globals.androidScaleFactor,
+}
+"#pedalMenuElement":{
+	left:0,
+	bottom:0,
+	width : Ti.UI.SIZE,
+	height :Ti.UI.SIZE,
+},
+"#toolbar_button_home" :{
+	zIndex:3,
+},

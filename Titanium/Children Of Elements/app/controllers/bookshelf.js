@@ -18,6 +18,7 @@ function init(){
 	setPlanet();
 	$.aboutImage.touchEnabled = false;
 	$.aboutImage.zIndex = 20
+	$.bookshelf_slide.touchEnabled = false;
 
 	
 
@@ -26,6 +27,8 @@ function init(){
 
 		$.bookshelf_slide.add(_slideshow);
 	},1000)
+
+
 		
 
 	_pedals = new PedalMenu( $.MainTitle , $.descriptionText );
@@ -46,6 +49,8 @@ function init(){
 		});
 				
 	})
+
+
 
 	 
 

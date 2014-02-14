@@ -5,6 +5,7 @@ function Controller() {
         setPlanet();
         $.aboutImage.touchEnabled = false;
         $.aboutImage.zIndex = 20;
+        $.bookshelf_slide.touchEnabled = false;
         setTimeout(function() {
             _slideshow = new SlideShow();
             $.bookshelf_slide.add(_slideshow);
@@ -75,36 +76,6 @@ function Controller() {
     $.__views.bookshelf && $.addTopLevelView($.__views.bookshelf);
     playLoopAudio ? $.__views.bookshelf.addEventListener("open", playLoopAudio) : __defers["$.__views.bookshelf!open!playLoopAudio"] = true;
     stopLoopAudio ? $.__views.bookshelf.addEventListener("close", stopLoopAudio) : __defers["$.__views.bookshelf!close!stopLoopAudio"] = true;
-    $.__views.bookshelf_toolBar = Ti.UI.createView({
-        layout: "horizontal",
-        left: "40%",
-        id: "bookshelf_toolBar"
-    });
-    $.__views.bookshelf.add($.__views.bookshelf_toolBar);
-    $.__views.toolbar_button_home = Ti.UI.createImageView({
-        width: 93,
-        height: 93,
-        id: "toolbar_button_home",
-        image: "/bookshelf/bookshelf_navigator_home.png"
-    });
-    $.__views.bookshelf_toolBar.add($.__views.toolbar_button_home);
-    cerrar ? $.__views.toolbar_button_home.addEventListener("click", cerrar) : __defers["$.__views.toolbar_button_home!click!cerrar"] = true;
-    $.__views.toolbar_button_mute = Ti.UI.createImageView({
-        width: 98,
-        height: 97,
-        id: "toolbar_button_mute",
-        image: "/bookshelf/bookshelf_navigator_sound.png"
-    });
-    $.__views.bookshelf_toolBar.add($.__views.toolbar_button_mute);
-    stopLoopAudio ? $.__views.toolbar_button_mute.addEventListener("click", stopLoopAudio) : __defers["$.__views.toolbar_button_mute!click!stopLoopAudio"] = true;
-    $.__views.toolbar_button_suscribe = Ti.UI.createImageView({
-        width: 101,
-        height: 91,
-        id: "toolbar_button_suscribe",
-        image: "/bookshelf/bookshelf_navigator_suscribe.png"
-    });
-    $.__views.bookshelf_toolBar.add($.__views.toolbar_button_suscribe);
-    suscribe ? $.__views.toolbar_button_suscribe.addEventListener("click", suscribe) : __defers["$.__views.toolbar_button_suscribe!click!suscribe"] = true;
     $.__views.MainTitle = Ti.UI.createLabel({
         color: "#000000",
         right: 0,
@@ -137,28 +108,20 @@ function Controller() {
         id: "planetImage"
     });
     $.__views.bookshelf.add($.__views.planetImage);
-    $.__views.bookshelf_play = Ti.UI.createImageView({
-        top: 208,
-        left: "88%",
-        width: 92,
-        height: 89,
-        image: "/bookshelf/bookshelf_buton_play.png",
-        id: "bookshelf_play"
-    });
-    $.__views.bookshelf.add($.__views.bookshelf_play);
     $.__views.bookshelf_slide = Ti.UI.createView({
-        bottom: 0,
-        right: 0,
-        width: 431,
-        height: 426,
+        bottom: -50,
+        right: "-50dp",
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        transform: Alloy.Globals.androidScaleFactor,
         id: "bookshelf_slide"
     });
     $.__views.bookshelf.add($.__views.bookshelf_slide);
     $.__views.pedalMenuElement = Ti.UI.createView({
         left: 0,
         bottom: 0,
-        width: "85%",
-        height: "88%",
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
         id: "pedalMenuElement"
     });
     $.__views.bookshelf.add($.__views.pedalMenuElement);
@@ -174,6 +137,46 @@ function Controller() {
         opacity: "0"
     });
     $.__views.bookshelf.add($.__views.aboutImage);
+    $.__views.bookshelf_toolBar = Ti.UI.createView({
+        layout: "horizontal",
+        left: "40%",
+        id: "bookshelf_toolBar"
+    });
+    $.__views.bookshelf.add($.__views.bookshelf_toolBar);
+    $.__views.toolbar_button_home = Ti.UI.createImageView({
+        width: 93,
+        height: 93,
+        zIndex: 3,
+        id: "toolbar_button_home",
+        image: "/bookshelf/bookshelf_navigator_home.png"
+    });
+    $.__views.bookshelf_toolBar.add($.__views.toolbar_button_home);
+    cerrar ? $.__views.toolbar_button_home.addEventListener("click", cerrar) : __defers["$.__views.toolbar_button_home!click!cerrar"] = true;
+    $.__views.toolbar_button_mute = Ti.UI.createImageView({
+        width: 98,
+        height: 97,
+        id: "toolbar_button_mute",
+        image: "/bookshelf/bookshelf_navigator_sound.png"
+    });
+    $.__views.bookshelf_toolBar.add($.__views.toolbar_button_mute);
+    stopLoopAudio ? $.__views.toolbar_button_mute.addEventListener("click", stopLoopAudio) : __defers["$.__views.toolbar_button_mute!click!stopLoopAudio"] = true;
+    $.__views.toolbar_button_suscribe = Ti.UI.createImageView({
+        width: 101,
+        height: 91,
+        id: "toolbar_button_suscribe",
+        image: "/bookshelf/bookshelf_navigator_suscribe.png"
+    });
+    $.__views.bookshelf_toolBar.add($.__views.toolbar_button_suscribe);
+    suscribe ? $.__views.toolbar_button_suscribe.addEventListener("click", suscribe) : __defers["$.__views.toolbar_button_suscribe!click!suscribe"] = true;
+    $.__views.bookshelf_play = Ti.UI.createImageView({
+        top: 208,
+        left: "88%",
+        width: 92,
+        height: 89,
+        image: "/bookshelf/bookshelf_buton_play.png",
+        id: "bookshelf_play"
+    });
+    $.__views.bookshelf.add($.__views.bookshelf_play);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};

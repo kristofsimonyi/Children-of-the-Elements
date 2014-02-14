@@ -2,11 +2,6 @@
 	<Window class="container" onOpen="playLoopAudio" onClose="stopLoopAudio"> 
 
 
-		<View id="bookshelf_toolBar">
-			<ImageView id="toolbar_button_home" onClick="cerrar" image="/bookshelf/bookshelf_navigator_home.png"></ImageView>
-			<ImageView id="toolbar_button_mute" onClick="stopLoopAudio" image="/bookshelf/bookshelf_navigator_sound.png"></ImageView>
-			<ImageView id="toolbar_button_suscribe" onClick="suscribe" image="/bookshelf/bookshelf_navigator_suscribe.png"></ImageView>
-		</View>
 		
 
 		<Label id="MainTitle">Legend of the north</Label>
@@ -19,7 +14,7 @@
 
 
 
-		<ImageView image="/bookshelf/bookshelf_buton_play.png" id="bookshelf_play" > </ImageView>
+		
 
 		<View  id="bookshelf_slide"> </View>
 
@@ -39,7 +34,15 @@
 		<ImageView id="aboutImage" image="/about/aboutScreen.png"  opacity="0" ></ImageView>
 		
 
-	 
+		
+
+		<View id="bookshelf_toolBar">
+			<ImageView id="toolbar_button_home" onClick="cerrar" image="/bookshelf/bookshelf_navigator_home.png"></ImageView>
+			<ImageView id="toolbar_button_mute" onClick="stopLoopAudio" image="/bookshelf/bookshelf_navigator_sound.png"></ImageView>
+			<ImageView id="toolbar_button_suscribe" onClick="suscribe" image="/bookshelf/bookshelf_navigator_suscribe.png"></ImageView>
+		</View>
+		
+	 	<ImageView image="/bookshelf/bookshelf_buton_play.png" id="bookshelf_play" > </ImageView>
 		
 		
 	</Window>
