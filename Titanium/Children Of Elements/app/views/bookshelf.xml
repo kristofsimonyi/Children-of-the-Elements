@@ -36,6 +36,7 @@
 		</View>
 
 		
+		<ImageView id="aboutImage" image="/about/aboutScreen.png"  opacity="0" ></ImageView>
 		
 
 	 

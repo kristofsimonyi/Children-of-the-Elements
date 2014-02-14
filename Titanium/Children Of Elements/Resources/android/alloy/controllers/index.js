@@ -86,15 +86,12 @@ function Controller() {
             bookshelfx.open({
                 fullscreen: true,
                 navBarHidden: true,
+                exitOnClose: true,
                 modal: true,
                 activityEnterAnimation: Ti.Android.R.anim.fade_in,
                 activityExitAnimation: Ti.Android.R.anim.fade_out
             });
-            $.index.addEventListener("focus", function() {
-                $.index.removeEventListener("focus", function() {});
-                cleanUp("show");
-                _flagPlanetIsMoving = true;
-            });
+            stopLoopAudio();
         }
         currentID = _target.id.toString();
         cleanUp("hide");
@@ -104,7 +101,7 @@ function Controller() {
         matrix = matrix.scale(2.3, 2.3);
         var animationFinal = Titanium.UI.createAnimation({
             left: -50,
-            transform: matrix,
+            transform: Alloy.Globals.rotateInterno,
             curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
             duration: 500
         });
@@ -144,8 +141,8 @@ function Controller() {
     playLoopAudio ? $.__views.index.addEventListener("open", playLoopAudio) : __defers["$.__views.index!open!playLoopAudio"] = true;
     stopLoopAudio ? $.__views.index.addEventListener("close", stopLoopAudio) : __defers["$.__views.index!close!stopLoopAudio"] = true;
     $.__views.north = Ti.UI.createView({
-        width: 297,
-        height: 260,
+        width: 250,
+        height: 250,
         backgroundImage: "/home/home_planet_north.png",
         transform: Alloy.Globals.rotateTop,
         id: "north",
@@ -154,8 +151,8 @@ function Controller() {
     $.__views.index.add($.__views.north);
     onSelectPlanet ? $.__views.north.addEventListener("click", onSelectPlanet) : __defers["$.__views.north!click!onSelectPlanet"] = true;
     $.__views.east = Ti.UI.createView({
-        width: 297,
-        height: 260,
+        width: 250,
+        height: 250,
         backgroundImage: "/home/home_planet_east.png",
         transform: Alloy.Globals.rotateRight,
         id: "east",
@@ -192,6 +189,11 @@ function Controller() {
         fullscreen: true,
         navBarHidden: true,
         exitOnClose: false
+    });
+    Ti.App.addEventListener("backPlanet", function() {
+        cleanUp("show");
+        playLoopAudio();
+        _flagPlanetIsMoving = true;
     });
     __defers["$.__views.index!open!playLoopAudio"] && $.__views.index.addEventListener("open", playLoopAudio);
     __defers["$.__views.index!close!stopLoopAudio"] && $.__views.index.addEventListener("close", stopLoopAudio);

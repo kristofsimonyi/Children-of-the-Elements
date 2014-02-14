@@ -261,7 +261,7 @@ function  openBookshelf(_target){
 
 		var animationFinal = Titanium.UI.createAnimation({
 			left: -50, 
-			transform: matrix,
+			transform: Alloy.Globals.rotateInterno,
 			curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
 			duration: 500
 		});

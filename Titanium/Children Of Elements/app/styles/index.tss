@@ -3,8 +3,8 @@
 	layout:"center"
 },
 "#north":{
-	width: 297,
-	height: 260,
+	width: 250,
+	height: 250,
 	backgroundImage:'/home/home_planet_north.png',
 	transform: Alloy.Globals.rotateTop,
 	
@@ -18,8 +18,8 @@
 
 
 "#east":{
-	width: 297,
-	height: 260,
+	width: 250,
+	height: 250,
 	backgroundImage:'/home/home_planet_east.png',
 	transform: Alloy.Globals.rotateRight
 }
@@ -29,5 +29,4 @@
 	backgroundImage:'/home/home_planet_west.png',
 	transform: Alloy.Globals.rotateLeft,
 }
-
 

@@ -21,9 +21,8 @@ function Controller() {
         var planetObject = $.planetImage;
         var argsObj = args.currentItem;
         planetObject.backgroundImage = argsObj.backgroundImage;
-        planetObject.bottom = -(planetObject.height / 3);
-        planetObject.left = -200;
-        planetObject.transform = Ti.UI.create2DMatrix().rotate(49);
+        planetObject.zIndex = 10;
+        planetObject.top = "75%";
     }
     function playLoopAudio() {
         player = Ti.Media.createSound({
@@ -37,7 +36,18 @@ function Controller() {
         player.stop();
     }
     function suscribe() {
-        alert("coming soon :)");
+        var animation = Titanium.UI.createAnimation({
+            opacity: 1,
+            duration: 600
+        });
+        $.aboutImage.animate(animation);
+        $.aboutImage.addEventListener("click", function() {
+            var animationx = Titanium.UI.createAnimation({
+                opacity: 0,
+                duration: 600
+            });
+            $.aboutImage.animate(animationx);
+        });
     }
     function cerrar() {
         Ti.App.fireEvent("stopSlideShow");
@@ -115,8 +125,10 @@ function Controller() {
     });
     $.__views.bookshelf.add($.__views.descriptionText);
     $.__views.planetImage = Ti.UI.createView({
-        width: 594,
-        height: 520,
+        width: 250,
+        height: 250,
+        transform: Alloy.Globals.rotateInterno,
+        left: -50,
         id: "planetImage"
     });
     $.__views.bookshelf.add($.__views.planetImage);
@@ -147,6 +159,12 @@ function Controller() {
         id: "pedalItems"
     });
     $.__views.pedalMenuElement.add($.__views.pedalItems);
+    $.__views.aboutImage = Ti.UI.createImageView({
+        id: "aboutImage",
+        image: "/about/aboutScreen.png",
+        opacity: "0"
+    });
+    $.__views.bookshelf.add($.__views.aboutImage);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};

@@ -3,10 +3,12 @@ var currentItem = args.currentItem;
 
 var SlideShow = require('/common/SlideShow');
 var PedalMenu = require('/common/PedalMenu');
+ 
 
 
 var _slideshow;
-var	_pedals
+var	_pedals;
+ 
 
 function init(){
 
@@ -24,6 +26,8 @@ function init(){
 		$.pedalMenuElement.add(_pedals);
 
 
+ 
+
 	$.bookshelf_play.addEventListener('click',function(){
 
 		var soonScreen = Alloy.createController('soon').getView();
@@ -35,7 +39,6 @@ function init(){
 			modal: true,
 		});
 				
-
 	})
 
 	 
@@ -51,9 +54,18 @@ function setPlanet(){
 		var argsObj = args.currentItem;
 		
 		planetObject.backgroundImage = argsObj.backgroundImage;
+		planetObject.zIndex = 10
+/*
 		planetObject.bottom = -(planetObject.height/3);
 		planetObject.left = -200;
 		planetObject.transform = Ti.UI.create2DMatrix().rotate(49);
+*/
+		if(Ti.Platform.name == "android"){
+			
+			planetObject.bottom = -60;
+		}else{
+			planetObject.top = "75%";
+		}
 		
 }
 
@@ -77,7 +89,17 @@ function stopLoopAudio(){
 
 function suscribe(){
 
-	alert("coming soon :)")
+
+	var animation = Titanium.UI.createAnimation({ opacity:1, duration: 600 });
+
+
+	$.aboutImage.animate(animation );
+	$.aboutImage.addEventListener('click', function(){
+		var animationx = Titanium.UI.createAnimation({ opacity:0, duration: 600 });
+		$.aboutImage.animate(animationx );
+
+	})
+ 
 }
 
 

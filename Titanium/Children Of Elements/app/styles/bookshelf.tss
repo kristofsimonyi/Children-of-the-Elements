@@ -43,8 +43,11 @@
 	height:517,
 },
 "#planetImage":{
-	width:594,
-	height:520,
+	width: 250,
+	height: 250,
+	transform: Alloy.Globals.rotateInterno,
+	left: -50, 
+	
 	/*
 	 * left:-175, 
 	transform: Alloy.Globals.rotateInterno,
