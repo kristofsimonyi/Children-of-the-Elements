@@ -113,7 +113,6 @@ function Controller() {
         right: "-50dp",
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
-        transform: Alloy.Globals.androidScaleFactor,
         id: "bookshelf_slide"
     });
     $.__views.bookshelf.add($.__views.bookshelf_slide);

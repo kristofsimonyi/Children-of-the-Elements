@@ -88,6 +88,13 @@ function Controller() {
                 navBarHidden: true
             });
             stopLoopAudio();
+            $.index.addEventListener("focus", function() {
+                if (!_flagPlanetIsMoving) {
+                    $.index.removeEventListener("focus", function() {});
+                    cleanUp("show");
+                    _flagPlanetIsMoving = true;
+                }
+            });
         }
         currentID = _target.id.toString();
         cleanUp("hide");
