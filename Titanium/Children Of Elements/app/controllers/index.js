@@ -304,7 +304,6 @@ function  openBookshelf(_target){
 					bookshelfx.open({
 						fullscreen:true,
 						navBarHidden : true,
-						exitOnClose:true,
 						modal: true,
 						activityEnterAnimation: Ti.Android.R.anim.fade_in,
     					activityExitAnimation: Ti.Android.R.anim.fade_out
@@ -322,19 +321,22 @@ function  openBookshelf(_target){
 				
 				stopLoopAudio()
 				///listen when the window us back
-				/*
+				 
 				$.index.addEventListener('focus', function(e){
 					
-					$.index.removeEventListener('focus', function(){});
-					cleanUp("show");
-					
-					///after proces are done, enable this view
-					_flagPlanetIsMoving = true;
+					/// this should not be necesary, but android is special
+					if(!_flagPlanetIsMoving) {
+						$.index.removeEventListener('focus', function(){});
+						cleanUp("show");
+						
+						///after proces are done, enable this view
+						_flagPlanetIsMoving = true;
+					}
 					
 					
 					
 				});
-				*/
+				 
 				
 				
 				

@@ -86,12 +86,18 @@ function Controller() {
             bookshelfx.open({
                 fullscreen: true,
                 navBarHidden: true,
-                exitOnClose: true,
                 modal: true,
                 activityEnterAnimation: Ti.Android.R.anim.fade_in,
                 activityExitAnimation: Ti.Android.R.anim.fade_out
             });
             stopLoopAudio();
+            $.index.addEventListener("focus", function() {
+                if (!_flagPlanetIsMoving) {
+                    $.index.removeEventListener("focus", function() {});
+                    cleanUp("show");
+                    _flagPlanetIsMoving = true;
+                }
+            });
         }
         currentID = _target.id.toString();
         cleanUp("hide");

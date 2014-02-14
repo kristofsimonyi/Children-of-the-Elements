@@ -42,7 +42,6 @@ function init(){
 		soonScreen.open({
 			fullscreen:true,
 			navBarHidden : true,
-			exitOnClose:true,
 			modal: true,
 		});
 				
@@ -86,7 +85,7 @@ function playLoopAudio(){
 }
 
 function stopLoopAudio(){
-
+	Ti.App.fireEvent('stopSlideShow');
 	player.stop();
 	//player = null;
 	//_slideshow = null
@@ -117,8 +116,9 @@ function suscribe(){
 
 
 function cerrar(){
-	Ti.App.fireEvent('stopSlideShow');
+
 	Ti.App.fireEvent('backPlanet');
+
 	$.bookshelf.close();
  
 }

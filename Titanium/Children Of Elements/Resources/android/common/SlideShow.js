@@ -35,7 +35,7 @@ SlideShow.prototype.createSlide = function() {
 
 SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
     var val = _arrayTarget.length - 1;
-    SlideShow.prototype._slideInterval = setInterval(function() {
+    SlideShow.prototype._slideInterval = setInterval(function(e) {
         function reposition(e) {
             if (2 == e.source.parentView.children.length) {
                 e.source.parentView.children[0].opacity = 0;
@@ -43,7 +43,12 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
             }
             animation.removeEventListener("complete", reposition);
         }
-        0 > val && (val = _arrayTarget.length - 1);
+        if (0 > val) {
+            val = _arrayTarget.length - 1;
+            Ti.App.fireEvent("stopSlideShow", {
+                custom_data: e
+            });
+        }
         var animation = Titanium.UI.createAnimation({
             opacity: 1,
             duration: 1e3
