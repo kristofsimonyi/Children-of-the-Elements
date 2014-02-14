@@ -16,10 +16,17 @@ function init(){
 	$.descriptionText.text = "This is a placeholder for the  >" + args.currentItem.id.toUpperCase() + "< planet. There is no layout yet...use your imagination in here :)  ";
 
 	setPlanet();
+	$.aboutImage.touchEnabled = false;
+	$.aboutImage.zIndex = 20
 
-	_slideshow = new SlideShow();
+	
+
+	var TO = setTimeout(function(){
+		_slideshow = new SlideShow();
 
 		$.bookshelf_slide.add(_slideshow);
+	},1000)
+		
 
 	_pedals = new PedalMenu( $.MainTitle , $.descriptionText );
 	
@@ -92,12 +99,12 @@ function suscribe(){
 
 	var animation = Titanium.UI.createAnimation({ opacity:1, duration: 600 });
 
-
+	$.aboutImage.touchEnabled = true;
 	$.aboutImage.animate(animation );
 	$.aboutImage.addEventListener('click', function(){
 		var animationx = Titanium.UI.createAnimation({ opacity:0, duration: 600 });
 		$.aboutImage.animate(animationx );
-
+		$.aboutImage.touchEnabled = false;
 	})
  
 }

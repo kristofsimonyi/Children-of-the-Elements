@@ -3,8 +3,12 @@ function Controller() {
         $.MainTitle.text = args.currentItem.id;
         $.descriptionText.text = "This is a placeholder for the  >" + args.currentItem.id.toUpperCase() + "< planet. There is no layout yet...use your imagination in here :)  ";
         setPlanet();
-        _slideshow = new SlideShow();
-        $.bookshelf_slide.add(_slideshow);
+        $.aboutImage.touchEnabled = false;
+        $.aboutImage.zIndex = 20;
+        setTimeout(function() {
+            _slideshow = new SlideShow();
+            $.bookshelf_slide.add(_slideshow);
+        }, 1e3);
         _pedals = new PedalMenu($.MainTitle, $.descriptionText);
         $.pedalMenuElement.add(_pedals);
         $.bookshelf_play.addEventListener("click", function() {
@@ -40,6 +44,7 @@ function Controller() {
             opacity: 1,
             duration: 600
         });
+        $.aboutImage.touchEnabled = true;
         $.aboutImage.animate(animation);
         $.aboutImage.addEventListener("click", function() {
             var animationx = Titanium.UI.createAnimation({
@@ -47,6 +52,7 @@ function Controller() {
                 duration: 600
             });
             $.aboutImage.animate(animationx);
+            $.aboutImage.touchEnabled = false;
         });
     }
     function cerrar() {
@@ -135,6 +141,8 @@ function Controller() {
     $.__views.bookshelf_play = Ti.UI.createImageView({
         top: 208,
         left: "88%",
+        width: 92,
+        height: 89,
         image: "/bookshelf/bookshelf_buton_play.png",
         id: "bookshelf_play"
     });
@@ -151,7 +159,7 @@ function Controller() {
         left: 0,
         bottom: 0,
         width: "85%",
-        height: "86%",
+        height: "88%",
         id: "pedalMenuElement"
     });
     $.__views.bookshelf.add($.__views.pedalMenuElement);
@@ -160,6 +168,8 @@ function Controller() {
     });
     $.__views.pedalMenuElement.add($.__views.pedalItems);
     $.__views.aboutImage = Ti.UI.createImageView({
+        width: "100%",
+        height: "100%",
         id: "aboutImage",
         image: "/about/aboutScreen.png",
         opacity: "0"

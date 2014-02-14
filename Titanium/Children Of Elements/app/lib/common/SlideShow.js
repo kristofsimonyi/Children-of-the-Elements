@@ -50,10 +50,6 @@ SlideShow.prototype.createSlide = function() {
 
 
 SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
-	
-
-
-	
 
 	var val = _arrayTarget.length - 1;
 
