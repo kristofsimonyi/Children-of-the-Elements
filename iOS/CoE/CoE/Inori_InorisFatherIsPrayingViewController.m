@@ -7,7 +7,7 @@
 //
 #define PHASE_01_PERIOD                                 300.00  //300, 3 sec long
 #define PHASE_01_DISSOLVE_START                         200.00  //200, after 2 sec
-#define PHASE_01_TIMER_STEP                             1.00
+#define PHASE_01_TIMER_STEP                             5.00
 
 #define PHASE_02_PERIOD                                 40.00  //40, 2 sec long
 
@@ -276,11 +276,13 @@
         if (phase01TimerClock==0)
             if (CGRectContainsPoint(riceFieldBaseImageView.frame, translatedPoint))
             {
+                [phase01View setAlpha:0];
                 [phase02View setAlpha:1];
                 transitionToPhase02ImageView.image=[self captureScreen:phase02View];
                 [phase02View setAlpha:0];
+                [phase01View setAlpha:1];
                 
-                phase01Timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(phase01TimerActionMethod) userInfo:nil repeats:YES];
+                phase01Timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(phase01TimerActionMethod) userInfo:nil repeats:YES];
                 [phase01Timer fire];
                 
                 [self startSFXHouse];
@@ -343,9 +345,10 @@
     
     CGRect cropRect = CGRectMake(512-(1024*newScale/2), phase01TimerClock/5, 1024*newScale, 748*newScale);
     
-    NSString* imagePath;
-    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
-    CGImageRef imageRef = CGImageCreateWithImageInRect([[UIImage imageWithContentsOfFile:imagePath] CGImage], cropRect);
+//    NSString* imagePath; //***
+//    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
+//    riceFieldBaseCGImage=[riceFieldBaseImage CGImage];
+    CGImageRef imageRef = CGImageCreateWithImageInRect(riceFieldBaseCGImage, cropRect);
     UIImage *newImage = [UIImage imageWithCGImage:imageRef scale:1.00 orientation:riceFieldBaseImageView.image.imageOrientation];
     [riceFieldBaseImageView setImage:newImage];
     CGImageRelease(imageRef);
@@ -664,8 +667,10 @@
 {
     NSString* imagePath;
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
-    [riceFieldBaseImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
-    
+    riceFieldBaseImage=[UIImage imageWithContentsOfFile:imagePath];
+    [riceFieldBaseImageView setImage:riceFieldBaseImage];
+    riceFieldBaseCGImage=[riceFieldBaseImage CGImage];
+
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_ablak" ofType:@"png"];
     [windowImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
     

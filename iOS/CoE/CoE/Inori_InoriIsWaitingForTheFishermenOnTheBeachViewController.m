@@ -477,7 +477,7 @@
     //set the SFX then start playing
     if (sfxInori==nil)
     {
-        NSString *inoriSFXPath = [[NSBundle mainBundle] pathForResource:@"002_hello" ofType:@"mp3"];
+        NSString *inoriSFXPath = [[NSBundle mainBundle] pathForResource:@"002_ohajooK" ofType:@"mp3"];
         sfxInori = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:inoriSFXPath] error:NULL];
         sfxInori.delegate = self;
         [sfxInori setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method

@@ -19,6 +19,8 @@
     CGFloat teaPotTimerClock, teaPotTimerChangeCurrentMax, teaPotTimerClockMax, teaPotTimerClockMin, teaPotTimerClockChange;
     AVAudioPlayer *backgroundMusic, *sfxHouse, *sfxTeaPot, *sfxFather, *narration;
     BOOL fatherInteractionFound, teaPotInteractionFound;
+    UIImage *riceFieldBaseImage;
+    CGImageRef riceFieldBaseCGImage;
 }
 
 @property (nonatomic, weak) IBOutlet UIView *phase01View, *phase02View;

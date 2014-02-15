@@ -21,6 +21,10 @@
 
 - (IBAction)screenTapped:(id)sender
 {
+    [introMusic stop];
+    introMusic.delegate=nil;
+    introMusic=nil;
+    
     //After tapping this screen it is time to change the rootViewController in NavigationController to ViewController that is on the MainStoryboard
     NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:[self.navigationController.viewControllers mutableCopy]];
 
@@ -29,8 +33,7 @@
     mainViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 
     //For the continuous music we need to pass the current introMusic as backgroundMusic of ViewController.
-    mainViewController.backgroundMusic=introMusic;
-    mainViewController.nextViewController=101;
+    mainViewController.nextViewController=112;
     mainViewController.musicIsOn=YES;
 
     [viewControllers replaceObjectAtIndex:0 withObject:mainViewController];
