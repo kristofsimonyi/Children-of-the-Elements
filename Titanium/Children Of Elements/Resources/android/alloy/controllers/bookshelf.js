@@ -139,6 +139,7 @@ function Controller() {
     $.__views.bookshelf_toolBar = Ti.UI.createView({
         layout: "horizontal",
         left: "40%",
+        height: 102,
         id: "bookshelf_toolBar"
     });
     $.__views.bookshelf.add($.__views.bookshelf_toolBar);

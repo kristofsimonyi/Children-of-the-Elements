@@ -1,0 +1,7 @@
+[
+    {"left":"-5", "bottom":"500" , "rotacion":"0" , "titleA": "FIRST STORY"},
+    {"left":"160", "bottom":"460" , "rotacion":"18" , "titleA": "SECOND STORY"},
+    {"left":"300", "bottom":"320" , "rotacion":"45" , "titleA": "THIRD STORY" , "imagenActiva" : "/bookshelf/bookshelf_pedal_active_img.png"},
+    {"left":"430", "bottom":"180" , "rotacion":"72" , "titleA": "FOURTH STORY"},
+    {"left":"480", "bottom":"5" , "rotacion":"90" , "titleA": "FIFTH STORY"}
+]

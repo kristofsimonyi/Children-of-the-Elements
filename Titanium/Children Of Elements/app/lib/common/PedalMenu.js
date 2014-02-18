@@ -14,19 +14,13 @@ PedalMenu.prototype.screenText;
 
 PedalMenu.prototype.createPedals = function (){
 
-	petalo1 = {"left":"-5", "bottom":"500" , "rotacion":"0" , "titleA": "FIRST STORY"};
-	petalo2 = {"left":"160", "bottom":"460" , "rotacion":"18" , "titleA": "SECOND STORY"};
-	petalo3 = {"left":"300", "bottom":"320" , "rotacion":"45" , "titleA": "THIRD STORY" , "imagenActiva" : "/bookshelf/bookshelf_pedal_active_img.png"};
-	petalo4 = {"left":"430", "bottom":"180" , "rotacion":"72" , "titleA": "FOURTH STORY"};
-	petalo5 = {"left":"480", "bottom":"5" , "rotacion":"90" , "titleA": "FIFTH STORY"};
 
-	 
+	var petalos = this.parseJSON('/json/pedals.json');
+	// [petalo1, petalo2, petalo3, petalo4, petalo5];
 
 
-	var petalos = [petalo1, petalo2, petalo3, petalo4, petalo5];
+	var petaloContainer = Ti.UI.createView({width:700, height:700, bottom:0, left:0})
 
-
-	var petaloContainer = Ti.UI.createView()
 	
 
 	for (var i = 0; i < petalos.length; i++) {
@@ -95,15 +89,60 @@ PedalMenu.prototype.createPedals = function (){
 	})
 
 	petaloContainer.add(cirContainer);
+	this.pedalContainerView = petaloContainer;
+
+	this.rotatePedals();
 
 	return  petaloContainer;
 
 }
 
 
-PedalMenu.prototype.mostrarTexto = function (){
-	
+PedalMenu.prototype.mostrarTexto = function (){	
 }
 
+PedalMenu.prototype.rotatePedals = function(){
+
+		 
+	// define transform matrix for short planets
+	var matrix = Ti.UI.create2DMatrix();
+		matrix = matrix.rotate(180);
+ 
+	
+
+	//Ti.API.info(currentItem.preferedRightPosition)
+	
+	var centre = {x:0,y:1};
+	
+
+	this.pedalContainerView.anchorPoint = centre;		
+
+	
+	/*
+	this.pedalContainerView.borderWidth=5;
+	this.pedalContainerView.borderColor="#00ff00";
+	*/
+
+	var planetAnimation = Ti.UI.createAnimation({
+		transform:matrix,
+		repeat:100,
+		anchorPoint : centre ,
+		curve: Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,
+		autoreverse:true,
+		duration:1000
+	});
+ 
+ 	//this.pedalContainerView.animate(planetAnimation)
+
+};
+
+
+PedalMenu.prototype.parseJSON = function(_URL) {
+	var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);
+	var data = file.read().text;
+	var json = JSON.parse(data);
+
+	return json;
+};
 
 module.exports = PedalMenu;
