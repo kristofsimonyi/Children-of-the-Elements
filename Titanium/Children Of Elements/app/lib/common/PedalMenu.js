@@ -2,10 +2,7 @@ function PedalMenu(_titleTarget , _textTarget){
 
 	this.screenTitle = _titleTarget;
 	this.screenText = _textTarget;
-
-	Ti.App.addEventListener('clickPetalo', function(){
-		
-	} )
+	
 	return this.createPedals();
 }
 
@@ -25,16 +22,11 @@ PedalMenu.prototype.createPedals = function (){
 
 	for (var i = 0; i < petalos.length; i++) {
 
-
-		
-
-
-
 		var imagenPetaloBase
 		var imagenW
 		var imagenH 
 
-		if (petalos[i].imagenActiva){
+		if (petalos[i].imageActive){
 		
 			imagenPetaloBase  = petalos[i].imagenActiva;
 			imagenW = 224
@@ -48,30 +40,7 @@ PedalMenu.prototype.createPedals = function (){
 			
 		}
 	
-		var petalo = Ti.UI.createImageView({image:imagenPetaloBase});
-	
-
-			var matrix = Ti.UI.create2DMatrix();
-				matrix = matrix.rotate(petalos[i].rotacion); //340
-
-
-			petalo.width = imagenW;
-			petalo.height = imagenH ;
-			petalo.left = petalos[i].left;
-			petalo.bottom = petalos[i].bottom;
-			petalo.transform = matrix;
-			petalo.s_titulo = this.screenTitle;
-			petalo.s_text = this.screenText;
-			petalo.d_titulo = petalos[i].titleA
-	  
-
-			petalo.addEventListener('click', function(e){
-				//Ti.App.fireEvent('clickPetalo', {evento:e});
-
-				e.source.s_titulo.text = e.source.d_titulo;
-				e.source.s_text.text = "THIS IS A PLACEHOLDER Lorem ipsum dolor sit amet, consectetur " 
-
-			});
+			var petalo = this.createPedalItem(petalos[i]);
 
 
 			petaloContainer.add(petalo);
@@ -94,7 +63,6 @@ PedalMenu.prototype.createPedals = function (){
 	this.rotatePedals();
 
 	return  petaloContainer;
-
 }
 
 
@@ -133,9 +101,84 @@ PedalMenu.prototype.rotatePedals = function(){
 	});
  
  	//this.pedalContainerView.animate(planetAnimation)
-
 };
 
+
+PedalMenu.prototype.createPedalItem = function(_pedalInfo) {
+	
+	/*
+	var petalo = Ti.UI.createImageView({image:imagenPetaloBase});
+	
+
+			var matrix = Ti.UI.create2DMatrix();
+				matrix = matrix.rotate(petalos[i].rotacion); //340
+
+
+			petalo.width = imagenW;
+			petalo.height = imagenH ;
+			petalo.left = petalos[i].left;
+			petalo.bottom = petalos[i].bottom;
+			petalo.transform = matrix;
+			petalo.s_titulo = this.screenTitle;
+			petalo.s_text = this.screenText;
+			petalo.d_titulo = petalos[i].titleA
+	  
+
+			petalo.addEventListener('click', function(e){
+				//Ti.App.fireEvent('clickPetalo', {evento:e});
+
+				e.source.s_titulo.text = e.source.d_titulo;
+				e.source.s_text.text = "THIS IS A PLACEHOLDER Lorem ipsum dolor sit amet, consectetur " 
+				
+
+			});
+	*/
+
+	var petalo = Ti.UI.createImageView({
+		image:"/bookshelf/bookshelf_pedalMenu_pedal_normal.png",
+		width:144,
+		height:160,
+		touchEnabled:false
+	});
+
+
+	var matrix = Ti.UI.create2DMatrix();
+				matrix = matrix.rotate(_pedalInfo.rotacion); //340
+
+	var pedalItem = Ti.UI.createView({
+			width:144,
+			height:160,
+			transform:matrix,
+			left: _pedalInfo.left,
+			bottom: _pedalInfo.bottom,
+			d_titulo: _pedalInfo.titleA,
+			storyID: _pedalInfo.storyID,
+	})
+
+	pedalItem.s_titulo = this.screenTitle;
+	pedalItem.s_text = this.screenText;
+
+	pedalItem.add(petalo);
+
+
+
+	pedalItem.addEventListener('click', function(e){
+		
+		//alert( e.source.s_titulo.text )
+		//e.source.s_titulo.text = e.source.d_titulo;
+		e.source.s_titulo.text = e.source.d_titulo;
+
+		//e.source.s_text.text = "THIS IS A PLACEHOLDER Lorem ipsum dolor sit amet, consectetur "
+
+		/// this should fire on double ckick
+		Ti.App.fireEvent("onShowNewStory", {"storyID": e.source.storyID})
+		
+
+	});
+
+	return pedalItem;
+
+};
 
 PedalMenu.prototype.parseJSON = function(_URL) {
 	var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);

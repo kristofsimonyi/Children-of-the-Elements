@@ -12,12 +12,16 @@ function Controller() {
         }, 1e3);
         _pedals = new PedalMenu($.MainTitle, $.descriptionText);
         $.pedalMenuElement.add(_pedals);
-        $.bookshelf_play.addEventListener("click", function() {
-            var soonScreen = Alloy.createController("soon").getView();
-            soonScreen.open({
+        Ti.App.addEventListener("onShowNewStory", function(e) {
+            $.bookshelf_play.storyID = e.storyID;
+        });
+        $.bookshelf_play.addEventListener("click", function(e) {
+            var storyViewer = Alloy.createController("storyViewer", {
+                storyID: e.source.storyID
+            }).getView();
+            storyViewer.open({
                 fullscreen: true,
-                navBarHidden: true,
-                modal: true
+                navBarHidden: true
             });
         });
     }
@@ -140,6 +144,7 @@ function Controller() {
         layout: "horizontal",
         left: "40%",
         height: 102,
+        top: 0,
         id: "bookshelf_toolBar"
     });
     $.__views.bookshelf.add($.__views.bookshelf_toolBar);

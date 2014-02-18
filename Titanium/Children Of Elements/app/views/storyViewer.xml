@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class="container"> 
+
+		<View id="storyStage">
+
+		</View>
+		
+		<Button onClick="cerrar"> Back </Button>
+
+
+		
+	</Window>
+</Alloy>

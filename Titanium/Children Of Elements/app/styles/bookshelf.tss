@@ -51,7 +51,8 @@
 "#bookshelf_toolBar":{
 	layout:'horizontal',
 	left: "40%",
-	height:102
+	height:102,
+	top:0
 },
 "#toolbar_button_home" :{
 	width: 93,

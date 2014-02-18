@@ -36,16 +36,20 @@ function init(){
 		$.pedalMenuElement.add(_pedals);
 
 
+
+	Ti.App.addEventListener("onShowNewStory",function(e){
+		$.bookshelf_play.storyID = e.storyID
+		//aqui deberia activar otro slideshow
+	})
  
 
-	$.bookshelf_play.addEventListener('click',function(){
+	$.bookshelf_play.addEventListener('click',function(e){
 
-		var soonScreen = Alloy.createController('soon').getView();
+		var storyViewer= Alloy.createController('storyViewer', {storyID:e.source.storyID}).getView();
 
-		soonScreen.open({
+		storyViewer.open({
 			fullscreen:true,
 			navBarHidden : true,
-			modal: true,
 		});
 				
 	})

@@ -1,7 +1,6 @@
 function PedalMenu(_titleTarget, _textTarget) {
     this.screenTitle = _titleTarget;
     this.screenText = _textTarget;
-    Ti.App.addEventListener("clickPetalo", function() {});
     return this.createPedals();
 }
 
@@ -21,7 +20,7 @@ PedalMenu.prototype.createPedals = function() {
         var imagenPetaloBase;
         var imagenW;
         var imagenH;
-        if (petalos[i].imagenActiva) {
+        if (petalos[i].imageActive) {
             imagenPetaloBase = petalos[i].imagenActiva;
             imagenW = 224;
             imagenH = 257;
@@ -30,23 +29,7 @@ PedalMenu.prototype.createPedals = function() {
             imagenW = 144;
             imagenH = 160;
         }
-        var petalo = Ti.UI.createImageView({
-            image: imagenPetaloBase
-        });
-        var matrix = Ti.UI.create2DMatrix();
-        matrix = matrix.rotate(petalos[i].rotacion);
-        petalo.width = imagenW;
-        petalo.height = imagenH;
-        petalo.left = petalos[i].left;
-        petalo.bottom = petalos[i].bottom;
-        petalo.transform = matrix;
-        petalo.s_titulo = this.screenTitle;
-        petalo.s_text = this.screenText;
-        petalo.d_titulo = petalos[i].titleA;
-        petalo.addEventListener("click", function(e) {
-            e.source.s_titulo.text = e.source.d_titulo;
-            e.source.s_text.text = "THIS IS A PLACEHOLDER Lorem ipsum dolor sit amet, consectetur ";
-        });
+        var petalo = this.createPedalItem(petalos[i]);
         petaloContainer.add(petalo);
     }
     var cirContainer = Ti.UI.createImageView({
@@ -81,6 +64,36 @@ PedalMenu.prototype.rotatePedals = function() {
         autoreverse: true,
         duration: 1e3
     });
+};
+
+PedalMenu.prototype.createPedalItem = function(_pedalInfo) {
+    var petalo = Ti.UI.createImageView({
+        image: "/bookshelf/bookshelf_pedalMenu_pedal_normal.png",
+        width: 144,
+        height: 160,
+        touchEnabled: false
+    });
+    var matrix = Ti.UI.create2DMatrix();
+    matrix = matrix.rotate(_pedalInfo.rotacion);
+    var pedalItem = Ti.UI.createView({
+        width: 144,
+        height: 160,
+        transform: matrix,
+        left: _pedalInfo.left,
+        bottom: _pedalInfo.bottom,
+        d_titulo: _pedalInfo.titleA,
+        storyID: _pedalInfo.storyID
+    });
+    pedalItem.s_titulo = this.screenTitle;
+    pedalItem.s_text = this.screenText;
+    pedalItem.add(petalo);
+    pedalItem.addEventListener("click", function(e) {
+        e.source.s_titulo.text = e.source.d_titulo;
+        Ti.App.fireEvent("onShowNewStory", {
+            storyID: e.source.storyID
+        });
+    });
+    return pedalItem;
 };
 
 PedalMenu.prototype.parseJSON = function(_URL) {
