@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GiantJellyfishArrivedViewController">
             <connections>
+                <outlet property="hintLayerImageView" destination="Tvc-4T-2LG" id="c1Z-KV-Pcg"/>
                 <outlet property="screen12BackgroundImageView" destination="9" id="g0F-W0-E5A"/>
                 <outlet property="screen12BackgroundMedusa1ImageView" destination="67" id="87"/>
                 <outlet property="screen12BackgroundMedusa2ImageView" destination="71" id="88"/>
@@ -21,7 +22,6 @@
                 <outlet property="screen12BigMedusaArm3ImageView" destination="37" id="99"/>
                 <outlet property="screen12BigMedusaArm4ImageView" destination="38" id="100"/>
                 <outlet property="screen12BigMedusaImageView" destination="31" id="101"/>
-                <outlet property="screen12HintLayerImageView" destination="Tvc-4T-2LG" id="els-kC-lmA"/>
                 <outlet property="screen12Kelp1ImageView" destination="16" id="102"/>
                 <outlet property="screen12Kelp2ImageView" destination="17" id="103"/>
                 <outlet property="screen12Kelp3ImageView" destination="18" id="104"/>
@@ -143,7 +143,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_HintLayer.png" id="Tvc-4T-2LG" userLabel="HintLayerImageView">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Tvc-4T-2LG" userLabel="HintLayerImageView">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -153,7 +153,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="mRo-fb-RVo" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="0.0" y="28" width="45" height="80"/>
+                    <rect key="frame" x="0.0" y="-2" width="89" height="83"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -162,7 +162,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="jlh-o4-EPe" userLabel="NarrationControl" customClass="UIControl">
-                    <rect key="frame" x="427" y="-2" width="54" height="47"/>
+                    <rect key="frame" x="194" y="-1" width="89" height="87"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -171,7 +171,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="qcc-Cr-HyZ" userLabel="MusicControl" customClass="UIControl">
-                    <rect key="frame" x="487" y="0.0" width="50" height="45"/>
+                    <rect key="frame" x="301" y="-1" width="87" height="95"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -180,7 +180,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="Xhk-K9-rZt" userLabel="HintControl" customClass="UIControl">
-                    <rect key="frame" x="545" y="0.0" width="49" height="44"/>
+                    <rect key="frame" x="502" y="0.0" width="81" height="86"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -189,7 +189,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="PhA-Ox-g7I" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="28" width="45" height="80"/>
+                    <rect key="frame" x="933" y="0.0" width="91" height="76"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -228,7 +228,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="1_HintLayer.png" width="800" height="799"/>
-        <image name="menu_set-top-w.png" width="2048" height="1536"/>
+        <image name="menu_set-top-w.png" width="1024" height="768"/>
     </resources>
 </document>

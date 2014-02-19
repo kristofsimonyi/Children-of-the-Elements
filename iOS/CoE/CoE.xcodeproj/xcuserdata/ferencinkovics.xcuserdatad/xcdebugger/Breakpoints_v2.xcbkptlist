@@ -28,11 +28,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/GiantJellyfishArrivedViewController.m"
-            timestampString = "414023545.078658"
+            timestampString = "414461586.173187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "538"
-            endingLineNumber = "538"
+            startingLineNumber = "541"
+            endingLineNumber = "541"
             landmarkName = "-touchesMoved:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -45,28 +45,11 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/GiantJellyfishArrivedViewController.m"
-            timestampString = "414183142.350187"
+            timestampString = "414461586.173187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "735"
-            endingLineNumber = "735"
-            landmarkName = "-bigMedusaSlowsDownAction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            isPathRelative = "1"
-            filePath = "CoE/GiantJellyfishArrivedViewController.m"
-            timestampString = "414023545.078658"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "621"
-            endingLineNumber = "621"
+            startingLineNumber = "624"
+            endingLineNumber = "624"
             landmarkName = "-touchesEnded:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -79,46 +62,12 @@
             continueAfterRunningActions = "No"
             isPathRelative = "1"
             filePath = "CoE/GiantJellyfishArrivedViewController.m"
-            timestampString = "414023545.078658"
+            timestampString = "414461586.173187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "625"
+            endingLineNumber = "625"
             landmarkName = "-touchesEnded:withEvent:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            isPathRelative = "1"
-            filePath = "CoE/GiantJellyfishArrivedViewController.m"
-            timestampString = "414183142.350187"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "739"
-            endingLineNumber = "739"
-            landmarkName = "-bigMedusaSlowsDownAction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            isPathRelative = "1"
-            filePath = "CoE/GiantJellyfishArrivedViewController.m"
-            timestampString = "414183142.350187"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "741"
-            endingLineNumber = "741"
-            landmarkName = "-bigMedusaSlowsDownAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -559,11 +508,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m"
-            timestampString = "413158436.49196"
+            timestampString = "414450237.765555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "-screen04Move:"
             landmarkType = "5">
          </BreakpointContent>
@@ -623,11 +572,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/Inori_InorisFatherIsPrayingViewController.m"
-            timestampString = "413162814.111833"
+            timestampString = "414449524.264441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-hintButtonTapped"
             landmarkType = "5">
          </BreakpointContent>
@@ -661,6 +610,38 @@
             startingLineNumber = "348"
             endingLineNumber = "348"
             landmarkName = "-startNarration"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoE/GiantJellyfishArrivedViewController.m"
+            timestampString = "414461586.173187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "747"
+            endingLineNumber = "747"
+            landmarkName = "-bigMedusaSlowsDownAction"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoE/GiantJellyfishArrivedViewController.m"
+            timestampString = "414461586.173187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
+            landmarkName = "-screen12BigMedusaAppearsAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

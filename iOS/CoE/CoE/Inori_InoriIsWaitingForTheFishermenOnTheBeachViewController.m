@@ -134,27 +134,7 @@
 
     if (screen04InoriSitting.alpha == 0)
     {
-        [UIView animateWithDuration: 1.0
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveEaseIn
-                         animations:^
-         {
-             [screen04InoriStanding setAlpha:1-screen04InoriStanding.alpha];
-         }
-                         completion:nil];
-        
-        [UIView animateWithDuration: 1.0
-                              delay: 0.5
-                            options: UIViewAnimationOptionCurveEaseIn
-                         animations:^
-         {
-             [screen04InoriSitting setAlpha:1-screen04InoriSitting.alpha];
-         }
-                         completion:nil];
-        if (screen04InoriStanding.alpha==0)
-        {
-            [self startsfxInori];
-        }
+        [self startsfxInori];
     }
     else
     {
@@ -573,29 +553,29 @@
                 [self screen04PreviousScreenControlTapped];
             }
             else
-                if (CGRectContainsPoint(bigShipFrame, tapLocation))
+                if (CGRectContainsPoint(self.screen04HintButton.frame, tapLocation))
                 {
-                    [self handleTappingBigShip];
+                    [self hintButtonTapped];
                 }
                 else
-                    if (CGRectContainsPoint(smallShipFrame, tapLocation))
+                    if (CGRectContainsPoint(self.screen04NarrationButton.frame, tapLocation))
                     {
-                        [self handleTappingSmallShip];
+                        [self narrationButtonTapped];
                     }
                     else
-                        if (CGRectContainsPoint(self.screen04InoriControl.frame, tapLocation))
+                        if (CGRectContainsPoint(bigShipFrame, tapLocation))
                         {
-                            [self screen04InoriTapped];
+                            [self handleTappingBigShip];
                         }
                         else
-                            if (CGRectContainsPoint(self.screen04HintButton.frame, tapLocation))
+                            if (CGRectContainsPoint(smallShipFrame, tapLocation))
                             {
-                                [self hintButtonTapped];
+                                [self handleTappingSmallShip];
                             }
                             else
-                                if (CGRectContainsPoint(self.screen04NarrationButton.frame, tapLocation))
+                                if (CGRectContainsPoint(self.screen04InoriControl.frame, tapLocation))
                                 {
-                                    [self narrationButtonTapped];
+                                    [self screen04InoriTapped];
                                 }
     
 }
@@ -803,6 +783,9 @@
     
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_kishajo" ofType:@"png"];
     [screen04SmallShipImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"hint-2" ofType:@"png"];
+    [hintLayerImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
 }
 
 #pragma mark - View lifecycle

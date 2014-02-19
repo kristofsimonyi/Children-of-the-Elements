@@ -36,7 +36,7 @@
 
 @implementation Inori_MothersBigBowlViewController
 
-@synthesize screen11CookingPotImageView, screen11CookingPotIngredient01ImageView, screen11Ingredient01ImageView, screen11Ingredient01TouchView, screen11CookingPotIngredient02ImageView, screen11CookingPotIngredient03ImageView, screen11CookingPotIngredient04ImageView, screen11CookingPotIngredient05ImageView, screen11CookingPotIngredient06ImageView, screen11Ingredient02ImageView, screen11Ingredient02TouchView, screen11Ingredient03ImageView, screen11Ingredient03TouchView, screen11Ingredient04ImageView, screen11Ingredient04TouchView, screen11Ingredient05ImageView, screen11Ingredient05TouchView, screen11Ingredient06ImageView, screen11Ingredient06TouchView, screen11PlateImageView, screen11Ingredient07ImageView, screen11Ingredient07TouchView, screen11HintLayerImageView, screen11MenuImageView;
+@synthesize screen11CookingPotImageView, screen11CookingPotIngredient01ImageView, screen11Ingredient01ImageView, screen11Ingredient01TouchView, screen11CookingPotIngredient02ImageView, screen11CookingPotIngredient03ImageView, screen11CookingPotIngredient04ImageView, screen11CookingPotIngredient05ImageView, screen11CookingPotIngredient06ImageView, screen11Ingredient02ImageView, screen11Ingredient02TouchView, screen11Ingredient03ImageView, screen11Ingredient03TouchView, screen11Ingredient04ImageView, screen11Ingredient04TouchView, screen11Ingredient05ImageView, screen11Ingredient05TouchView, screen11Ingredient06ImageView, screen11Ingredient06TouchView, screen11PlateImageView, screen11Ingredient07ImageView, screen11Ingredient07TouchView, hintLayerImageView, screen11MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -231,7 +231,7 @@
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag;
 {
-    if (ingredientsRemained==0)
+    if ((ingredientsRemained==0)&&![sfxPotGrowing1 isPlaying]&&![sfxPotGrowing2 isPlaying]&&![sfxPotGrowing3 isPlaying]&&![sfxPotGrowing4 isPlaying]&&![sfxPotGrowing5 isPlaying]&&![sfxPotGrowing6 isPlaying]&&![sfxPotGrowing7 isPlaying])
     {
         sfxPlateComeIn=[self startsfx:sfxPlateComeIn named:@"005_sonkas_mandala_thEnd"];
         ingredientsRemained=-1;
@@ -300,31 +300,31 @@
 {
     if (ingredient==screen11Ingredient01ImageView)
     {
-        sfxIngredient1=[self startsfx:sfxIngredient1 named:@"005_nov1"];
+        sfxIngredient1=[self startsfx:sfxIngredient1 named:@"005_food1mix"];
     }
     if (ingredient==screen11Ingredient02ImageView)
     {
-        sfxIngredient2=[self startsfx:sfxIngredient2 named:@"005_nov2"];
+        sfxIngredient2=[self startsfx:sfxIngredient2 named:@"005_food2mix"];
     }
     if (ingredient==screen11Ingredient03ImageView)
     {
-        sfxIngredient3=[self startsfx:sfxIngredient3 named:@"005_nov3"];
+        sfxIngredient3=[self startsfx:sfxIngredient3 named:@"005_food3mix"];
     }
     if (ingredient==screen11Ingredient04ImageView)
     {
-        sfxIngredient4=[self startsfx:sfxIngredient4 named:@"005_nov4"];
+        sfxIngredient4=[self startsfx:sfxIngredient4 named:@"005_food4mix"];
     }
     if (ingredient==screen11Ingredient05ImageView)
     {
-        sfxIngredient5=[self startsfx:sfxIngredient5 named:@"005_nov5"];
+        sfxIngredient5=[self startsfx:sfxIngredient5 named:@"005_food5mix"];
     }
     if (ingredient==screen11Ingredient06ImageView)
     {
-        sfxIngredient6=[self startsfx:sfxIngredient6 named:@"005_nov6"];
+        sfxIngredient6=[self startsfx:sfxIngredient6 named:@"005_food6mix"];
     }
     if (ingredient==screen11Ingredient07ImageView)
     {
-        sfxIngredient7=[self startsfx:sfxIngredient7 named:@"005_nov7"];
+        sfxIngredient7=[self startsfx:sfxIngredient7 named:@"005_food7mix"];
     }
 }
 
@@ -443,21 +443,21 @@
 
 - (IBAction)screen11HintButtonTapped:(UITapGestureRecognizer *)sender;
 {
-    if (screen11HintLayerImageView.alpha==0.0)
+    if (hintLayerImageView.alpha==0.0)
     {
         //        [hintLayerImageView removeFromSuperview];
         //        [self.view addSubview:hintLayerImageView];
         [UIView animateWithDuration:HINT_TIME animations:^{
-            [self.screen11HintLayerImageView setAlpha:1.0];
+            [self.hintLayerImageView setAlpha:1.0];
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:HINT_TIME animations:^{
-                [self.screen11HintLayerImageView setAlpha:0.01];
+                [self.hintLayerImageView setAlpha:0.01];
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:HINT_TIME animations:^{
-                    [self.screen11HintLayerImageView setAlpha:1.0];
+                    [self.hintLayerImageView setAlpha:1.0];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration:HINT_TIME animations:^{
-                        [self.screen11HintLayerImageView setAlpha:0.0];
+                        [self.hintLayerImageView setAlpha:0.0];
                     }];
                 }];
             }];
@@ -596,6 +596,9 @@
     
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"11_1k_tanyer" ofType:@"png"];
     [screen11PlateImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"hint-5" ofType:@"png"];
+    [hintLayerImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
 }
 
 -(void)startBackgroundMusic;

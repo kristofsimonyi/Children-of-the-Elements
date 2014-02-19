@@ -55,7 +55,7 @@
 
 @implementation Inori_FatherAndSonSwimInTheSeaViewController
 
-@synthesize screen06_07FatherImageView, screen06_07InoriImageView, screen06_07Wave01ImageView, screen06_07Wave02ImageView, screen06_07Wave03ImageView, screen06_07Wave04ImageView, screen06_07Wave05ImageView, screen06_07Wave06ImageView, screen06_07Wave07ImageView, screen06_07Wave08ImageView, screen06_07Wave09ImageView, screen06_07FatherControlView, screen06_07InoriControlView, screen06_07FatherControl, screen06_07InoriControl, screen06_07SmallFishSwarmView, screen06_07HintLayerImageView, screen06_07MenuImageView;
+@synthesize screen06_07FatherImageView, screen06_07InoriImageView, screen06_07Wave01ImageView, screen06_07Wave02ImageView, screen06_07Wave03ImageView, screen06_07Wave04ImageView, screen06_07Wave05ImageView, screen06_07Wave06ImageView, screen06_07Wave07ImageView, screen06_07Wave08ImageView, screen06_07Wave09ImageView, screen06_07FatherControlView, screen06_07InoriControlView, screen06_07FatherControl, screen06_07InoriControl, screen06_07SmallFishSwarmView, hintLayerImageView, screen06_07MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -105,7 +105,9 @@
     {
         [backgroundMusic setVolume:0.0];
         [sfx2Swimmwers setVolume:0.0];
-        [sfxCreatures setVolume:0.0];
+        [sfxCreatures1 setVolume:0.0];
+        [sfxCreatures1 setVolume:0.0];
+        [sfxCreatures1 setVolume:0.0];
         [sfxFishSwarmArc setVolume:0.0];
         [sfxFishSwarmStraight setVolume:0.0];
         [narration setVolume:0.0];
@@ -116,7 +118,9 @@
     {
         [backgroundMusic setVolume:1.0];
         [sfx2Swimmwers setVolume:1.0];
-        [sfxCreatures setVolume:1.0];
+        [sfxCreatures1 setVolume:1.0];
+        [sfxCreatures2 setVolume:1.0];
+        [sfxCreatures3 setVolume:1.0];
         [sfxFishSwarmArc setVolume:1.0];
         [sfxFishSwarmStraight setVolume:1.0];
         [narration setVolume:1.0];
@@ -176,7 +180,9 @@
 {
     [backgroundMusic stop];
     [sfx2Swimmwers stop];
-    [sfxCreatures stop];
+    [sfxCreatures1 stop];
+    [sfxCreatures2 stop];
+    [sfxCreatures3 stop];
     [sfxFishSwarmArc stop];
     [sfxFishSwarmStraight stop];
     [narration stop];
@@ -184,21 +190,21 @@
 
 - (IBAction)screen06_07HintButtonTapped:(UITapGestureRecognizer *)sender;
 {
-    if (screen06_07HintLayerImageView.alpha==0.0)
+    if (hintLayerImageView.alpha==0.0)
     {
         //        [hintLayerImageView removeFromSuperview];
         //        [self.view addSubview:hintLayerImageView];
         [UIView animateWithDuration:HINT_TIME animations:^{
-            [self.screen06_07HintLayerImageView setAlpha:1.0];
+            [self.hintLayerImageView setAlpha:1.0];
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:HINT_TIME animations:^{
-                [self.screen06_07HintLayerImageView setAlpha:0.01];
+                [self.hintLayerImageView setAlpha:0.01];
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:HINT_TIME animations:^{
-                    [self.screen06_07HintLayerImageView setAlpha:1.0];
+                    [self.hintLayerImageView setAlpha:1.0];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration:HINT_TIME animations:^{
-                        [self.screen06_07HintLayerImageView setAlpha:0.0];
+                        [self.hintLayerImageView setAlpha:0.0];
                     }];
                 }];
             }];
@@ -497,14 +503,18 @@
 {
     BOOL isMirrored=arc4random()%2;
     SmallFishSwarmArcImageView *smallFishSwarmArcImageView = [[SmallFishSwarmArcImageView alloc] initWithFrame:CGRectMake(0, 768, SMALL_FISH_SWARM_ARC_WIDTH, SMALL_FISH_SWARM_ARC_HEIGHT)];
+
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_kishal_raj_2" ofType:@"png"];
+
     if (isMirrored)
     {
-        UIImage *mirroredImage = [UIImage imageNamed:@"6-7_1k_kishal_raj_2.png"];
+        UIImage *mirroredImage = [UIImage imageWithContentsOfFile:imagePath];
         smallFishSwarmArcImageView.image = [UIImage imageWithCGImage:[mirroredImage CGImage] scale:1.0 orientation:UIImageOrientationUpMirrored];
     }
     else
     {
-        smallFishSwarmArcImageView.image = [UIImage imageNamed:@"6-7_1k_kishal_raj_2.png"];
+        smallFishSwarmArcImageView.image = [UIImage imageWithContentsOfFile:imagePath];
     }
     smallFishSwarmArcImageView.actualRotation=0;
     smallFishSwarmArcImageView.isMirrored=isMirrored;
@@ -529,14 +539,17 @@
 {
     BOOL isMirrored=arc4random()%2;
     SmallFishSwarmStraightImageView *smallFishSwarmStraightImageView = [[SmallFishSwarmStraightImageView alloc] initWithFrame:CGRectMake(0, 768, SMALL_FISH_SWARM_STRAIGHT_WIDTH, SMALL_FISH_SWARM_STRAIGHT_HEIGHT)];
+
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_kishal_raj_1" ofType:@"png"];
     if (isMirrored)
     {
-        smallFishSwarmStraightImageView.image = [UIImage imageNamed:@"6-7_1k_kishal_raj_1.png"];
+        smallFishSwarmStraightImageView.image = [UIImage imageWithContentsOfFile:imagePath];
         smallFishSwarmStraightImageView.image = [UIImage imageWithCGImage:[smallFishSwarmStraightImageView.image CGImage] scale:1.0 orientation:UIImageOrientationUpMirrored];
     }
     else
     {
-        smallFishSwarmStraightImageView.image = [UIImage imageNamed:@"6-7_1k_kishal_raj_1.png"];
+        smallFishSwarmStraightImageView.image = [UIImage imageWithContentsOfFile:imagePath];
     }
     smallFishSwarmStraightImageView.isMirrored=isMirrored;
     CGPoint newCenter = CGPointMake((1024+SMALL_FISH_SWARM_STRAIGHT_WIDTH)*(!isMirrored), arc4random()%749);
@@ -596,82 +609,84 @@
     NSInteger randomNumber = (arc4random()%NUMBER_OF_CREATURES)+1;
     
     Screen06_07CreaturesImageView *randomCreatureImageView;
+    NSString* imagePath;
     switch (randomNumber)
     {
         case 1:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE01_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny1.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny1" ofType:@"png"];
             break;
             
         case 2:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE02_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny2.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny2" ofType:@"png"];
             break;
             
         case 3:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE03_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny3.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny3" ofType:@"png"];
             break;
             
         case 4:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE04_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny4.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny4" ofType:@"png"];
             break;
             
         case 5:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE05_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny5.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny5" ofType:@"png"];
             break;
             
         case 6:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE06_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny6.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny6" ofType:@"png"];
             break;
             
         case 7:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE07_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny7.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny7" ofType:@"png"];
             break;
             
         case 8:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE08_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny8.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny8" ofType:@"png"];
             break;
             
         case 9:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE09_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny9.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny9" ofType:@"png"];
             break;
             
         case 10:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE10_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny10.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny10" ofType:@"png"];
             break;
             
         case 11:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE11_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny11.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny11" ofType:@"png"];
             break;
             
         case 12:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE12_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny12.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny12" ofType:@"png"];
             break;
             
         case 13:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE13_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny13.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny13" ofType:@"png"];
             break;
             
         case 14:
             randomCreatureImageView = [[Screen06_07CreaturesImageView alloc] initWithFrame:CGRectMake(CREATURE14_START_FRAME)];
-            randomCreatureImageView.image = [UIImage imageNamed:@"6-7_1k_leny14.png"];
+            imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_leny14" ofType:@"png"];
             break;
             
         default:
             ;
             break;
     }
+    randomCreatureImageView.image = [UIImage imageWithContentsOfFile:imagePath];
     
     randomCreatureImageView.direction=newDirectionForCreature;
     CGPoint newCenter;
@@ -690,33 +705,47 @@
 
 }
 
+- (void)loadSFXCreatures;
+{
+    NSString *creaturesSFXPath = [[NSBundle mainBundle] pathForResource:@"003_strangecreatures1" ofType:@"mp3"];
+    sfxCreatures1 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:creaturesSFXPath] error:NULL];
+    sfxCreatures1.delegate = self;
+    [sfxCreatures1 setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+    
+    creaturesSFXPath = [[NSBundle mainBundle] pathForResource:@"003_strangecreatures2" ofType:@"mp3"];
+    sfxCreatures2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:creaturesSFXPath] error:NULL];
+    sfxCreatures2.delegate = self;
+    [sfxCreatures2 setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+
+    creaturesSFXPath = [[NSBundle mainBundle] pathForResource:@"003_strangecreatures3" ofType:@"mp3"];
+    sfxCreatures3 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:creaturesSFXPath] error:NULL];
+    sfxCreatures3.delegate = self;
+    [sfxCreatures3 setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
+}
+
 - (void)startsfxCreatures;
 {
-    //set the SFX then start playing
-    if (sfxCreatures==nil)
-    {
-        NSString *creaturesSFXPath = [[NSBundle mainBundle] pathForResource:@"003_furalenyek" ofType:@"mp3"];
-        sfxCreatures = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:creaturesSFXPath] error:NULL];
-        sfxCreatures.delegate = self;
-        [sfxCreatures setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
-        
-        creaturesSFXPath= nil;
-    }
-    
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     if (viewContoller.musicIsOn)
     {
-        [sfxCreatures setVolume:1.0];
+        [sfxCreatures1 setVolume:1.0];
     }
     else
     {
-        [sfxCreatures setVolume:0.0];
+        [sfxCreatures1 setVolume:0.0];
     }
     
-    if (![sfxCreatures isPlaying])
+    if (![sfxCreatures1 isPlaying])
     {
-        [sfxCreatures play];
+        [sfxCreatures1 play];
     }
+    
+    AVAudioPlayer *player;
+    player=sfxCreatures3;
+    sfxCreatures3=sfxCreatures2;
+    sfxCreatures2=sfxCreatures1;
+    sfxCreatures1=player;
+    
 }
 
 - (void)startsfxFishSwarmArc;
@@ -822,6 +851,9 @@
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"6-7_1k_inori" ofType:@"png"];
     [screen06_07InoriImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
     
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"hint-3" ofType:@"png"];
+    [hintLayerImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
 }
 
 #pragma mark - View lifecycle
@@ -850,14 +882,18 @@
     
     backgroundMusic.delegate=nil;
     sfx2Swimmwers.delegate=nil;
-    sfxCreatures.delegate=nil;
+    sfxCreatures1.delegate=nil;
+    sfxCreatures2.delegate=nil;
+    sfxCreatures3.delegate=nil;
     sfxFishSwarmArc.delegate=nil;
     sfxFishSwarmStraight.delegate=nil;
     narration.delegate=nil;
     
     backgroundMusic=nil;
     sfx2Swimmwers=nil;
-    sfxCreatures=nil;
+    sfxCreatures1=nil;
+    sfxCreatures2=nil;
+    sfxCreatures3=nil;
     sfxFishSwarmArc=nil;
     sfxFishSwarmStraight=nil;
     narration=nil;
@@ -887,6 +923,8 @@
     inoriInteractionFound=false;
     fatherInteractionFound=false;
     wavesInteractionFound=false;
+    
+    [self loadSFXCreatures];
 }
 
 - (void)didReceiveMemoryWarning

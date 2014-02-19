@@ -20,22 +20,23 @@
  #define FISHES_2_RADIUS2 330
  #define MAX_FISHES_2 30
 */
-///*
- #define FISHES_1_CENTER_X  800
- #define FISHES_1_CENTER_Y  -200
- #define FISHES_1_RADIUS    500
- #define FISHES_1_RADIUS2   300
- #define MAX_FISHES_1       40
- #define FISHES_2_CENTER_X  330
- #define FISHES_2_CENTER_Y  1270
- #define FISHES_2_RADIUS    900
- #define FISHES_2_RADIUS2   700
- #define MAX_FISHES_2       60
- #define FISHES1_MIN_SPEED     5
- #define FISHES1_MAX_SPEED     13
- #define FISHES2_MIN_SPEED     3
- #define FISHES2_MAX_SPEED     7
-//*/
+#define FISHES_1_CENTER_X  800
+#define FISHES_1_CENTER_Y  -200
+#define FISHES_1_RADIUS    500
+#define FISHES_1_RADIUS2   300
+#define MAX_FISHES_1       40
+#define FISHES_2_CENTER_X  330
+#define FISHES_2_CENTER_Y  1270
+#define FISHES_2_RADIUS    900
+#define FISHES_2_RADIUS2   700
+#define MAX_FISHES_2       60
+#define FISHES1_MIN_SPEED     5
+#define FISHES1_MAX_SPEED     13
+#define FISHES2_MIN_SPEED     3
+#define FISHES2_MAX_SPEED     7
+#define BIG_MEDUSA_STARTX -100
+#define BIG_MEDUSA_STARTY -100
+#define BIG_MEDUSA_START_STEPS 200
 #define BIG_MEDUSA_MAX_ROTATION_AT_A_TIME   2.0
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
@@ -44,7 +45,7 @@
 
 @implementation GiantJellyfishArrivedViewController
 
-@synthesize screen12BackgroundImageView, screen12WavesImageView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView, screen12HintLayerImageView, screen12MenuImageView;
+@synthesize screen12BackgroundImageView, screen12WavesImageView, screen12Kelp1ImageView, screen12Kelp2ImageView, screen12Kelp3ImageView, screen12Kelp4ImageView, screen12Kelp5ImageView, screen12Kelp6ImageView, screen12BigMedusaImageView,screen12BigMedusaArm1ImageView, screen12BigMedusaArm2ImageView, screen12BigMedusaArm3ImageView, screen12BigMedusaArm4ImageView, screen12BackgroundMedusa1ImageView, screen12BackgroundMedusa2ImageView, screen12BackgroundMedusa3ImageView, screen12BackgroundMedusa4ImageView, screen12BackgroundMedusa5ImageView, screen12BackgroundMedusa6ImageView, screen12BackgroundMedusa7ImageView, screen12BackgroundMedusa8ImageView, hintLayerImageView, screen12MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -90,21 +91,21 @@
 
 - (IBAction)screen12HintButtonTapped:(UITapGestureRecognizer *)sender;
 {
-    if (screen12HintLayerImageView.alpha==0.0)
+    if (hintLayerImageView.alpha==0.0)
     {
         //        [hintLayerImageView removeFromSuperview];
         //        [self.view addSubview:hintLayerImageView];
         [UIView animateWithDuration:HINT_TIME animations:^{
-            [self.screen12HintLayerImageView setAlpha:1.0];
+            [self.hintLayerImageView setAlpha:1.0];
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:HINT_TIME animations:^{
-                [self.screen12HintLayerImageView setAlpha:0.01];
+                [self.hintLayerImageView setAlpha:0.01];
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:HINT_TIME animations:^{
-                    [self.screen12HintLayerImageView setAlpha:1.0];
+                    [self.hintLayerImageView setAlpha:1.0];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration:HINT_TIME animations:^{
-                        [self.screen12HintLayerImageView setAlpha:0.0];
+                        [self.hintLayerImageView setAlpha:0.0];
                     }];
                 }];
             }];
@@ -240,19 +241,16 @@
 
 - (AVAudioPlayer *)startsfx2:(AVAudioPlayer *)audioplayer named:(NSString *)sfxFileName;
 {
-    //set the SFX then start playing
-    if (audioplayer!=nil)
+    //set the SFX and do not start playing it
+    if (audioplayer==nil)
     {
-        [audioplayer stop];
-        [audioplayer setDelegate:nil];
-        audioplayer=nil;
-    }
         NSString *audiplayerSFXPath = [[NSBundle mainBundle] pathForResource:sfxFileName ofType:@"mp3"];
         audioplayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audiplayerSFXPath] error:NULL];
         audioplayer.delegate = self;
         [audioplayer setNumberOfLoops:0]; // when the value is negativ, the sound will be played until you call STOP method
         
         audiplayerSFXPath= nil;
+    }
     
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     if (viewContoller.musicIsOn)
@@ -262,11 +260,6 @@
     else
     {
         [audioplayer setVolume:0.0];
-    }
-    
-    if (![audioplayer isPlaying])
-    {
-        [audioplayer play];
     }
     
     viewContoller=nil;
@@ -349,12 +342,21 @@
     }
     [screen12WavesImageView setCenter:CGPointMake((20.00*sin(M_PI/180*movingWavesClock*2))+512,(20.00*cos(M_PI/180*movingWavesClock))+374)];
     
+    if (!CGRectIntersectsRect(screen12BigMedusaImageView.frame, self.view.frame)&&(bigMedusaAppearsClock>BIG_MEDUSA_START_STEPS))
+    {
+        isBigMedusaSlowsDown=false;
+        bigMedusaArmsMoveClock=0;
+        [screen12BigMedusaImageView setTransform:CGAffineTransformMakeRotation(0)];
+        [self screen12BigMedusaAppears];
+    }
+
 }
 
 - (void)screen12BigMedusaAppears;
 {
-    [self screen12BigMedusaMoveToCoordinate:CGPointMake(-100, 200)];
+    [self screen12BigMedusaMoveToCoordinate:CGPointMake(BIG_MEDUSA_STARTX,BIG_MEDUSA_STARTY)];
     
+    bigMedusaAppearsClock = 0;
     bigMedusaAppearsTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(screen12BigMedusaAppearsAction) userInfo:nil repeats:YES];
 	[bigMedusaAppearsTimer fire];
     
@@ -366,13 +368,13 @@
     bigMedusaAppearsClock=bigMedusaAppearsClock+1;
     if (bigMedusaAppearsClock >= 0) 
     {
-        if ((bigMedusaAppearsClock>100)||(isBigMedusaMoving)||(isBigMedusaPulse)) 
+        if ((bigMedusaAppearsClock>BIG_MEDUSA_START_STEPS)||(isBigMedusaMoving)||(isBigMedusaPulse))
         {
             [bigMedusaAppearsTimer invalidate];
         } 
         else
         {
-            [self screen12BigMedusaMoveToCoordinate:CGPointMake(-100+bigMedusaAppearsClock, bigMedusaAppearsClock-40)];
+            [self screen12BigMedusaMoveToCoordinate:CGPointMake(screen12BigMedusaImageView.center.x+1, screen12BigMedusaImageView.center.y+1)];
         }
     }
 }
@@ -741,15 +743,15 @@
         bigMedusaSlowsDownValues.y=bigMedusaSlowsDownValues.y*0.975;
         if (sqrt(pow(bigMedusaSlowsDownValues.x,2.0)+pow(bigMedusaSlowsDownValues.y,2.0))<0.01) {
             [bigMedusaSlowsDownTimer invalidate];
-            if (CGRectIntersectsRect(screen12BigMedusaImageView.frame, self.view.frame)!=1) 
+            /*
+            if (!CGRectIntersectsRect(screen12BigMedusaImageView.frame, self.view.frame))
             {
                 isBigMedusaSlowsDown=false;
                 bigMedusaArmsMoveClock=0;
                 [screen12BigMedusaImageView setTransform:CGAffineTransformMakeRotation(0)];
                 [self screen12BigMedusaAppears];
-                ///*****
-
             }
+             */
         }
     }
     
@@ -773,6 +775,7 @@
             }
         }
     }
+    
 }
 
 - (void) screen12IsBigMedusaReachesFish;
@@ -1095,7 +1098,8 @@
                 [fish setFrame:CGRectMake(0, 0, 89, 57)];
                 break;
         }
-        fish.image = [UIImage imageNamed:[NSString stringWithFormat:@"12_1k_hal%i.png",randomFish]];
+        imagePath = [ [ NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"12_1k_hal%i",randomFish] ofType:@"png"];
+        fish.image = [UIImage imageWithContentsOfFile:imagePath];
         
         fishRadius = FISHES_1_RADIUS2+((arc4random()%(FISHES_1_RADIUS-FISHES_1_RADIUS2))+1);
         [fish setCenter:CGPointMake(roundf(1.00*FISHES_1_CENTER_X+fishRadius*sin(fishOriginalDegree)), roundf(1.00*FISHES_1_CENTER_Y+fishRadius*cos(fishOriginalDegree)))];
@@ -1158,7 +1162,9 @@
                 [fish setFrame:CGRectMake(0, 0, 89, 57)];
                 break;
         }
-        fish.image = [UIImage imageNamed:[NSString stringWithFormat:@"12_1k_hal%i.png",randomFish]];
+        NSString* imagePath;
+        imagePath = [ [ NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"12_1k_hal%i",randomFish] ofType:@"png"];
+        fish.image = [UIImage imageWithContentsOfFile:imagePath];
         
         if (arc4random()%2==0) 
         {
@@ -1193,7 +1199,8 @@
 
         fish = [[UIImageView alloc] init];
         [fish setFrame:CGRectMake(0, 0, 89, 57)];
-        fish.image = [UIImage imageNamed:[NSString stringWithFormat:@"12_1k_hal%i.png",arc4random()%9+1]];
+        imagePath = [ [ NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"12_1k_hal%i",randomFish] ofType:@"png"];
+        fish.image = [UIImage imageWithContentsOfFile:imagePath];
         
         if (arc4random()%2==0) 
         {
@@ -1349,12 +1356,12 @@
     
     medusa1ComeInClock=[self rotateMedusa:screen12BackgroundMedusa1ImageView withDegree:0.7 currentClock:medusa1ComeInClock];
     medusa2ComeInClock=[self rotateMedusa:screen12BackgroundMedusa2ImageView withDegree:-0.7 currentClock:medusa2ComeInClock];
-    medusa3ComeInClock=[self rotateMedusa:screen12BackgroundMedusa3ImageView withDegree:1.3 currentClock:medusa3ComeInClock];
-    medusa4ComeInClock=[self rotateMedusa:screen12BackgroundMedusa4ImageView withDegree:-1.3 currentClock:medusa4ComeInClock];
-    medusa5ComeInClock=[self rotateMedusa:screen12BackgroundMedusa5ImageView withDegree:2 currentClock:medusa5ComeInClock];
-    medusa6ComeInClock=[self rotateMedusa:screen12BackgroundMedusa6ImageView withDegree:-2 currentClock:medusa6ComeInClock];
-    medusa7ComeInClock=[self rotateMedusa:screen12BackgroundMedusa7ImageView withDegree:1.6 currentClock:medusa7ComeInClock];
-    medusa8ComeInClock=[self rotateMedusa:screen12BackgroundMedusa8ImageView withDegree:-1.6 currentClock:medusa8ComeInClock];
+    medusa3ComeInClock=[self rotateMedusa:screen12BackgroundMedusa3ImageView withDegree:0.3 currentClock:medusa3ComeInClock];
+    medusa4ComeInClock=[self rotateMedusa:screen12BackgroundMedusa4ImageView withDegree:-0.3 currentClock:medusa4ComeInClock];
+    medusa5ComeInClock=[self rotateMedusa:screen12BackgroundMedusa5ImageView withDegree:0.4 currentClock:medusa5ComeInClock];
+    medusa6ComeInClock=[self rotateMedusa:screen12BackgroundMedusa6ImageView withDegree:-0.4 currentClock:medusa6ComeInClock];
+    medusa7ComeInClock=[self rotateMedusa:screen12BackgroundMedusa7ImageView withDegree:0.6 currentClock:medusa7ComeInClock];
+    medusa8ComeInClock=[self rotateMedusa:screen12BackgroundMedusa8ImageView withDegree:-0.6 currentClock:medusa8ComeInClock];
 }
 
 - (CGFloat)rotateMedusa:(UIImageView *)medusa withDegree:(CGFloat)degree currentClock:(CGFloat)clock;
@@ -1506,19 +1513,19 @@
 {
     AVAudioPlayer *newSFX;
 
-    newSFX=[self startsfx:newSFX named:@"006_hal1"];
+    newSFX=[self startsfx2:newSFX named:@"006_hal1"];
     [sfxMedusaReachesFishArray addObject:newSFX];
     newSFX=nil;
-    newSFX=[self startsfx:newSFX named:@"006_hal2"];
+    newSFX=[self startsfx2:newSFX named:@"006_hal2"];
     [sfxMedusaReachesFishArray addObject:newSFX];
     newSFX=nil;
-    newSFX=[self startsfx:newSFX named:@"006_hal3"];
+    newSFX=[self startsfx2:newSFX named:@"006_hal3"];
     [sfxMedusaReachesFishArray addObject:newSFX];
     newSFX=nil;
-    newSFX=[self startsfx:newSFX named:@"006_hal4"];
+    newSFX=[self startsfx2:newSFX named:@"006_hal4"];
     [sfxMedusaReachesFishArray addObject:newSFX];
     newSFX=nil;
-    newSFX=[self startsfx:newSFX named:@"006_hal5"];
+    newSFX=[self startsfx2:newSFX named:@"006_hal5"];
     [sfxMedusaReachesFishArray addObject:newSFX];
     newSFX=nil;
 }
@@ -1589,6 +1596,9 @@
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"12_1k_hatter_meduza_8" ofType:@"png"];
     [screen12BackgroundMedusa8ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
     
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"hint-6" ofType:@"png"];
+    [hintLayerImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
 }
 
 - (void)viewDidLoad
@@ -1618,7 +1628,6 @@
     [self screen12BigMedusaAppears];
 
     isBigMedusaPulse = false;
-    bigMedusaAppearsClock = 0;
 //    bigMedusaAppearsClock = -400;
     bigMedusaPulseClockChange = -1;
     [screen12BigMedusaImageView setTransform:CGAffineTransformMakeScale(1.00+0.01*bigMedusaPulseClock, 0.90)];

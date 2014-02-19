@@ -34,7 +34,7 @@
 
 @implementation Inori_FatherAndSonPatchUpAFishnetViewController
 
-@synthesize screen09ShoreImageView, screen09PeopleImageView, screen09Fish01ImageView, screen09Fish02ImageView, screen09Fish03ImageView, screen09Fish04ImageView, screen09Fish05ImageView, screen09NetImageView, screen09Sea01ImageView, screen09Sea02ImageView, screen09MenuImageView, screen09InoriAndFatherControl, screen09HintLayerImageView;
+@synthesize screen09ShoreImageView, screen09PeopleImageView, screen09Fish01ImageView, screen09Fish02ImageView, screen09Fish03ImageView, screen09Fish04ImageView, screen09Fish05ImageView, screen09NetImageView, screen09Sea01ImageView, screen09Sea02ImageView, screen09MenuImageView, screen09InoriAndFatherControl, hintLayerImageView;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
@@ -268,21 +268,21 @@
 
 - (IBAction)screen09HintButtonTapped:(UITapGestureRecognizer *)sender;
 {
-    if (screen09HintLayerImageView.alpha==0.0)
+    if (hintLayerImageView.alpha==0.0)
     {
         //        [hintLayerImageView removeFromSuperview];
         //        [self.view addSubview:hintLayerImageView];
         [UIView animateWithDuration:HINT_TIME animations:^{
-            [self.screen09HintLayerImageView setAlpha:1.0];
+            [self.hintLayerImageView setAlpha:1.0];
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:HINT_TIME animations:^{
-                [self.screen09HintLayerImageView setAlpha:0.01];
+                [self.hintLayerImageView setAlpha:0.01];
             } completion:^(BOOL finished) {
                 [UIView animateWithDuration:HINT_TIME animations:^{
-                    [self.screen09HintLayerImageView setAlpha:1.0];
+                    [self.hintLayerImageView setAlpha:1.0];
                 } completion:^(BOOL finished) {
                     [UIView animateWithDuration:HINT_TIME animations:^{
-                        [self.screen09HintLayerImageView setAlpha:0.0];
+                        [self.hintLayerImageView setAlpha:0.0];
                     }];
                 }];
             }];
@@ -649,6 +649,9 @@
     
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"9_1k_hal1" ofType:@"png"];
     [screen09Fish05ImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"hint-4" ofType:@"png"];
+    [hintLayerImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
 }
 
 - (void)viewDidLoad

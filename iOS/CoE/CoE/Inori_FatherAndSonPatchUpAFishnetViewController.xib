@@ -7,12 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Inori_FatherAndSonPatchUpAFishnetViewController">
             <connections>
+                <outlet property="hintLayerImageView" destination="1JF-IX-QWP" id="Abj-1F-sWH"/>
                 <outlet property="screen09Fish01ImageView" destination="27" id="29"/>
                 <outlet property="screen09Fish02ImageView" destination="28" id="30"/>
                 <outlet property="screen09Fish03ImageView" destination="9IQ-p6-Z7r" id="DBl-FO-MYL"/>
                 <outlet property="screen09Fish04ImageView" destination="UHc-ZP-bHZ" id="a2p-dE-9Zj"/>
                 <outlet property="screen09Fish05ImageView" destination="Ka4-md-BYc" id="bFe-SA-qbj"/>
-                <outlet property="screen09HintLayerImageView" destination="1JF-IX-QWP" id="0Yn-If-YdD"/>
                 <outlet property="screen09InoriAndFatherControl" destination="BYp-Sd-FWp" id="gdP-ra-RZ9"/>
                 <outlet property="screen09MenuImageView" destination="nwD-FM-GPp" id="MVQ-kx-l7o"/>
                 <outlet property="screen09NetImageView" destination="24" id="31"/>
@@ -84,7 +84,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="iey-uO-jxr" userLabel="PreviousScreenControl" customClass="UIControl">
-                    <rect key="frame" x="0.0" y="29" width="45" height="80"/>
+                    <rect key="frame" x="0.0" y="-1" width="84" height="74"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -92,7 +92,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="GBj-4r-hSb" userLabel="NarrationControl" customClass="UIControl">
-                    <rect key="frame" x="427" y="-1" width="54" height="47"/>
+                    <rect key="frame" x="198" y="0.0" width="83" height="81"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -101,7 +101,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="QaJ-xw-cOo" userLabel="MusicControl" customClass="UIControl">
-                    <rect key="frame" x="487" y="1" width="50" height="45"/>
+                    <rect key="frame" x="301" y="-1" width="77" height="92"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -110,7 +110,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="xE7-3Q-oDf" userLabel="HintControl" customClass="UIControl">
-                    <rect key="frame" x="545" y="2" width="49" height="44"/>
+                    <rect key="frame" x="505" y="2" width="74" height="79"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
@@ -119,7 +119,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="ioh-db-zm9" userLabel="NextScreenControl" customClass="UIControl">
-                    <rect key="frame" x="979" y="29" width="45" height="80"/>
+                    <rect key="frame" x="935" y="2" width="89" height="79"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -148,7 +148,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="1_HintLayer.png" width="800" height="799"/>
-        <image name="menu_set-top-w.png" width="2048" height="1536"/>
+        <image name="1_HintLayer.png" width="2048" height="1536"/>
+        <image name="menu_set-top-w.png" width="1024" height="768"/>
     </resources>
 </document>

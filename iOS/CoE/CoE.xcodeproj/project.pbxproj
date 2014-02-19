@@ -10,6 +10,31 @@
 		E20A7C3F16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A7C3D16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m */; };
 		E20A7C4016C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20A7C3E16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib */; };
 		E210840F152CDC4500E4A492 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E210840E152CDC4400E4A492 /* AVFoundation.framework */; };
+		E212A43F18B3EBA40011108E /* 8_1k_dune.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A43C18B3EBA40011108E /* 8_1k_dune.png */; };
+		E212A44018B3EBA40011108E /* 8_1k_hatter.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A43D18B3EBA40011108E /* 8_1k_hatter.png */; };
+		E212A44118B3EBA40011108E /* 8_1k_nagyhajo.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A43E18B3EBA40011108E /* 8_1k_nagyhajo.png */; };
+		E212A45118B3ED4F0011108E /* hint-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44318B3ED4F0011108E /* hint-1.png */; };
+		E212A45218B3ED4F0011108E /* hint-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44418B3ED4F0011108E /* hint-1@2x.png */; };
+		E212A45318B3ED4F0011108E /* hint-2.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44518B3ED4F0011108E /* hint-2.png */; };
+		E212A45418B3ED4F0011108E /* hint-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44618B3ED4F0011108E /* hint-2@2x.png */; };
+		E212A45518B3ED4F0011108E /* hint-3.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44718B3ED4F0011108E /* hint-3.png */; };
+		E212A45618B3ED4F0011108E /* hint-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44818B3ED4F0011108E /* hint-3@2x.png */; };
+		E212A45718B3ED4F0011108E /* hint-4.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44918B3ED4F0011108E /* hint-4.png */; };
+		E212A45818B3ED4F0011108E /* hint-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44A18B3ED4F0011108E /* hint-4@2x.png */; };
+		E212A45918B3ED4F0011108E /* hint-5.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44B18B3ED4F0011108E /* hint-5.png */; };
+		E212A45A18B3ED4F0011108E /* hint-5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44C18B3ED4F0011108E /* hint-5@2x.png */; };
+		E212A45B18B3ED4F0011108E /* hint-6.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44D18B3ED4F0011108E /* hint-6.png */; };
+		E212A45C18B3ED4F0011108E /* hint-6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E212A44E18B3ED4F0011108E /* hint-6@2x.png */; };
+		E212A46218B415DA0011108E /* 003_strangecreatures1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A45F18B415DA0011108E /* 003_strangecreatures1.mp3 */; };
+		E212A46318B415DA0011108E /* 003_strangecreatures2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46018B415DA0011108E /* 003_strangecreatures2.mp3 */; };
+		E212A46418B415DA0011108E /* 003_strangecreatures3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46118B415DA0011108E /* 003_strangecreatures3.mp3 */; };
+		E212A46C18B41A9C0011108E /* 005_food1mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46518B41A9C0011108E /* 005_food1mix.mp3 */; };
+		E212A46D18B41A9C0011108E /* 005_food2mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46618B41A9C0011108E /* 005_food2mix.mp3 */; };
+		E212A46E18B41A9C0011108E /* 005_food3mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46718B41A9C0011108E /* 005_food3mix.mp3 */; };
+		E212A46F18B41A9C0011108E /* 005_food4mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46818B41A9C0011108E /* 005_food4mix.mp3 */; };
+		E212A47018B41A9C0011108E /* 005_food5mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46918B41A9C0011108E /* 005_food5mix.mp3 */; };
+		E212A47118B41A9C0011108E /* 005_food6mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46A18B41A9C0011108E /* 005_food6mix.mp3 */; };
+		E212A47218B41A9C0011108E /* 005_food7mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E212A46B18B41A9C0011108E /* 005_food7mix.mp3 */; };
 		E222CEE31524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E222CEE11524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m */; };
 		E222CEE41524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E222CEE21524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib */; };
 		E224377518AFCFA300B47C47 /* 1_2k_ablak.png in Resources */ = {isa = PBXBuildFile; fileRef = E224375E18AFCFA300B47C47 /* 1_2k_ablak.png */; };
@@ -20,8 +45,6 @@
 		E224377A18AFCFA300B47C47 /* 1_2k_alap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376318AFCFA300B47C47 /* 1_2k_alap@2x.png */; };
 		E224377B18AFCFA300B47C47 /* 1_2k_apa.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376418AFCFA300B47C47 /* 1_2k_apa.png */; };
 		E224377C18AFCFA300B47C47 /* 1_2k_apa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376518AFCFA300B47C47 /* 1_2k_apa@2x.png */; };
-		E224377D18AFCFA300B47C47 /* 1_2k_ejszaka1.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376618AFCFA300B47C47 /* 1_2k_ejszaka1.png */; };
-		E224377E18AFCFA300B47C47 /* 1_2k_ejszaka1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376718AFCFA300B47C47 /* 1_2k_ejszaka1@2x.png */; };
 		E224377F18AFCFA300B47C47 /* 1_2k_ejszaka2.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376818AFCFA300B47C47 /* 1_2k_ejszaka2.png */; };
 		E224378018AFCFA300B47C47 /* 1_2k_ejszaka2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376918AFCFA300B47C47 /* 1_2k_ejszaka2@2x.png */; };
 		E224378118AFCFA300B47C47 /* 1_2k_kanna.png in Resources */ = {isa = PBXBuildFile; fileRef = E224376A18AFCFA300B47C47 /* 1_2k_kanna.png */; };
@@ -34,7 +57,6 @@
 		E224378818AFCFA300B47C47 /* 1_2k_rizsfold-ejszaka@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E224377118AFCFA300B47C47 /* 1_2k_rizsfold-ejszaka@2x.png */; };
 		E224378918AFCFA300B47C47 /* 1_2k_tuz.png in Resources */ = {isa = PBXBuildFile; fileRef = E224377218AFCFA300B47C47 /* 1_2k_tuz.png */; };
 		E224378A18AFCFA300B47C47 /* 1_2k_tuz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E224377318AFCFA300B47C47 /* 1_2k_tuz@2x.png */; };
-		E224378B18AFCFA300B47C47 /* 1_HintLayer.png in Resources */ = {isa = PBXBuildFile; fileRef = E224377418AFCFA300B47C47 /* 1_HintLayer.png */; };
 		E22437A018AFD10500B47C47 /* 4_1k_alap.png in Resources */ = {isa = PBXBuildFile; fileRef = E224378C18AFD10500B47C47 /* 4_1k_alap.png */; };
 		E22437A118AFD10500B47C47 /* 4_1k_alap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E224378D18AFD10500B47C47 /* 4_1k_alap@2x.png */; };
 		E22437A218AFD10500B47C47 /* 4_1k_csiga.png in Resources */ = {isa = PBXBuildFile; fileRef = E224378E18AFD10500B47C47 /* 4_1k_csiga.png */; };
@@ -207,8 +229,6 @@
 		E236A8361860F671003A1B04 /* FontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E236A8351860F671003A1B04 /* FontsViewController.m */; };
 		E23C51B116D6C989000D5958 /* CommonLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C51B016D6C989000D5958 /* CommonLibrary.m */; };
 		E240C9D318A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E240C9D218A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 */; };
-		E24AF55F1783720300C9EF11 /* Screen15_16ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */; };
-		E24AF5601783720300C9EF11 /* Screen15_16ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */; };
 		E25745F2184D40B8001E98FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25745F1184D40B8001E98FB /* Images.xcassets */; };
 		E2657B32185DE13C0099018E /* IntroScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2657B31185DE13C0099018E /* IntroScreenViewController.m */; };
 		E26BC120187B3CAE009F9956 /* The story of the Sea_OK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E26BC11F187B3CAE009F9956 /* The story of the Sea_OK.mp3 */; };
@@ -245,7 +265,6 @@
 		E2C6B0DF185E3E79002862EA /* 002_csiga3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BD185E3E79002862EA /* 002_csiga3.mp3 */; };
 		E2C6B0E0185E3E79002862EA /* 002_hajohajo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BE185E3E79002862EA /* 002_hajohajo.mp3 */; };
 		E2C6B0E1185E3E79002862EA /* 002_wooohooooK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BF185E3E79002862EA /* 002_wooohooooK.mp3 */; };
-		E2C6B0E2185E3E79002862EA /* 003_furalenyek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0C0185E3E79002862EA /* 003_furalenyek.mp3 */; };
 		E2C6B0E3185E3E79002862EA /* 003_hosszuhalak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0C1185E3E79002862EA /* 003_hosszuhalak.mp3 */; };
 		E2C6B0E4185E3E79002862EA /* 003_ketten usznak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0C2185E3E79002862EA /* 003_ketten usznak.mp3 */; };
 		E2C6B0E5185E3E79002862EA /* 003_rovidhalak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0C3185E3E79002862EA /* 003_rovidhalak.mp3 */; };
@@ -280,13 +299,6 @@
 		E2C6F345189F032C00FA167D /* 005_edeny_novekszik_6OK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F335189F032C00FA167D /* 005_edeny_novekszik_6OK.mp3 */; };
 		E2C6F346189F032C00FA167D /* 005_edeny_novekszik_7OK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F336189F032C00FA167D /* 005_edeny_novekszik_7OK.mp3 */; };
 		E2C6F347189F032C00FA167D /* 005_Marketok.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F337189F032C00FA167D /* 005_Marketok.mp3 */; };
-		E2C6F348189F032C00FA167D /* 005_nov1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F338189F032C00FA167D /* 005_nov1.mp3 */; };
-		E2C6F349189F032C00FA167D /* 005_nov2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F339189F032C00FA167D /* 005_nov2.mp3 */; };
-		E2C6F34A189F032C00FA167D /* 005_nov3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F33A189F032C00FA167D /* 005_nov3.mp3 */; };
-		E2C6F34B189F032C00FA167D /* 005_nov4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F33B189F032C00FA167D /* 005_nov4.mp3 */; };
-		E2C6F34C189F032C00FA167D /* 005_nov5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F33C189F032C00FA167D /* 005_nov5.mp3 */; };
-		E2C6F34D189F032C00FA167D /* 005_nov6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F33D189F032C00FA167D /* 005_nov6.mp3 */; };
-		E2C6F34E189F032C00FA167D /* 005_nov7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F33E189F032C00FA167D /* 005_nov7.mp3 */; };
 		E2CE7DDC14FE265B00FB442A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CE7DDB14FE265B00FB442A /* UIKit.framework */; };
 		E2CE7DDE14FE265B00FB442A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CE7DDD14FE265B00FB442A /* Foundation.framework */; };
 		E2CE7DE014FE265B00FB442A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CE7DDF14FE265B00FB442A /* CoreGraphics.framework */; };
@@ -332,6 +344,31 @@
 		E20A7C3D16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_InorisFatherIsPrayingViewController.m; sourceTree = "<group>"; };
 		E20A7C3E16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inori_InorisFatherIsPrayingViewController.xib; sourceTree = "<group>"; };
 		E210840E152CDC4400E4A492 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E212A43C18B3EBA40011108E /* 8_1k_dune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8_1k_dune.png; path = Resources/Images/StaticScreenViewController/8_1k_dune.png; sourceTree = "<group>"; };
+		E212A43D18B3EBA40011108E /* 8_1k_hatter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8_1k_hatter.png; path = Resources/Images/StaticScreenViewController/8_1k_hatter.png; sourceTree = "<group>"; };
+		E212A43E18B3EBA40011108E /* 8_1k_nagyhajo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8_1k_nagyhajo.png; path = Resources/Images/StaticScreenViewController/8_1k_nagyhajo.png; sourceTree = "<group>"; };
+		E212A44318B3ED4F0011108E /* hint-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-1.png"; path = "Resources/Hints/hint-1.png"; sourceTree = "<group>"; };
+		E212A44418B3ED4F0011108E /* hint-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-1@2x.png"; path = "Resources/Hints/hint-1@2x.png"; sourceTree = "<group>"; };
+		E212A44518B3ED4F0011108E /* hint-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-2.png"; path = "Resources/Hints/hint-2.png"; sourceTree = "<group>"; };
+		E212A44618B3ED4F0011108E /* hint-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-2@2x.png"; path = "Resources/Hints/hint-2@2x.png"; sourceTree = "<group>"; };
+		E212A44718B3ED4F0011108E /* hint-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-3.png"; path = "Resources/Hints/hint-3.png"; sourceTree = "<group>"; };
+		E212A44818B3ED4F0011108E /* hint-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-3@2x.png"; path = "Resources/Hints/hint-3@2x.png"; sourceTree = "<group>"; };
+		E212A44918B3ED4F0011108E /* hint-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-4.png"; path = "Resources/Hints/hint-4.png"; sourceTree = "<group>"; };
+		E212A44A18B3ED4F0011108E /* hint-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-4@2x.png"; path = "Resources/Hints/hint-4@2x.png"; sourceTree = "<group>"; };
+		E212A44B18B3ED4F0011108E /* hint-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-5.png"; path = "Resources/Hints/hint-5.png"; sourceTree = "<group>"; };
+		E212A44C18B3ED4F0011108E /* hint-5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-5@2x.png"; path = "Resources/Hints/hint-5@2x.png"; sourceTree = "<group>"; };
+		E212A44D18B3ED4F0011108E /* hint-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-6.png"; path = "Resources/Hints/hint-6.png"; sourceTree = "<group>"; };
+		E212A44E18B3ED4F0011108E /* hint-6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-6@2x.png"; path = "Resources/Hints/hint-6@2x.png"; sourceTree = "<group>"; };
+		E212A45F18B415DA0011108E /* 003_strangecreatures1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 003_strangecreatures1.mp3; path = "Music, SFX/003_strangecreatures1.mp3"; sourceTree = "<group>"; };
+		E212A46018B415DA0011108E /* 003_strangecreatures2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 003_strangecreatures2.mp3; path = "Music, SFX/003_strangecreatures2.mp3"; sourceTree = "<group>"; };
+		E212A46118B415DA0011108E /* 003_strangecreatures3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 003_strangecreatures3.mp3; path = "Music, SFX/003_strangecreatures3.mp3"; sourceTree = "<group>"; };
+		E212A46518B41A9C0011108E /* 005_food1mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_food1mix.mp3; path = "Music, SFX/005_food1mix.mp3"; sourceTree = "<group>"; };
+		E212A46618B41A9C0011108E /* 005_food2mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_food2mix.mp3; path = "Music, SFX/005_food2mix.mp3"; sourceTree = "<group>"; };
+		E212A46718B41A9C0011108E /* 005_food3mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_food3mix.mp3; path = "Music, SFX/005_food3mix.mp3"; sourceTree = "<group>"; };
+		E212A46818B41A9C0011108E /* 005_food4mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_food4mix.mp3; path = "Music, SFX/005_food4mix.mp3"; sourceTree = "<group>"; };
+		E212A46918B41A9C0011108E /* 005_food5mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_food5mix.mp3; path = "Music, SFX/005_food5mix.mp3"; sourceTree = "<group>"; };
+		E212A46A18B41A9C0011108E /* 005_food6mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_food6mix.mp3; path = "Music, SFX/005_food6mix.mp3"; sourceTree = "<group>"; };
+		E212A46B18B41A9C0011108E /* 005_food7mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_food7mix.mp3; path = "Music, SFX/005_food7mix.mp3"; sourceTree = "<group>"; };
 		E222CEE01524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h; sourceTree = "<group>"; };
 		E222CEE11524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m; sourceTree = "<group>"; };
 		E222CEE21524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.xib; sourceTree = "<group>"; };
@@ -343,8 +380,6 @@
 		E224376318AFCFA300B47C47 /* 1_2k_alap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1_2k_alap@2x.png"; path = "Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_alap@2x.png"; sourceTree = SOURCE_ROOT; };
 		E224376418AFCFA300B47C47 /* 1_2k_apa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1_2k_apa.png; path = Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_apa.png; sourceTree = SOURCE_ROOT; };
 		E224376518AFCFA300B47C47 /* 1_2k_apa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1_2k_apa@2x.png"; path = "Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_apa@2x.png"; sourceTree = SOURCE_ROOT; };
-		E224376618AFCFA300B47C47 /* 1_2k_ejszaka1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1_2k_ejszaka1.png; path = Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_ejszaka1.png; sourceTree = SOURCE_ROOT; };
-		E224376718AFCFA300B47C47 /* 1_2k_ejszaka1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1_2k_ejszaka1@2x.png"; path = "Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_ejszaka1@2x.png"; sourceTree = SOURCE_ROOT; };
 		E224376818AFCFA300B47C47 /* 1_2k_ejszaka2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1_2k_ejszaka2.png; path = Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_ejszaka2.png; sourceTree = SOURCE_ROOT; };
 		E224376918AFCFA300B47C47 /* 1_2k_ejszaka2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1_2k_ejszaka2@2x.png"; path = "Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_ejszaka2@2x.png"; sourceTree = SOURCE_ROOT; };
 		E224376A18AFCFA300B47C47 /* 1_2k_kanna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1_2k_kanna.png; path = Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_kanna.png; sourceTree = SOURCE_ROOT; };
@@ -357,7 +392,6 @@
 		E224377118AFCFA300B47C47 /* 1_2k_rizsfold-ejszaka@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1_2k_rizsfold-ejszaka@2x.png"; path = "Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_rizsfold-ejszaka@2x.png"; sourceTree = SOURCE_ROOT; };
 		E224377218AFCFA300B47C47 /* 1_2k_tuz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1_2k_tuz.png; path = Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_tuz.png; sourceTree = SOURCE_ROOT; };
 		E224377318AFCFA300B47C47 /* 1_2k_tuz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1_2k_tuz@2x.png"; path = "Resources/Images/Inori_InorisFatherIsPrayingViewController/1_2k_tuz@2x.png"; sourceTree = SOURCE_ROOT; };
-		E224377418AFCFA300B47C47 /* 1_HintLayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1_HintLayer.png; path = Resources/Images/Inori_InorisFatherIsPrayingViewController/1_HintLayer.png; sourceTree = SOURCE_ROOT; };
 		E224378C18AFD10500B47C47 /* 4_1k_alap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4_1k_alap.png; path = Resources/Images/Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController/4_1k_alap.png; sourceTree = "<group>"; };
 		E224378D18AFD10500B47C47 /* 4_1k_alap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "4_1k_alap@2x.png"; path = "Resources/Images/Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController/4_1k_alap@2x.png"; sourceTree = "<group>"; };
 		E224378E18AFD10500B47C47 /* 4_1k_csiga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4_1k_csiga.png; path = Resources/Images/Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController/4_1k_csiga.png; sourceTree = "<group>"; };
@@ -532,9 +566,6 @@
 		E23C51AF16D6C989000D5958 /* CommonLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonLibrary.h; sourceTree = "<group>"; };
 		E23C51B016D6C989000D5958 /* CommonLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLibrary.m; sourceTree = "<group>"; };
 		E240C9D218A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_sonkas_mandala_thEnd.mp3; path = "Music, SFX/005_sonkas_mandala_thEnd.mp3"; sourceTree = "<group>"; };
-		E24AF55C1783720300C9EF11 /* Screen15_16ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen15_16ViewController.h; sourceTree = "<group>"; };
-		E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen15_16ViewController.m; sourceTree = "<group>"; };
-		E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Screen15_16ViewController.xib; sourceTree = "<group>"; };
 		E25745F1184D40B8001E98FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E2657B30185DE13C0099018E /* IntroScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroScreenViewController.h; sourceTree = "<group>"; };
 		E2657B31185DE13C0099018E /* IntroScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScreenViewController.m; sourceTree = "<group>"; };
@@ -575,7 +606,6 @@
 		E2C6B0BD185E3E79002862EA /* 002_csiga3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_csiga3.mp3; path = "Music, SFX/002_csiga3.mp3"; sourceTree = "<group>"; };
 		E2C6B0BE185E3E79002862EA /* 002_hajohajo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_hajohajo.mp3; path = "Music, SFX/002_hajohajo.mp3"; sourceTree = "<group>"; };
 		E2C6B0BF185E3E79002862EA /* 002_wooohooooK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_wooohooooK.mp3; path = "Music, SFX/002_wooohooooK.mp3"; sourceTree = "<group>"; };
-		E2C6B0C0185E3E79002862EA /* 003_furalenyek.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 003_furalenyek.mp3; path = "Music, SFX/003_furalenyek.mp3"; sourceTree = "<group>"; };
 		E2C6B0C1185E3E79002862EA /* 003_hosszuhalak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 003_hosszuhalak.mp3; path = "Music, SFX/003_hosszuhalak.mp3"; sourceTree = "<group>"; };
 		E2C6B0C2185E3E79002862EA /* 003_ketten usznak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "003_ketten usznak.mp3"; path = "Music, SFX/003_ketten usznak.mp3"; sourceTree = "<group>"; };
 		E2C6B0C3185E3E79002862EA /* 003_rovidhalak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 003_rovidhalak.mp3; path = "Music, SFX/003_rovidhalak.mp3"; sourceTree = "<group>"; };
@@ -610,13 +640,6 @@
 		E2C6F335189F032C00FA167D /* 005_edeny_novekszik_6OK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_edeny_novekszik_6OK.mp3; path = "Music, SFX/005_edeny_novekszik_6OK.mp3"; sourceTree = "<group>"; };
 		E2C6F336189F032C00FA167D /* 005_edeny_novekszik_7OK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_edeny_novekszik_7OK.mp3; path = "Music, SFX/005_edeny_novekszik_7OK.mp3"; sourceTree = "<group>"; };
 		E2C6F337189F032C00FA167D /* 005_Marketok.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_Marketok.mp3; path = "Music, SFX/005_Marketok.mp3"; sourceTree = "<group>"; };
-		E2C6F338189F032C00FA167D /* 005_nov1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_nov1.mp3; path = "Music, SFX/005_nov1.mp3"; sourceTree = "<group>"; };
-		E2C6F339189F032C00FA167D /* 005_nov2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_nov2.mp3; path = "Music, SFX/005_nov2.mp3"; sourceTree = "<group>"; };
-		E2C6F33A189F032C00FA167D /* 005_nov3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_nov3.mp3; path = "Music, SFX/005_nov3.mp3"; sourceTree = "<group>"; };
-		E2C6F33B189F032C00FA167D /* 005_nov4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_nov4.mp3; path = "Music, SFX/005_nov4.mp3"; sourceTree = "<group>"; };
-		E2C6F33C189F032C00FA167D /* 005_nov5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_nov5.mp3; path = "Music, SFX/005_nov5.mp3"; sourceTree = "<group>"; };
-		E2C6F33D189F032C00FA167D /* 005_nov6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_nov6.mp3; path = "Music, SFX/005_nov6.mp3"; sourceTree = "<group>"; };
-		E2C6F33E189F032C00FA167D /* 005_nov7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_nov7.mp3; path = "Music, SFX/005_nov7.mp3"; sourceTree = "<group>"; };
 		E2CE7DD714FE265B00FB442A /* CoE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CE7DDB14FE265B00FB442A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E2CE7DDD14FE265B00FB442A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -697,8 +720,6 @@
 				E224376318AFCFA300B47C47 /* 1_2k_alap@2x.png */,
 				E224376418AFCFA300B47C47 /* 1_2k_apa.png */,
 				E224376518AFCFA300B47C47 /* 1_2k_apa@2x.png */,
-				E224376618AFCFA300B47C47 /* 1_2k_ejszaka1.png */,
-				E224376718AFCFA300B47C47 /* 1_2k_ejszaka1@2x.png */,
 				E224376818AFCFA300B47C47 /* 1_2k_ejszaka2.png */,
 				E224376918AFCFA300B47C47 /* 1_2k_ejszaka2@2x.png */,
 				E224376A18AFCFA300B47C47 /* 1_2k_kanna.png */,
@@ -711,7 +732,6 @@
 				E224377118AFCFA300B47C47 /* 1_2k_rizsfold-ejszaka@2x.png */,
 				E224377218AFCFA300B47C47 /* 1_2k_tuz.png */,
 				E224377318AFCFA300B47C47 /* 1_2k_tuz@2x.png */,
-				E224377418AFCFA300B47C47 /* 1_HintLayer.png */,
 			);
 			name = Inori_InorisFatherIsPrayingViewController;
 			path = Resources/Images/01/1_1k;
@@ -725,6 +745,35 @@
 				E20A7C3E16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib */,
 			);
 			name = Screen01;
+			sourceTree = "<group>";
+		};
+		E212A43B18B3EA230011108E /* StaticScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E212A43C18B3EBA40011108E /* 8_1k_dune.png */,
+				E212A43D18B3EBA40011108E /* 8_1k_hatter.png */,
+				E212A43E18B3EBA40011108E /* 8_1k_nagyhajo.png */,
+			);
+			name = StaticScreenViewController;
+			sourceTree = "<group>";
+		};
+		E212A44218B3ED3F0011108E /* Hints */ = {
+			isa = PBXGroup;
+			children = (
+				E212A44318B3ED4F0011108E /* hint-1.png */,
+				E212A44418B3ED4F0011108E /* hint-1@2x.png */,
+				E212A44518B3ED4F0011108E /* hint-2.png */,
+				E212A44618B3ED4F0011108E /* hint-2@2x.png */,
+				E212A44718B3ED4F0011108E /* hint-3.png */,
+				E212A44818B3ED4F0011108E /* hint-3@2x.png */,
+				E212A44918B3ED4F0011108E /* hint-4.png */,
+				E212A44A18B3ED4F0011108E /* hint-4@2x.png */,
+				E212A44B18B3ED4F0011108E /* hint-5.png */,
+				E212A44C18B3ED4F0011108E /* hint-5@2x.png */,
+				E212A44D18B3ED4F0011108E /* hint-6.png */,
+				E212A44E18B3ED4F0011108E /* hint-6@2x.png */,
+			);
+			name = Hints;
 			sourceTree = "<group>";
 		};
 		E222CEDF1524B8C8008FA949 /* Screen02 */ = {
@@ -866,7 +915,6 @@
 				E2537415189434FC00EFC01B /* Screen04 */,
 				E27309461700FD50003B955F /* Screen05 */,
 				E23C2DFA15189B1D00281164 /* Screen06 */,
-				E272A26C158BC408004D39D6 /* Screen07 */,
 				E2B364DE189867A5000BC192 /* FeedbackScreen */,
 				E253742818943EEB00EFC01B /* FontsViewController */,
 			);
@@ -876,13 +924,14 @@
 		E253741F189438CD00EFC01B /* MiniEpisode01 */ = {
 			isa = PBXGroup;
 			children = (
+				E212A44218B3ED3F0011108E /* Hints */,
+				E212A43B18B3EA230011108E /* StaticScreenViewController */,
 				E20A7C2016C99C710036748A /* Inori_InorisFatherIsPrayingViewController */,
 				E222CF131524B9F6008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController */,
 				E22436EF18AFB8C800B47C47 /* Inori_FatherAndSonSwimInTheSeaViewController */,
 				E2FA494516D43AA60044816A /* Inori_FatherAndSonPatchUpAFishnetViewController */,
 				E27309271700FCF6003B955F /* Inori_MothersBigBowlViewController */,
 				E258B93F151663F80094C4F7 /* GiantJellyfishArrivedViewController */,
-				E272A270158BC470004D39D6 /* Screen15_16 */,
 			);
 			name = MiniEpisode01;
 			sourceTree = "<group>";
@@ -952,23 +1001,6 @@
 				E22438AB18AFDF0C00B47C47 /* 12_1k_alap.png */,
 			);
 			name = GiantJellyfishArrivedViewController;
-			sourceTree = "<group>";
-		};
-		E272A26C158BC408004D39D6 /* Screen07 */ = {
-			isa = PBXGroup;
-			children = (
-				E24AF55C1783720300C9EF11 /* Screen15_16ViewController.h */,
-				E24AF55D1783720300C9EF11 /* Screen15_16ViewController.m */,
-				E24AF55E1783720300C9EF11 /* Screen15_16ViewController.xib */,
-			);
-			name = Screen07;
-			sourceTree = "<group>";
-		};
-		E272A270158BC470004D39D6 /* Screen15_16 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Screen15_16;
 			sourceTree = "<group>";
 		};
 		E27309271700FCF6003B955F /* Inori_MothersBigBowlViewController */ = {
@@ -1050,10 +1082,12 @@
 				E2E5F8B0187DFCED00996FA5 /* 002_hello.mp3 */,
 				E2C6F32F189F032C00FA167D /* 002_ohajooK.mp3 */,
 				E2C6B0BF185E3E79002862EA /* 002_wooohooooK.mp3 */,
-				E2C6B0C0185E3E79002862EA /* 003_furalenyek.mp3 */,
 				E2C6B0C1185E3E79002862EA /* 003_hosszuhalak.mp3 */,
 				E2C6B0C2185E3E79002862EA /* 003_ketten usznak.mp3 */,
 				E2C6B0C3185E3E79002862EA /* 003_rovidhalak.mp3 */,
+				E212A45F18B415DA0011108E /* 003_strangecreatures1.mp3 */,
+				E212A46018B415DA0011108E /* 003_strangecreatures2.mp3 */,
+				E212A46118B415DA0011108E /* 003_strangecreatures3.mp3 */,
 				E2C6B0C4185E3E79002862EA /* 003_vizalatt.mp3 */,
 				E2C6B0C5185E3E79002862EA /* 004_Atm_hullamszelmadarhang.mp3 */,
 				E2C6B0C6185E3E79002862EA /* 004_hal1.mp3 */,
@@ -1066,14 +1100,14 @@
 				E2C6F334189F032C00FA167D /* 005_edeny_novekszik_5OK.mp3 */,
 				E2C6F335189F032C00FA167D /* 005_edeny_novekszik_6OK.mp3 */,
 				E2C6F336189F032C00FA167D /* 005_edeny_novekszik_7OK.mp3 */,
+				E212A46518B41A9C0011108E /* 005_food1mix.mp3 */,
+				E212A46618B41A9C0011108E /* 005_food2mix.mp3 */,
+				E212A46718B41A9C0011108E /* 005_food3mix.mp3 */,
+				E212A46818B41A9C0011108E /* 005_food4mix.mp3 */,
+				E212A46918B41A9C0011108E /* 005_food5mix.mp3 */,
+				E212A46A18B41A9C0011108E /* 005_food6mix.mp3 */,
+				E212A46B18B41A9C0011108E /* 005_food7mix.mp3 */,
 				E2C6F337189F032C00FA167D /* 005_Marketok.mp3 */,
-				E2C6F338189F032C00FA167D /* 005_nov1.mp3 */,
-				E2C6F339189F032C00FA167D /* 005_nov2.mp3 */,
-				E2C6F33A189F032C00FA167D /* 005_nov3.mp3 */,
-				E2C6F33B189F032C00FA167D /* 005_nov4.mp3 */,
-				E2C6F33C189F032C00FA167D /* 005_nov5.mp3 */,
-				E2C6F33D189F032C00FA167D /* 005_nov6.mp3 */,
-				E2C6F33E189F032C00FA167D /* 005_nov7.mp3 */,
 				E240C9D218A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 */,
 				E2C6B0C9185E3E79002862EA /* 006_hal1.mp3 */,
 				E2C6B0CA185E3E79002862EA /* 006_hal2.mp3 */,
@@ -1335,12 +1369,10 @@
 				E2C6F324189E98B500FA167D /* 01 Story of the Sea 1.mp3 in Resources */,
 				E22437EB18AFD24200B47C47 /* 6-7_1k_apa@2x.png in Resources */,
 				E2C6B0E0185E3E79002862EA /* 002_hajohajo.mp3 in Resources */,
-				E2C6F34C189F032C00FA167D /* 005_nov5.mp3 in Resources */,
 				E224385318AFD46B00B47C47 /* 11_1k_hozzavalo-4@2x.png in Resources */,
 				E22437F718AFD24200B47C47 /* 6-7_1k_leny3@2x.png in Resources */,
 				E2F9C84D18999E7000E60D0F /* StaticScreenViewController.xib in Resources */,
 				E224377A18AFCFA300B47C47 /* 1_2k_alap@2x.png in Resources */,
-				E224377D18AFCFA300B47C47 /* 1_2k_ejszaka1.png in Resources */,
 				E22438CA18AFDF0C00B47C47 /* 12_1k_hatter_meduza_5@x2.png in Resources */,
 				E22438C318AFDF0C00B47C47 /* 12_1k_hinar_1.png in Resources */,
 				E224383E18AFD46B00B47C47 /* 11_1k_fazek-0.png in Resources */,
@@ -1356,6 +1388,7 @@
 				E224377C18AFCFA300B47C47 /* 1_2k_apa@2x.png in Resources */,
 				E22437AB18AFD10500B47C47 /* 4_1k_hullam_4@2x.png in Resources */,
 				E224384E18AFD46B00B47C47 /* 11_1k_hozzavalo-2.png in Resources */,
+				E212A45818B3ED4F0011108E /* hint-4@2x.png in Resources */,
 				E224380018AFD24200B47C47 /* 6-7_1k_leny8.png in Resources */,
 				E22438B318AFDF0C00B47C47 /* 12_1k_meduza_kar_1.png in Resources */,
 				E22437B318AFD10500B47C47 /* 4_1k_nagyhajo@2x.png in Resources */,
@@ -1373,13 +1406,19 @@
 				E2C6B0DC185E3E79002862EA /* 002_Atm_tengermadarszel.mp3 in Resources */,
 				E22438BC18AFDF0C00B47C47 /* 12_1k_hinar_4@x2.png in Resources */,
 				E22438AF18AFDF0C00B47C47 /* 12_1k_meduza_kar_3.png in Resources */,
+				E212A44118B3EBA40011108E /* 8_1k_nagyhajo.png in Resources */,
 				E224380918AFD24200B47C47 /* 6-7_1k_leny12@2x.png in Resources */,
 				E22437B018AFD10500B47C47 /* 4_1k_kishajo.png in Resources */,
+				E212A45A18B3ED4F0011108E /* hint-5@2x.png in Resources */,
+				E212A47018B41A9C0011108E /* 005_food5mix.mp3 in Resources */,
 				E22437F218AFD24200B47C47 /* 6-7_1k_leny1.png in Resources */,
+				E212A46D18B41A9C0011108E /* 005_food2mix.mp3 in Resources */,
 				E22438C718AFDF0C00B47C47 /* 12_1k_hatter_meduza_7.png in Resources */,
+				E212A45C18B3ED4F0011108E /* hint-6@2x.png in Resources */,
 				E224384318AFD46B00B47C47 /* 11_1k_fazek-2@2x.png in Resources */,
 				E2E0B75D151661CE009C0F56 /* GiantJellyfishArrivedViewController.xib in Resources */,
 				E224385118AFD46B00B47C47 /* 11_1k_hozzavalo-3@2x.png in Resources */,
+				E212A46318B415DA0011108E /* 003_strangecreatures2.mp3 in Resources */,
 				E224378218AFCFA300B47C47 /* 1_2k_kanna@2x.png in Resources */,
 				E224384C18AFD46B00B47C47 /* 11_1k_hozzavalo-1.png in Resources */,
 				E224385218AFD46B00B47C47 /* 11_1k_hozzavalo-4.png in Resources */,
@@ -1434,8 +1473,12 @@
 				E224387118AFD51300B47C47 /* 9_1k_halo@2x.png in Resources */,
 				E22438CE18AFDF0C00B47C47 /* 12_1k_hatter_meduza_3@x2.png in Resources */,
 				E224385B18AFD46B00B47C47 /* 11_1k_tanyer@2x.png in Resources */,
+				E212A46418B415DA0011108E /* 003_strangecreatures3.mp3 in Resources */,
+				E212A47218B41A9C0011108E /* 005_food7mix.mp3 in Resources */,
 				E22437F318AFD24200B47C47 /* 6-7_1k_leny1@2x.png in Resources */,
+				E212A47118B41A9C0011108E /* 005_food6mix.mp3 in Resources */,
 				E224380718AFD24200B47C47 /* 6-7_1k_leny11@2x.png in Resources */,
+				E212A43F18B3EBA40011108E /* 8_1k_dune.png in Resources */,
 				E22437A918AFD10500B47C47 /* 4_1k_hullam_3@2x.png in Resources */,
 				E22438CC18AFDF0C00B47C47 /* 12_1k_hatter_meduza_4@x2.png in Resources */,
 				E22438C018AFDF0C00B47C47 /* 12_1k_hinar_2@x2.png in Resources */,
@@ -1445,18 +1488,22 @@
 				E2C6B0DB185E3E79002862EA /* 001_rakozelithazraOK.mp3 in Resources */,
 				E2C6B0F3185E3E79002862EA /* 006_pulzalo.mp3 in Resources */,
 				E22438DF18AFDF0C00B47C47 /* 12_1k_alap.png in Resources */,
+				E212A45B18B3ED4F0011108E /* hint-6.png in Resources */,
+				E212A44018B3EBA40011108E /* 8_1k_hatter.png in Resources */,
 				E224380C18AFD24200B47C47 /* 6-7_1k_leny14.png in Resources */,
+				E212A46E18B41A9C0011108E /* 005_food3mix.mp3 in Resources */,
 				E2A34AD21854F242006446F4 /* CoE_80x80.png in Resources */,
 				E224384F18AFD46B00B47C47 /* 11_1k_hozzavalo-2@2x.png in Resources */,
+				E212A45618B3ED4F0011108E /* hint-3@2x.png in Resources */,
 				E22438D218AFDF0C00B47C47 /* 12_1k_hatter_meduza_1@x2.png in Resources */,
 				E22437F818AFD24200B47C47 /* 6-7_1k_leny4.png in Resources */,
 				E2C6B0E8185E3E79002862EA /* 004_hal1.mp3 in Resources */,
-				E2C6F34E189F032C00FA167D /* 005_nov7.mp3 in Resources */,
 				E22438C518AFDF0C00B47C47 /* 12_1k_hatter_meduza_8.png in Resources */,
 				E224378918AFCFA300B47C47 /* 1_2k_tuz.png in Resources */,
 				E2A34ACC1854F242006446F4 /* CoE_29x29.png in Resources */,
 				E224378118AFCFA300B47C47 /* 1_2k_kanna.png in Resources */,
 				E224378A18AFCFA300B47C47 /* 1_2k_tuz@2x.png in Resources */,
+				E212A45418B3ED4F0011108E /* hint-2@2x.png in Resources */,
 				E224380F18AFD24200B47C47 /* 6-7_1k_nagyhullam1@2x.png in Resources */,
 				E2C6B0D4185E3E79002862EA /* 001_Atm_tucsok_zene.mp3 in Resources */,
 				E22437A318AFD10500B47C47 /* 4_1k_csiga@2x.png in Resources */,
@@ -1465,8 +1512,6 @@
 				E22438C418AFDF0C00B47C47 /* 12_1k_hatter_meduza_8@x2.png in Resources */,
 				E22438BB18AFDF0C00B47C47 /* 12_1k_hinar_5.png in Resources */,
 				E2C6F340189F032C00FA167D /* 005_edeny_novekszik_1OK.mp3 in Resources */,
-				E2C6F34B189F032C00FA167D /* 005_nov4.mp3 in Resources */,
-				E2C6F34A189F032C00FA167D /* 005_nov3.mp3 in Resources */,
 				E224387318AFD51300B47C47 /* 9_1k_part@2x.png in Resources */,
 				E22438D318AFDF0C00B47C47 /* 12_1k_hatter_meduza_1.png in Resources */,
 				E224385018AFD46B00B47C47 /* 11_1k_hozzavalo-3.png in Resources */,
@@ -1476,10 +1521,10 @@
 				E2C6B0F0185E3E79002862EA /* 006_halraj.mp3 in Resources */,
 				E2A34AD31854F242006446F4 /* CoE_100x100.png in Resources */,
 				E2C6B0D2185E3E79002862EA /* 001_Atm_tucsok_tuz_zene.mp3 in Resources */,
+				E212A45118B3ED4F0011108E /* hint-1.png in Resources */,
 				E2C6F346189F032C00FA167D /* 005_edeny_novekszik_7OK.mp3 in Resources */,
 				E22437F118AFD24200B47C47 /* 6-7_1k_kishal_raj_2@2x.png in Resources */,
 				E2C6B0E1185E3E79002862EA /* 002_wooohooooK.mp3 in Resources */,
-				E2C6F348189F032C00FA167D /* 005_nov1.mp3 in Resources */,
 				E2C6B0E9185E3E79002862EA /* 004_hal2.mp3 in Resources */,
 				E22437F518AFD24200B47C47 /* 6-7_1k_leny2@2x.png in Resources */,
 				E20A7C4016C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.xib in Resources */,
@@ -1488,10 +1533,12 @@
 				E22438B118AFDF0C00B47C47 /* 12_1k_meduza_kar_2.png in Resources */,
 				E224386B18AFD51300B47C47 /* 9_1k_alakok@2x.png in Resources */,
 				E224381818AFD24200B47C47 /* 6-7_1k_nagyhullam6.png in Resources */,
+				E212A45318B3ED4F0011108E /* hint-2.png in Resources */,
 				E2C6F341189F032C00FA167D /* 005_edeny_novekszik_2OK.mp3 in Resources */,
 				E2C6F343189F032C00FA167D /* 005_edeny_novekszik_4OK.mp3 in Resources */,
 				E224386D18AFD51300B47C47 /* 9_1k_hal1@2x.png in Resources */,
 				E2C6B0D3185E3E79002862EA /* 001_Atm_tucsok_tuz.mp3 in Resources */,
+				E212A46C18B41A9C0011108E /* 005_food1mix.mp3 in Resources */,
 				E2A34AD11854F242006446F4 /* CoE_76x76.png in Resources */,
 				E2FA493E16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib in Resources */,
 				E224378718AFCFA300B47C47 /* 1_2k_rizsfold-ejszaka.png in Resources */,
@@ -1505,7 +1552,9 @@
 				E224380618AFD24200B47C47 /* 6-7_1k_leny11.png in Resources */,
 				E2C6B0DA185E3E79002862EA /* 001_rakozelithazra2OK.mp3 in Resources */,
 				E224381B18AFD24200B47C47 /* 6-7_1k_nagyhullam7@2x.png in Resources */,
+				E212A45218B3ED4F0011108E /* hint-1@2x.png in Resources */,
 				E224377B18AFCFA300B47C47 /* 1_2k_apa.png in Resources */,
+				E212A45518B3ED4F0011108E /* hint-3.png in Resources */,
 				E224377918AFCFA300B47C47 /* 1_2k_alap.png in Resources */,
 				E224384518AFD46B00B47C47 /* 11_1k_fazek-3@2x.png in Resources */,
 				E224384918AFD46B00B47C47 /* 11_1k_fazek-5@2x.png in Resources */,
@@ -1527,6 +1576,7 @@
 				E224381618AFD24200B47C47 /* 6-7_1k_nagyhullam5.png in Resources */,
 				E22437B118AFD10500B47C47 /* 4_1k_kishajo@2x.png in Resources */,
 				E22437AF18AFD10500B47C47 /* 4_1k_inori_ul@2x.png in Resources */,
+				E212A45918B3ED4F0011108E /* hint-5.png in Resources */,
 				E22438C918AFDF0C00B47C47 /* 12_1k_hatter_meduza_6.png in Resources */,
 				E22437F418AFD24200B47C47 /* 6-7_1k_leny2.png in Resources */,
 				E22438D918AFDF0C00B47C47 /* 12_1k_hal4.png in Resources */,
@@ -1536,6 +1586,7 @@
 				E22437FB18AFD24200B47C47 /* 6-7_1k_leny5@2x.png in Resources */,
 				E2C6F32C189E9ED200FA167D /* ScreenNarrations.txt in Resources */,
 				E22437FC18AFD24200B47C47 /* 6-7_1k_leny6.png in Resources */,
+				E212A45718B3ED4F0011108E /* hint-4.png in Resources */,
 				E22437EA18AFD24200B47C47 /* 6-7_1k_apa.png in Resources */,
 				E2C6B0EE185E3E79002862EA /* 006_hal4.mp3 in Resources */,
 				E224381118AFD24200B47C47 /* 6-7_1k_nagyhullam2@2x.png in Resources */,
@@ -1543,9 +1594,9 @@
 				E2C6F345189F032C00FA167D /* 005_edeny_novekszik_6OK.mp3 in Resources */,
 				E224381518AFD24200B47C47 /* 6-7_1k_nagyhullam4@2x.png in Resources */,
 				E2C6F344189F032C00FA167D /* 005_edeny_novekszik_5OK.mp3 in Resources */,
+				E212A46F18B41A9C0011108E /* 005_food4mix.mp3 in Resources */,
 				E22437EF18AFD24200B47C47 /* 6-7_1k_kishal_raj_1@2x.png in Resources */,
 				E273094B1700FD7A003B955F /* Inori_MothersBigBowlViewController.xib in Resources */,
-				E224377E18AFCFA300B47C47 /* 1_2k_ejszaka1@2x.png in Resources */,
 				E2E5F8B1187DFCED00996FA5 /* 002_hello.mp3 in Resources */,
 				E224381718AFD24200B47C47 /* 6-7_1k_nagyhullam5@2x.png in Resources */,
 				E22438B418AFDF0C00B47C47 /* 12_1k_meduza_fej@x2.png in Resources */,
@@ -1556,14 +1607,13 @@
 				E22438C618AFDF0C00B47C47 /* 12_1k_hatter_meduza_7@x2.png in Resources */,
 				E224380318AFD24200B47C47 /* 6-7_1k_leny9@2x.png in Resources */,
 				E2C6B0DD185E3E79002862EA /* 002_csiga1.mp3 in Resources */,
-				E2C6B0E2185E3E79002862EA /* 003_furalenyek.mp3 in Resources */,
 				E22438CF18AFDF0C00B47C47 /* 12_1k_hatter_meduza_3.png in Resources */,
 				E2A34AD51854F242006446F4 /* CoE_152x152.png in Resources */,
 				E224381C18AFD24200B47C47 /* 6-7_1k_nagyhullam8.png in Resources */,
 				E224380D18AFD24200B47C47 /* 6-7_1k_leny14@2x.png in Resources */,
-				E24AF5601783720300C9EF11 /* Screen15_16ViewController.xib in Resources */,
 				E224381218AFD24200B47C47 /* 6-7_1k_nagyhullam3.png in Resources */,
 				E22438C818AFDF0C00B47C47 /* 12_1k_hatter_meduza_6@x2.png in Resources */,
+				E212A46218B415DA0011108E /* 003_strangecreatures1.mp3 in Resources */,
 				E22437AC18AFD10500B47C47 /* 4_1k_inori_all.png in Resources */,
 				E22438B218AFDF0C00B47C47 /* 12_1k_meduza_kar_1@x2.png in Resources */,
 				E224385718AFD46B00B47C47 /* 11_1k_hozzavalo-6@2x.png in Resources */,
@@ -1595,14 +1645,11 @@
 				E224381A18AFD24200B47C47 /* 6-7_1k_nagyhullam7.png in Resources */,
 				E224387618AFD51300B47C47 /* 9_1k_tenger2.png in Resources */,
 				E26BC120187B3CAE009F9956 /* The story of the Sea_OK.mp3 in Resources */,
-				E2C6F349189F032C00FA167D /* 005_nov2.mp3 in Resources */,
 				E22438D618AFDF0C00B47C47 /* 12_1k_hal7.png in Resources */,
 				E224378618AFCFA300B47C47 /* 1_2k_riszfoldalap@2x.png in Resources */,
-				E2C6F34D189F032C00FA167D /* 005_nov6.mp3 in Resources */,
 				E224380218AFD24200B47C47 /* 6-7_1k_leny9.png in Resources */,
 				E2F38184189B165E00FF03EA /* menu_set-top-g.png in Resources */,
 				E22438B818AFDF0C00B47C47 /* 12_1k_hinar_6@x2.png in Resources */,
-				E224378B18AFCFA300B47C47 /* 1_HintLayer.png in Resources */,
 				E22437FE18AFD24200B47C47 /* 6-7_1k_leny7.png in Resources */,
 				E224387518AFD51300B47C47 /* 9_1k_tenger1@2x.png in Resources */,
 			);
@@ -1655,7 +1702,6 @@
 				E2FA494316D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m in Sources */,
 				E23C51B116D6C989000D5958 /* CommonLibrary.m in Sources */,
 				E273094A1700FD7A003B955F /* Inori_MothersBigBowlViewController.m in Sources */,
-				E24AF55F1783720300C9EF11 /* Screen15_16ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1775,6 +1821,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoE/CoE-Prefix.pch";
 				INFOPLIST_FILE = "CoE/CoE-Info.plist";
@@ -1788,6 +1835,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoE/CoE-Prefix.pch";
 				INFOPLIST_FILE = "CoE/CoE-Info.plist";
