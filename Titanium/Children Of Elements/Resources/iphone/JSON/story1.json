@@ -1,0 +1,83 @@
+[
+
+{
+    "background": "img.png",
+    "top":10,
+    "stageImages": [
+        {
+            "image": "imagen.png",
+            "posx": 10,
+            "posY": 10,
+            "width": 100,
+            "height": 100,
+            "transform": {
+                "rotate": 10,
+                "scale": 10
+            }
+        },
+        {
+            "image": "imagen.png",
+            "posx": 10,
+            "posY": 10,
+            "width": 100,
+            "height": 100,
+            "transform": {
+                "rotate": 10,
+                "scale": 10
+            }
+        },
+        {
+            "image": "imagen.png",
+            "posx": 10,
+            "posY": 10,
+            "width": 100,
+            "height": 100,
+            "transform": {
+                "rotate": 10,
+                "scale": 10
+            }
+        }
+    ]
+},
+
+{
+    "background": "img.png",
+    "top":30,
+    "stageImages": [
+        {
+            "image": "imagen.png",
+            "posx": 10,
+            "posY": 10,
+            "width": 100,
+            "height": 100,
+            "transform": {
+                "rotate": 10,
+                "scale": 10
+            }
+        },
+        {
+            "image": "imagen.png",
+            "posx": 10,
+            "posY": 10,
+            "width": 100,
+            "height": 100,
+            "transform": {
+                "rotate": 10,
+                "scale": 10
+            }
+        },
+        {
+            "image": "imagen.png",
+            "posx": 10,
+            "posY": 10,
+            "width": 100,
+            "height": 100,
+            "transform": {
+                "rotate": 10,
+                "scale": 10
+            }
+        }
+    ]
+}
+
+]

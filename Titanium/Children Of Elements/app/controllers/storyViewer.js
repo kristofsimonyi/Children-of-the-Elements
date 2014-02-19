@@ -15,7 +15,7 @@ function init(){
 	
 	_story = new Story(currentStoryID);
 
-	$.storyViewer.add(_story);
+	$.storyStage.add(_story);
 
 	/** @TODO agregar controles de navegacion **/
 

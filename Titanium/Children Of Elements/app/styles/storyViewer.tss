@@ -1,5 +1,5 @@
 ".container":{
-	backgroundImage:'/bookshelf/bookshelf_pantallaFinal.png',
+	backgroundColor:"#ffffff",
 },
 "Button":{
 	bottom:10,
