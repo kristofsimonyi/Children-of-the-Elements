@@ -26,8 +26,6 @@ StorySlide.prototype.mainView;
 
 
 
-
-
 /// parse the elements lists and add all elements to main View
 StorySlide.prototype.buildElements = function() {
 	
@@ -92,6 +90,13 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
 			currentElement.animate(itemAnimation)
 
 		}
+		if(_targetElement.alertOnClick){
+
+			currentElement._msg = _targetElement.alertOnClick
+			currentElement.addEventListener('click',function(e){
+				alert(e.source._msg)
+			})
+		}
 		
 
 
@@ -102,20 +107,26 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
 StorySlide.prototype.animations = function(_animData) {
 	
 	
-	Ti.API.info(_animData)
-
-	Ti.API.info("==========")
-
-
+ 
 	/// valida si existe rotation
 
+	var matrix = Ti.UI.create2DMatrix()
 
+	if(_animData.rotate){
+		//alert("rotation" + _animData.rotate)
+		matrix = matrix.rotate(90);
+		_animData.transform = matrix
+
+	}
 	_animData.rotate = null;
 	_animData.scale = null;
+	
 
-	Ti.API.info(_animData)
+
 
 	var _animation = Ti.UI.createAnimation(_animData);
+		
+		
 
 	return _animation;
 };
@@ -126,10 +137,12 @@ StorySlide.prototype.errorDetect = function(_alertMessage) {
 	alert(_alertMessage)
 };
 
+
 //memory delloc
 StorySlide.prototype.cleaner = function() {
 	// this function should track all images and remove them from memory
 };
+
 
 module.exports = StorySlide;
 

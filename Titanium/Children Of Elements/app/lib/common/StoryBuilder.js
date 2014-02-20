@@ -10,7 +10,7 @@ var _slides
 function StoryBuilder(_storyID){
 
 	/// parse data
-	var _data = this.parseJSON('/json/story'+ _storyID +'.json');
+	var _data = this.parseJSON('json/story'+ _storyID +'.json');
 	
 	/// create slide class
 	var _slides = []; //Ti.UI.createView()
@@ -28,8 +28,10 @@ function StoryBuilder(_storyID){
 StoryBuilder.prototype.parseJSON = function(_URL) {
 	
 	var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);
-	var data = file.read().text;
-	var json = JSON.parse(data);
+	var data = file.read()//.text;
+	var json = JSON.parse(data.text);
+
+ 
 
 	return json;
 };

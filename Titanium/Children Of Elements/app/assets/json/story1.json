@@ -72,11 +72,42 @@
                     "left": 0
                 },
                 "animation": {
-                    "rotate": 10,
                     "opacity": 0,
-                    "scale": 10,
                     "duration": 3000,
                     "delay": 4000
+                }
+            }
+        ]
+    },
+    {
+        "slideTitle": "SecondSlide",
+        "stageElements": [     
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen2_background.jpg",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "left": 0
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen2_boats.png",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "opacity": 1,
+                    "left": 0
+                },
+                "animation": {
+                    "rotate": "180",
+                    "duration": 1000,
+                    "repeat":30,
+                    "autoreverse":"true",
+                    "delay": 8000
                 }
             }
         ]
@@ -91,11 +122,13 @@
                     "top": 0,
                     "width": "100%",
                     "height": "100%",
-                    "left": 0
+                    "left": 0,
+                    "touchEnabled":false
                 }
             },
             {
                 "type": "image",
+                "alertOnClick":"Hi! i'm clickable",
                 "properties": {
                     "image": "android.png",
                     "top": 0,
@@ -109,9 +142,11 @@
                     "opacity": 0,
                     "scale": 10,
                     "duration": 3000,
-                    "delay": 4000
+                    "repeat":100,
+                    "delay": 12000
                 }
             }
         ]
     }
+    
 ]

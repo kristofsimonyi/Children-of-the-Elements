@@ -35,15 +35,23 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
         var itemAnimation = this.animations(_targetElement.animation);
         currentElement.animate(itemAnimation);
     }
+    if (_targetElement.alertOnClick) {
+        currentElement._msg = _targetElement.alertOnClick;
+        currentElement.addEventListener("click", function(e) {
+            alert(e.source._msg);
+        });
+    }
     return currentElement;
 };
 
 StorySlide.prototype.animations = function(_animData) {
-    Ti.API.info(_animData);
-    Ti.API.info("==========");
+    var matrix = Ti.UI.create2DMatrix();
+    if (_animData.rotate) {
+        matrix = matrix.rotate(90);
+        _animData.transform = matrix;
+    }
     _animData.rotate = null;
     _animData.scale = null;
-    Ti.API.info(_animData);
     var _animation = Ti.UI.createAnimation(_animData);
     return _animation;
 };

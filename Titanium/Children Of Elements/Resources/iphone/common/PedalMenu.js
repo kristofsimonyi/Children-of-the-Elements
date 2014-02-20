@@ -99,8 +99,6 @@ PedalMenu.prototype.createPedalItem = function(_pedalInfo) {
 PedalMenu.prototype.parseJSON = function(_URL) {
     var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);
     var data = file.read();
-    alert(file);
-    alert(data.text);
     var json = JSON.parse(data.text);
     return json;
 };
