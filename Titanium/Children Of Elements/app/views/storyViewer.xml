@@ -3,7 +3,13 @@
 
 		<View id="storyStage"> </View>
  
-		<Button onClick="cerrar"> Back </Button>
- 		
+ 		<View id="navBar">
+
+			<Button onClick="back" id="back"> Back </Button>
+			<Button onClick="exitStory" id="home"> home </Button>
+			<Button onClick="next" id="next"> next </Button>
+
+ 		</View>
+
 	</Window>
 </Alloy>

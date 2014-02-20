@@ -1,7 +1,7 @@
 function StoryBuilder(_storyID) {
     var _data = this.parseJSON("/json/story" + _storyID + ".json");
-    var _slides = Ti.UI.createView();
-    for (var i = 0; _data.length > i; i++) _slides.add(new Slide(_data[i]));
+    var _slides = [];
+    for (var i = 0; _data.length > i; i++) _slides.push(new Slide(_data[i]));
     return _slides;
 }
 

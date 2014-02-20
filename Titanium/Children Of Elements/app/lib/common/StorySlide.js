@@ -9,7 +9,7 @@ function StorySlide(_slideData){
 	/// create main container
 	this.mainView = Ti.UI.createView()
 
-	// store data inside the class
+	// include slide data inside the class
 	this.slideData = _slideData;
 
 

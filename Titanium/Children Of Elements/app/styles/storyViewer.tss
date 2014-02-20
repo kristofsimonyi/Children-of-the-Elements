@@ -2,7 +2,20 @@
 	backgroundColor:"#ffffff",
 },
 "Button":{
-	bottom:10,
 	backgroundColor:"#ffffff",
-	width:80
+},
+"#navBar":{
+	height:100,
+	top:0
+},
+"#back":{
+	left:10,
+	top:10
+},
+"#next":{
+	right:10,
+	top:10
+},
+"#home":{
+	top:10
 }

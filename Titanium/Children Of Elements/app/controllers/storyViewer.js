@@ -3,7 +3,10 @@ var currentStoryID = args.storyID;
 
 
 var Story = require('/common/StoryBuilder');
+var Navigator = require('/common/StoryNavigator');
+
 var	_story;
+var _navigator;
 
 /// importar clase creadora
 /// importar manejo de sonidos?
@@ -14,8 +17,9 @@ function init(){
 	/** @TODO funcion de carga */
 	
 	_story = new Story(currentStoryID);
+	_navigator = new Navigator(_story)
 
-	$.storyStage.add(_story);
+	$.storyStage.add(_navigator.init() );
 
 	/** @TODO agregar controles de navegacion **/
 
@@ -27,6 +31,14 @@ $.storyViewer.addEventListener('open', function(){
 })
 
 
-function cerrar(){
+function next(){
+	_navigator.next();
+}
+
+function back(){
+	_navigator.back();
+}
+
+function exitStory(){
 	$.storyViewer.close();
 }

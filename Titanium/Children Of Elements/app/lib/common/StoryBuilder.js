@@ -13,11 +13,11 @@ function StoryBuilder(_storyID){
 	var _data = this.parseJSON('/json/story'+ _storyID +'.json');
 	
 	/// create slide class
-	var _slides = Ti.UI.createView()
+	var _slides = []; //Ti.UI.createView()
 
 	for (var i = 0; i < _data.length; i++) {
 
-		_slides.add( new Slide( _data[i] ) )
+		_slides.push( new Slide( _data[i] ) )
 
 	};
 

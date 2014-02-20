@@ -26,7 +26,7 @@
                     "width": "105%",
                     "height": "105%",
                     "duration": 1000,
-                    "delay": 7000,
+                    "delay": 6500,
                     "repeat":30,
                     "autoreverse":"true"
                 }
@@ -76,13 +76,42 @@
                     "opacity": 0,
                     "scale": 10,
                     "duration": 3000,
-                    "delay": 5000
+                    "delay": 4000
                 }
             }
-
-
-
-
+        ]
+    },
+    {
+        "slideTitle": "SecondSlide",
+        "stageElements": [     
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen1_cattle.png",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "left": 0
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "android.png",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "opacity": 1,
+                    "left": 0
+                },
+                "animation": {
+                    "rotate": 10,
+                    "opacity": 0,
+                    "scale": 10,
+                    "duration": 3000,
+                    "delay": 4000
+                }
+            }
         ]
     }
 ]
