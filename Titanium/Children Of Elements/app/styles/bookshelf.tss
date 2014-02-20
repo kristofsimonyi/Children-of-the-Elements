@@ -32,8 +32,8 @@
 "#pedalMenuElement":{
 	left:0,
 	bottom:0,
-	width:'600dip',
-	height:'600dip'
+	width:'630dip',
+	height:'660dip'
 	
 },
 "#pedal_circleContainer":{

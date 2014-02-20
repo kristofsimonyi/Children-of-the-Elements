@@ -5,7 +5,7 @@ function StoryBuilder(_storyID) {
     return _slides;
 }
 
-var Slide = require("StorySlide");
+var Slide = require("/common/StorySlide");
 
 var _slides;
 

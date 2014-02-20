@@ -26,7 +26,7 @@ function StoryBuilder(_storyID){
 }
 
 StoryBuilder.prototype.parseJSON = function(_URL) {
-	alert(_URL)
+	
 	var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);
 	var data = file.read().text;
 	var json = JSON.parse(data);

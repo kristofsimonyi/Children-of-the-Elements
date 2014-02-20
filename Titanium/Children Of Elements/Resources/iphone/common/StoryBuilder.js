@@ -10,7 +10,6 @@ var Slide = require("/common/StorySlide");
 var _slides;
 
 StoryBuilder.prototype.parseJSON = function(_URL) {
-    alert(_URL);
     var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);
     var data = file.read().text;
     var json = JSON.parse(data);

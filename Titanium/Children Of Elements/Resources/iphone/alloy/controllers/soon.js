@@ -1,7 +1,4 @@
 function Controller() {
-    function cerrar() {
-        $.soon.close();
-    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "soon";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;

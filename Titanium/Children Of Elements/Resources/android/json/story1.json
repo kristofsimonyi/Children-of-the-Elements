@@ -1,83 +1,60 @@
 [
+    {
+        "slideTitle": "FirstSlide",
+        "stageElements": [
 
-{
-    "background": "img.png",
-    "top":10,
-    "stageImages": [
-        {
-            "image": "imagen.png",
-            "posx": 10,
-            "posY": 10,
-            "width": 100,
-            "height": 100,
-            "transform": {
-                "rotate": 10,
-                "scale": 10
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen1_background.jpg",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "left": 0
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen_hammock_dad.png",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "left": 0
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen1_frames.png",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "left": 0
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen1_home.jpg",
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%",
+                    "opacity": 1,
+                    "left": 0
+                },
+                "animation": {
+                    "rotate": 10,
+                    "opacity": 0,
+                    "scale": 10,
+                    "duration": 5000,
+                    "delay": 5000
+                }
             }
-        },
-        {
-            "image": "imagen.png",
-            "posx": 10,
-            "posY": 10,
-            "width": 100,
-            "height": 100,
-            "transform": {
-                "rotate": 10,
-                "scale": 10
-            }
-        },
-        {
-            "image": "imagen.png",
-            "posx": 10,
-            "posY": 10,
-            "width": 100,
-            "height": 100,
-            "transform": {
-                "rotate": 10,
-                "scale": 10
-            }
-        }
-    ]
-},
 
-{
-    "background": "img.png",
-    "top":30,
-    "stageImages": [
-        {
-            "image": "imagen.png",
-            "posx": 10,
-            "posY": 10,
-            "width": 100,
-            "height": 100,
-            "transform": {
-                "rotate": 10,
-                "scale": 10
-            }
-        },
-        {
-            "image": "imagen.png",
-            "posx": 10,
-            "posY": 10,
-            "width": 100,
-            "height": 100,
-            "transform": {
-                "rotate": 10,
-                "scale": 10
-            }
-        },
-        {
-            "image": "imagen.png",
-            "posx": 10,
-            "posY": 10,
-            "width": 100,
-            "height": 100,
-            "transform": {
-                "rotate": 10,
-                "scale": 10
-            }
-        }
-    ]
-}
 
+
+
+        ]
+    }
 ]

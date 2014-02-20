@@ -123,8 +123,8 @@ function Controller() {
     $.__views.pedalMenuElement = Ti.UI.createView({
         left: 0,
         bottom: 0,
-        width: "600dip",
-        height: "600dip",
+        width: "630dip",
+        height: "660dip",
         id: "pedalMenuElement"
     });
     $.__views.bookshelf.add($.__views.pedalMenuElement);

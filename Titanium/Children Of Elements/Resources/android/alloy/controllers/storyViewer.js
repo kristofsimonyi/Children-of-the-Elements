@@ -1,7 +1,7 @@
 function Controller() {
     function init() {
         _story = new Story(currentStoryID);
-        $.storyViewer.add(_story);
+        $.storyStage.add(_story);
     }
     function cerrar() {
         $.storyViewer.close();
@@ -15,6 +15,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.storyViewer = Ti.UI.createWindow({
+        backgroundColor: "#ffffff",
         id: "storyViewer"
     });
     $.__views.storyViewer && $.addTopLevelView($.__views.storyViewer);
@@ -22,12 +23,15 @@ function Controller() {
         id: "storyStage"
     });
     $.__views.storyViewer.add($.__views.storyStage);
-    $.__views.__alloyId1 = Ti.UI.createButton({
+    $.__views.__alloyId2 = Ti.UI.createButton({
+        bottom: 10,
+        backgroundColor: "#ffffff",
+        width: 80,
         title: "Back",
-        id: "__alloyId1"
+        id: "__alloyId2"
     });
-    $.__views.storyViewer.add($.__views.__alloyId1);
-    cerrar ? $.__views.__alloyId1.addEventListener("click", cerrar) : __defers["$.__views.__alloyId1!click!cerrar"] = true;
+    $.__views.storyViewer.add($.__views.__alloyId2);
+    cerrar ? $.__views.__alloyId2.addEventListener("click", cerrar) : __defers["$.__views.__alloyId2!click!cerrar"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};
@@ -37,7 +41,7 @@ function Controller() {
     $.storyViewer.addEventListener("open", function() {
         init();
     });
-    __defers["$.__views.__alloyId1!click!cerrar"] && $.__views.__alloyId1.addEventListener("click", cerrar);
+    __defers["$.__views.__alloyId2!click!cerrar"] && $.__views.__alloyId2.addEventListener("click", cerrar);
     _.extend($, exports);
 }
 
