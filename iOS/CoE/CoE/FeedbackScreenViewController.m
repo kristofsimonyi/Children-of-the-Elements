@@ -15,6 +15,8 @@
 
 @implementation FeedbackScreenViewController
 
+@synthesize backgroundImageView, logoImageView;
+
 -(void)goToNextScreen;
 {
     CATransition* transition = [CATransition animation];
@@ -38,9 +40,34 @@
 
 - (IBAction)feedbackScreenFeedbackLinkTapped:(id)sender;
 {
- [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.google.co.uk"]] ;
+ [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://docs.google.com/forms/d/1D0sUP0Kmwh9CA3_hVvlzqZHHChvWHEexth_yj_PyKKQ/viewform"]] ;
 }
 
+- (IBAction)feedbackScreenCallForArtistLinkTapped:(id)sender;
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.google.com/url?q=http%3A%2F%2Fchildrenoftheelements.org%2Fen%2Fopen-platform&sa=D&sntz=1&usg=AFQjCNHdWnWP83DF2dAT1JNatT6_KuCoSw"]] ;
+}
+
+- (IBAction)feedbackScreenFaceBookPageLinkTapped:(id)sender;
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2FChildrenOfTheElements&sa=D&sntz=1&usg=AFQjCNGfmxpTMmDMz9MjyqKmudGMxlFhMQ"]] ;
+}
+
+- (IBAction)feedbackScreenCoEHomePageLinkTapped:(id)sender;
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.google.com/url?q=http%3A%2F%2Fchildrenoftheelements.org&sa=D&sntz=1&usg=AFQjCNFgLcq65rx13KkIVd3Y_GQwkRRPJw"]] ;
+}
+
+- (void)loadImages;
+{
+    NSString* imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"Inori_screen_feedback" ofType:@"png"];
+    [backgroundImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"Inori_screen_feedback_logo" ofType:@"png"];
+    [logoImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +82,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self loadImages];
 }
 
 - (void)didReceiveMemoryWarning

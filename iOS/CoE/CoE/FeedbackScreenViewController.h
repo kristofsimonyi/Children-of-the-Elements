@@ -12,7 +12,12 @@
     
 }
 
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView, *logoImageView;
+
 - (IBAction)feedbackScreenPreviousScreenButtonTouched:(id)sender;
 - (IBAction)feedbackScreenFeedbackLinkTapped:(id)sender;
+- (IBAction)feedbackScreenCallForArtistLinkTapped:(id)sender;
+- (IBAction)feedbackScreenFaceBookPageLinkTapped:(id)sender;
+- (IBAction)feedbackScreenCoEHomePageLinkTapped:(id)sender;
 
 @end

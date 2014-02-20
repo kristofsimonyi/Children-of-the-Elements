@@ -249,6 +249,22 @@
 		E2A34ADD1854F630006446F4 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A34ADB1854F630006446F4 /* Default-Landscape@2x~ipad.png */; };
 		E2B364E1189867DA000BC192 /* FeedbackScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B364E0189867DA000BC192 /* FeedbackScreenViewController.m */; };
 		E2B469FD186F321F0063647F /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B469FC186F321F0063647F /* NavigationController.m */; };
+		E2BDA97218B55CBB00DA52C1 /* Inori_text1_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96618B55CBB00DA52C1 /* Inori_text1_bg.png */; };
+		E2BDA97318B55CBB00DA52C1 /* Inori_text1_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96718B55CBB00DA52C1 /* Inori_text1_bg@2x.png */; };
+		E2BDA97418B55CBB00DA52C1 /* Inori_text2_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96818B55CBB00DA52C1 /* Inori_text2_bg.png */; };
+		E2BDA97518B55CBB00DA52C1 /* Inori_text2_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96918B55CBB00DA52C1 /* Inori_text2_bg@2x.png */; };
+		E2BDA97618B55CBB00DA52C1 /* Inori_text3_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96A18B55CBB00DA52C1 /* Inori_text3_bg.png */; };
+		E2BDA97718B55CBB00DA52C1 /* Inori_text3_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96B18B55CBB00DA52C1 /* Inori_text3_bg@2x.png */; };
+		E2BDA97818B55CBB00DA52C1 /* Inori_text4_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96C18B55CBB00DA52C1 /* Inori_text4_bg.png */; };
+		E2BDA97918B55CBB00DA52C1 /* Inori_text4_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96D18B55CBB00DA52C1 /* Inori_text4_bg@2x.png */; };
+		E2BDA97A18B55CBB00DA52C1 /* Inori_text5_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96E18B55CBB00DA52C1 /* Inori_text5_bg.png */; };
+		E2BDA97B18B55CBB00DA52C1 /* Inori_text5_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96F18B55CBB00DA52C1 /* Inori_text5_bg@2x.png */; };
+		E2BDA97C18B55CBB00DA52C1 /* Inori_text6_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA97018B55CBB00DA52C1 /* Inori_text6_bg.png */; };
+		E2BDA97D18B55CBB00DA52C1 /* Inori_text6_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA97118B55CBB00DA52C1 /* Inori_text6_bg@2x.png */; };
+		E2BDA98518B57A7E00DA52C1 /* Inori_screen_feedback_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA98118B57A7E00DA52C1 /* Inori_screen_feedback_logo.png */; };
+		E2BDA98618B57A7E00DA52C1 /* Inori_screen_feedback_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA98218B57A7E00DA52C1 /* Inori_screen_feedback_logo@2x.png */; };
+		E2BDA98718B57A7E00DA52C1 /* Inori_screen_feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA98318B57A7E00DA52C1 /* Inori_screen_feedback.png */; };
+		E2BDA98818B57A7E00DA52C1 /* Inori_screen_feedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA98418B57A7E00DA52C1 /* Inori_screen_feedback@2x.png */; };
 		E2C6B0D2185E3E79002862EA /* 001_Atm_tucsok_tuz_zene.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0B0185E3E79002862EA /* 001_Atm_tucsok_tuz_zene.mp3 */; };
 		E2C6B0D3185E3E79002862EA /* 001_Atm_tucsok_tuz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0B1185E3E79002862EA /* 001_Atm_tucsok_tuz.mp3 */; };
 		E2C6B0D4185E3E79002862EA /* 001_Atm_tucsok_zene.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0B2185E3E79002862EA /* 001_Atm_tucsok_zene.mp3 */; };
@@ -590,6 +606,22 @@
 		E2B364E0189867DA000BC192 /* FeedbackScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackScreenViewController.m; sourceTree = "<group>"; };
 		E2B469FB186F321F0063647F /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		E2B469FC186F321F0063647F /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		E2BDA96618B55CBB00DA52C1 /* Inori_text1_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_text1_bg.png; path = Resources/Images/StaticScreenViewController/Inori_text1_bg.png; sourceTree = "<group>"; };
+		E2BDA96718B55CBB00DA52C1 /* Inori_text1_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_text1_bg@2x.png"; path = "Resources/Images/StaticScreenViewController/Inori_text1_bg@2x.png"; sourceTree = "<group>"; };
+		E2BDA96818B55CBB00DA52C1 /* Inori_text2_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_text2_bg.png; path = Resources/Images/StaticScreenViewController/Inori_text2_bg.png; sourceTree = "<group>"; };
+		E2BDA96918B55CBB00DA52C1 /* Inori_text2_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_text2_bg@2x.png"; path = "Resources/Images/StaticScreenViewController/Inori_text2_bg@2x.png"; sourceTree = "<group>"; };
+		E2BDA96A18B55CBB00DA52C1 /* Inori_text3_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_text3_bg.png; path = Resources/Images/StaticScreenViewController/Inori_text3_bg.png; sourceTree = "<group>"; };
+		E2BDA96B18B55CBB00DA52C1 /* Inori_text3_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_text3_bg@2x.png"; path = "Resources/Images/StaticScreenViewController/Inori_text3_bg@2x.png"; sourceTree = "<group>"; };
+		E2BDA96C18B55CBB00DA52C1 /* Inori_text4_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_text4_bg.png; path = Resources/Images/StaticScreenViewController/Inori_text4_bg.png; sourceTree = "<group>"; };
+		E2BDA96D18B55CBB00DA52C1 /* Inori_text4_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_text4_bg@2x.png"; path = "Resources/Images/StaticScreenViewController/Inori_text4_bg@2x.png"; sourceTree = "<group>"; };
+		E2BDA96E18B55CBB00DA52C1 /* Inori_text5_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_text5_bg.png; path = Resources/Images/StaticScreenViewController/Inori_text5_bg.png; sourceTree = "<group>"; };
+		E2BDA96F18B55CBB00DA52C1 /* Inori_text5_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_text5_bg@2x.png"; path = "Resources/Images/StaticScreenViewController/Inori_text5_bg@2x.png"; sourceTree = "<group>"; };
+		E2BDA97018B55CBB00DA52C1 /* Inori_text6_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_text6_bg.png; path = Resources/Images/StaticScreenViewController/Inori_text6_bg.png; sourceTree = "<group>"; };
+		E2BDA97118B55CBB00DA52C1 /* Inori_text6_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_text6_bg@2x.png"; path = "Resources/Images/StaticScreenViewController/Inori_text6_bg@2x.png"; sourceTree = "<group>"; };
+		E2BDA98118B57A7E00DA52C1 /* Inori_screen_feedback_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_screen_feedback_logo.png; path = Resources/Images/FeedbackFormViewController/Inori_screen_feedback_logo.png; sourceTree = "<group>"; };
+		E2BDA98218B57A7E00DA52C1 /* Inori_screen_feedback_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_screen_feedback_logo@2x.png"; path = "Resources/Images/FeedbackFormViewController/Inori_screen_feedback_logo@2x.png"; sourceTree = "<group>"; };
+		E2BDA98318B57A7E00DA52C1 /* Inori_screen_feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inori_screen_feedback.png; path = Resources/Images/FeedbackFormViewController/Inori_screen_feedback.png; sourceTree = "<group>"; };
+		E2BDA98418B57A7E00DA52C1 /* Inori_screen_feedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Inori_screen_feedback@2x.png"; path = "Resources/Images/FeedbackFormViewController/Inori_screen_feedback@2x.png"; sourceTree = "<group>"; };
 		E2C6B0B0185E3E79002862EA /* 001_Atm_tucsok_tuz_zene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 001_Atm_tucsok_tuz_zene.mp3; path = "Music, SFX/001_Atm_tucsok_tuz_zene.mp3"; sourceTree = "<group>"; };
 		E2C6B0B1185E3E79002862EA /* 001_Atm_tucsok_tuz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 001_Atm_tucsok_tuz.mp3; path = "Music, SFX/001_Atm_tucsok_tuz.mp3"; sourceTree = "<group>"; };
 		E2C6B0B2185E3E79002862EA /* 001_Atm_tucsok_zene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 001_Atm_tucsok_zene.mp3; path = "Music, SFX/001_Atm_tucsok_zene.mp3"; sourceTree = "<group>"; };
@@ -753,6 +785,18 @@
 				E212A43C18B3EBA40011108E /* 8_1k_dune.png */,
 				E212A43D18B3EBA40011108E /* 8_1k_hatter.png */,
 				E212A43E18B3EBA40011108E /* 8_1k_nagyhajo.png */,
+				E2BDA96618B55CBB00DA52C1 /* Inori_text1_bg.png */,
+				E2BDA96718B55CBB00DA52C1 /* Inori_text1_bg@2x.png */,
+				E2BDA96818B55CBB00DA52C1 /* Inori_text2_bg.png */,
+				E2BDA96918B55CBB00DA52C1 /* Inori_text2_bg@2x.png */,
+				E2BDA96A18B55CBB00DA52C1 /* Inori_text3_bg.png */,
+				E2BDA96B18B55CBB00DA52C1 /* Inori_text3_bg@2x.png */,
+				E2BDA96C18B55CBB00DA52C1 /* Inori_text4_bg.png */,
+				E2BDA96D18B55CBB00DA52C1 /* Inori_text4_bg@2x.png */,
+				E2BDA96E18B55CBB00DA52C1 /* Inori_text5_bg.png */,
+				E2BDA96F18B55CBB00DA52C1 /* Inori_text5_bg@2x.png */,
+				E2BDA97018B55CBB00DA52C1 /* Inori_text6_bg.png */,
+				E2BDA97118B55CBB00DA52C1 /* Inori_text6_bg@2x.png */,
 			);
 			name = StaticScreenViewController;
 			sourceTree = "<group>";
@@ -932,6 +976,7 @@
 				E2FA494516D43AA60044816A /* Inori_FatherAndSonPatchUpAFishnetViewController */,
 				E27309271700FCF6003B955F /* Inori_MothersBigBowlViewController */,
 				E258B93F151663F80094C4F7 /* GiantJellyfishArrivedViewController */,
+				E2BDA98018B579F100DA52C1 /* FeedbackForm */,
 			);
 			name = MiniEpisode01;
 			sourceTree = "<group>";
@@ -1057,6 +1102,17 @@
 				E2B364E0189867DA000BC192 /* FeedbackScreenViewController.m */,
 			);
 			name = FeedbackScreen;
+			sourceTree = "<group>";
+		};
+		E2BDA98018B579F100DA52C1 /* FeedbackForm */ = {
+			isa = PBXGroup;
+			children = (
+				E2BDA98118B57A7E00DA52C1 /* Inori_screen_feedback_logo.png */,
+				E2BDA98218B57A7E00DA52C1 /* Inori_screen_feedback_logo@2x.png */,
+				E2BDA98318B57A7E00DA52C1 /* Inori_screen_feedback.png */,
+				E2BDA98418B57A7E00DA52C1 /* Inori_screen_feedback@2x.png */,
+			);
+			name = FeedbackForm;
 			sourceTree = "<group>";
 		};
 		E2C6B0AF185E3E56002862EA /* Music, SFX */ = {
@@ -1378,17 +1434,21 @@
 				E224383E18AFD46B00B47C47 /* 11_1k_fazek-0.png in Resources */,
 				E22437F018AFD24200B47C47 /* 6-7_1k_kishal_raj_2.png in Resources */,
 				E2F9C84F1899A93C00E60D0F /* StaticScreenTexts.txt in Resources */,
+				E2BDA98518B57A7E00DA52C1 /* Inori_screen_feedback_logo.png in Resources */,
 				E224387718AFD51300B47C47 /* 9_1k_tenger2@2x.png in Resources */,
 				E2C6F326189E98B500FA167D /* 03 Story of the Sea 3.mp3 in Resources */,
 				E240C9D318A1A07200F7BC2E /* 005_sonkas_mandala_thEnd.mp3 in Resources */,
 				E224384418AFD46B00B47C47 /* 11_1k_fazek-3.png in Resources */,
+				E2BDA97318B55CBB00DA52C1 /* Inori_text1_bg@2x.png in Resources */,
 				E2C6B0E3185E3E79002862EA /* 003_hosszuhalak.mp3 in Resources */,
 				E224384118AFD46B00B47C47 /* 11_1k_fazek-1@2x.png in Resources */,
+				E2BDA97418B55CBB00DA52C1 /* Inori_text2_bg.png in Resources */,
 				E2C6B0E6185E3E79002862EA /* 003_vizalatt.mp3 in Resources */,
 				E224377C18AFCFA300B47C47 /* 1_2k_apa@2x.png in Resources */,
 				E22437AB18AFD10500B47C47 /* 4_1k_hullam_4@2x.png in Resources */,
 				E224384E18AFD46B00B47C47 /* 11_1k_hozzavalo-2.png in Resources */,
 				E212A45818B3ED4F0011108E /* hint-4@2x.png in Resources */,
+				E2BDA97C18B55CBB00DA52C1 /* Inori_text6_bg.png in Resources */,
 				E224380018AFD24200B47C47 /* 6-7_1k_leny8.png in Resources */,
 				E22438B318AFDF0C00B47C47 /* 12_1k_meduza_kar_1.png in Resources */,
 				E22437B318AFD10500B47C47 /* 4_1k_nagyhajo@2x.png in Resources */,
@@ -1432,6 +1492,7 @@
 				E2C6B0EC185E3E79002862EA /* 006_hal2.mp3 in Resources */,
 				E22438BE18AFDF0C00B47C47 /* 12_1k_hinar_3@x2.png in Resources */,
 				E224381318AFD24200B47C47 /* 6-7_1k_nagyhullam3@2x.png in Resources */,
+				E2BDA97818B55CBB00DA52C1 /* Inori_text4_bg.png in Resources */,
 				E224387018AFD51300B47C47 /* 9_1k_halo.png in Resources */,
 				E22438D418AFDF0C00B47C47 /* 12_1k_hal9.png in Resources */,
 				E22438D018AFDF0C00B47C47 /* 12_1k_hatter_meduza_2@x2.png in Resources */,
@@ -1457,6 +1518,7 @@
 				E22438C118AFDF0C00B47C47 /* 12_1k_hinar_2.png in Resources */,
 				E22437A818AFD10500B47C47 /* 4_1k_hullam_3.png in Resources */,
 				E224385A18AFD46B00B47C47 /* 11_1k_tanyer.png in Resources */,
+				E2BDA97D18B55CBB00DA52C1 /* Inori_text6_bg@2x.png in Resources */,
 				E2C6B0EF185E3E79002862EA /* 006_hal5.mp3 in Resources */,
 				E2C6F32A189E98B500FA167D /* 07 Story of the Sea 7.mp3 in Resources */,
 				E22438B618AFDF0C00B47C47 /* 12_1k_hullamok@x2.png in Resources */,
@@ -1486,6 +1548,7 @@
 				E2C6F342189F032C00FA167D /* 005_edeny_novekszik_3OK.mp3 in Resources */,
 				E2C6B0ED185E3E79002862EA /* 006_hal3.mp3 in Resources */,
 				E2C6B0DB185E3E79002862EA /* 001_rakozelithazraOK.mp3 in Resources */,
+				E2BDA98818B57A7E00DA52C1 /* Inori_screen_feedback@2x.png in Resources */,
 				E2C6B0F3185E3E79002862EA /* 006_pulzalo.mp3 in Resources */,
 				E22438DF18AFDF0C00B47C47 /* 12_1k_alap.png in Resources */,
 				E212A45B18B3ED4F0011108E /* hint-6.png in Resources */,
@@ -1494,6 +1557,7 @@
 				E212A46E18B41A9C0011108E /* 005_food3mix.mp3 in Resources */,
 				E2A34AD21854F242006446F4 /* CoE_80x80.png in Resources */,
 				E224384F18AFD46B00B47C47 /* 11_1k_hozzavalo-2@2x.png in Resources */,
+				E2BDA97718B55CBB00DA52C1 /* Inori_text3_bg@2x.png in Resources */,
 				E212A45618B3ED4F0011108E /* hint-3@2x.png in Resources */,
 				E22438D218AFDF0C00B47C47 /* 12_1k_hatter_meduza_1@x2.png in Resources */,
 				E22437F818AFD24200B47C47 /* 6-7_1k_leny4.png in Resources */,
@@ -1503,6 +1567,7 @@
 				E2A34ACC1854F242006446F4 /* CoE_29x29.png in Resources */,
 				E224378118AFCFA300B47C47 /* 1_2k_kanna.png in Resources */,
 				E224378A18AFCFA300B47C47 /* 1_2k_tuz@2x.png in Resources */,
+				E2BDA97918B55CBB00DA52C1 /* Inori_text4_bg@2x.png in Resources */,
 				E212A45418B3ED4F0011108E /* hint-2@2x.png in Resources */,
 				E224380F18AFD24200B47C47 /* 6-7_1k_nagyhullam1@2x.png in Resources */,
 				E2C6B0D4185E3E79002862EA /* 001_Atm_tucsok_zene.mp3 in Resources */,
@@ -1519,6 +1584,7 @@
 				E2A34AD41854F242006446F4 /* CoE_144x144.png in Resources */,
 				E25745F2184D40B8001E98FB /* Images.xcassets in Resources */,
 				E2C6B0F0185E3E79002862EA /* 006_halraj.mp3 in Resources */,
+				E2BDA97218B55CBB00DA52C1 /* Inori_text1_bg.png in Resources */,
 				E2A34AD31854F242006446F4 /* CoE_100x100.png in Resources */,
 				E2C6B0D2185E3E79002862EA /* 001_Atm_tucsok_tuz_zene.mp3 in Resources */,
 				E212A45118B3ED4F0011108E /* hint-1.png in Resources */,
@@ -1542,6 +1608,7 @@
 				E2A34AD11854F242006446F4 /* CoE_76x76.png in Resources */,
 				E2FA493E16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib in Resources */,
 				E224378718AFCFA300B47C47 /* 1_2k_rizsfold-ejszaka.png in Resources */,
+				E2BDA97B18B55CBB00DA52C1 /* Inori_text5_bg@2x.png in Resources */,
 				E224385818AFD46B00B47C47 /* 11_1k_hozzavalo-7.png in Resources */,
 				E224386C18AFD51300B47C47 /* 9_1k_hal1.png in Resources */,
 				E2C6B0EA185E3E79002862EA /* 004_sohaj.mp3 in Resources */,
@@ -1551,6 +1618,7 @@
 				E22438D118AFDF0C00B47C47 /* 12_1k_hatter_meduza_2.png in Resources */,
 				E224380618AFD24200B47C47 /* 6-7_1k_leny11.png in Resources */,
 				E2C6B0DA185E3E79002862EA /* 001_rakozelithazra2OK.mp3 in Resources */,
+				E2BDA98718B57A7E00DA52C1 /* Inori_screen_feedback.png in Resources */,
 				E224381B18AFD24200B47C47 /* 6-7_1k_nagyhullam7@2x.png in Resources */,
 				E212A45218B3ED4F0011108E /* hint-1@2x.png in Resources */,
 				E224377B18AFCFA300B47C47 /* 1_2k_apa.png in Resources */,
@@ -1560,6 +1628,7 @@
 				E224384918AFD46B00B47C47 /* 11_1k_fazek-5@2x.png in Resources */,
 				E224384718AFD46B00B47C47 /* 11_1k_fazek-4@2x.png in Resources */,
 				E22438B018AFDF0C00B47C47 /* 12_1k_meduza_kar_2@x2.png in Resources */,
+				E2BDA97618B55CBB00DA52C1 /* Inori_text3_bg.png in Resources */,
 				E22438AC18AFDF0C00B47C47 /* 12_1k_meduza_kar_4@x2.png in Resources */,
 				E224383F18AFD46B00B47C47 /* 11_1k_fazek-0@2x.png in Resources */,
 				E224384218AFD46B00B47C47 /* 11_1k_fazek-2.png in Resources */,
@@ -1571,12 +1640,14 @@
 				E2A34ACE1854F242006446F4 /* CoE_50x50.png in Resources */,
 				E2C6B0D7185E3E79002862EA /* 001_foarizsteaFXzene.mp3 in Resources */,
 				E2C6F329189E98B500FA167D /* 06 Story of the Sea 6.mp3 in Resources */,
+				E2BDA97A18B55CBB00DA52C1 /* Inori_text5_bg.png in Resources */,
 				E224381918AFD24200B47C47 /* 6-7_1k_nagyhullam6@2x.png in Resources */,
 				E224387218AFD51300B47C47 /* 9_1k_part.png in Resources */,
 				E224381618AFD24200B47C47 /* 6-7_1k_nagyhullam5.png in Resources */,
 				E22437B118AFD10500B47C47 /* 4_1k_kishajo@2x.png in Resources */,
 				E22437AF18AFD10500B47C47 /* 4_1k_inori_ul@2x.png in Resources */,
 				E212A45918B3ED4F0011108E /* hint-5.png in Resources */,
+				E2BDA98618B57A7E00DA52C1 /* Inori_screen_feedback_logo@2x.png in Resources */,
 				E22438C918AFDF0C00B47C47 /* 12_1k_hatter_meduza_6.png in Resources */,
 				E22437F418AFD24200B47C47 /* 6-7_1k_leny2.png in Resources */,
 				E22438D918AFDF0C00B47C47 /* 12_1k_hal4.png in Resources */,
@@ -1646,6 +1717,7 @@
 				E224387618AFD51300B47C47 /* 9_1k_tenger2.png in Resources */,
 				E26BC120187B3CAE009F9956 /* The story of the Sea_OK.mp3 in Resources */,
 				E22438D618AFDF0C00B47C47 /* 12_1k_hal7.png in Resources */,
+				E2BDA97518B55CBB00DA52C1 /* Inori_text2_bg@2x.png in Resources */,
 				E224378618AFCFA300B47C47 /* 1_2k_riszfoldalap@2x.png in Resources */,
 				E224380218AFD24200B47C47 /* 6-7_1k_leny9.png in Resources */,
 				E2F38184189B165E00FF03EA /* menu_set-top-g.png in Resources */,

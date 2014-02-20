@@ -98,7 +98,9 @@
 
 @implementation StaticScreenViewController
 
-@synthesize Screen10BackgroundImageView, Screen10DuneImageView, Screen10BigShipImageView, Screen10SmallShipImageView, Screen10CloudImageView, Screen10InoriImageView, staticTextView, Screen10MenuImageView;
+@synthesize Screen10BackgroundImageView, Screen10MenuImageView;
+
+//@synthesize Screen10BackgroundImageView, Screen10DuneImageView, Screen10BigShipImageView, Screen10SmallShipImageView, Screen10CloudImageView, Screen10InoriImageView, staticTextView, Screen10MenuImageView;
 
 -(void)goToNextScreen;
 {
@@ -144,6 +146,7 @@
     viewContoller = nil;
 }
 
+/*
 - (void) setSmallShipRockingState;
 {
     CGAffineTransform newTransform = CGAffineTransformRotate(smallShipOriginalTransform,1.00*smallShipRockingClock/18000.00*M_PI);
@@ -182,6 +185,7 @@
         [Screen10CloudImageView setTransform:newTransform];
     }
 }
+*/
 
 /*
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -199,7 +203,7 @@
     }
 }
 */
-
+/*
 - (UIImage*)adjustImage:(UIImage *)sourceImage saturation:(CGFloat)saturationAmount brightness:(CGFloat) brightnessAmount contrast:(CGFloat) contrastAmount;
 {
     
@@ -332,6 +336,7 @@
     bigShipRockingClockChange=BIG_SHIP_ROTATE_SHIFT;
 	[bigShipRockingTimer fire];
 }
+*/
 
 -(void)startNarration;
 {
@@ -443,6 +448,14 @@
 
 - (void)loadImages;
 {
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    int pageNumber =  (viewContoller.nextViewController-100+1)/2;
+    NSString *imagePath;
+    imagePath = [ [ NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"Inori_text%i_bg",pageNumber] ofType:@"png"];
+    [Screen10BackgroundImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    viewContoller = nil;
+
+    /*
     NSString* imagePath;
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"8_1k_hatter" ofType:@"png"];
     [Screen10BackgroundImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
@@ -461,6 +474,7 @@
     
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"4_1k_inori_ul" ofType:@"png"];
     [Screen10InoriImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
+    */
 }
 
 #pragma mark - View lifecycle
@@ -487,7 +501,7 @@
 {
     [self stopNarration];
     narration=nil;
-    
+/*
     [bigShipRockingTimer invalidate];
     [smallShipRockingTimer invalidate];
     [cloudMovingTimer invalidate];
@@ -521,6 +535,7 @@
     
     [self.view removeFromSuperview];
     self.view=nil;
+ */
 }
 
 - (void)viewDidLoad
@@ -532,11 +547,11 @@
 
     [self loadImages];
     
-    [self setSettingsForShipRocking];
+//    [self setSettingsForShipRocking];
 
-    [self startCloud];
+//    [self startCloud];
     
-    [self loadStaticText];
+//    [self loadStaticText];
     
     [self startNarration];
 }

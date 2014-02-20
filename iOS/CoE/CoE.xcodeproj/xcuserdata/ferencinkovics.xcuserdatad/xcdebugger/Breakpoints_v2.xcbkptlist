@@ -571,22 +571,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CoE/Inori_InorisFatherIsPrayingViewController.m"
-            timestampString = "414449524.264441"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "-hintButtonTapped"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CoE/Inori_FatherAndSonPatchUpAFishnetViewController.m"
             timestampString = "414022556.339557"
             startingColumnNumber = "9223372036854775807"
@@ -604,11 +588,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoE/StaticScreenViewController.m"
-            timestampString = "413597226.819323"
+            timestampString = "414540778.352942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
             landmarkName = "-startNarration"
             landmarkType = "5">
          </BreakpointContent>

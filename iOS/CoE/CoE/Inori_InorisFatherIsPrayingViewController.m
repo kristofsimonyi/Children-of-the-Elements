@@ -5,6 +5,10 @@
 //  Created by Ferenc INKOVICS on 11/02/2013.
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
+#define PHASE_01_PERIOD                                 300.00  //300, 3 sec long
+#define PHASE_01_DISSOLVE_START                         200.00  //200, after 2 sec
+#define PHASE_01_TIMER_STEP                             5.00
+
 #define PHASE_02_PERIOD                                 40.00  //40, 2 sec long
 
 #define NIGHT_01_OPACITY_START                          0.89
@@ -47,7 +51,7 @@
 
 @implementation Inori_InorisFatherIsPrayingViewController
 
-@synthesize phase02View, windowImageView, bedImageView, baseImageView, fatherImageView, night1ImageView, night2ImageView, teaPotImageView, frameImageView, fireImageView, fatherControl, teaPotControl, hintLayerImageView;
+@synthesize riceFieldBaseImageView, phase01View, phase02View, windowImageView, bedImageView, baseImageView, fatherImageView, night1ImageView, night2ImageView, teaPotImageView, frameImageView, fireImageView, transitionToPhase02ImageView, fatherControl, teaPotControl, hintLayerImageView;
 
 -(void)goToNextScreen;
 {
@@ -261,7 +265,7 @@
     }
 }
 
-/*
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 {
     
@@ -270,11 +274,45 @@
 	{
 		CGPoint translatedPoint = [touch locationInView:self.view];
 
+        if (phase01TimerClock==0)
+            if (CGRectContainsPoint(riceFieldBaseImageView.frame, translatedPoint))
+            {
+                [phase01View setAlpha:0];
+                [phase02View setAlpha:1];
+                transitionToPhase02ImageView.image=[self captureScreen:phase02View];
+                [phase02View setAlpha:0];
+                [phase01View setAlpha:1];
+                
+                phase01Timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(phase01TimerActionMethod) userInfo:nil repeats:YES];
+                [phase01Timer fire];
+                
+                [self startSFXHouse];
+            }
+        if ((phase01TimerClock==PHASE_01_PERIOD)&(phase02TimerClock==0))
+            if (CGRectContainsPoint(baseImageView.frame, translatedPoint))
+            {
+                [self erasePhase01Images];
+                
+                phase02Timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(phase02TimerActionMethod) userInfo:nil repeats:YES];
+                [phase02Timer fire];
+                
+            }
+
 		touchCount++;
 	}
     
 }
-*/
+
+-(void)erasePhase01Images;
+{
+    NSArray *views=[phase01View subviews];
+    for (UIView *subview in views)
+    {
+        [subview removeFromSuperview];
+    }
+    [phase01View removeFromSuperview];
+    phase01View=nil;
+}
 
 -(IBAction)fatherTouched:(id)sender;
 {
@@ -299,6 +337,42 @@
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	return viewImage;
+}
+
+- (void)phase01TimerActionMethod;
+{
+    phase01TimerClock=phase01TimerClock+PHASE_01_TIMER_STEP;
+    
+    CGFloat newScale =1.00/(1.00+phase01TimerClock/150.00);
+    
+    CGRect cropRect = CGRectMake(512-(1024*newScale/2), phase01TimerClock/5, 1024*newScale, 748*newScale);
+    
+    //    NSString* imagePath; //***
+    //    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
+    //    riceFieldBaseCGImage=[riceFieldBaseImage CGImage];
+    CGImageRef imageRef = CGImageCreateWithImageInRect(riceFieldBaseCGImage, cropRect);
+    UIImage *newImage = [UIImage imageWithCGImage:imageRef scale:1.00 orientation:riceFieldBaseImageView.image.imageOrientation];
+    [riceFieldBaseImageView setImage:newImage];
+    CGImageRelease(imageRef);
+    
+    if (phase01TimerClock>=PHASE_01_DISSOLVE_START)
+    {
+        //        [phase01View setAlpha:1.00*(300-phase01TimerClock)/100];
+        CGFloat newAlpha=1.00*(phase01TimerClock-PHASE_01_DISSOLVE_START)/(PHASE_01_PERIOD-PHASE_01_DISSOLVE_START);
+        [transitionToPhase02ImageView setAlpha:newAlpha];
+    }
+    if (phase01TimerClock==PHASE_01_PERIOD)
+    {
+        [phase01Timer invalidate];
+        [phase02View setAlpha:1];
+        [self startBackgroundMusic2nd];
+        
+        [self erasePhase01Images];
+        
+        phase02Timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(phase02TimerActionMethod) userInfo:nil repeats:YES];
+        [phase02Timer fire];
+
+    }
 }
 
 - (void)phase02TimerActionMethod;
@@ -601,6 +675,11 @@
 {
     NSString* imagePath;
 
+    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
+    riceFieldBaseImage=[UIImage imageWithContentsOfFile:imagePath];
+    [riceFieldBaseImageView setImage:riceFieldBaseImage];
+    riceFieldBaseCGImage=[riceFieldBaseImage CGImage];
+    
     imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_ablak" ofType:@"png"];
     [windowImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
     
@@ -741,8 +820,6 @@
     
     [self startBackgroundMusic1st];
     
-    phase02Timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(phase02TimerActionMethod) userInfo:nil repeats:YES];
-    [phase02Timer fire];
 }
 
 - (void)didReceiveMemoryWarning

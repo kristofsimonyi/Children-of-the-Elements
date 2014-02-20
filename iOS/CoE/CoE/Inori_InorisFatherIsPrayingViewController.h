@@ -11,18 +11,20 @@
 #import "ViewController.h"
 @interface Inori_InorisFatherIsPrayingViewController : UIViewController <AVAudioPlayerDelegate>
 {
-    NSTimer *phase02Timer, *night02Timer, *teaPotTimer, *fatherTimer;
-    NSInteger phase02TimerClock;
+    NSTimer *phase01Timer, *phase02Timer, *night02Timer, *teaPotTimer, *fatherTimer;
+    NSInteger phase01TimerClock, phase02TimerClock;
     BOOL isFatherRotationClockwise, isTeaPotRockingClockwise;
     CGFloat fatherTimerClock, fatherTimerClockChange;
     CGAffineTransform teaPotOriginalTransform;
     CGFloat teaPotTimerClock, teaPotTimerChangeCurrentMax, teaPotTimerClockMax, teaPotTimerClockMin, teaPotTimerClockChange;
     AVAudioPlayer *backgroundMusic, *sfxHouse, *sfxTeaPot, *sfxFather, *narration;
     BOOL fatherInteractionFound, teaPotInteractionFound;
+    UIImage *riceFieldBaseImage;
+    CGImageRef riceFieldBaseCGImage;
 }
 
-@property (nonatomic, weak) IBOutlet UIView *phase02View;
-@property (nonatomic, weak) IBOutlet UIImageView *windowImageView, *bedImageView, *baseImageView, *fatherImageView, *night1ImageView, *night2ImageView, *teaPotImageView, *frameImageView, *fireImageView, *hintLayerImageView, *menuImageView;
+@property (nonatomic, weak) IBOutlet UIView *phase01View, *phase02View;
+@property (nonatomic, weak) IBOutlet UIImageView *riceFieldBaseImageView, *windowImageView, *bedImageView, *baseImageView, *fatherImageView, *night1ImageView, *night2ImageView, *teaPotImageView, *frameImageView, *fireImageView, *transitionToPhase02ImageView, *hintLayerImageView, *menuImageView;
 
 @property (nonatomic, weak) IBOutlet UIControl *fatherControl, *teaPotControl;
 
