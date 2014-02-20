@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 No company - private person. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
 @interface GiantJellyfishArrivedViewController : UIViewController<UIGestureRecognizerDelegate, AVAudioPlayerDelegate>{
@@ -20,7 +19,7 @@
     
     AVAudioPlayer *backgroundMusic, *narration, *sfxFishesMoving, *sfxFishReached1, *sfxFishReached2, *sfxFishReached3, *sfxFishReached4, *sfxFishReached5, *sfxMedusaPulsing;
     
-    NSMutableArray *sfxMedusaReachesFishArray, *sfxMedusasComeInArray, *timingOfMedusasArray;
+    NSMutableArray *sfxMedusaReachesFishArray, *timingOfMedusasArray;
 }
 
 @property (nonatomic, weak) IBOutlet UIImageView *screen12BackgroundImageView, *screen12WavesImageView, *screen12Kelp1ImageView, *screen12Kelp2ImageView, *screen12Kelp3ImageView, *screen12Kelp4ImageView, *screen12Kelp5ImageView, *screen12Kelp6ImageView, *screen12BigMedusaImageView, *screen12BigMedusaArm1ImageView, *screen12BigMedusaArm2ImageView, *screen12BigMedusaArm3ImageView, *screen12BigMedusaArm4ImageView, *screen12BackgroundMedusa1ImageView, *screen12BackgroundMedusa2ImageView, *screen12BackgroundMedusa3ImageView, *screen12BackgroundMedusa4ImageView, *screen12BackgroundMedusa5ImageView, *screen12BackgroundMedusa6ImageView, *screen12BackgroundMedusa7ImageView, *screen12BackgroundMedusa8ImageView, *hintLayerImageView, *screen12MenuImageView;
@@ -32,7 +31,6 @@
 - (void)screen12CreateFishes;
 -(CGPoint)rotatePoint:(CGPoint)centre around:(CGPoint)point withDegree:(float)degree;
 - (void) screen12IsBigMedusaReachesFish;
-- (UIImageView *)screen12CreateWhiteKelpOf:(UIImageView *)kelpImageView;
 - (IBAction)screen12NextScreenButtonTouched:(id) sender;
 - (IBAction)screen12PreviousScreenButtonTouched:(id)sender;
 - (IBAction)screen12HintButtonTapped:(UITapGestureRecognizer *)sender;

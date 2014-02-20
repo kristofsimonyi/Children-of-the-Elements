@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <AVFoundation/AVAudioPlayer.h>
 #import "ViewController.h"
 @interface Inori_InorisFatherIsPrayingViewController : UIViewController <AVAudioPlayerDelegate>

@@ -9,7 +9,6 @@
 
 #import "IntroScreenViewController.h"
 #import "ViewController.h"
-#import "NavigationController.h"
 
 @interface IntroScreenViewController ()
 
@@ -17,7 +16,7 @@
 
 @implementation IntroScreenViewController
 
-@synthesize introLabel, introStoryTitleLabel, continueLabel;
+@synthesize continueLabel;
 
 - (IBAction)screenTapped:(id)sender
 {
@@ -86,11 +85,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    //set custom font for labels
-//    [introLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:45]];
-//    [introStoryTitleLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:40]];
-//    [continueLabel setFont:[UIFont fontWithName:@"Ruge Boogie" size:30]];
     
     //start background music
     [self startMusic];

@@ -69,17 +69,6 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
-/*
-- (IBAction)screen06_07BackToMainMenu:(id)sender;
-{
-    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
-    viewContoller.nextViewController=0;
-    viewContoller = nil;
-    
-    [self goToNextScreen];
-}
-     */
-
 - (IBAction)screen06_07NextScreenControlTapped:(id)sender
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -106,8 +95,8 @@
         [backgroundMusic setVolume:0.0];
         [sfx2Swimmwers setVolume:0.0];
         [sfxCreatures1 setVolume:0.0];
-        [sfxCreatures1 setVolume:0.0];
-        [sfxCreatures1 setVolume:0.0];
+        [sfxCreatures2 setVolume:0.0];
+        [sfxCreatures3 setVolume:0.0];
         [sfxFishSwarmArc setVolume:0.0];
         [sfxFishSwarmStraight setVolume:0.0];
         [narration setVolume:0.0];
@@ -586,11 +575,6 @@
 
 -(void)screen06_07WavesTouched;
 {
-    /*
-
-     az alakokon kivul barhova tapintva 'random leny trio' effekt: random pont a kepernyo peremen, innen indul 3 random valaszott leny (ossz 14 fele leny van), ugy 0.5 mp kesessel kovetve egymast. mozgasuk a screen 16 szitakotoihez hasonlo, valami random iven atszelik a kepernyot, mindig az ivre fordulva, majd eltunnek. sebesseguk is lehet a szitakotokkel egyezo. (Az osszes leny alapbol egyenesen felfele nez eredeti allapotaban a kepeken).
-    */
-    
     if (newCreatureTimer==nil)
     {
         newXForCreature = 1.00*(arc4random()%1024);

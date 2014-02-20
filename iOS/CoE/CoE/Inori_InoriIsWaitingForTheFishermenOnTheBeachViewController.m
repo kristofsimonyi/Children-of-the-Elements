@@ -6,14 +6,6 @@
 //  Copyright (c) 2012 No company - private person. All rights reserved.
 //
 
-/*
- 1. Alap: statikus tenger, dunek hatter. 4 extra hullam jon-megy (fenti allapotban attunessel megjelenik, lefele jon, alul attunessel eltunik), egymassal szinkronban (egymas utan, legfelso indul eloszor).
- 2. 1 mp utan megjelenik a szoveg, 5 mp utan megjelenik Inori (ulo alak).
- 3. Inorit megerintve attunik az allo, integeto pozba
- 4. rakocska a jobb oldali dune felszinen tud mozogni, athuzasa a jobb oldalra csuszkakent szolgal a hajok megjelenitesehez:
- 5. hajok: fent indulnak kicsiben a hatter szellemhajoin, alapbol a transparency 100%-on. Ahogy huzod at a rakot jobbra, ugy jonnek szepen lefele, s nagyobbodnak az overview-n lathato allapotba, illetve a transparency is lemegy 0%-ra. A hajok alapbol magukhoz kepest ringanak is (jobbra, balra dulongelnek kicsit, kozeppontjuk is mozog egy kis lapos ovalis menten lassan).
-*/
-
 #import "Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h"
 #import "ViewController.h"
 
@@ -89,17 +81,6 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
-- (void) screen04BackToMainMenu;
-{
-/*
-    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
-    viewContoller.nextViewController=0;
-    viewContoller = nil;
-    
-    [self goToNextScreen];
- */
-}
-
 - (void)screen04NextScreenControlTapped;
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -159,51 +140,6 @@
     }
 }
 
-/*
-- (void) textAppear;
-{
-    for (UIView *view in screen04StoryTextView.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    UILabel *newLabel;
-    NSString *string;
- 
-    UILabel *origLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 500, 10, 12)];
-    [origLabel setText:@" abcd efgh ijkl mnopqr stuvxyz valaminek jonnie kell..."];
-    
-    CGAffineTransform previousTransformMatrixForText;
-    previousTransformMatrixForText = [origLabel transform];
-    
-    CGAffineTransform newTransform = CGAffineTransformRotate(previousTransformMatrixForText,M_PI/2.00);
-    
-    for (int i=0; i<17; i++) 
-        for (int j=0; j<11; j++) 
-        {
-            newLabel = [[UILabel alloc] initWithFrame:CGRectMake(i*20-20, j*20-20, 20, 20)];
-            string = [NSString stringWithFormat:@"%c",[origLabel.text characterAtIndex:arc4random()%30+1]];
-            [newLabel setText:string];
-            [screen04StoryTextView addSubview:newLabel]; 
-            [newLabel setAlpha:0];
-            [newLabel setTransform:newTransform];
-            [newLabel setBackgroundColor:[UIColor clearColor]];
-            [newLabel setTextAlignment:NSTextAlignmentRight];
-            
-            [UIView animateWithDuration:((i%3)*0.5+0.5)
-                                  delay: 3+arc4random()%3*0.5
-                                options: UIViewAnimationOptionCurveEaseIn
-                             animations:^
-             {
-                 [newLabel setTransform:previousTransformMatrixForText];
-                 [newLabel setAlpha:1];
-                 [newLabel setCenter:CGPointMake(newLabel.center.x+20,newLabel.center.y+40)];
-             }
-                             completion:nil];
-            
-            
-        }
-}
-*/
 -(void)screen04Move:(id)sender
 {
     CGPoint locatedPoint = [(UIPanGestureRecognizer*)sender locationInView:self.view];
@@ -285,12 +221,6 @@
                 [screen04BigShipView setAlpha:sliderPercentage];
                 [screen04SmallShipView setAlpha:sliderPercentage];
 
-                /*
-                CGRect frame = self.screen04BigShipControl.frame;
-                CGRect frame1 = self.screen04BigShipImageView.frame;
-                CGRect frame2 = self.screen04BigShipView.frame;
-//                NSLog(@"%@",[NSString stringWithFormat:@"\n\nControl: %f,%f,%f,%f \nImage: %f,%f,%f,%f \nView %f,%f,%f,%f\n\n",frame.origin.x,frame.origin.y,frame.size.width,frame.size.height,frame1.origin.x,frame1.origin.y,frame1.size.width,frame1.size.height,frame2.origin.x,frame2.origin.y,frame2.size.width,frame2.size.height]);
-//*/
             }
         }
         else
@@ -647,8 +577,6 @@
 {
     if (self.hintLayerImageView.alpha==0.0)
     {
-        //        [hintLayerImageView removeFromSuperview];
-        //        [self.view addSubview:hintLayerImageView];
         [UIView animateWithDuration:HINT_TIME animations:^{
             [self.hintLayerImageView setAlpha:1.0];
         } completion:^(BOOL finished) {
@@ -685,7 +613,7 @@
 
 -(void)startNarration;
 {
-    //set the Music for intro then start playing
+    //set the Music then start playing
     if (narration==nil)
     {
         ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -906,8 +834,6 @@
     bigShipRockingClock=0;
     bigShipRockingClockChange=BIG_SHIP_ROTATE_SHIFT;
 	[bigShipRockingTimer fire];
-    
-//    [self textAppear];
     
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(screen04Move:)];
     [panRecognizer setMinimumNumberOfTouches:1];

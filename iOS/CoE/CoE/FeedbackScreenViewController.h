@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 No company - private person. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface FeedbackScreenViewController : UIViewController{
     
 }

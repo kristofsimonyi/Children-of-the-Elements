@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 No company - private person. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <AVFoundation/AVAudioPlayer.h>
 
 @interface Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController : UIViewController<UIGestureRecognizerDelegate, AVAudioPlayerDelegate>

@@ -290,19 +290,6 @@
     }
 }
 
-/*
-- (IBAction)netPanGestureRecognizer:(UIPanGestureRecognizer *)sender
-{
-//    CGPoint newCenter=CGPointMake(screen09NetImageView.center.x, screen09NetImageView.center.y);
-//    [screen09NetImageView setCenter:newCenter];
- 
-    CGPoint translation = [sender translationInView:screen09NetImageView];
-    CGPoint location = [sender locationInView:screen09NetImageView];
-    NSLog(@"%f, %f", translation.x, translation.y);
-    NSLog(@"%f, %f", location.x, location.y);
-}
-*/
-
 - (IBAction)screen09NarrationButtonTapped:(UITapGestureRecognizer *)sender;
 {
     if (narration==nil)
@@ -347,7 +334,7 @@
 
 -(void)startNarration;
 {
-    //set the Music for intro then start playing
+    //set the Music then start playing
     if (narration==nil)
     {
         ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -424,17 +411,6 @@
     
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
-
-/*
--(IBAction)screen09BackToMainMenu:(id)sender;
-{
-    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
-    viewContoller.nextViewController=0;
-    viewContoller = nil;
-    
-    [self goToNextScreen];
-}
- */
 
 - (IBAction)screen09NextScreenButtonTouched:(id)sender
 {
@@ -610,10 +586,10 @@
 -(void)stopMusicAndSfx;
 {
     [backgroundMusic stop];
-//    [narration stop];
-//    [sfxFish1 stop];
-//    [sfxFish2 stop];
-//    [sfxInoriAndFather stop];
+    [narration stop];
+    [sfxFish1 stop];
+    [sfxFish2 stop];
+    [sfxInoriAndFather stop];
     [backgroundMusic stop];
 }
 

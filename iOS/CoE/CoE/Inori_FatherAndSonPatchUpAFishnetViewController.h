@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 No company - private person. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "CommonLibrary.h"
 #import <AVFoundation/AVAudioPlayer.h>
 
@@ -35,6 +34,5 @@
 - (IBAction)screen09NarrationButtonTapped:(UITapGestureRecognizer *)sender;
 - (IBAction)screen09MusicButtonTapped:(UITapGestureRecognizer *) sender;
 - (IBAction)screen09HintButtonTapped:(UITapGestureRecognizer *)sender;
-//- (IBAction)netPanGestureRecognizer:(UIPanGestureRecognizer *)sender;
 
 @end

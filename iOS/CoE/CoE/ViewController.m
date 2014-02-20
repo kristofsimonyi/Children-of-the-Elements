@@ -38,6 +38,9 @@
 
 -(void)pushNextViewController;
 {
+    //a viewcontroller will be pshed based on the value of variable 'newScreenViewController'
+    
+    //set the transition between screens
     CATransition* transition = [CATransition animation];
     transition.duration = 0.5;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
@@ -104,13 +107,7 @@
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN06:
         {
-            /*
-            //Go to theScreenFonts that is on the MainStoryboard
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-            Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"FatherAndSonSwimInTheSea"];
-            */
             Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController=[[Inori_FatherAndSonSwimInTheSeaViewController alloc] init];
-            
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -205,6 +202,7 @@
 
 -(void)emptyViewControllers;
 {
+    //in case there are more than 1 viewcontroller in the array remove all but the main
     NSMutableArray *viewcontrollers = [self.navigationController.viewControllers mutableCopy];
 
     while ([viewcontrollers count]>1)
@@ -236,6 +234,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+    //only landscape orientations are supported
     if ((interfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(interfaceOrientation==UIInterfaceOrientationLandscapeRight)) {
         return YES;
     } else {

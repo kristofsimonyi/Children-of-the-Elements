@@ -332,7 +332,6 @@
 		E2E0B75D151661CE009C0F56 /* GiantJellyfishArrivedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E0B75B151661CE009C0F56 /* GiantJellyfishArrivedViewController.xib */; };
 		E2E5F8B1187DFCED00996FA5 /* 002_hello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2E5F8B0187DFCED00996FA5 /* 002_hello.mp3 */; };
 		E2E67F80186F646E00B455A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E67F7F186F646E00B455A5 /* QuartzCore.framework */; };
-		E2EF912A16AC098500FEA0A3 /* DesatView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF912916AC098500FEA0A3 /* DesatView.m */; };
 		E2EF913516AC11CC00FEA0A3 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF913416AC11CC00FEA0A3 /* CoreImage.framework */; };
 		E2F38184189B165E00FF03EA /* menu_set-top-g.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F38182189B165E00FF03EA /* menu_set-top-g.png */; };
 		E2F38185189B165E00FF03EA /* menu_set-top-w.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F38183189B165E00FF03EA /* menu_set-top-w.png */; };
@@ -696,8 +695,6 @@
 		E2E0B75B151661CE009C0F56 /* GiantJellyfishArrivedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiantJellyfishArrivedViewController.xib; sourceTree = "<group>"; };
 		E2E5F8B0187DFCED00996FA5 /* 002_hello.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_hello.mp3; path = "Music, SFX/002_hello.mp3"; sourceTree = "<group>"; };
 		E2E67F7F186F646E00B455A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		E2EF912816AC098500FEA0A3 /* DesatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesatView.h; sourceTree = "<group>"; };
-		E2EF912916AC098500FEA0A3 /* DesatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesatView.m; sourceTree = "<group>"; };
 		E2EF913416AC11CC00FEA0A3 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		E2F38182189B165E00FF03EA /* menu_set-top-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_set-top-g.png"; path = "Resources/Images/menu_set-top-g.png"; sourceTree = "<group>"; };
 		E2F38183189B165E00FF03EA /* menu_set-top-w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_set-top-w.png"; path = "Resources/Images/menu_set-top-w.png"; sourceTree = "<group>"; };
@@ -933,8 +930,6 @@
 			children = (
 				E23C51AF16D6C989000D5958 /* CommonLibrary.h */,
 				E23C51B016D6C989000D5958 /* CommonLibrary.m */,
-				E2EF912816AC098500FEA0A3 /* DesatView.h */,
-				E2EF912916AC098500FEA0A3 /* DesatView.m */,
 			);
 			name = CommonLibrary;
 			sourceTree = "<group>";
@@ -1767,7 +1762,6 @@
 				E2B469FD186F321F0063647F /* NavigationController.m in Sources */,
 				E236A8361860F671003A1B04 /* FontsViewController.m in Sources */,
 				E2B364E1189867DA000BC192 /* FeedbackScreenViewController.m in Sources */,
-				E2EF912A16AC098500FEA0A3 /* DesatView.m in Sources */,
 				E20A7C3F16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m in Sources */,
 				E2FA493D16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */,
 				E2F9C84C18999E7000E60D0F /* StaticScreenViewController.m in Sources */,

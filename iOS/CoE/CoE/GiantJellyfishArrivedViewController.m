@@ -8,18 +8,7 @@
 
 #import "GiantJellyfishArrivedViewController.h"
 #import "ViewController.h"
-/*
- #define FISHES_1_CENTER_X 800
- #define FISHES_1_CENTER_Y -200
- #define FISHES_1_RADIUS 500
- #define FISHES_1_RADIUS2 420
- #define MAX_FISHES_1 30
- #define FISHES_2_CENTER_X 512
- #define FISHES_2_CENTER_Y 378
- #define FISHES_2_RADIUS 300
- #define FISHES_2_RADIUS2 330
- #define MAX_FISHES_2 30
-*/
+
 #define FISHES_1_CENTER_X  800
 #define FISHES_1_CENTER_Y  -200
 #define FISHES_1_RADIUS    500
@@ -58,18 +47,6 @@
     
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
-
-
-/*
-- (void)screen12BackToMainMenu;
-{
-    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
-    viewContoller.nextViewController=0;
-    viewContoller = nil;
-    
-    [self goToNextScreen];
-}
- */
 
 - (IBAction)screen12NextScreenButtonTouched:(id) sender;
 {
@@ -267,53 +244,6 @@
     return audioplayer;
 }
 
-/*
-- (void) textAppear;
-{
-    for (UIView *view in screen12StoryTextView.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    UILabel *newLabel;
-    NSString *string;
-    
-    UILabel *origLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 500, 10, 12)];
-    [origLabel setText:@" abcd efgh ijkl mnopqr stuvxyz valaminek jonnie kell..."];
-    
-    CGAffineTransform previousTransformMatrixForText;
-    previousTransformMatrixForText = [origLabel transform];
-    
-    CGAffineTransform newTransform = CGAffineTransformRotate(previousTransformMatrixForText,M_PI/2.00);
-    
-    for (int i=0; i<15; i++) 
-        for (int j=0; j<30; j++) 
-        {
-            newLabel = [[UILabel alloc] initWithFrame:CGRectMake(i*20-20, j*20-20, 20, 20)];
-            string = [NSString stringWithFormat:@"%c",[origLabel.text characterAtIndex:arc4random()%30+1]];
-            [newLabel setText:string];
-            [screen12StoryTextView addSubview:newLabel]; 
-            [newLabel setAlpha:0];
-            [newLabel setTransform:newTransform];
-            [newLabel setBackgroundColor:[UIColor clearColor]];
-            [newLabel setTextAlignment:NSTextAlignmentRight];
-            
-            [UIView animateWithDuration:((i%3)*0.5+0.5)
-                                  delay: 3+arc4random()%5*0.5
-                                options: UIViewAnimationOptionCurveEaseIn
-                             animations:^
-             {
-                 [newLabel setTransform:previousTransformMatrixForText];
-                 [newLabel setAlpha:1];
-                 [newLabel setTextColor:[UIColor whiteColor]];
-                 [newLabel setCenter:CGPointMake(newLabel.center.x+20,newLabel.center.y+40)];
-             }
-                             completion:nil];
-            
-            
-        }
-}
-*/
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -421,7 +351,6 @@
     if (CGRectContainsPoint(screen12Kelp1ImageView.frame, translatedPoint))
     {
         selectedKelp = screen12Kelp1ImageView;
-        screen12Kelp1ImageView = [self screen12CreateWhiteKelpOf:screen12Kelp1ImageView];
     }
     if (CGRectContainsPoint(screen12Kelp2ImageView.frame, translatedPoint)) 
     {
@@ -459,81 +388,6 @@
 
 }
 
-- (UIImageView *)screen12CreateWhiteKelpOf:(UIImageView *)kelpImageView;
-{
-    UIImageView *whiteKelp;
-    
-    /*
-     
-    CGImageRef alphaImage = CGImageRetain(kelpImageView.image.CGImage);
-    CGImageRef maskingImage;
-    
-    NSMutableData *data = [NSMutableData dataWithLength:400 * 400 * 1];
-    // Create a bitmap context
-    CGContextRef context = CGBitmapContextCreate([data mutableBytes], 400, 400, 8, 400, NULL, kCGImageAlphaOnly);
-    // Set the blend mode to copy to avoid any alteration of the source data
-    CGContextSetBlendMode(context, kCGBlendModeCopy);
-    // Draw the image to extract the alpha channel
-    CGContextDrawImage(context, CGRectMake(0.0, 0.0, 400, 400), alphaImage);
-    // Now the alpha channel has been copied into our NSData object above, so discard the context and lets make an image mask.
-    CGContextRelease(context);
-    // Create a data provider for our data object (NSMutableData is tollfree bridged to CFMutableDataRef, which is compatible with CFDataRef)
-    CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((CFMutableDataRef)data);
-    // Create our new mask image with the same size as the original image
-    maskingImage = CGImageMaskCreate(400, 400, 8, 8, 400, dataProvider, NULL, YES);
-    // And release the provider.
-    CGDataProviderRelease(dataProvider);
-
-    
-    
-    
-    
-    //Open up an ImageContext
-    
-	UIGraphicsBeginImageContext(kelpImageView.frame.size);
-    context = UIGraphicsGetCurrentContext();
-	
-    
-	// Quartz also allows you to mask to an image or image mask, the primary difference being
-	// how the image data is interpreted. Note that you can use any image
-	// When you use a regular image, the alpha channel is interpreted as the alpha values to use,
-	// that is a 0.0 alpha indicates no pass and a 1.0 alpha indicates full pass.
-    
-    //save the current graphic state
-	CGContextSaveGState(context);
-    
-    //set the image mask
-	CGContextClipToMask(context, CGRectMake(0.0, 0.0, kelpImageView.frame.size.width, kelpImageView.frame.size.height), alphaImage);
-    
-    //set the image to draw
-//        alphaImage2 = CGImageRetain(mysteryMachineImage.image.CGImage);
-    CGContextDrawImage(context, CGRectMake(0.0, 0.0, 100.0, 100.0), alphaImage);
-    
-    CGContextTranslateCTM(context, 0.0, kelpImageView.frame.size.height);
-	CGContextScaleCTM(context, 1.0, -1.0);
-    
-	CGRect myImageArea = kelpImageView.frame;
-	CGImageRef mySubimage = CGImageCreateWithImageInRect (alphaImage, myImageArea);
-	CGRect myRect = CGRectMake(0, 0, kelpImageView.frame.size.width, kelpImageView.frame.size.height);
-	CGContextDrawImage(context, myRect, mySubimage);
-    
-    // Restore the graphic state
-    CGContextRestoreGState(context);
-    
-    
-    
-    
-    
-    //writing the result to the image
-    kelpImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    //closing ImageContext
-    UIGraphicsEndImageContext();
-     
-    */ 
-    
-    return whiteKelp;
-}
-
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event 
 {
     UITouch *touch = [touches anyObject];
@@ -549,8 +403,6 @@
         if (newBigMedusaRotation<=0) {
             newBigMedusaRotation=newBigMedusaRotation+2*M_PI;
         }
-
-//        NSLog(@"new:%f actual:%f",RADIANS_TO_DEGREES(newBigMedusaRotation),RADIANS_TO_DEGREES(bigMedusaRotation));
         
         if (fabs(bigMedusaRotation-newBigMedusaRotation)>DEGREES_TO_RADIANS(BIG_MEDUSA_MAX_ROTATION_AT_A_TIME)) {
             if (fabs(bigMedusaRotation-newBigMedusaRotation)>M_PI) 
@@ -599,10 +451,6 @@
         }
         newTransform = CGAffineTransformRotate(newTransform, bigMedusaRotation);
         [screen12BigMedusaImageView setTransform:newTransform];
-        
-        
-        
-        
         
         if (sqrt(pow(translatedPoint.x-previousTranslatedPoint.x, 2.0)+pow(translatedPoint.y-previousTranslatedPoint.y, 2.0))>5) 
         {
@@ -667,15 +515,9 @@
     [sfxFishReached5 stop];
     [sfxMedusaPulsing stop];
 
-
     for (AVAudioPlayer *sfxMedusaReachesFish in sfxMedusaReachesFishArray)
     {
         [sfxMedusaReachesFish stop];
-    }
-
-    for (AVAudioPlayer *sfxMedusaComeIn in sfxMedusasComeInArray)
-    {
-        [sfxMedusaComeIn stop];
     }
 
     [narration stop];
@@ -699,10 +541,6 @@
         {
             [sfxMedusaReachesFish setVolume:0.0];
         }
-        for (AVAudioPlayer *sfxMedusaComeIn in sfxMedusasComeInArray)
-        {
-            [sfxMedusaComeIn setVolume:0.0];
-        }
         [narration setVolume:0.0];
         
         viewContoller.musicIsOn=FALSE;
@@ -722,10 +560,6 @@
         {
             [sfxMedusaReachesFish setVolume:1.0];
         }
-        for (AVAudioPlayer *sfxMedusaComeIn in sfxMedusasComeInArray)
-        {
-            [sfxMedusaComeIn setVolume:1.0];
-        }
         [narration setVolume:1.0];
         
         viewContoller.musicIsOn=TRUE;
@@ -743,15 +577,6 @@
         bigMedusaSlowsDownValues.y=bigMedusaSlowsDownValues.y*0.975;
         if (sqrt(pow(bigMedusaSlowsDownValues.x,2.0)+pow(bigMedusaSlowsDownValues.y,2.0))<0.01) {
             [bigMedusaSlowsDownTimer invalidate];
-            /*
-            if (!CGRectIntersectsRect(screen12BigMedusaImageView.frame, self.view.frame))
-            {
-                isBigMedusaSlowsDown=false;
-                bigMedusaArmsMoveClock=0;
-                [screen12BigMedusaImageView setTransform:CGAffineTransformMakeRotation(0)];
-                [self screen12BigMedusaAppears];
-            }
-             */
         }
     }
     
@@ -765,17 +590,6 @@
             }
         }
     }
-    if ([sfxMedusasComeInArray count] != 0)
-    {
-        for (int i=[sfxMedusasComeInArray count]-1; i>-1; i--)
-        {
-            if (![[sfxMedusasComeInArray objectAtIndex:i] isPlaying])
-            {
-                [sfxMedusasComeInArray removeObjectAtIndex:i];
-            }
-        }
-    }
-    
 }
 
 - (void) screen12IsBigMedusaReachesFish;
@@ -791,38 +605,41 @@
         fish = obj;
         if (CGRectIntersectsRect(fish.frame, screen12BigMedusaImageView.frame)==1)
         {
-            AVAudioPlayer *sfxMedusaReachesFish;
-            sfxMedusaReachesFish = [sfxMedusaReachesFishArray objectAtIndex:0];
-            [sfxMedusaReachesFish setCurrentTime:0.0];
-            [sfxMedusaReachesFish play];
-            [sfxMedusaReachesFishArray removeObject:sfxMedusaReachesFish];
-            [sfxMedusaReachesFishArray addObject:sfxMedusaReachesFish];
-            
-            fishNewX = fish.center.x+(fish.center.x-screen12BigMedusaImageView.center.x)*2;
-            fishNewY = fish.center.y+(fish.center.y-screen12BigMedusaImageView.center.y)*2;
-            fishEscapeRotation = atanf((fish.center.y-fishNewY)/(fish.center.x-fishNewX));
-            if (fish.center.x>screen12BigMedusaImageView.center.x) 
+            if (fish.alpha==1.00)
             {
-                fishEscapeRotation = fishEscapeRotation-M_PI;
+                AVAudioPlayer *sfxMedusaReachesFish;
+                sfxMedusaReachesFish = [sfxMedusaReachesFishArray objectAtIndex:0];
+                [sfxMedusaReachesFish setCurrentTime:0.0];
+                [sfxMedusaReachesFish play];
+                [sfxMedusaReachesFishArray removeObject:sfxMedusaReachesFish];
+                [sfxMedusaReachesFishArray addObject:sfxMedusaReachesFish];
+                
+                fishNewX = fish.center.x+(fish.center.x-screen12BigMedusaImageView.center.x)*2;
+                fishNewY = fish.center.y+(fish.center.y-screen12BigMedusaImageView.center.y)*2;
+                fishEscapeRotation = atanf((fish.center.y-fishNewY)/(fish.center.x-fishNewX));
+                if (fish.center.x>screen12BigMedusaImageView.center.x)
+                {
+                    fishEscapeRotation = fishEscapeRotation-M_PI;
+                }
+                [UIView animateWithDuration: 0.20
+                                      delay: 0
+                                    options: UIViewAnimationOptionCurveEaseIn
+                                 animations:^
+                 {
+                     CGAffineTransform newTransform = CGAffineTransformRotate([fish transform],fishEscapeRotation);
+                     [fish setTransform:newTransform];
+                 }
+                                 completion:nil];
+                [UIView animateWithDuration: 1.00
+                                      delay: 0
+                                    options: UIViewAnimationOptionCurveEaseIn
+                                 animations:^
+                 {
+                     [fish setAlpha:0];
+                     [fish setCenter:CGPointMake(fishNewX, fishNewY)];
+                 }
+                                 completion:nil];
             }
-            [UIView animateWithDuration: 0.20
-                                  delay: 0
-                                options: UIViewAnimationOptionCurveEaseIn
-                             animations:^
-             {
-                 CGAffineTransform newTransform = CGAffineTransformRotate([fish transform],fishEscapeRotation);
-                 [fish setTransform:newTransform];
-             }
-                             completion:nil];
-            [UIView animateWithDuration: 1.00
-                                  delay: 0
-                                options: UIViewAnimationOptionCurveEaseIn
-                             animations:^
-             {
-                 [fish setAlpha:0];
-                 [fish setCenter:CGPointMake(fishNewX, fishNewY)];
-             }
-                             completion:nil];
         }
     }
     
@@ -832,39 +649,41 @@
         fish = obj;
         if (CGRectIntersectsRect(fish.frame, screen12BigMedusaImageView.frame)==1)
         {
-            
-            AVAudioPlayer *sfxMedusaReachesFish;
-            sfxMedusaReachesFish = [sfxMedusaReachesFishArray objectAtIndex:0];
-            [sfxMedusaReachesFish setCurrentTime:0.0];
-            [sfxMedusaReachesFish play];
-            [sfxMedusaReachesFishArray removeObject:sfxMedusaReachesFish];
-            [sfxMedusaReachesFishArray addObject:sfxMedusaReachesFish];
-            
-            fishNewX = fish.center.x+(fish.center.x-screen12BigMedusaImageView.center.x)*2;
-            fishNewY = fish.center.y+(fish.center.y-screen12BigMedusaImageView.center.y)*2;
-            fishEscapeRotation = atanf((fish.center.y-fishNewY)/(fish.center.x-fishNewX));
-            if (fish.center.x<screen12BigMedusaImageView.center.x) 
+            if (fish.alpha==1.00)
             {
-                fishEscapeRotation = fishEscapeRotation-M_PI;
+                AVAudioPlayer *sfxMedusaReachesFish;
+                sfxMedusaReachesFish = [sfxMedusaReachesFishArray objectAtIndex:0];
+                [sfxMedusaReachesFish setCurrentTime:0.0];
+                [sfxMedusaReachesFish play];
+                [sfxMedusaReachesFishArray removeObject:sfxMedusaReachesFish];
+                [sfxMedusaReachesFishArray addObject:sfxMedusaReachesFish];
+                
+                fishNewX = fish.center.x+(fish.center.x-screen12BigMedusaImageView.center.x)*2;
+                fishNewY = fish.center.y+(fish.center.y-screen12BigMedusaImageView.center.y)*2;
+                fishEscapeRotation = atanf((fish.center.y-fishNewY)/(fish.center.x-fishNewX));
+                if (fish.center.x<screen12BigMedusaImageView.center.x)
+                {
+                    fishEscapeRotation = fishEscapeRotation-M_PI;
+                }
+                [UIView animateWithDuration: 0.20
+                                      delay: 0
+                                    options: UIViewAnimationOptionCurveEaseIn
+                                 animations:^
+                 {
+                     CGAffineTransform newTransform = CGAffineTransformRotate([fish transform],fishEscapeRotation);
+                     [fish setTransform:newTransform];
+                 }
+                                 completion:nil];
+                [UIView animateWithDuration: 1.00
+                                      delay: 0
+                                    options: UIViewAnimationOptionCurveEaseIn
+                                 animations:^
+                 {
+                     [fish setAlpha:0];
+                     [fish setCenter:CGPointMake(fishNewX, fishNewY)];
+                 }
+                                 completion:nil];
             }
-            [UIView animateWithDuration: 0.20
-                                  delay: 0
-                                options: UIViewAnimationOptionCurveEaseIn
-                             animations:^
-             {
-                 CGAffineTransform newTransform = CGAffineTransformRotate([fish transform],fishEscapeRotation);
-                 [fish setTransform:newTransform];
-             }
-                             completion:nil];
-            [UIView animateWithDuration: 1.00
-                                  delay: 0
-                                options: UIViewAnimationOptionCurveEaseIn
-                             animations:^
-             {
-                 [fish setAlpha:0];
-                 [fish setCenter:CGPointMake(fishNewX, fishNewY)];
-             }
-                             completion:nil];
         }
     }
 }
@@ -986,8 +805,7 @@
     rotation = 0.2*sinf(1.00*bigMedusaArmsMoveClock/180*M_PI)+bigMedusaRotation;
     newTransform = CGAffineTransformRotate(previousTransformMatrix,rotation);
     [screen12BigMedusaArm4ImageView setTransform:newTransform];
-    
-    
+
 }
 
 - (void) screen12CreateFishes;
@@ -1186,8 +1004,6 @@
         fishOriginalDegree = 2.00*M_PI/MAX_FISHES_2*i;
         fishRadius = FISHES_2_RADIUS2+((arc4random()%(FISHES_2_RADIUS-FISHES_2_RADIUS2))+1);
         [fish setCenter:CGPointMake(roundf(1.00*FISHES_2_CENTER_X+fishRadius*sin(fishOriginalDegree)), roundf(1.00*FISHES_2_CENTER_Y+fishRadius*cos(fishOriginalDegree)))];
-
-//        [fish setCenter:CGPointMake(roundf(1.00*FISHES_2_CENTER_X+FISHES_2_RADIUS*sin(2.00*M_PI/MAX_FISHES_2*i)), roundf(1.00*FISHES_2_CENTER_Y+FISHES_2_RADIUS*cos(2.00*M_PI/MAX_FISHES_2*i)))];
 
         [self.view addSubview:fish];
         
@@ -1609,7 +1425,6 @@
     [self loadImages];
 
     sfxMedusaReachesFishArray=[[NSMutableArray alloc] init];
-    sfxMedusasComeInArray=[[NSMutableArray alloc] init];
     timingOfMedusasArray=[[NSMutableArray alloc] init];
     
     [self loadSFXs];
@@ -1623,12 +1438,9 @@
     previousTransformMatrix = [screen12BigMedusaImageView transform];
 	[bigMedusaArmsMoveTimer fire];
 
-//    [self textAppear];
-
     [self screen12BigMedusaAppears];
 
     isBigMedusaPulse = false;
-//    bigMedusaAppearsClock = -400;
     bigMedusaPulseClockChange = -1;
     [screen12BigMedusaImageView setTransform:CGAffineTransformMakeScale(1.00+0.01*bigMedusaPulseClock, 0.90)];
 
@@ -1662,25 +1474,45 @@
 
 - (void)viewDidDisappear:(BOOL)animated;
 {
+    NSEnumerator *enumerator = [fishes1Array objectEnumerator];
+    id obj;
+    UIImageView *fish;
+    while (obj = [enumerator nextObject])
+    {
+        fish=obj;
+        [fish removeFromSuperview];
+        fish.image=nil;
+        fish=nil;
+    }
+    
+    [self stopMusicAndSfx];
+
+    enumerator = [sfxMedusaReachesFishArray objectEnumerator];
+    AVAudioPlayer *player;
+    while (obj = [enumerator nextObject])
+    {
+        player=obj;
+        player.delegate = nil;
+        player=nil;
+    }
+    
     [fishes1Array removeAllObjects];
     [fishes2Array removeAllObjects];
     [fishes1SpeedArray removeAllObjects];
     [fishes2SpeedArray removeAllObjects];
     [sfxMedusaReachesFishArray removeAllObjects];
-    [sfxMedusasComeInArray removeAllObjects];
+    [timingOfMedusasArray removeAllObjects];
 
     fishes1Array=nil;
     fishes2Array=nil;
     fishes1SpeedArray=nil;
     fishes2SpeedArray=nil;
     sfxMedusaReachesFishArray=nil;
-    sfxMedusasComeInArray=nil;
-
+    timingOfMedusasArray=nil;
+    
     backgroundMusic.delegate=nil;
 
     backgroundMusic=nil;
-    
-    [self stopMusicAndSfx];
     
     [movingWavesTimer invalidate];
     [bigMedusaAppearsTimer invalidate];
@@ -1698,6 +1530,9 @@
     bigMedusaSlowsDownTimer=nil;
     continuousKelpMovementTimer=nil;
     
+    [self.view removeFromSuperview];
+    self.view = nil;
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

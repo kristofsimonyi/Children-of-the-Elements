@@ -50,17 +50,6 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
-/*
--(IBAction)screen11BackToMainMenu:(id)sender;
-{
-    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
-    viewContoller.nextViewController=0;
-    viewContoller = nil;
-    
-    [self goToNextScreen];
-}
- */
-
 - (IBAction)screen11NextScreenButtonTouched:(id)sender
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -268,6 +257,7 @@
         [sfxIngredient5 setVolume:0.0];
         [sfxIngredient6 setVolume:0.0];
         [sfxIngredient7 setVolume:0.0];
+        [sfxPlateComeIn setVolume:0.0];
         [narration setVolume:0.0];
         
         viewContoller.musicIsOn=FALSE;
@@ -289,6 +279,7 @@
         [sfxIngredient5 setVolume:1.0];
         [sfxIngredient6 setVolume:1.0];
         [sfxIngredient7 setVolume:1.0];
+        [sfxPlateComeIn setVolume:1.0];
         [narration setVolume:1.0];
         
         viewContoller.musicIsOn=TRUE;
@@ -483,7 +474,7 @@
 
 -(void)startNarration;
 {
-    //set the Music for intro then start playing
+    //set the Music then start playing
     if (narration==nil)
     {
         ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -629,6 +620,7 @@
     [sfxIngredient5 stop];
     [sfxIngredient6 stop];
     [sfxIngredient7 stop];
+    [sfxPlateComeIn stop];
     [narration stop];
 }
 
@@ -675,6 +667,7 @@
     sfxIngredient5.delegate=nil;
     sfxIngredient6.delegate=nil;
     sfxIngredient7.delegate=nil;
+    sfxPlateComeIn.delegate=nil;
     
     backgroundMusic=nil;
     narration=nil;
@@ -692,6 +685,7 @@
     sfxIngredient5=nil;
     sfxIngredient6=nil;
     sfxIngredient7=nil;
+    sfxPlateComeIn=nil;
     
     [self.view removeFromSuperview];
     self.view = nil;

@@ -43,7 +43,6 @@
 
 #import "Inori_InorisFatherIsPrayingViewController.h"
 #import "ViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface Inori_InorisFatherIsPrayingViewController ()
 
@@ -65,17 +64,6 @@
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
-/*
--(IBAction)screen01BackToMainMenu:(id)sender;
-{
-    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
-    viewContoller.nextViewController=0;
-    viewContoller = nil;
-    
-    [self goToNextScreen];
-}
-*/
-
 - (IBAction)Screen01nextScreenButtonTouched:(id)sender
 {
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
@@ -96,7 +84,7 @@
 
 -(void)startBackgroundMusic1st;
 {
-    //set the Music for intro then start playing
+    //set the Music then start playing
 	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"001_Atm_tucsok" ofType:@"mp3"];
 	backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:backgroundMusicPath] error:NULL];
 	backgroundMusic.delegate = self;
@@ -121,7 +109,7 @@
 
 -(void)startBackgroundMusic2nd;
 {
-    //set the Music for intro then start playing
+    //set the Music then start playing
     backgroundMusic = nil;
 	NSString *backgroundMusicPath = [[NSBundle mainBundle] pathForResource:@"001_Atm_tucsok_tuz_zene" ofType:@"mp3"];
 	backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:backgroundMusicPath] error:NULL];
@@ -245,8 +233,6 @@
 {
     if (hintLayerImageView.alpha==0.0)
     {
-//        [hintLayerImageView removeFromSuperview];
-//        [self.view addSubview:hintLayerImageView];
         [UIView animateWithDuration:HINT_TIME animations:^{
             [hintLayerImageView setAlpha:1.0];
         } completion:^(BOOL finished) {
@@ -347,9 +333,6 @@
     
     CGRect cropRect = CGRectMake(512-(1024*newScale/2), phase01TimerClock/5, 1024*newScale, 748*newScale);
     
-    //    NSString* imagePath; //***
-    //    imagePath = [ [ NSBundle mainBundle] pathForResource:@"1_2k_riszfoldalap" ofType:@"png"];
-    //    riceFieldBaseCGImage=[riceFieldBaseImage CGImage];
     CGImageRef imageRef = CGImageCreateWithImageInRect(riceFieldBaseCGImage, cropRect);
     UIImage *newImage = [UIImage imageWithCGImage:imageRef scale:1.00 orientation:riceFieldBaseImageView.image.imageOrientation];
     [riceFieldBaseImageView setImage:newImage];
@@ -417,22 +400,6 @@
         }
     [night2ImageView setAlpha:newRandomValue];
 }
-
-/*
--(IBAction)teaPotTouched_old:(id)sender;
-{
-    [teaPotControl setUserInteractionEnabled:false];
-    teaPotTimerClock=0;
-    teaPotTimerClockChange=TEAPOT_TIMER_CHANGE_FIRST;
-    teaPotTimerChangeCurrentMax=TEAPOT_TIMER_FIRST_CURRENT_MAX;
-    if (arc4random()%2==1) teaPotTimerClockChange=-teaPotTimerClockChange;
-    
-    teaPotOriginalTransform = [teaPotImageView transform]; // ez lehet nem lesz jó... mert lehet nem 0 ha már nem előszőr van megérintve
-    
-    teaPotTimer = [NSTimer scheduledTimerWithTimeInterval:TEAPOT_TIMER_FREQUENCY target:self selector:@selector(teaPotTimerActionMethod) userInfo:nil repeats:YES];
-    [teaPotTimer fire];
-}
-*/
 
 - (void)teaPotTimerActionMethodOld;
 {
@@ -581,7 +548,7 @@
 -(void)startPhase03;
 {
     night02Timer = [NSTimer scheduledTimerWithTimeInterval:NIGHT_02_TIMER_FREQUENCY target:self selector:@selector(night02TimerActionMethod) userInfo:nil repeats:YES];
-//    [night02Timer fire];
+    [night02Timer fire];
     [fatherControl setUserInteractionEnabled:true];
     [teaPotControl setUserInteractionEnabled:true];
     
