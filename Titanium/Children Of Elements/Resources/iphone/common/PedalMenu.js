@@ -9,7 +9,7 @@ PedalMenu.prototype.screenTitle;
 PedalMenu.prototype.screenText;
 
 PedalMenu.prototype.createPedals = function() {
-    var petalos = this.parseJSON("/json/pedals.json");
+    var petalos = this.parseJSON("json/pedals.json");
     var petaloContainer = Ti.UI.createView({
         width: 700,
         height: 700,
@@ -98,8 +98,10 @@ PedalMenu.prototype.createPedalItem = function(_pedalInfo) {
 
 PedalMenu.prototype.parseJSON = function(_URL) {
     var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);
-    var data = file.read().text;
-    var json = JSON.parse(data);
+    var data = file.read();
+    alert(file);
+    alert(data.text);
+    var json = JSON.parse(data.text);
     return json;
 };
 

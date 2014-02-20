@@ -12,7 +12,7 @@ PedalMenu.prototype.screenText;
 PedalMenu.prototype.createPedals = function (){
 
 
-	var petalos = this.parseJSON('/json/pedals.json');
+	var petalos = this.parseJSON('json/pedals.json');
 	// [petalo1, petalo2, petalo3, petalo4, petalo5];
 
 
@@ -181,9 +181,16 @@ PedalMenu.prototype.createPedalItem = function(_pedalInfo) {
 };
 
 PedalMenu.prototype.parseJSON = function(_URL) {
+
+
 	var file = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, _URL);
-	var data = file.read().text;
-	var json = JSON.parse(data);
+	var data = file.read()//.text;
+	var json = JSON.parse(data.text);
+
+ 
+
+
+
 
 	return json;
 };
