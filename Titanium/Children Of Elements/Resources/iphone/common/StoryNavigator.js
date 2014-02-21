@@ -11,6 +11,7 @@ StoryNavigator.prototype.contentCount;
 
 StoryNavigator.prototype.init = function() {
     this.storyView.add(this.storySlides[0]);
+    this.storySlides[0].fireEvent("animarSlide");
     this.contentCount = 0;
     return this.storyView;
 };
@@ -33,6 +34,7 @@ StoryNavigator.prototype.loadSlide = function(_slideID) {
     this.storySlides[_slideID].opacity = 0;
     this.storySlides[_slideID].backgroundColor = "#ffffff";
     this.storyView.add(this.storySlides[_slideID]);
+    this.storySlides[_slideID].fireEvent("animarSlide");
     var animation = Titanium.UI.createAnimation({
         opacity: 1,
         duration: 600

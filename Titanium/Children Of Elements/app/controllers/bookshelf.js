@@ -50,14 +50,10 @@ function init(){
 		storyViewer.open({
 			fullscreen:true,
 			navBarHidden : true,
+			exitOnClose:true
 		});
 				
 	})
-
-
-
-	 
-
 }
 
 
@@ -70,18 +66,17 @@ function setPlanet(){
 		
 		planetObject.backgroundImage = argsObj.backgroundImage;
 		planetObject.zIndex = 10
-/*
-		planetObject.bottom = -(planetObject.height/3);
-		planetObject.left = -200;
-		planetObject.transform = Ti.UI.create2DMatrix().rotate(49);
-*/
+		/*
+				planetObject.bottom = -(planetObject.height/3);
+				planetObject.left = -200;
+				planetObject.transform = Ti.UI.create2DMatrix().rotate(49);
+		*/
 		if(Ti.Platform.name == "android"){
 			
 			planetObject.bottom = -60;
 		}else{
 			planetObject.top = "75%";
-		}
-		
+		}	
 }
 
  
@@ -93,14 +88,14 @@ function playLoopAudio(){
 	player.play();	
 }
 
+
 function stopLoopAudio(){
 	Ti.App.fireEvent('stopSlideShow');
 	player.stop();
 	//player = null;
-	//_slideshow = null
-
-	
+	//_slideshow = null	
 }
+
 
 function suscribe(){
 
@@ -114,22 +109,19 @@ function suscribe(){
 		$.aboutImage.animate(animationx );
 		$.aboutImage.touchEnabled = false;
 	})
- 
 }
 
 
-
 //// add pedals dynamically
-
-
 
 
 function cerrar(){
 
 	Ti.App.fireEvent('backPlanet');
 
+	_slideshow = null;
+
 	$.bookshelf.close();
- 
 }
 
 

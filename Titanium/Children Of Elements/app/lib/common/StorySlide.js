@@ -6,6 +6,10 @@ return: a self contained slide
 
 function StorySlide(_slideData){
 	
+	// start animated array
+	this.animatedItems = []
+
+
 	/// create main container
 	this.mainView = Ti.UI.createView()
 
@@ -16,6 +20,9 @@ function StorySlide(_slideData){
 	///add elements to slide
 	this.mainView.add ( this.buildElements() );
 
+	this.mainView.anima = this.animatedItems;
+
+	this.mainView.addEventListener('animarSlide', this.animateSlide);
 
 	return this.mainView;
 }
@@ -23,6 +30,7 @@ function StorySlide(_slideData){
 
 
 StorySlide.prototype.mainView;
+StorySlide.prototype.animatedItems;
 
 
 
@@ -48,6 +56,7 @@ StorySlide.prototype.buildElements = function() {
 
 	return elementsPreWrap
 };
+
 
 /// create a single element based on map document Info
 StorySlide.prototype.createSingleElement = function(_targetElement) {
@@ -82,26 +91,37 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
 		default:
 			Ti.API.info("create single element, type not found");
 	}
-		/// if there's animation for this element attach it
+
+	///Attach Animations
 		if(_targetElement.animation){
 			
 			var itemAnimation = this.animations(_targetElement.animation);
 
-			currentElement.animate(itemAnimation)
+			currentElement._innerAnimation = itemAnimation;
+
+			/// add this element to animation queue
+			this.animatedItems.push(currentElement);
+
+			//currentElement.animate(itemAnimation)
 
 		}
+
+	///Attach Touch Events
 		if(_targetElement.alertOnClick){
 
 			currentElement._msg = _targetElement.alertOnClick
 			currentElement.addEventListener('click',function(e){
-				alert(e.source._msg)
+
 			})
+		}else{
+
+			currentElement.touchEnabled = false;
 		}
-		
 
 
 	return currentElement;
 };
+
 
 
 StorySlide.prototype.animations = function(_animData) {
@@ -130,6 +150,19 @@ StorySlide.prototype.animations = function(_animData) {
 
 	return _animation;
 };
+
+StorySlide.prototype.animateSlide = function(e){
+
+
+	// Loop animation queue
+	for (var i = 0; i < e.source.anima.length; i++) {
+		
+		var element = e.source.anima[i]
+			element.animate( element._innerAnimation )
+	};
+
+	e.source.removeEventListener('animarSlide', function(){});
+}
 
 
 /// verifies values

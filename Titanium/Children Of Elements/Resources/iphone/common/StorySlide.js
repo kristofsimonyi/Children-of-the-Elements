@@ -1,11 +1,16 @@
 function StorySlide(_slideData) {
+    this.animatedItems = [];
     this.mainView = Ti.UI.createView();
     this.slideData = _slideData;
     this.mainView.add(this.buildElements());
+    this.mainView.anima = this.animatedItems;
+    this.mainView.addEventListener("animarSlide", this.animateSlide);
     return this.mainView;
 }
 
 StorySlide.prototype.mainView;
+
+StorySlide.prototype.animatedItems;
 
 StorySlide.prototype.buildElements = function() {
     this.slideData.stageElements || this.errorDetect("stage elements not found");
@@ -33,14 +38,13 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
     }
     if (_targetElement.animation) {
         var itemAnimation = this.animations(_targetElement.animation);
-        currentElement.animate(itemAnimation);
+        currentElement._innerAnimation = itemAnimation;
+        this.animatedItems.push(currentElement);
     }
     if (_targetElement.alertOnClick) {
         currentElement._msg = _targetElement.alertOnClick;
-        currentElement.addEventListener("click", function(e) {
-            alert(e.source._msg);
-        });
-    }
+        currentElement.addEventListener("click", function() {});
+    } else currentElement.touchEnabled = false;
     return currentElement;
 };
 
@@ -54,6 +58,14 @@ StorySlide.prototype.animations = function(_animData) {
     _animData.scale = null;
     var _animation = Ti.UI.createAnimation(_animData);
     return _animation;
+};
+
+StorySlide.prototype.animateSlide = function(e) {
+    for (var i = 0; e.source.anima.length > i; i++) {
+        var element = e.source.anima[i];
+        element.animate(element._innerAnimation);
+    }
+    e.source.removeEventListener("animarSlide", function() {});
 };
 
 StorySlide.prototype.errorDetect = function(_alertMessage) {

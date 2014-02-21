@@ -11,6 +11,8 @@ function Controller() {
         _navigator.back();
     }
     function exitStory() {
+        __navigator = null;
+        _story = null;
         $.storyViewer.close();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));

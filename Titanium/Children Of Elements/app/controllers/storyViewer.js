@@ -40,5 +40,7 @@ function back(){
 }
 
 function exitStory(){
+	__navigator = null;
+	_story = null;
 	$.storyViewer.close();
 }

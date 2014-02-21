@@ -21,7 +21,8 @@ function Controller() {
             }).getView();
             storyViewer.open({
                 fullscreen: true,
-                navBarHidden: true
+                navBarHidden: true,
+                exitOnClose: true
             });
         });
     }
@@ -62,6 +63,7 @@ function Controller() {
     }
     function cerrar() {
         Ti.App.fireEvent("backPlanet");
+        _slideshow = null;
         $.bookshelf.close();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
