@@ -79,6 +79,7 @@
             }
         ]
     },
+    
     {
         "slideTitle": "SecondSlide",
         "stageElements": [     
@@ -112,6 +113,7 @@
             }
         ]
     },
+
     {
         "slideTitle": "SecondSlide",
         "stageElements": [     

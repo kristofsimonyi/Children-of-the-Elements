@@ -47,11 +47,20 @@ function init(){
 
 		var storyViewer= Alloy.createController('storyViewer', {storyID:e.source.storyID}).getView();
 
-		storyViewer.open({
-			fullscreen:true,
-			navBarHidden : true,
-			exitOnClose:true
-		});
+		if(Ti.Platform.name == "android"){
+			storyViewer.open({
+				fullscreen:true,
+				navBarHidden : true,
+			});
+		}else{
+
+			storyViewer.open({
+				fullscreen:true,
+				navBarHidden : true,
+				exitOnClose:true
+			});
+
+		}
 				
 	})
 }

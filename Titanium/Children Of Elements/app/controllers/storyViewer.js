@@ -15,11 +15,13 @@ var _navigator;
 function init(){
 
 	/** @TODO funcion de carga */
+	//Ti.App.imageCount = 0
 	
 	_story = new Story(currentStoryID);
 	_navigator = new Navigator(_story)
 
 	$.storyStage.add(_navigator.init() );
+
 
 	/** @TODO agregar controles de navegacion **/
 
@@ -41,6 +43,7 @@ function back(){
 
 function exitStory(){
 	__navigator = null;
+	///_story.cleaner()
 	_story = null;
 	$.storyViewer.close();
 }

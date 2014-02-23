@@ -1,9 +1,13 @@
 function StorySlide(_slideData) {
     this.animatedItems = [];
-    this.mainView = Ti.UI.createView();
+    this.mainView = Ti.UI.createView({
+        opacity: 0
+    });
     this.slideData = _slideData;
-    this.mainView.add(this.buildElements());
+    this.buildElements();
     this.mainView.anima = this.animatedItems;
+    this.mainView.imageCount = 0;
+    this.mainView.addEventListener("story_slideImage_loaded", this.slideLoaded);
     this.mainView.addEventListener("animarSlide", this.animateSlide);
     return this.mainView;
 }
@@ -14,13 +18,13 @@ StorySlide.prototype.animatedItems;
 
 StorySlide.prototype.buildElements = function() {
     this.slideData.stageElements || this.errorDetect("stage elements not found");
-    var elementsPreWrap = Ti.UI.createView();
-    for (var i = 0; this.slideData.stageElements.length > i; i++) {
-        var element = this.createSingleElement(this.slideData.stageElements[i]);
+    _itemsLength = this.slideData.stageElements.length;
+    for (var i = 0; _itemsLength > i; i++) {
+        var element = this.createSingleElement(this.slideData.stageElements[i], _itemsLength);
         element.zIndex = i;
-        elementsPreWrap.add(element);
+        element._parent = this.mainView;
+        this.mainView.add(element);
     }
-    return elementsPreWrap;
 };
 
 StorySlide.prototype.createSingleElement = function(_targetElement) {
@@ -28,9 +32,15 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
     var currentElement;
     switch (_targetElement.type) {
       case "image":
-        var newImg = "/storyAssets/story1/" + _targetElement.properties.image;
-        _targetElement.properties.image = newImg;
+        _targetElement.properties.image = "/storyAssets/story1/" + _targetElement.properties.image;
         currentElement = Ti.UI.createImageView(_targetElement.properties);
+        currentElement.itemCount = _itemsLength;
+        currentElement.addEventListener("load", function(e) {
+            if (++e.source._parent.imageCount == e.source.itemCount) {
+                e.source._parent.fireEvent("story_slideImage_loaded");
+                e.source._parent.imageCount = 0;
+            }
+        });
         break;
 
       default:
@@ -66,6 +76,23 @@ StorySlide.prototype.animateSlide = function(e) {
         element.animate(element._innerAnimation);
     }
     e.source.removeEventListener("animarSlide", function() {});
+};
+
+StorySlide.prototype.slideLoaded = function(e) {
+    var element = e.source;
+    var animation = Titanium.UI.createAnimation({
+        opacity: 1,
+        duration: 600
+    });
+    element.animate(animation);
+    animation.parentView = element.parentView;
+    animation.addEventListener("complete", function(e) {
+        e.source.parentView.children.length > 1 && e.source.parentView.remove(e.source.parentView.children[0]);
+    });
+    if (!element.onStage) {
+        element.fireEvent("animarSlide");
+        element.onStage = true;
+    }
 };
 
 StorySlide.prototype.errorDetect = function(_alertMessage) {

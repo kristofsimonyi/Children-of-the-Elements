@@ -26,8 +26,10 @@ StoryNavigator.prototype.contentCount;
 
 StoryNavigator.prototype.init = function() {
 	// place the first slide
-	this.storyView.add(this.storySlides[0])
-	this.storySlides[0].fireEvent('animarSlide')
+	//this.storyView.add(this.storySlides[0])
+
+	this.loadSlide(0)
+
 
 	this.contentCount = 0
 	
@@ -65,26 +67,22 @@ StoryNavigator.prototype.back = function() {
 
 StoryNavigator.prototype.loadSlide = function(_slideID) {
 	
-	this.storySlides[_slideID].opacity = 0
+	
 	this.storySlides[_slideID].backgroundColor = "#ffffff";
+	this.storySlides[_slideID].parentView = this.storyView;
+	this.storySlides[_slideID].opacity = 0
 
 	this.storyView.add(this.storySlides[_slideID])
 	
-	this.storySlides[_slideID].fireEvent('animarSlide')
-
-	var animation = Titanium.UI.createAnimation({opacity:1, duration:600});
-	this.storySlides[_slideID].animate(animation)
-
-	animation.parentView = this.storyView;
-
-	animation.addEventListener('complete',function(e){
-
-		
+	// check if this slide already appeared
+	if (this.storySlides[_slideID].onStage ){
+		this.storySlides[_slideID].fireEvent('story_slideImage_loaded')
+	}
 
 
-		e.source.parentView.remove(e.source.parentView.children[0]);
+	
 
-	});
+
 };
 
 
