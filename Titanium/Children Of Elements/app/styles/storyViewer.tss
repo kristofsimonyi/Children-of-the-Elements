@@ -10,12 +10,15 @@
 },
 "#back":{
 	left:10,
-	top:10
+	top:10,
+	backgroundColor:"#182C9F"
 },
 "#next":{
 	right:10,
-	top:10
+	top:10,
+	backgroundColor:"#182C9F"
 },
 "#home":{
-	top:10
+	top:10,
+	backgroundColor:"#182C9F"
 }

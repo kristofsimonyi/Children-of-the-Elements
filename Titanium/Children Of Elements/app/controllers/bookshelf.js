@@ -134,5 +134,4 @@ function cerrar(){
 }
 
 
-init();
-
+init(); 

@@ -19,8 +19,8 @@ SlideShow.prototype.createSlide = function() {
 
 	//this._slideContainer.top=325;
 	//this._slideContainer.left=849;
-	this._slideContainer.width = 431
-	this._slideContainer.height = 426
+	this._slideContainer.width = '431dip'
+	this._slideContainer.height = '426dip'
 
 	var imageSlides = ["/bookshelf/bookshelf_imageslide_01.jpg", "/bookshelf/bookshelf_imageslide_02.jpg" , "/bookshelf/bookshelf_imageslide_03.jpg"]
 	var slideViews=[]	
@@ -28,8 +28,8 @@ SlideShow.prototype.createSlide = function() {
 	for (var i = 0; i < imageSlides.length; i++) {
 		
 		var imageItem = Ti.UI.createImageView({image: imageSlides[i] });
-			imageItem.width = 431
-			imageItem.height = 426
+			imageItem.width =  Ti.UI.FILL //431
+			imageItem.height = Ti.UI.FILL //426
 			imageItem.bottom = 0
 			imageItem.right = 0
 			imageItem.zIndex = 1
