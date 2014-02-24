@@ -89,10 +89,7 @@ StorySlide.prototype.slideLoaded = function(e) {
     animation.addEventListener("complete", function(e) {
         e.source.parentView.children.length > 1 && e.source.parentView.remove(e.source.parentView.children[0]);
     });
-    if (!element.onStage) {
-        element.fireEvent("animarSlide");
-        element.onStage = true;
-    }
+    element.onStage || element.fireEvent("animarSlide");
 };
 
 StorySlide.prototype.errorDetect = function(_alertMessage) {

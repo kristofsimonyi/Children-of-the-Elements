@@ -39,7 +39,7 @@ function Controller() {
     });
     $.__views.storyViewer.add($.__views.navBar);
     $.__views.back = Ti.UI.createButton({
-        backgroundColor: "#ffffff",
+        backgroundColor: "#182C9F",
         left: 10,
         top: 10,
         title: "Back",
@@ -48,7 +48,7 @@ function Controller() {
     $.__views.navBar.add($.__views.back);
     back ? $.__views.back.addEventListener("click", back) : __defers["$.__views.back!click!back"] = true;
     $.__views.home = Ti.UI.createButton({
-        backgroundColor: "#ffffff",
+        backgroundColor: "#182C9F",
         top: 10,
         title: "home",
         id: "home"
@@ -56,7 +56,7 @@ function Controller() {
     $.__views.navBar.add($.__views.home);
     exitStory ? $.__views.home.addEventListener("click", exitStory) : __defers["$.__views.home!click!exitStory"] = true;
     $.__views.next = Ti.UI.createButton({
-        backgroundColor: "#ffffff",
+        backgroundColor: "#182C9F",
         right: 10,
         top: 10,
         title: "next",

@@ -67,9 +67,11 @@ PedalMenu.prototype.createPedals = function (){
 	};
 	
 	this.pedalContainerView.addEventListener('resetHighLight', function(e){
-		//alert(e.source.children.length )
+		
 
 		for (var i = 0; i < e.source.children.length; i++) {
+
+			//alert(e.source.children[i].children.length )
 			
 			if(e.source.children[i].children[1]){
 				 e.source.children[i].children[1].opacity = 0
@@ -177,8 +179,10 @@ PedalMenu.prototype.createPedalItem = function(_pedalInfo, _targetParent) {
 
 		//animation._target = _arrayTarget[val];
 
-
-		e.source.active.animate( animation );
+		var TO = setTimeout(function(){
+			e.source.active.animate( animation );
+		}, 100)
+		
 		
 	});
 
