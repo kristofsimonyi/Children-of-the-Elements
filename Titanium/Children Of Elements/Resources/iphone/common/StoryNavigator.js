@@ -34,7 +34,7 @@ StoryNavigator.prototype.loadSlide = function(_slideID) {
     this.storySlides[_slideID].parentView = this.storyView;
     this.storySlides[_slideID].opacity = 0;
     this.storyView.add(this.storySlides[_slideID]);
-    this.storySlides[_slideID].onStage && this.storySlides[_slideID].fireEvent("story_slideImage_loaded");
+    this.storySlides[_slideID].fireEvent("story_slideImage_loaded");
 };
 
 StoryNavigator.prototype.errorManager = function(_message) {

@@ -52,12 +52,13 @@ StoryNavigator.prototype.next = function() {
 
 StoryNavigator.prototype.back = function() {
 	
+	//alert("click y conteo normal preIF" + this.contentCount)
 
 	if((this.contentCount -1) >= 0){
 
 		this.contentCount--
 
-		//alert(this.contentCount)
+		//alert(" este es el conteo real"+this.contentCount)
 		this.loadSlide(this.contentCount)
 
 		
@@ -75,10 +76,17 @@ StoryNavigator.prototype.loadSlide = function(_slideID) {
 	this.storyView.add(this.storySlides[_slideID])
 	
 	// check if this slide already appeared
-	if (this.storySlides[_slideID].onStage ){
+	if(Ti.Platform.name == "iPhone OS"){
+	
 		this.storySlides[_slideID].fireEvent('story_slideImage_loaded')
+	
+	}else if(Ti.Platform.name == "android"){
+	
+		if ( this.storySlides[_slideID].onStage  ){
+			this.storySlides[_slideID].fireEvent('story_slideImage_loaded')
+		}
+	
 	}
-
 
 	
 

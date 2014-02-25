@@ -211,7 +211,7 @@ StorySlide.prototype.slideLoaded = function(e) {
  
 		
 		if(e.source.parentView.children.length > 1){ 
-			//alert("remove")//e.source.parentView.children.length )
+			//alert("removed Slide")//e.source.parentView.children.length )
 			e.source.parentView.remove(e.source.parentView.children[0]);
 		}
 
