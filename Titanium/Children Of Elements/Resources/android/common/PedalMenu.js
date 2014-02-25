@@ -78,7 +78,9 @@ PedalMenu.prototype.createPedalItem = function(_pedalInfo, _targetParent) {
             opacity: 1,
             duration: 500
         });
-        e.source.active.animate(animation);
+        setTimeout(function() {
+            e.source.active.animate(animation);
+        }, 100);
     });
     return pedalItem;
 };

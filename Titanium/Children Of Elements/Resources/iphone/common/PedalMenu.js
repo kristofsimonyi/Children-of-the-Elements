@@ -80,7 +80,7 @@ PedalMenu.prototype.createPedalItem = function(_pedalInfo, _targetParent) {
         });
         setTimeout(function() {
             e.source.active.animate(animation);
-        }, 1e3);
+        }, 100);
     });
     return pedalItem;
 };

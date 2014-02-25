@@ -9,6 +9,8 @@ function StorySlide(_slideData){
 	// start animated array
 	this.animatedItems = []
 
+	//alert("yoyoyoy")
+
 
 	/// create main container
 	this.mainView = Ti.UI.createView({opacity:0})
@@ -199,18 +201,17 @@ StorySlide.prototype.slideLoaded = function(e) {
 
 	var animation = Titanium.UI.createAnimation({opacity:1, duration:600});
 
-
+	//alert("removexx")
 
 	element.animate(animation)
 
 	animation.parentView = element.parentView
 
 	animation.addEventListener('complete',function(e){
-
-		
+ 
 		
 		if(e.source.parentView.children.length > 1){ 
-			//alert(e.source.parentView.children.length )
+			//alert("remove")//e.source.parentView.children.length )
 			e.source.parentView.remove(e.source.parentView.children[0]);
 		}
 

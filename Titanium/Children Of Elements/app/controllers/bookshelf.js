@@ -45,22 +45,26 @@ function init(){
 
 	$.bookshelf_play.addEventListener('click',function(e){
 
-		var storyViewer= Alloy.createController('storyViewer', {storyID:e.source.storyID}).getView();
+		if(e.source.storyID){
 
-		if(Ti.Platform.name == "android"){
-			storyViewer.open({
-				fullscreen:true,
-				navBarHidden : true,
-			});
-		}else{
+			var storyViewer= Alloy.createController('storyViewer', {storyID:e.source.storyID}).getView();
 
-			storyViewer.open({
-				fullscreen:true,
-				navBarHidden : true,
-				exitOnClose:true
-			});
+			if(Ti.Platform.name == "android"){
+				storyViewer.open({
+					fullscreen:true,
+					navBarHidden : true,
+				});
+			}else{
 
+				storyViewer.open({
+					fullscreen:true,
+					navBarHidden : true,
+					exitOnClose:true
+				});
+			}
+			
 		}
+
 				
 	})
 }

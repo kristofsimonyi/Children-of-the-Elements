@@ -16,13 +16,15 @@ function Controller() {
             $.bookshelf_play.storyID = e.storyID;
         });
         $.bookshelf_play.addEventListener("click", function(e) {
-            var storyViewer = Alloy.createController("storyViewer", {
-                storyID: e.source.storyID
-            }).getView();
-            storyViewer.open({
-                fullscreen: true,
-                navBarHidden: true
-            });
+            if (e.source.storyID) {
+                var storyViewer = Alloy.createController("storyViewer", {
+                    storyID: e.source.storyID
+                }).getView();
+                storyViewer.open({
+                    fullscreen: true,
+                    navBarHidden: true
+                });
+            }
         });
     }
     function setPlanet() {
