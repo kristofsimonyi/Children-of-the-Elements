@@ -8,6 +8,7 @@
 
 #import "CommonLibrary.h"
 #import <AVFoundation/AVAudioPlayer.h>
+#import <CoreMotion/CoreMotion.h>
 
 @interface Inori_FatherAndSonPatchUpAFishnetViewController : UIViewController <AVAudioPlayerDelegate>
 {
@@ -23,6 +24,11 @@
     AVAudioPlayer *backgroundMusic, *narration, *sfxInoriAndFather, *sfxFish1, *sfxFish2;
     
     BOOL fish1InteractionFound, fish2InteractionFound, fish3InteractionFound, fish4InteractionFound, fish5InteractionFound, inoriAndFatherInteractionFound;
+
+    CMMotionManager *motionManager;
+    NSOperationQueue *queue;
+    CGFloat netAccelerationY;
+    double alphaValue;
 }
 
 @property (nonatomic, weak) IBOutlet UIControl *screen09InoriAndFatherControl;

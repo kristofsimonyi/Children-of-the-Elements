@@ -10,11 +10,21 @@
 
 @interface StaticScreenViewController : UIViewController <AVAudioPlayerDelegate>
 {
-    AVAudioPlayer *narration;
+    int bigShipRockingClock, bigShipRockingClockChange, smallShipRockingClock, smallShipRockingClockChange;
+    CGFloat cloudMovingTimerClockChange, cloudMovingTimerClock;
+    NSTimer *bigShipRockingTimer, *smallShipRockingTimer, *cloudMovingTimer;
+    CGAffineTransform smallShipOriginalTransform, bigShipOriginalTransform;
+    
+    AVAudioPlayer *narration, *narration2;
+    
+    int narrationToPlay;
 }
 
-@property (nonatomic, weak) IBOutlet UIImageView *Screen10BackgroundImageView, *Screen10MenuImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *Screen10BackgroundImageView, *Screen10DuneImageView, *Screen10SmallShipImageView, *Screen10BigShipImageView, *Screen10CloudImageView, *Screen10InoriImageView, *Screen10MenuImageView;
+@property (nonatomic, weak) IBOutlet UITextView *staticTextView;
 
+- (void) setSmallShipRockingState;
+- (void) setBigShipRockingState;
 - (IBAction)screen10NextScreenButtonTouched:(id)sender;
 - (IBAction)screen10PreviousScreenButtonTouched:(id)sender;
 - (IBAction)screen10NarrationButtonTouched:(id)sender;

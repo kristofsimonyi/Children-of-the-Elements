@@ -227,9 +227,54 @@
             if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) 
             {
                 isSnailMoving=false;
-                [sfxSnail stop];
+                [sfxSnail1 stop];
+                [sfxSnail2 stop];
+                [sfxSnail3 stop];
             }
     
+    ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
+    if (viewContoller.musicIsOn)
+    {
+        CGFloat volume1 = (boatsAreCloseVolumePercentage)/0.33;
+        CGFloat volume2 = (boatsAreCloseVolumePercentage-0.33)/0.33;
+        CGFloat volume3 = (boatsAreCloseVolumePercentage-0.66)/0.33;
+        if (volume1>1.0)
+        {
+            volume1=1.0;
+        }
+        if (volume2<0)
+        {
+            volume2=0;
+        }
+        else
+            if (volume2>1.0)
+            {
+                volume2=1.0;
+            }
+        if (volume3<0)
+        {
+            volume3=0;
+        }
+        else
+            if (volume3>1.0)
+            {
+                volume3=1.0;
+            }
+
+//        NSLog([NSString stringWithFormat:@"%f, %f, %f",volume1,volume2,volume3]);
+        
+        [sfxSnail1 setVolume:volume1];
+        [sfxSnail2 setVolume:volume2];
+        [sfxSnail3 setVolume:volume3];
+    }
+    else
+    {
+        [sfxSnail1 setVolume:0.0];
+        [sfxSnail2 setVolume:0.0];
+        [sfxSnail3 setVolume:0.0];
+    }
+    
+
 }
 
 
@@ -349,7 +394,9 @@
         [sfxInori setVolume:0.0];
         [sfxBoatsAreClose setVolume:0.0];
         [sfxBoat setVolume:0.0];
-        [sfxSnail setVolume:0.0];
+        [sfxSnail1 setVolume:0.0];
+        [sfxSnail2 setVolume:0.0];
+        [sfxSnail3 setVolume:0.0];
         
         viewContoller.musicIsOn=FALSE;
     }
@@ -360,8 +407,37 @@
         [sfxInori setVolume:1.0];
         [sfxBoatsAreClose setVolume:boatsAreCloseVolumePercentage];
         [sfxBoat setVolume:1.0];
-        [sfxSnail setVolume:1.0];
+
+        CGFloat volume1 = (boatsAreCloseVolumePercentage)/0.33;
+        CGFloat volume2 = (boatsAreCloseVolumePercentage-0.33)/0.33;
+        CGFloat volume3 = (boatsAreCloseVolumePercentage-0.66)/0.33;
+        if (volume1>1.0)
+        {
+            volume1=1.0;
+        }
+        if (volume2<0)
+        {
+            volume2=0;
+        }
+        else
+            if (volume2>1.0)
+            {
+                volume2=1.0;
+            }
+        if (volume3<0)
+        {
+            volume3=0;
+        }
+        else
+            if (volume3>1.0)
+            {
+                volume3=1.0;
+            }
         
+        [sfxSnail1 setVolume:volume1];
+        [sfxSnail2 setVolume:volume2];
+        [sfxSnail3 setVolume:volume3];
+
         viewContoller.musicIsOn=TRUE;
     }
     viewContoller = nil;
@@ -513,12 +589,32 @@
 - (void)startsfxSnail;
 {
     //set the SFX then start playing
-    if (sfxSnail==nil)
+    if (sfxSnail1==nil)
     {
-        NSString *snailSFXPath = [[NSBundle mainBundle] pathForResource:@"002_csiga1" ofType:@"mp3"];
-        sfxSnail = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:snailSFXPath] error:NULL];
-        sfxSnail.delegate = self;
-        [sfxSnail setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
+        NSString *snailSFXPath = [[NSBundle mainBundle] pathForResource:@"002_csiga1new" ofType:@"mp3"];
+        sfxSnail1 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:snailSFXPath] error:NULL];
+        sfxSnail1.delegate = self;
+        [sfxSnail1 setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        snailSFXPath=nil;
+    }
+
+    if (sfxSnail2==nil)
+    {
+        NSString *snailSFXPath = [[NSBundle mainBundle] pathForResource:@"002_csiga2new" ofType:@"mp3"];
+        sfxSnail2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:snailSFXPath] error:NULL];
+        sfxSnail2.delegate = self;
+        [sfxSnail2 setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
+        
+        snailSFXPath=nil;
+    }
+    
+    if (sfxSnail3==nil)
+    {
+        NSString *snailSFXPath = [[NSBundle mainBundle] pathForResource:@"002_csiga3new" ofType:@"mp3"];
+        sfxSnail3 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:snailSFXPath] error:NULL];
+        sfxSnail3.delegate = self;
+        [sfxSnail3 setNumberOfLoops:-1]; // when the value is negativ, the sound will be played until you call STOP method
         
         snailSFXPath=nil;
     }
@@ -526,16 +622,54 @@
     ViewController *viewContoller = [self.navigationController.viewControllers objectAtIndex:0];
     if (viewContoller.musicIsOn)
     {
-        [sfxSnail setVolume:1.0];
+        CGFloat volume1 = (boatsAreCloseVolumePercentage)/0.33;
+        CGFloat volume2 = (boatsAreCloseVolumePercentage-0.33)/0.33;
+        CGFloat volume3 = (boatsAreCloseVolumePercentage-0.66)/0.33;
+        if (volume1>1.0)
+        {
+            volume1=1.0;
+        }
+        if (volume2<0)
+        {
+            volume2=0;
+        }
+        else
+            if (volume2>1.0)
+            {
+                volume2=1.0;
+            }
+        if (volume3<0)
+        {
+            volume3=0;
+        }
+        else
+            if (volume3>1.0)
+            {
+                volume3=1.0;
+            }
+        
+        [sfxSnail1 setVolume:volume1];
+        [sfxSnail2 setVolume:volume2];
+        [sfxSnail3 setVolume:volume3];
     }
     else
     {
-        [sfxSnail setVolume:0.0];
+        [sfxSnail1 setVolume:0.0];
+        [sfxSnail2 setVolume:0.0];
+        [sfxSnail3 setVolume:0.0];
     }
     
-    if (![sfxSnail isPlaying])
+    if (![sfxSnail1 isPlaying])
     {
-        [sfxSnail play];
+        [sfxSnail1 play];
+    }
+    if (![sfxSnail2 isPlaying])
+    {
+        [sfxSnail2 play];
+    }
+    if (![sfxSnail3 isPlaying])
+    {
+        [sfxSnail3 play];
     }
 }
 
@@ -569,7 +703,9 @@
     [sfxInori stop];
     [sfxBoatsAreClose stop];
     [sfxBoat stop];
-    [sfxSnail stop];
+    [sfxSnail1 stop];
+    [sfxSnail2 stop];
+    [sfxSnail3 stop];
     [narration stop];
 }
 
@@ -745,14 +881,18 @@
     sfxInori.delegate=nil;
     sfxBoatsAreClose.delegate=nil;
     sfxBoat.delegate=nil;
-    sfxSnail.delegate=nil;
+    sfxSnail1.delegate=nil;
+    sfxSnail2.delegate=nil;
+    sfxSnail3.delegate=nil;
     
     backgroundMusic = nil;
     narration = nil;
     sfxInori = nil;
     sfxBoatsAreClose = nil;
     sfxBoat = nil;
-    sfxSnail = nil;
+    sfxSnail1 = nil;
+    sfxSnail2 = nil;
+    sfxSnail3 = nil;
 
     [itIsWavingTimer invalidate];
     [bigShipRockingTimer invalidate];

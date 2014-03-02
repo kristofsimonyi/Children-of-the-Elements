@@ -27,6 +27,12 @@ M:
 112:
 06 Story of the Sea 6.mp3
 113:
-07 Story of the Sea 7.mp3
+07 Story of the Sea 7a.mp3
+08 Story of the Sea 7b.mp3
 114:
-07 Story of the Sea 7.mp
+07 Story of the Sea 7a.mp3
+08 Story of the Sea 7b.mp3
+115:
+09 Story of the Sea 8.mp3
+116:
+09 Story of the Sea 8.mp3

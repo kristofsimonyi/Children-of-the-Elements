@@ -234,7 +234,6 @@
 		E26BC120187B3CAE009F9956 /* The story of the Sea_OK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E26BC11F187B3CAE009F9956 /* The story of the Sea_OK.mp3 */; };
 		E273094A1700FD7A003B955F /* Inori_MothersBigBowlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27309481700FD7A003B955F /* Inori_MothersBigBowlViewController.m */; };
 		E273094B1700FD7A003B955F /* Inori_MothersBigBowlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E27309491700FD7A003B955F /* Inori_MothersBigBowlViewController.xib */; };
-		E2A34AC11854EC2E006446F4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A34AC01854EC2E006446F4 /* StoreKit.framework */; };
 		E2A34ACC1854F242006446F4 /* CoE_29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A34AC21854F242006446F4 /* CoE_29x29.png */; };
 		E2A34ACD1854F242006446F4 /* CoE_40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A34AC31854F242006446F4 /* CoE_40x40.png */; };
 		E2A34ACE1854F242006446F4 /* CoE_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A34AC41854F242006446F4 /* CoE_50x50.png */; };
@@ -247,6 +246,10 @@
 		E2A34AD51854F242006446F4 /* CoE_152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A34ACB1854F242006446F4 /* CoE_152x152.png */; };
 		E2A34ADC1854F630006446F4 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A34ADA1854F62F006446F4 /* Default-Landscape~ipad.png */; };
 		E2A34ADD1854F630006446F4 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A34ADB1854F630006446F4 /* Default-Landscape@2x~ipad.png */; };
+		E2B2368518C266AD00A63BC3 /* 002_csiga1new.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2B2368218C266AD00A63BC3 /* 002_csiga1new.mp3 */; };
+		E2B2368618C266AD00A63BC3 /* 002_csiga2new.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2B2368318C266AD00A63BC3 /* 002_csiga2new.mp3 */; };
+		E2B2368718C266AD00A63BC3 /* 002_csiga3new.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2B2368418C266AD00A63BC3 /* 002_csiga3new.mp3 */; };
+		E2B2368918C28C4E00A63BC3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B2368818C28C4E00A63BC3 /* CoreMotion.framework */; };
 		E2B364E1189867DA000BC192 /* FeedbackScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B364E0189867DA000BC192 /* FeedbackScreenViewController.m */; };
 		E2B469FD186F321F0063647F /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B469FC186F321F0063647F /* NavigationController.m */; };
 		E2BDA97218B55CBB00DA52C1 /* Inori_text1_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BDA96618B55CBB00DA52C1 /* Inori_text1_bg.png */; };
@@ -276,9 +279,6 @@
 		E2C6B0DA185E3E79002862EA /* 001_rakozelithazra2OK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0B8185E3E79002862EA /* 001_rakozelithazra2OK.mp3 */; };
 		E2C6B0DB185E3E79002862EA /* 001_rakozelithazraOK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0B9185E3E79002862EA /* 001_rakozelithazraOK.mp3 */; };
 		E2C6B0DC185E3E79002862EA /* 002_Atm_tengermadarszel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BA185E3E79002862EA /* 002_Atm_tengermadarszel.mp3 */; };
-		E2C6B0DD185E3E79002862EA /* 002_csiga1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BB185E3E79002862EA /* 002_csiga1.mp3 */; };
-		E2C6B0DE185E3E79002862EA /* 002_csiga2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BC185E3E79002862EA /* 002_csiga2.mp3 */; };
-		E2C6B0DF185E3E79002862EA /* 002_csiga3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BD185E3E79002862EA /* 002_csiga3.mp3 */; };
 		E2C6B0E0185E3E79002862EA /* 002_hajohajo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BE185E3E79002862EA /* 002_hajohajo.mp3 */; };
 		E2C6B0E1185E3E79002862EA /* 002_wooohooooK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0BF185E3E79002862EA /* 002_wooohooooK.mp3 */; };
 		E2C6B0E3185E3E79002862EA /* 003_hosszuhalak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6B0C1185E3E79002862EA /* 003_hosszuhalak.mp3 */; };
@@ -304,7 +304,6 @@
 		E2C6F327189E98B500FA167D /* 04 Story of the Sea 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F320189E98B500FA167D /* 04 Story of the Sea 4.mp3 */; };
 		E2C6F328189E98B500FA167D /* 05 Story of the Sea 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F321189E98B500FA167D /* 05 Story of the Sea 5.mp3 */; };
 		E2C6F329189E98B500FA167D /* 06 Story of the Sea 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F322189E98B500FA167D /* 06 Story of the Sea 6.mp3 */; };
-		E2C6F32A189E98B500FA167D /* 07 Story of the Sea 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F323189E98B500FA167D /* 07 Story of the Sea 7.mp3 */; };
 		E2C6F32C189E9ED200FA167D /* ScreenNarrations.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F32B189E9ED200FA167D /* ScreenNarrations.txt */; };
 		E2C6F33F189F032C00FA167D /* 002_ohajooK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F32F189F032C00FA167D /* 002_ohajooK.mp3 */; };
 		E2C6F340189F032C00FA167D /* 005_edeny_novekszik_1OK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2C6F330189F032C00FA167D /* 005_edeny_novekszik_1OK.mp3 */; };
@@ -328,6 +327,20 @@
 		E2CE7DFC14FE265B00FB442A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CE7DDD14FE265B00FB442A /* Foundation.framework */; };
 		E2CE7E0414FE265B00FB442A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2CE7E0214FE265B00FB442A /* InfoPlist.strings */; };
 		E2CE7E0714FE265B00FB442A /* CoEOffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CE7E0614FE265B00FB442A /* CoEOffTests.m */; };
+		E2DBA96118C3723400F372D8 /* StaticScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DBA95F18C3723400F372D8 /* StaticScreenViewController.m */; };
+		E2DBA96218C3723400F372D8 /* StaticScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96018C3723400F372D8 /* StaticScreenViewController.xib */; };
+		E2DBA96718C3742700F372D8 /* hint-7.png in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96318C3742700F372D8 /* hint-7.png */; };
+		E2DBA96818C3742700F372D8 /* hint-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96418C3742700F372D8 /* hint-7@2x.png */; };
+		E2DBA96918C3742700F372D8 /* hint-8.png in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96518C3742700F372D8 /* hint-8.png */; };
+		E2DBA96A18C3742700F372D8 /* hint-8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96618C3742700F372D8 /* hint-8@2x.png */; };
+		E2DBA96D18C376CC00F372D8 /* 07 Story of the Sea 7a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96B18C376CC00F372D8 /* 07 Story of the Sea 7a.mp3 */; };
+		E2DBA96E18C376CC00F372D8 /* 08 Story of the Sea 7b.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96C18C376CC00F372D8 /* 08 Story of the Sea 7b.mp3 */; };
+		E2DBA97018C3BC5600F372D8 /* 09 Story of the Sea 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA96F18C3BC5600F372D8 /* 09 Story of the Sea 8.mp3 */; };
+		E2DBA97518C3C8EA00F372D8 /* Inori_AmihanIntroducesHimselfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DBA97418C3C8EA00F372D8 /* Inori_AmihanIntroducesHimselfViewController.m */; };
+		E2DBA97818C3C96C00F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DBA97718C3C96C00F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController.m */; };
+		E2DBA97C18C3E74B00F372D8 /* Copy of bg-dark-1k.png in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA97B18C3E74B00F372D8 /* Copy of bg-dark-1k.png */; };
+		E2DBA97F18C3E7DA00F372D8 /* bg-light.png in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA97D18C3E7DA00F372D8 /* bg-light.png */; };
+		E2DBA98018C3E7DA00F372D8 /* bg-light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2DBA97E18C3E7DA00F372D8 /* bg-light@2x.png */; };
 		E2E0B75C151661CE009C0F56 /* GiantJellyfishArrivedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E0B75A151661CE009C0F56 /* GiantJellyfishArrivedViewController.m */; };
 		E2E0B75D151661CE009C0F56 /* GiantJellyfishArrivedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E0B75B151661CE009C0F56 /* GiantJellyfishArrivedViewController.xib */; };
 		E2E5F8B1187DFCED00996FA5 /* 002_hello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E2E5F8B0187DFCED00996FA5 /* 002_hello.mp3 */; };
@@ -335,8 +348,8 @@
 		E2EF913516AC11CC00FEA0A3 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF913416AC11CC00FEA0A3 /* CoreImage.framework */; };
 		E2F38184189B165E00FF03EA /* menu_set-top-g.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F38182189B165E00FF03EA /* menu_set-top-g.png */; };
 		E2F38185189B165E00FF03EA /* menu_set-top-w.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F38183189B165E00FF03EA /* menu_set-top-w.png */; };
-		E2F9C84C18999E7000E60D0F /* StaticScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F9C84A18999E7000E60D0F /* StaticScreenViewController.m */; };
-		E2F9C84D18999E7000E60D0F /* StaticScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F9C84B18999E7000E60D0F /* StaticScreenViewController.xib */; };
+		E2F9C84C18999E7000E60D0F /* StaticScreenTemporaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F9C84A18999E7000E60D0F /* StaticScreenTemporaryViewController.m */; };
+		E2F9C84D18999E7000E60D0F /* StaticScreenTemporaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F9C84B18999E7000E60D0F /* StaticScreenTemporaryViewController.xib */; };
 		E2F9C84F1899A93C00E60D0F /* StaticScreenTexts.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2F9C84E1899A93C00E60D0F /* StaticScreenTexts.txt */; };
 		E2FA493D16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FA493B16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m */; };
 		E2FA493E16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2FA493C16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.xib */; };
@@ -601,6 +614,10 @@
 		E2A34ACB1854F242006446F4 /* CoE_152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoE_152x152.png; sourceTree = "<group>"; };
 		E2A34ADA1854F62F006446F4 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		E2A34ADB1854F630006446F4 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		E2B2368218C266AD00A63BC3 /* 002_csiga1new.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_csiga1new.mp3; path = "Music, SFX/002_csiga1new.mp3"; sourceTree = "<group>"; };
+		E2B2368318C266AD00A63BC3 /* 002_csiga2new.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_csiga2new.mp3; path = "Music, SFX/002_csiga2new.mp3"; sourceTree = "<group>"; };
+		E2B2368418C266AD00A63BC3 /* 002_csiga3new.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_csiga3new.mp3; path = "Music, SFX/002_csiga3new.mp3"; sourceTree = "<group>"; };
+		E2B2368818C28C4E00A63BC3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E2B364DF189867DA000BC192 /* FeedbackScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackScreenViewController.h; sourceTree = "<group>"; };
 		E2B364E0189867DA000BC192 /* FeedbackScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackScreenViewController.m; sourceTree = "<group>"; };
 		E2B469FB186F321F0063647F /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
@@ -632,9 +649,6 @@
 		E2C6B0B8185E3E79002862EA /* 001_rakozelithazra2OK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 001_rakozelithazra2OK.mp3; path = "Music, SFX/001_rakozelithazra2OK.mp3"; sourceTree = "<group>"; };
 		E2C6B0B9185E3E79002862EA /* 001_rakozelithazraOK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 001_rakozelithazraOK.mp3; path = "Music, SFX/001_rakozelithazraOK.mp3"; sourceTree = "<group>"; };
 		E2C6B0BA185E3E79002862EA /* 002_Atm_tengermadarszel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_Atm_tengermadarszel.mp3; path = "Music, SFX/002_Atm_tengermadarszel.mp3"; sourceTree = "<group>"; };
-		E2C6B0BB185E3E79002862EA /* 002_csiga1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_csiga1.mp3; path = "Music, SFX/002_csiga1.mp3"; sourceTree = "<group>"; };
-		E2C6B0BC185E3E79002862EA /* 002_csiga2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_csiga2.mp3; path = "Music, SFX/002_csiga2.mp3"; sourceTree = "<group>"; };
-		E2C6B0BD185E3E79002862EA /* 002_csiga3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_csiga3.mp3; path = "Music, SFX/002_csiga3.mp3"; sourceTree = "<group>"; };
 		E2C6B0BE185E3E79002862EA /* 002_hajohajo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_hajohajo.mp3; path = "Music, SFX/002_hajohajo.mp3"; sourceTree = "<group>"; };
 		E2C6B0BF185E3E79002862EA /* 002_wooohooooK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_wooohooooK.mp3; path = "Music, SFX/002_wooohooooK.mp3"; sourceTree = "<group>"; };
 		E2C6B0C1185E3E79002862EA /* 003_hosszuhalak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 003_hosszuhalak.mp3; path = "Music, SFX/003_hosszuhalak.mp3"; sourceTree = "<group>"; };
@@ -660,7 +674,6 @@
 		E2C6F320189E98B500FA167D /* 04 Story of the Sea 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "04 Story of the Sea 4.mp3"; path = "Narration/04 Story of the Sea 4.mp3"; sourceTree = "<group>"; };
 		E2C6F321189E98B500FA167D /* 05 Story of the Sea 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "05 Story of the Sea 5.mp3"; path = "Narration/05 Story of the Sea 5.mp3"; sourceTree = "<group>"; };
 		E2C6F322189E98B500FA167D /* 06 Story of the Sea 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "06 Story of the Sea 6.mp3"; path = "Narration/06 Story of the Sea 6.mp3"; sourceTree = "<group>"; };
-		E2C6F323189E98B500FA167D /* 07 Story of the Sea 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "07 Story of the Sea 7.mp3"; path = "Narration/07 Story of the Sea 7.mp3"; sourceTree = "<group>"; };
 		E2C6F32B189E9ED200FA167D /* ScreenNarrations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ScreenNarrations.txt; path = Resources/ScreenNarrations.txt; sourceTree = SOURCE_ROOT; };
 		E2C6F32F189F032C00FA167D /* 002_ohajooK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 002_ohajooK.mp3; path = "Music, SFX/002_ohajooK.mp3"; sourceTree = "<group>"; };
 		E2C6F330189F032C00FA167D /* 005_edeny_novekszik_1OK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 005_edeny_novekszik_1OK.mp3; path = "Music, SFX/005_edeny_novekszik_1OK.mp3"; sourceTree = "<group>"; };
@@ -690,6 +703,23 @@
 		E2CE7E0314FE265B00FB442A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2CE7E0514FE265B00FB442A /* CoEOffTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoEOffTests.h; sourceTree = "<group>"; };
 		E2CE7E0614FE265B00FB442A /* CoEOffTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoEOffTests.m; sourceTree = "<group>"; };
+		E2DBA95E18C3723400F372D8 /* StaticScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticScreenViewController.h; sourceTree = "<group>"; };
+		E2DBA95F18C3723400F372D8 /* StaticScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticScreenViewController.m; sourceTree = "<group>"; };
+		E2DBA96018C3723400F372D8 /* StaticScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticScreenViewController.xib; sourceTree = "<group>"; };
+		E2DBA96318C3742700F372D8 /* hint-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-7.png"; path = "Resources/Hints/hint-7.png"; sourceTree = "<group>"; };
+		E2DBA96418C3742700F372D8 /* hint-7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-7@2x.png"; path = "Resources/Hints/hint-7@2x.png"; sourceTree = "<group>"; };
+		E2DBA96518C3742700F372D8 /* hint-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-8.png"; path = "Resources/Hints/hint-8.png"; sourceTree = "<group>"; };
+		E2DBA96618C3742700F372D8 /* hint-8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hint-8@2x.png"; path = "Resources/Hints/hint-8@2x.png"; sourceTree = "<group>"; };
+		E2DBA96B18C376CC00F372D8 /* 07 Story of the Sea 7a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "07 Story of the Sea 7a.mp3"; path = "Narration/07 Story of the Sea 7a.mp3"; sourceTree = "<group>"; };
+		E2DBA96C18C376CC00F372D8 /* 08 Story of the Sea 7b.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "08 Story of the Sea 7b.mp3"; path = "Narration/08 Story of the Sea 7b.mp3"; sourceTree = "<group>"; };
+		E2DBA96F18C3BC5600F372D8 /* 09 Story of the Sea 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "09 Story of the Sea 8.mp3"; path = "Narration/09 Story of the Sea 8.mp3"; sourceTree = "<group>"; };
+		E2DBA97318C3C8EA00F372D8 /* Inori_AmihanIntroducesHimselfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_AmihanIntroducesHimselfViewController.h; sourceTree = "<group>"; };
+		E2DBA97418C3C8EA00F372D8 /* Inori_AmihanIntroducesHimselfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_AmihanIntroducesHimselfViewController.m; sourceTree = "<group>"; };
+		E2DBA97618C3C96C00F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_InoriAndAmihanDiscussingOnTheBeachViewController.h; sourceTree = "<group>"; };
+		E2DBA97718C3C96C00F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_InoriAndAmihanDiscussingOnTheBeachViewController.m; sourceTree = "<group>"; };
+		E2DBA97B18C3E74B00F372D8 /* Copy of bg-dark-1k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Copy of bg-dark-1k.png"; path = "Resources/Images/Inori_AmihanIntroducesHimselfViewController/Copy of bg-dark-1k.png"; sourceTree = "<group>"; };
+		E2DBA97D18C3E7DA00F372D8 /* bg-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-light.png"; path = "Resources/Images/Inori_InoriAndAmihanDiscussingOnTheBeachViewController/bg-light.png"; sourceTree = "<group>"; };
+		E2DBA97E18C3E7DA00F372D8 /* bg-light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-light@2x.png"; path = "Resources/Images/Inori_InoriAndAmihanDiscussingOnTheBeachViewController/bg-light@2x.png"; sourceTree = "<group>"; };
 		E2E0B759151661CE009C0F56 /* GiantJellyfishArrivedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiantJellyfishArrivedViewController.h; sourceTree = "<group>"; };
 		E2E0B75A151661CE009C0F56 /* GiantJellyfishArrivedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiantJellyfishArrivedViewController.m; sourceTree = "<group>"; };
 		E2E0B75B151661CE009C0F56 /* GiantJellyfishArrivedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiantJellyfishArrivedViewController.xib; sourceTree = "<group>"; };
@@ -698,9 +728,9 @@
 		E2EF913416AC11CC00FEA0A3 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		E2F38182189B165E00FF03EA /* menu_set-top-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_set-top-g.png"; path = "Resources/Images/menu_set-top-g.png"; sourceTree = "<group>"; };
 		E2F38183189B165E00FF03EA /* menu_set-top-w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_set-top-w.png"; path = "Resources/Images/menu_set-top-w.png"; sourceTree = "<group>"; };
-		E2F9C84918999E7000E60D0F /* StaticScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticScreenViewController.h; sourceTree = "<group>"; };
-		E2F9C84A18999E7000E60D0F /* StaticScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticScreenViewController.m; sourceTree = "<group>"; };
-		E2F9C84B18999E7000E60D0F /* StaticScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticScreenViewController.xib; sourceTree = "<group>"; };
+		E2F9C84918999E7000E60D0F /* StaticScreenTemporaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticScreenTemporaryViewController.h; sourceTree = "<group>"; };
+		E2F9C84A18999E7000E60D0F /* StaticScreenTemporaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticScreenTemporaryViewController.m; sourceTree = "<group>"; };
+		E2F9C84B18999E7000E60D0F /* StaticScreenTemporaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticScreenTemporaryViewController.xib; sourceTree = "<group>"; };
 		E2F9C84E1899A93C00E60D0F /* StaticScreenTexts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StaticScreenTexts.txt; path = ../Resources/StaticScreenTexts.txt; sourceTree = "<group>"; };
 		E2FA493A16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inori_FatherAndSonSwimInTheSeaViewController.h; sourceTree = "<group>"; };
 		E2FA493B16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inori_FatherAndSonSwimInTheSeaViewController.m; sourceTree = "<group>"; };
@@ -715,8 +745,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B2368918C28C4E00A63BC3 /* CoreMotion.framework in Frameworks */,
 				E2E67F80186F646E00B455A5 /* QuartzCore.framework in Frameworks */,
-				E2A34AC11854EC2E006446F4 /* StoreKit.framework in Frameworks */,
 				E2EF913516AC11CC00FEA0A3 /* CoreImage.framework in Frameworks */,
 				E210840F152CDC4500E4A492 /* AVFoundation.framework in Frameworks */,
 				E2CE7DDC14FE265B00FB442A /* UIKit.framework in Frameworks */,
@@ -813,6 +843,10 @@
 				E212A44C18B3ED4F0011108E /* hint-5@2x.png */,
 				E212A44D18B3ED4F0011108E /* hint-6.png */,
 				E212A44E18B3ED4F0011108E /* hint-6@2x.png */,
+				E2DBA96318C3742700F372D8 /* hint-7.png */,
+				E2DBA96418C3742700F372D8 /* hint-7@2x.png */,
+				E2DBA96518C3742700F372D8 /* hint-8.png */,
+				E2DBA96618C3742700F372D8 /* hint-8@2x.png */,
 			);
 			name = Hints;
 			sourceTree = "<group>";
@@ -947,13 +981,16 @@
 		E25374171894358400EFC01B /* MiniEpisode01 */ = {
 			isa = PBXGroup;
 			children = (
-				E2F9C7FB18999C5000E60D0F /* StaticScreen */,
+				E2DBA95D18C371DA00F372D8 /* StaticScreen */,
+				E2F9C7FB18999C5000E60D0F /* StaticScreenTemporary */,
 				E20A7C3B16C99D660036748A /* Screen01 */,
 				E222CEDF1524B8C8008FA949 /* Screen02 */,
 				E2FA48F616D431660044816A /* Screen03 */,
 				E2537415189434FC00EFC01B /* Screen04 */,
 				E27309461700FD50003B955F /* Screen05 */,
 				E23C2DFA15189B1D00281164 /* Screen06 */,
+				E2DBA97118C3C86100F372D8 /* Screen07 */,
+				E2DBA97218C3C86D00F372D8 /* Screen08 */,
 				E2B364DE189867A5000BC192 /* FeedbackScreen */,
 				E253742818943EEB00EFC01B /* FontsViewController */,
 			);
@@ -971,6 +1008,8 @@
 				E2FA494516D43AA60044816A /* Inori_FatherAndSonPatchUpAFishnetViewController */,
 				E27309271700FCF6003B955F /* Inori_MothersBigBowlViewController */,
 				E258B93F151663F80094C4F7 /* GiantJellyfishArrivedViewController */,
+				E2DBA97918C3CFFB00F372D8 /* Inori_AmihanIntroducesHimselfViewController */,
+				E2DBA97A18C3D00600F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController */,
 				E2BDA98018B579F100DA52C1 /* FeedbackForm */,
 			);
 			name = MiniEpisode01;
@@ -1126,9 +1165,9 @@
 				E2C6B0B8185E3E79002862EA /* 001_rakozelithazra2OK.mp3 */,
 				E2C6B0B9185E3E79002862EA /* 001_rakozelithazraOK.mp3 */,
 				E2C6B0BA185E3E79002862EA /* 002_Atm_tengermadarszel.mp3 */,
-				E2C6B0BB185E3E79002862EA /* 002_csiga1.mp3 */,
-				E2C6B0BC185E3E79002862EA /* 002_csiga2.mp3 */,
-				E2C6B0BD185E3E79002862EA /* 002_csiga3.mp3 */,
+				E2B2368218C266AD00A63BC3 /* 002_csiga1new.mp3 */,
+				E2B2368318C266AD00A63BC3 /* 002_csiga2new.mp3 */,
+				E2B2368418C266AD00A63BC3 /* 002_csiga3new.mp3 */,
 				E2C6B0BE185E3E79002862EA /* 002_hajohajo.mp3 */,
 				E2E5F8B0187DFCED00996FA5 /* 002_hello.mp3 */,
 				E2C6F32F189F032C00FA167D /* 002_ohajooK.mp3 */,
@@ -1183,7 +1222,9 @@
 				E2C6F320189E98B500FA167D /* 04 Story of the Sea 4.mp3 */,
 				E2C6F321189E98B500FA167D /* 05 Story of the Sea 5.mp3 */,
 				E2C6F322189E98B500FA167D /* 06 Story of the Sea 6.mp3 */,
-				E2C6F323189E98B500FA167D /* 07 Story of the Sea 7.mp3 */,
+				E2DBA96B18C376CC00F372D8 /* 07 Story of the Sea 7a.mp3 */,
+				E2DBA96C18C376CC00F372D8 /* 08 Story of the Sea 7b.mp3 */,
+				E2DBA96F18C3BC5600F372D8 /* 09 Story of the Sea 8.mp3 */,
 			);
 			name = Narration;
 			sourceTree = "<group>";
@@ -1223,6 +1264,7 @@
 		E2CE7DDA14FE265B00FB442A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2B2368818C28C4E00A63BC3 /* CoreMotion.framework */,
 				E2E67F7F186F646E00B455A5 /* QuartzCore.framework */,
 				E2A34AC01854EC2E006446F4 /* StoreKit.framework */,
 				E210840E152CDC4400E4A492 /* AVFoundation.framework */,
@@ -1297,16 +1339,61 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		E2F9C7FB18999C5000E60D0F /* StaticScreen */ = {
+		E2DBA95D18C371DA00F372D8 /* StaticScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E2F9C84E1899A93C00E60D0F /* StaticScreenTexts.txt */,
+				E2DBA95E18C3723400F372D8 /* StaticScreenViewController.h */,
+				E2DBA95F18C3723400F372D8 /* StaticScreenViewController.m */,
+				E2DBA96018C3723400F372D8 /* StaticScreenViewController.xib */,
+			);
+			name = StaticScreen;
+			sourceTree = "<group>";
+		};
+		E2DBA97118C3C86100F372D8 /* Screen07 */ = {
+			isa = PBXGroup;
+			children = (
+				E2DBA97318C3C8EA00F372D8 /* Inori_AmihanIntroducesHimselfViewController.h */,
+				E2DBA97418C3C8EA00F372D8 /* Inori_AmihanIntroducesHimselfViewController.m */,
+			);
+			name = Screen07;
+			sourceTree = "<group>";
+		};
+		E2DBA97218C3C86D00F372D8 /* Screen08 */ = {
+			isa = PBXGroup;
+			children = (
+				E2DBA97618C3C96C00F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController.h */,
+				E2DBA97718C3C96C00F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController.m */,
+			);
+			name = Screen08;
+			sourceTree = "<group>";
+		};
+		E2DBA97918C3CFFB00F372D8 /* Inori_AmihanIntroducesHimselfViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2DBA97B18C3E74B00F372D8 /* Copy of bg-dark-1k.png */,
+			);
+			name = Inori_AmihanIntroducesHimselfViewController;
+			sourceTree = "<group>";
+		};
+		E2DBA97A18C3D00600F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2DBA97D18C3E7DA00F372D8 /* bg-light.png */,
+				E2DBA97E18C3E7DA00F372D8 /* bg-light@2x.png */,
+			);
+			name = Inori_InoriAndAmihanDiscussingOnTheBeachViewController;
+			sourceTree = "<group>";
+		};
+		E2F9C7FB18999C5000E60D0F /* StaticScreenTemporary */ = {
 			isa = PBXGroup;
 			children = (
 				E2C6F32B189E9ED200FA167D /* ScreenNarrations.txt */,
-				E2F9C84E1899A93C00E60D0F /* StaticScreenTexts.txt */,
-				E2F9C84918999E7000E60D0F /* StaticScreenViewController.h */,
-				E2F9C84A18999E7000E60D0F /* StaticScreenViewController.m */,
-				E2F9C84B18999E7000E60D0F /* StaticScreenViewController.xib */,
+				E2F9C84918999E7000E60D0F /* StaticScreenTemporaryViewController.h */,
+				E2F9C84A18999E7000E60D0F /* StaticScreenTemporaryViewController.m */,
+				E2F9C84B18999E7000E60D0F /* StaticScreenTemporaryViewController.xib */,
 			);
-			name = StaticScreen;
+			name = StaticScreenTemporary;
 			sourceTree = "<group>";
 		};
 		E2FA48F616D431660044816A /* Screen03 */ = {
@@ -1387,6 +1474,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "No company - private person";
+				TargetAttributes = {
+					E2CE7DD614FE265B00FB442A = {
+						DevelopmentTeam = 63G2F6DU28;
+					};
+				};
 			};
 			buildConfigurationList = E2CE7DD114FE265B00FB442A /* Build configuration list for PBXProject "CoE" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1414,6 +1506,7 @@
 				E224384618AFD46B00B47C47 /* 11_1k_fazek-4.png in Resources */,
 				E224378318AFCFA300B47C47 /* 1_2k_keret.png in Resources */,
 				E2CE7DE614FE265B00FB442A /* InfoPlist.strings in Resources */,
+				E2B2368718C266AD00A63BC3 /* 002_csiga3new.mp3 in Resources */,
 				E224381E18AFD24200B47C47 /* 6-7_1k_nagyhullam9.png in Resources */,
 				E224384B18AFD46B00B47C47 /* 11_1k_fazek-6@2x.png in Resources */,
 				E2CE7DEF14FE265B00FB442A /* MainStoryboard.storyboard in Resources */,
@@ -1422,10 +1515,12 @@
 				E2C6B0E0185E3E79002862EA /* 002_hajohajo.mp3 in Resources */,
 				E224385318AFD46B00B47C47 /* 11_1k_hozzavalo-4@2x.png in Resources */,
 				E22437F718AFD24200B47C47 /* 6-7_1k_leny3@2x.png in Resources */,
-				E2F9C84D18999E7000E60D0F /* StaticScreenViewController.xib in Resources */,
+				E2F9C84D18999E7000E60D0F /* StaticScreenTemporaryViewController.xib in Resources */,
 				E224377A18AFCFA300B47C47 /* 1_2k_alap@2x.png in Resources */,
 				E22438CA18AFDF0C00B47C47 /* 12_1k_hatter_meduza_5@x2.png in Resources */,
 				E22438C318AFDF0C00B47C47 /* 12_1k_hinar_1.png in Resources */,
+				E2B2368518C266AD00A63BC3 /* 002_csiga1new.mp3 in Resources */,
+				E2DBA96A18C3742700F372D8 /* hint-8@2x.png in Resources */,
 				E224383E18AFD46B00B47C47 /* 11_1k_fazek-0.png in Resources */,
 				E22437F018AFD24200B47C47 /* 6-7_1k_kishal_raj_2.png in Resources */,
 				E2F9C84F1899A93C00E60D0F /* StaticScreenTexts.txt in Resources */,
@@ -1452,10 +1547,10 @@
 				E22437A618AFD10500B47C47 /* 4_1k_hullam_2.png in Resources */,
 				E224381418AFD24200B47C47 /* 6-7_1k_nagyhullam4.png in Resources */,
 				E22438D718AFDF0C00B47C47 /* 12_1k_hal6.png in Resources */,
-				E2C6B0DF185E3E79002862EA /* 002_csiga3.mp3 in Resources */,
 				E2C6B0F2185E3E79002862EA /* 006_melytenger.mp3 in Resources */,
 				E224378818AFCFA300B47C47 /* 1_2k_rizsfold-ejszaka@2x.png in Resources */,
 				E2C6F347189F032C00FA167D /* 005_Marketok.mp3 in Resources */,
+				E2DBA96D18C376CC00F372D8 /* 07 Story of the Sea 7a.mp3 in Resources */,
 				E2C6B0E7185E3E79002862EA /* 004_Atm_hullamszelmadarhang.mp3 in Resources */,
 				E2A34AD01854F242006446F4 /* CoE_72x72.png in Resources */,
 				E2C6B0DC185E3E79002862EA /* 002_Atm_tengermadarszel.mp3 in Resources */,
@@ -1495,10 +1590,12 @@
 				E22438B918AFDF0C00B47C47 /* 12_1k_hinar_6.png in Resources */,
 				E2C6B0D8185E3E79002862EA /* 001_ima.mp3 in Resources */,
 				E22437F918AFD24200B47C47 /* 6-7_1k_leny4@2x.png in Resources */,
+				E2DBA96918C3742700F372D8 /* hint-8.png in Resources */,
 				E22437A518AFD10500B47C47 /* 4_1k_hullam_1@2x.png in Resources */,
 				E224380518AFD24200B47C47 /* 6-7_1k_leny10@2x.png in Resources */,
 				E224378518AFCFA300B47C47 /* 1_2k_riszfoldalap.png in Resources */,
 				E2C6F33F189F032C00FA167D /* 002_ohajooK.mp3 in Resources */,
+				E2DBA97F18C3E7DA00F372D8 /* bg-light.png in Resources */,
 				E224380418AFD24200B47C47 /* 6-7_1k_leny10.png in Resources */,
 				E224385918AFD46B00B47C47 /* 11_1k_hozzavalo-7@2x.png in Resources */,
 				E224380A18AFD24200B47C47 /* 6-7_1k_leny13.png in Resources */,
@@ -1515,10 +1612,10 @@
 				E224385A18AFD46B00B47C47 /* 11_1k_tanyer.png in Resources */,
 				E2BDA97D18B55CBB00DA52C1 /* Inori_text6_bg@2x.png in Resources */,
 				E2C6B0EF185E3E79002862EA /* 006_hal5.mp3 in Resources */,
-				E2C6F32A189E98B500FA167D /* 07 Story of the Sea 7.mp3 in Resources */,
 				E22438B618AFDF0C00B47C47 /* 12_1k_hullamok@x2.png in Resources */,
 				E22437FD18AFD24200B47C47 /* 6-7_1k_leny6@2x.png in Resources */,
 				E2C6F328189E98B500FA167D /* 05 Story of the Sea 5.mp3 in Resources */,
+				E2DBA98018C3E7DA00F372D8 /* bg-light@2x.png in Resources */,
 				E22437AA18AFD10500B47C47 /* 4_1k_hullam_4.png in Resources */,
 				E2A34ACF1854F242006446F4 /* CoE_58x58.png in Resources */,
 				E22438B718AFDF0C00B47C47 /* 12_1k_hullamok.png in Resources */,
@@ -1534,6 +1631,7 @@
 				E212A47218B41A9C0011108E /* 005_food7mix.mp3 in Resources */,
 				E22437F318AFD24200B47C47 /* 6-7_1k_leny1@2x.png in Resources */,
 				E212A47118B41A9C0011108E /* 005_food6mix.mp3 in Resources */,
+				E2DBA97C18C3E74B00F372D8 /* Copy of bg-dark-1k.png in Resources */,
 				E224380718AFD24200B47C47 /* 6-7_1k_leny11@2x.png in Resources */,
 				E212A43F18B3EBA40011108E /* 8_1k_dune.png in Resources */,
 				E22437A918AFD10500B47C47 /* 4_1k_hullam_3@2x.png in Resources */,
@@ -1636,6 +1734,7 @@
 				E2C6B0D7185E3E79002862EA /* 001_foarizsteaFXzene.mp3 in Resources */,
 				E2C6F329189E98B500FA167D /* 06 Story of the Sea 6.mp3 in Resources */,
 				E2BDA97A18B55CBB00DA52C1 /* Inori_text5_bg.png in Resources */,
+				E2DBA96718C3742700F372D8 /* hint-7.png in Resources */,
 				E224381918AFD24200B47C47 /* 6-7_1k_nagyhullam6@2x.png in Resources */,
 				E224387218AFD51300B47C47 /* 9_1k_part.png in Resources */,
 				E224381618AFD24200B47C47 /* 6-7_1k_nagyhullam5.png in Resources */,
@@ -1645,6 +1744,8 @@
 				E2BDA98618B57A7E00DA52C1 /* Inori_screen_feedback_logo@2x.png in Resources */,
 				E22438C918AFDF0C00B47C47 /* 12_1k_hatter_meduza_6.png in Resources */,
 				E22437F418AFD24200B47C47 /* 6-7_1k_leny2.png in Resources */,
+				E2DBA97018C3BC5600F372D8 /* 09 Story of the Sea 8.mp3 in Resources */,
+				E2DBA96218C3723400F372D8 /* StaticScreenViewController.xib in Resources */,
 				E22438D918AFDF0C00B47C47 /* 12_1k_hal4.png in Resources */,
 				E2A34ADC1854F630006446F4 /* Default-Landscape~ipad.png in Resources */,
 				E22437ED18AFD24200B47C47 /* 6-7_1k_inori@2x.png in Resources */,
@@ -1654,12 +1755,14 @@
 				E22437FC18AFD24200B47C47 /* 6-7_1k_leny6.png in Resources */,
 				E212A45718B3ED4F0011108E /* hint-4.png in Resources */,
 				E22437EA18AFD24200B47C47 /* 6-7_1k_apa.png in Resources */,
+				E2DBA96818C3742700F372D8 /* hint-7@2x.png in Resources */,
 				E2C6B0EE185E3E79002862EA /* 006_hal4.mp3 in Resources */,
 				E224381118AFD24200B47C47 /* 6-7_1k_nagyhullam2@2x.png in Resources */,
 				E224384D18AFD46B00B47C47 /* 11_1k_hozzavalo-1@2x.png in Resources */,
 				E2C6F345189F032C00FA167D /* 005_edeny_novekszik_6OK.mp3 in Resources */,
 				E224381518AFD24200B47C47 /* 6-7_1k_nagyhullam4@2x.png in Resources */,
 				E2C6F344189F032C00FA167D /* 005_edeny_novekszik_5OK.mp3 in Resources */,
+				E2DBA96E18C376CC00F372D8 /* 08 Story of the Sea 7b.mp3 in Resources */,
 				E212A46F18B41A9C0011108E /* 005_food4mix.mp3 in Resources */,
 				E22437EF18AFD24200B47C47 /* 6-7_1k_kishal_raj_1@2x.png in Resources */,
 				E273094B1700FD7A003B955F /* Inori_MothersBigBowlViewController.xib in Resources */,
@@ -1667,12 +1770,10 @@
 				E224381718AFD24200B47C47 /* 6-7_1k_nagyhullam5@2x.png in Resources */,
 				E22438B418AFDF0C00B47C47 /* 12_1k_meduza_fej@x2.png in Resources */,
 				E2C6B0D6185E3E79002862EA /* 001_foarizstea.mp3 in Resources */,
-				E2C6B0DE185E3E79002862EA /* 002_csiga2.mp3 in Resources */,
 				E224386E18AFD51300B47C47 /* 9_1k_hal2.png in Resources */,
 				E22438DC18AFDF0C00B47C47 /* 12_1k_hal1.png in Resources */,
 				E22438C618AFDF0C00B47C47 /* 12_1k_hatter_meduza_7@x2.png in Resources */,
 				E224380318AFD24200B47C47 /* 6-7_1k_leny9@2x.png in Resources */,
-				E2C6B0DD185E3E79002862EA /* 002_csiga1.mp3 in Resources */,
 				E22438CF18AFDF0C00B47C47 /* 12_1k_hatter_meduza_3.png in Resources */,
 				E2A34AD51854F242006446F4 /* CoE_152x152.png in Resources */,
 				E224381C18AFD24200B47C47 /* 6-7_1k_nagyhullam8.png in Resources */,
@@ -1683,6 +1784,7 @@
 				E22437AC18AFD10500B47C47 /* 4_1k_inori_all.png in Resources */,
 				E22438B218AFDF0C00B47C47 /* 12_1k_meduza_kar_1@x2.png in Resources */,
 				E224385718AFD46B00B47C47 /* 11_1k_hozzavalo-6@2x.png in Resources */,
+				E2B2368618C266AD00A63BC3 /* 002_csiga2new.mp3 in Resources */,
 				E22437A418AFD10500B47C47 /* 4_1k_hullam_1.png in Resources */,
 				E22438C218AFDF0C00B47C47 /* 12_1k_hinar_1@x2.png in Resources */,
 				E22437A018AFD10500B47C47 /* 4_1k_alap.png in Resources */,
@@ -1756,17 +1858,20 @@
 				E2CE7DE814FE265B00FB442A /* main.m in Sources */,
 				E2CE7DEC14FE265B00FB442A /* AppDelegate.m in Sources */,
 				E2CE7DF214FE265B00FB442A /* ViewController.m in Sources */,
+				E2DBA97818C3C96C00F372D8 /* Inori_InoriAndAmihanDiscussingOnTheBeachViewController.m in Sources */,
 				E2657B32185DE13C0099018E /* IntroScreenViewController.m in Sources */,
 				E2E0B75C151661CE009C0F56 /* GiantJellyfishArrivedViewController.m in Sources */,
 				E222CEE31524B90C008FA949 /* Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.m in Sources */,
 				E2B469FD186F321F0063647F /* NavigationController.m in Sources */,
+				E2DBA97518C3C8EA00F372D8 /* Inori_AmihanIntroducesHimselfViewController.m in Sources */,
 				E236A8361860F671003A1B04 /* FontsViewController.m in Sources */,
 				E2B364E1189867DA000BC192 /* FeedbackScreenViewController.m in Sources */,
 				E20A7C3F16C99D8B0036748A /* Inori_InorisFatherIsPrayingViewController.m in Sources */,
 				E2FA493D16D434620044816A /* Inori_FatherAndSonSwimInTheSeaViewController.m in Sources */,
-				E2F9C84C18999E7000E60D0F /* StaticScreenViewController.m in Sources */,
+				E2F9C84C18999E7000E60D0F /* StaticScreenTemporaryViewController.m in Sources */,
 				E2FA494316D43A8F0044816A /* Inori_FatherAndSonPatchUpAFishnetViewController.m in Sources */,
 				E23C51B116D6C989000D5958 /* CommonLibrary.m in Sources */,
+				E2DBA96118C3723400F372D8 /* StaticScreenViewController.m in Sources */,
 				E273094A1700FD7A003B955F /* Inori_MothersBigBowlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1888,11 +1993,13 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoE/CoE-Prefix.pch";
 				INFOPLIST_FILE = "CoE/CoE-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = CoE;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1902,11 +2009,13 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoE/CoE-Prefix.pch";
 				INFOPLIST_FILE = "CoE/CoE-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = CoE;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

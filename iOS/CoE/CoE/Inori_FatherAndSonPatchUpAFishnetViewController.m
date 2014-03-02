@@ -14,6 +14,10 @@
 #define NET_MOVING_CLOCK_CHANGE_INCREMENT     1.01
 #define NET_MOVING_CLOCK_MAX                  10.00
 
+#define ACCELERATOR_UPDATE_FREQUENCY            50.0//20.0
+#define ACCELERATOR_FILTER_CUTOFF_FREQUENCY     100.0//100.0
+#define NET_ACCELERATION_MAX                    0.1667  // approximately 15 degree - 15/90=0.16667
+
 #define WAVING_FISH_TIMER_CLOCK_INTERVAL         0.02
 #define WAVING_FISH_TIMER_CLOCK_CHANGE           1.00
 #define WAVING_FISH_TIMER_CLOCK_SHIFT_AT_START   60.00
@@ -519,11 +523,47 @@
     }
 }
 
+- (void)startMotionManager;
+{
+    double dt = 1.0 / ACCELERATOR_FILTER_CUTOFF_FREQUENCY;
+    double RC = 1.0 / ACCELERATOR_UPDATE_FREQUENCY;
+    alphaValue = dt / (dt + RC);
+
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.accelerometerUpdateInterval  = 1.0/ACCELERATOR_UPDATE_FREQUENCY;
+    if (motionManager.accelerometerAvailable) {
+        NSLog(@"Accelerometer avaliable");
+        queue = [NSOperationQueue currentQueue];
+        [motionManager startAccelerometerUpdatesToQueue:queue
+                                            withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                                                CMAcceleration acceleration = accelerometerData.acceleration;
+                                                CGFloat valueX = -1.0*acceleration.y;  // -1 <=  x,y,z => 1
+                                                netAccelerationY=valueX*alphaValue+netAccelerationY*(1.0-alphaValue);
+                                            }];
+        
+    }
+}
+
 -(void)screen09NetMovingActionMethod;
 {
     [self netMovingTimerClockNextStep];
     
-    CGAffineTransform newTransform = CGAffineTransformMakeRotation(netMovingTimerClock/180*M_PI);
+    CGFloat newDegree = -(netAccelerationY*0.9);
+/*
+    if (newDegree<-NET_ACCELERATION_MAX)
+    {
+        newDegree=-NET_ACCELERATION_MAX;
+    }
+    if (newDegree>NET_ACCELERATION_MAX)
+    {
+        newDegree=NET_ACCELERATION_MAX;
+    }
+  */  
+//    NSLog([NSString stringWithFormat:@"%f ,%f",newDegree, netAccelerationY ]);
+    
+    newDegree = newDegree + netMovingTimerClock/180*M_PI;
+    
+    CGAffineTransform newTransform = CGAffineTransformMakeRotation(newDegree);
     
     [screen09NetImageView setTransform:newTransform];
 }
@@ -649,6 +689,8 @@
     fish3InteractionFound=false;
     fish4InteractionFound=false;
     fish5InteractionFound=false;
+    
+    [self startMotionManager];
 }
 
 - (void)viewDidDisappear:(BOOL)animated;
@@ -677,6 +719,9 @@
 
     [self.view removeFromSuperview];
     self.view = nil;
+    
+    [motionManager stopAccelerometerUpdates];
+    motionManager = nil;
 }
 
 - (void)didReceiveMemoryWarning

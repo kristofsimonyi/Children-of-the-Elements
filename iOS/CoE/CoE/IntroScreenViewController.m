@@ -32,7 +32,7 @@
     mainViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 
     //For the continuous music we need to pass the current introMusic as backgroundMusic of ViewController.
-    mainViewController.nextViewController=101;
+    mainViewController.nextViewController=113;
     mainViewController.musicIsOn=YES;
 
     [viewControllers replaceObjectAtIndex:0 withObject:mainViewController];

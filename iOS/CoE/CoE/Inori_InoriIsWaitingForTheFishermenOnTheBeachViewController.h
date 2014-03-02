@@ -17,7 +17,7 @@
     CGAffineTransform smallShipOriginalTransform, bigShipOriginalTransform;
 
     AVAudioPlayer *backgroundMusic, *narration;
-    AVAudioPlayer *sfxInori, *sfxBoatsAreClose, *sfxBoat, *sfxSnail;
+    AVAudioPlayer *sfxInori, *sfxBoatsAreClose, *sfxBoat, *sfxSnail1, *sfxSnail2, *sfxSnail3;
     CGFloat boatsAreCloseVolumePercentage;
     
     BOOL snailInteractionFound, inoriInteractionFound, shipsInteractionFound;

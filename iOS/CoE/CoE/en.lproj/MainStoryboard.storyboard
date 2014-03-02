@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="eS3-dX-Cgf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="eS3-dX-Cgf">
     <dependencies>
         <deployment defaultVersion="1280" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -121,6 +121,219 @@ Take one minute to give us feedback about your experience.</string>
             </objects>
             <point key="canvasLocation" x="705" y="-137"/>
         </scene>
+        <!--Inori Amihan Introduces Himself View Controller-->
+        <scene sceneID="gpR-oc-kTm">
+            <objects>
+                <viewController storyboardIdentifier="Inori_AmihanIntroducesHimselfViewController" id="PgS-Zq-qU3" customClass="Inori_AmihanIntroducesHimselfViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QEK-C4-y2h">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="RmQ-Al-ew7" userLabel="BackgroundImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="menu_set-top-w.png" id="SUF-4g-sVl" userLabel="HintImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="qah-F5-Zmt" userLabel="MenuImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="Hld-bb-kcT" userLabel="PreviousScreenControl" customClass="UIControl">
+                                <rect key="frame" x="0.0" y="2" width="86" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zZQ-Vt-dQz" appends="YES" id="4FW-5X-5eg"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="PGm-Gi-piS" userLabel="NarrationControl" customClass="UIControl">
+                                <rect key="frame" x="199" y="0.0" width="81" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9gW-c5-xxL" appends="YES" id="Bhx-y3-sG8"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="vvR-DI-JU1" userLabel="MusicControl" customClass="UIControl">
+                                <rect key="frame" x="302" y="11" width="82" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v57-K9-3l2" appends="YES" id="QbO-ap-d3i"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="a0h-QI-aGN" userLabel="HintControl" customClass="UIControl">
+                                <rect key="frame" x="505" y="-1" width="80" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lXX-tE-6LL" appends="YES" id="0x2-yW-6mA"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="Bp4-HK-T5w" userLabel="NextScreenControl" customClass="UIControl">
+                                <rect key="frame" x="933" y="0.0" width="92" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Wtb-LI-uKl" appends="YES" id="ygE-nx-Wpv"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="RmQ-Al-ew7" id="B4l-l9-twI"/>
+                        <outlet property="hintLayerImageView" destination="SUF-4g-sVl" id="9EK-nn-8PW"/>
+                        <outlet property="menuImageView" destination="qah-F5-Zmt" id="0RT-U3-lYS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIL-TA-gGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v57-K9-3l2" userLabel="MusicButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="musicButtonTapped:" destination="PgS-Zq-qU3" id="96E-ah-6P8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Wtb-LI-uKl" userLabel="NextButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="nextScreenButtonTouched:" destination="PgS-Zq-qU3" id="A2C-YQ-MY1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zZQ-Vt-dQz" userLabel="PreviousButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="previousScreenButtonTouched:" destination="PgS-Zq-qU3" id="9EC-7V-nAz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9gW-c5-xxL" userLabel="NarrationButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="narrationButtonTapped:" destination="PgS-Zq-qU3" id="oF3-RE-aO6"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="lXX-tE-6LL" userLabel="HintsButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="hintButtonTapped:" destination="PgS-Zq-qU3" id="KqX-M0-JO2"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="705" y="736"/>
+        </scene>
+        <!--Inori Inori And Amihan Discussing On The Beach View Controller-->
+        <scene sceneID="Tyt-XD-fgN">
+            <objects>
+                <viewController storyboardIdentifier="Inori_InoriAndAmihanDiscussingOnTheBeachViewController" id="wQS-pE-KZU" customClass="Inori_InoriAndAmihanDiscussingOnTheBeachViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oie-fy-7fl">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="VfW-Y5-8Nl" userLabel="BackgroundImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.88999998569488525" contentMode="scaleToFill" image="menu_set-top-w.png" id="Jj3-4Z-ai6" userLabel="MenuImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="menu_set-top-w.png" id="4QR-6Z-svU" userLabel="HintImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="yTZ-Cl-2Uu" userLabel="PreviousScreenControl" customClass="UIControl">
+                                <rect key="frame" x="-2" y="0.0" width="86" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1RO-Dp-Rwc" appends="YES" id="fUz-Sn-jVp"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="odV-lz-mYA" userLabel="NarrationControl" customClass="UIControl">
+                                <rect key="frame" x="195" y="0.0" width="95" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="m5X-YT-w3h" appends="YES" id="48T-VJ-qxq"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="A3Y-gG-4g4" userLabel="MusicControl" customClass="UIControl">
+                                <rect key="frame" x="298" y="-1" width="81" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ppP-je-t3I" appends="YES" id="QaT-cQ-CsC"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="5ua-Pb-84C" userLabel="HintControl" customClass="UIControl">
+                                <rect key="frame" x="505" y="-2" width="80" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nyw-IF-AZQ" appends="YES" id="t24-Zn-1Ci"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="YHr-0x-9KK" userLabel="NextScreenControl" customClass="UIControl">
+                                <rect key="frame" x="929" y="0.0" width="95" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nmK-J0-lZT" appends="YES" id="Lez-Vg-wmZ"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="VfW-Y5-8Nl" id="mau-3l-Phk"/>
+                        <outlet property="hintLayerImageView" destination="4QR-6Z-svU" id="RTf-HU-CQu"/>
+                        <outlet property="menuImageView" destination="Jj3-4Z-ai6" id="7af-9N-Sdn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BjW-YT-4aN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ppP-je-t3I" userLabel="MusicButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="musicButtonTapped:" destination="wQS-pE-KZU" id="Xwe-TP-N2I"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nyw-IF-AZQ" userLabel="HintButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="hintButtonTapped:" destination="wQS-pE-KZU" id="Fbu-8f-Ixz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="m5X-YT-w3h" userLabel="NarrationButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="narrationButtonTapped:" destination="wQS-pE-KZU" id="cZ8-lg-Ymw"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1RO-Dp-Rwc" userLabel="PreviousButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="previousScreenButtonTouched:" destination="wQS-pE-KZU" id="QTE-UX-F1o"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nmK-J0-lZT" userLabel="NextButtonTap Gesture Recognizer">
+                    <connections>
+                        <action selector="nextScreenButtonTouched:" destination="wQS-pE-KZU" id="XJX-Os-R5D"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="711" y="1636"/>
+        </scene>
         <!--Intro Screen View Controller-->
         <scene sceneID="z4u-fN-21e">
             <objects>
@@ -181,6 +394,7 @@ Take one minute to give us feedback about your experience.</string>
     </scenes>
     <resources>
         <image name="Default-Landscape.png" width="1024" height="768"/>
+        <image name="menu_set-top-w.png" width="1024" height="768"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

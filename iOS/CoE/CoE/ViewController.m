@@ -21,15 +21,21 @@
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN12 112
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN13 113
 #define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN14 114
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN15 115
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN16 116
+#define NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN17 117
 
 #import "ViewController.h"
 #import "StaticScreenViewController.h"
+#import "StaticScreenTemporaryViewController.h"
 #import "Inori_InorisFatherIsPrayingViewController.h"
 #import "Inori_InoriIsWaitingForTheFishermenOnTheBeachViewController.h"
 #import "Inori_FatherAndSonSwimInTheSeaViewController.h"
 #import "Inori_FatherAndSonPatchUpAFishnetViewController.h"
 #import "Inori_MothersBigBowlViewController.h"
 #import "GiantJellyfishArrivedViewController.h"
+#import "Inori_AmihanIntroducesHimselfViewController.h"
+#import "Inori_InoriAndAmihanDiscussingOnTheBeachViewController.h"
 #import "FeedbackScreenViewController.h"
 
 @implementation ViewController
@@ -52,7 +58,7 @@
     {
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN01:
         {
-            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            StaticScreenTemporaryViewController *newScreenViewController=[[StaticScreenTemporaryViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -74,7 +80,7 @@
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN03:
         {
-            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            StaticScreenTemporaryViewController *newScreenViewController=[[StaticScreenTemporaryViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -96,7 +102,7 @@
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN05:
         {
-            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            StaticScreenTemporaryViewController *newScreenViewController=[[StaticScreenTemporaryViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -118,7 +124,7 @@
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN07:
         {
-            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            StaticScreenTemporaryViewController *newScreenViewController=[[StaticScreenTemporaryViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -140,7 +146,7 @@
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN09:
         {
-            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            StaticScreenTemporaryViewController *newScreenViewController=[[StaticScreenTemporaryViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -162,7 +168,7 @@
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN11:
         {
-            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            StaticScreenTemporaryViewController *newScreenViewController=[[StaticScreenTemporaryViewController alloc] init];
             
             [self.navigationController pushViewController:newScreenViewController animated:NO];
             
@@ -183,6 +189,52 @@
         }
             
         case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN13:
+        {
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN14:
+        {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+            Inori_AmihanIntroducesHimselfViewController *newScreenViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"Inori_AmihanIntroducesHimselfViewController"];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN15:
+        {
+            StaticScreenViewController *newScreenViewController=[[StaticScreenViewController alloc] init];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN16:
+        {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+            Inori_InoriAndAmihanDiscussingOnTheBeachViewController *newScreenViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"Inori_InoriAndAmihanDiscussingOnTheBeachViewController"];
+            
+            [self.navigationController pushViewController:newScreenViewController animated:NO];
+            
+            newScreenViewController=nil;
+            
+            break;
+        }
+            
+        case NEXT_SCREEN_INORI_MINIEPISODE01_SCREEN17:
         {
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
             Inori_FatherAndSonSwimInTheSeaViewController *newScreenViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"FeedbackScreen"];
