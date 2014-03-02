@@ -80,7 +80,21 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 	
 	var currentElement
 
-	
+	///set rotationAxis android
+		if(_targetElement.animation){
+
+
+			if(_targetElement.animation.rotateAxis){
+
+				var axis = this.setAxis(_targetElement.animation.rotateAxis)
+				_targetElement.properties.anchorPoint = axis;
+				_targetElement.animation.anchorPoint = axis;
+
+				alert("anchorPoint Tester is --->" + _targetElement.animation.rotate)
+
+			}
+			
+		}
 
 	switch(_targetElement.type){
 
@@ -90,6 +104,9 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 
 			currentElement = Ti.UI.createImageView(_targetElement.properties)
 			currentElement.itemCount = _itemsLength 
+
+
+
 
 			///attach load event
 				currentElement.addEventListener('load',function(e){
@@ -154,12 +171,21 @@ StorySlide.prototype.animations = function(_animData) {
 
 	var matrix = Ti.UI.create2DMatrix()
 
-	if(_animData.rotate){
-		//alert("rotation" + _animData.rotate)
-		matrix = matrix.rotate(90);
-		_animData.transform = matrix
+	///set rotationAxis Animation
+		if(_animData.rotateAxis){
+			_animData.anchorPoint = this.setAxis(_animData.rotateAxis)
+			alert("rotation Axis B")
+		}
 
-	}
+	/// rotations
+		if(_animData.rotate){
+			//alert("rotation" + _animData.rotate)
+			matrix = matrix.rotate(90);
+			_animData.transform = matrix
+
+		}
+
+	_animData.rotateAxis	
 	_animData.rotate = null;
 	_animData.scale = null;
 	
@@ -228,15 +254,57 @@ StorySlide.prototype.slideLoaded = function(e) {
 			element.fireEvent('animarSlide')
 	}
 
-
-
 };
 
 
 
 
+///////////////////// TOOLS /////////
 
 
+StorySlide.prototype.setAxis = function(_axis) {
+
+	var point;
+
+	/*
+
+	top left : anchorPoint:{x:0,y:0} 
+	top right : anchorPoint:{x:1,y:0}
+	center : anchorPoint:{x:0.5,y:0.5}
+	bottom left : anchorPoint:{x:0,y:1} 
+	bottom right : anchorPoint:{x:1,y:1}
+	*/
+	switch(_axis){
+		case "topCenter":
+			point = {x:0.5, y:0};
+			break;
+		case "topLeft":
+			point = {x:0, y:0};
+			break;
+		case "topRight":
+			point = {x:1,y:0};
+			break;
+		case "center":
+			point = {x:0.5,y:0.5};
+			break;
+		case "bottomLeft":
+			point = {x:0,y:1};
+			break;
+		case "bottomRight":
+			point = {x:1,y:1};
+			break;
+		case "bottomCenter":
+			point = {x:0.5,y:1};
+			break;
+		default:
+			this.errorDetect("no valid axis value")
+	}
+
+
+	return point
+
+};
+ 
 
 /// verifies values
 StorySlide.prototype.errorDetect = function(_alertMessage) {

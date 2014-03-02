@@ -36,12 +36,12 @@ function Controller() {
         planetObject.top = "75%";
     }
     function playLoopAudio() {
+        alert("FIX - BOOKSHELF:98");
         player = Ti.Media.createSound({
             url: "/audio/storyOfTheSea.mp3",
             looping: true
         });
         player.looping = true;
-        player.play();
     }
     function stopLoopAudio() {
         Ti.App.fireEvent("stopSlideShow");
