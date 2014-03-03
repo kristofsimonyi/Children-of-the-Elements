@@ -115,7 +115,7 @@
                     "right": 0,
                     "top": 0,
                     "width": "711dip",
-                    "height": "533dip"                    
+                    "height": "533dip"
                 },
                 "animation": {
                     "rotate": -5,
@@ -131,48 +131,110 @@
                     "left": 81,
                     "top": 257,
                     "width": "335dip",
-                    "height": "357dip"                    
+                    "height": "357dip"
                 },
-                "images":[
-                   "inori_screen2_inori_sit.png",
-                   "inori_screen2_inori_stand.png"
+                "images": [
+                    "inori_screen2_inori_sit.png",
+                    "inori_screen2_inori_stand.png"
                 ]
-
             }
         ]
     },
     {
-        "slideTitle": "SecondSlide",
+        "slideTitle": "03_undersea",
         "stageElements": [
             {
                 "type": "image",
                 "properties": {
-                    "image": "inori_screen1_cattle.png",
-                    "top": 0,
-                    "width": "100%",
-                    "height": "100%",
+                    "image": "inori_screen3_waves1.png",
                     "left": 0,
-                    "touchEnabled": false
+                    "top": 0,
+                    "width": "809dip",
+                    "height": "636dip"
+                },
+                "animation": {
+                    "duration": 2000,
+                    "top": "-15",
+                    "delay": 500,
+                    "repeat": 45,
+                    "autoreverse": "true"
                 }
             },
             {
                 "type": "image",
-                "alertOnClick": "Hi! i'm clickable",
                 "properties": {
-                    "image": "android.png",
+                    "image": "inori_screen3_waves2.png",
+                    "right": 0,
                     "top": 0,
-                    "width": "100%",
-                    "height": "100%",
-                    "opacity": 1,
-                    "left": 0
+                    "width": "654dip",
+                    "height": "768dip"
                 },
                 "animation": {
-                    "rotate": 10,
-                    "opacity": 0,
-                    "scale": 10,
-                    "duration": 3000,
-                    "repeat": 100,
-                    "delay": 12000
+                    "duration": 3500,
+                    "right": "-20",
+                    "top": "8",
+                    "repeat": 45,
+                    "autoreverse": "true"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen3_fishes1.png",
+                    "left": 166,
+                    "top": 370,
+                    "width": "741dip",
+                    "height": "442dip"
+                }, 
+                "animation": {
+                    "rotate": 179,
+                    "rotateAxis": "bottomCenter",
+                    "duration": 20000,
+                    "autoreverse":"true"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen3_fishes2.png",
+                    "left": 241,
+                    "top": 90,
+                    "width": "682dip",
+                    "height": "212dip"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen3_people_guy2.png",
+                    "left": 409,
+                    "top": 109,
+                    "width": "346dip",
+                    "height": "202dip"
+                },
+                "animation": {
+                    "duration": 2600,
+                    "right": "-20",
+                    "left": 399,
+                    "repeat": 45,
+                    "autoreverse": "true"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen3_people_inori.png",
+                    "left": 178,
+                    "top": 270,
+                    "width": "199dip",
+                    "height": "96dip"
+                },
+                "animation": {
+                    "duration": 3500,
+                    "left": 188,
+                    "top": 265,
+                    "repeat": 45,
+                    "autoreverse": "true"
                 }
             }
         ]
