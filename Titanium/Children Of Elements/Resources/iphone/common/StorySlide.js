@@ -12,6 +12,8 @@ function StorySlide(_slideData) {
     return this.mainView;
 }
 
+var Transition = require("/common/ItemTransition");
+
 StorySlide.prototype.mainView;
 
 StorySlide.prototype.animatedItems;
@@ -34,13 +36,11 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
         var axis = this.setAxis(_targetElement.animation.rotateAxis);
         _targetElement.properties.anchorPoint = axis;
         _targetElement.animation.anchorPoint = axis;
-        alert("anchorPoint Tester is --->" + _targetElement.animation.rotate);
     }
     switch (_targetElement.type) {
       case "image":
         _targetElement.properties.image = "/storyAssets/story1/" + _targetElement.properties.image;
         currentElement = Ti.UI.createImageView(_targetElement.properties);
-        currentElement.itemCount = _itemsLength;
         currentElement.addEventListener("load", function(e) {
             if (++e.source._parent.imageCount == e.source.itemCount) {
                 e.source._parent.fireEvent("story_slideImage_loaded");
@@ -49,9 +49,14 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
         });
         break;
 
+      case "transition":
+        currentElement = this.createTransition(_targetElement);
+        break;
+
       default:
         Ti.API.info("create single element, type not found");
     }
+    currentElement.itemCount = _itemsLength;
     if (_targetElement.animation) {
         var itemAnimation = this.animations(_targetElement.animation);
         currentElement._innerAnimation = itemAnimation;
@@ -64,14 +69,16 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
     return currentElement;
 };
 
+StorySlide.prototype.createTransition = function(_targetInfo) {
+    var transition = new Transition(_targetInfo);
+    return transition;
+};
+
 StorySlide.prototype.animations = function(_animData) {
     var matrix = Ti.UI.create2DMatrix();
-    if (_animData.rotateAxis) {
-        _animData.anchorPoint = this.setAxis(_animData.rotateAxis);
-        alert("rotation Axis B");
-    }
+    _animData.rotateAxis && (_animData.anchorPoint = this.setAxis(_animData.rotateAxis));
     if (_animData.rotate) {
-        matrix = matrix.rotate(90);
+        matrix = matrix.rotate(_animData.rotate);
         _animData.transform = matrix;
     }
     _animData.rotateAxis;

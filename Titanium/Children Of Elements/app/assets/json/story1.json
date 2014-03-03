@@ -38,7 +38,7 @@
                     "height": "738dip"
                 },
                 "animation": {
-                    "rotate": -10,
+                    "rotate": 40,
                     "rotateAxis": "topCenter",
                     "duration": 2500,
                     "repeat": 5,
@@ -96,12 +96,12 @@
         ]
     },
     {
-        "slideTitle": "SecondSlide",
+        "slideTitle": "02_Boats",
         "stageElements": [
             {
                 "type": "image",
                 "properties": {
-                    "image": "inori_screen2_background.jpg",
+                    "image": "inori_screen2_background.png",
                     "top": 0,
                     "width": "100%",
                     "height": "100%",
@@ -112,19 +112,32 @@
                 "type": "image",
                 "properties": {
                     "image": "inori_screen2_boats.png",
+                    "right": 0,
                     "top": 0,
-                    "width": "100%",
-                    "height": "100%",
-                    "opacity": 1,
-                    "left": 0
+                    "width": "711dip",
+                    "height": "533dip"                    
                 },
                 "animation": {
-                    "rotate": "180",
-                    "duration": 1000,
+                    "rotate": -5,
+                    "duration": 3000,
                     "repeat": 30,
-                    "autoreverse": "true",
-                    "delay": 8000
+                    "rotateAxis": "center",
+                    "autoreverse": "true"
                 }
+            },
+            {
+                "type": "transition",
+                "properties": {
+                    "left": 81,
+                    "top": 257,
+                    "width": "335dip",
+                    "height": "357dip"                    
+                },
+                "images":[
+                   "inori_screen2_inori_sit.png",
+                   "inori_screen2_inori_stand.png"
+                ]
+
             }
         ]
     },

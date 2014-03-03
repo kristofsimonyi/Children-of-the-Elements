@@ -4,6 +4,8 @@ Contiene y administra un slide
 return: a self contained slide
 */
 
+var Transition = require('/common/ItemTransition');
+
 function StorySlide(_slideData){
 	
 	// start animated array
@@ -90,8 +92,6 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 				_targetElement.properties.anchorPoint = axis;
 				_targetElement.animation.anchorPoint = axis;
 
-				alert("anchorPoint Tester is --->" + _targetElement.animation.rotate)
-
 			}
 			
 		}
@@ -103,10 +103,7 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 			_targetElement.properties.image = '/storyAssets/story1/'+ _targetElement.properties.image;
 
 			currentElement = Ti.UI.createImageView(_targetElement.properties)
-			currentElement.itemCount = _itemsLength 
-
-
-
+			
 
 			///attach load event
 				currentElement.addEventListener('load',function(e){
@@ -124,12 +121,22 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 					
 				})
 
+			break;
+		
+		case "transition":
 
+			currentElement = this.createTransition( _targetElement)
 
 			break;
+
 		default:
 			Ti.API.info("create single element, type not found");
 	}
+
+
+	///Attach common vars
+
+		currentElement.itemCount = _itemsLength 
 
 	///Attach Animations
 		if(_targetElement.animation){
@@ -162,6 +169,15 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 };
 
 
+StorySlide.prototype.createTransition = function(_targetInfo) {
+	
+	var transition = new Transition(_targetInfo);
+
+	return transition
+};
+
+
+
 /// asign animations based on map
 StorySlide.prototype.animations = function(_animData) {
 	
@@ -174,13 +190,12 @@ StorySlide.prototype.animations = function(_animData) {
 	///set rotationAxis Animation
 		if(_animData.rotateAxis){
 			_animData.anchorPoint = this.setAxis(_animData.rotateAxis)
-			alert("rotation Axis B")
 		}
 
 	/// rotations
 		if(_animData.rotate){
 			//alert("rotation" + _animData.rotate)
-			matrix = matrix.rotate(90);
+			matrix = matrix.rotate(_animData.rotate);
 			_animData.transform = matrix
 
 		}
