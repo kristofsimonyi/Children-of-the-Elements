@@ -185,12 +185,12 @@
                     "top": 370,
                     "width": "741dip",
                     "height": "442dip"
-                }, 
+                },
                 "animation": {
                     "rotate": 179,
                     "rotateAxis": "bottomCenter",
                     "duration": 20000,
-                    "autoreverse":"true"
+                    "autoreverse": "true"
                 }
             },
             {
@@ -235,6 +235,226 @@
                     "top": 265,
                     "repeat": 45,
                     "autoreverse": "true"
+                }
+            }
+        ]
+    },
+    {
+        "slideTitle": "04_net",
+        "stageElements": [
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen4_background.png",
+                    "left": 0,
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen4_fishes.png",
+                    "right": "-250",
+                    "top": 295,
+                    "width": "750dip",
+                    "height": "441dip"
+                },
+                "animation": {
+                    "duration": 45000,
+                    "right": "1300"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen4_net.png",
+                    "left": 0,
+                    "top": 208,
+                    "width": "997dip",
+                    "height": "560dip",
+                    "rotate": -8
+                },
+                "animation": {
+                    "rotate": 8,
+                    "rotateAxis": "topCenter",
+                    "duration": 2500,
+                    "repeat": 20,
+                    "autoreverse": "true"
+                }
+            }
+        ]
+    },
+    {
+        "slideTitle": "05_pot",
+        "stageElements": [
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen5_pot.png",
+                    "left": 0,
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen5_ingredients.png",
+                    "left": "-10",
+                    "top": "-10",
+                    "opacity": 0,
+                    "width": "130%",
+                    "height": "130%"
+                },
+                "animation": {
+                    "duration": 3000,
+                    "opacity": 1,
+                    "delay": 1500,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            }
+        ]
+    },
+    {
+        "slideTitle": "06_jellyfish",
+        "stageElements": [
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6_bkg.png",
+                    "left": 0,
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6_waves.png",
+                    "left": 0,
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6_seaweed.png",
+                    "left": 48,
+                    "bottom": 0,
+                    "width": "491",
+                    "height": "203"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6_fishCirle2.png",
+                    "left": "-431",
+                    "top": "349",
+                    "width": "1236",
+                    "height": "1158"
+                },
+                "animation": {
+                    "rotate": "170",
+                    "duration": 95000,
+                    "rotateAxis": "center"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6_fishCirle2.png",
+                    "left": "264",
+                    "top": "-770",
+                    "width": "1236",
+                    "height": "1158"
+                },
+                "animation": {
+                    "rotate": "170",
+                    "duration": 85000,
+                    "rotateAxis": "center"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6__jelly_bkgA.png",
+                    "left": "57",
+                    "top": "48",
+                    "width": "867",
+                    "height": "670"
+                },
+                "animation": {
+                    "rotate": "600",
+                    "duration": 50000,
+                    "rotateAxis": "center"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6__jelly_bkgB.png",
+                    "left": "56",
+                    "top": "378",
+                    "width": "919",
+                    "height": "281"
+                },
+                "animation": {
+                    "top": "380",
+                    "left": "68",
+                    "duration": 10000,
+                    "rotateAxis": "center",
+                    "autoreverse": "true"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6__jelly_bkgC.png",
+                    "left": "218",
+                    "top": "184",
+                    "width": "448",
+                    "height": "329"
+                },
+                "animation": {
+                    "left": "200",
+                    "top": "165",
+                    "duration": 8000,
+                    "repeat":50,
+                    "autoreverse": "true"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6__jelly_bkgD.png",
+                    "left": "284",
+                    "top": "38",
+                    "width": "412",
+                    "height": "235"
+                }
+            },
+            {
+                "type": "image",
+                "properties": {
+                    "image": "inori_screen6_jellyFishBig.png",
+                    "left": "-305",
+                    "top": "20",
+                    "width": "656",
+                    "height": "369"
+                },
+                 "animation": {
+                    "left": "729",
+                    "top": "710",
+                    "duration": 160000,
+                    "rotate":"15"
                 }
             }
         ]

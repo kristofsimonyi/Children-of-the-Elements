@@ -87,10 +87,6 @@ StoryNavigator.prototype.loadSlide = function(_slideID) {
 		}
 	
 	}
-
-	
-
-
 };
 
 
@@ -101,3 +97,5 @@ StoryNavigator.prototype.errorManager = function(_message) {
 
 
 module.exports = StoryNavigator;
+
+

@@ -39,11 +39,8 @@ function StorySlide(_slideData){
 }
 
 
-
 StorySlide.prototype.mainView;
 StorySlide.prototype.animatedItems;
- 
-
 
 
 /// parse the elements lists and add all elements to main View
@@ -67,7 +64,6 @@ StorySlide.prototype.buildElements = function() {
 		this.mainView.add(element);
 
 	};
-
 };
 
 
@@ -215,11 +211,6 @@ StorySlide.prototype.animations = function(_animData) {
 };
 
 
-
-
-
-
-
 /// start animation on slide
 StorySlide.prototype.animateSlide = function(e){
 
@@ -232,7 +223,8 @@ StorySlide.prototype.animateSlide = function(e){
 	};
 
 	e.source.removeEventListener('animarSlide', function(){});
-}
+};
+
 
 ///counts every loaded image
 StorySlide.prototype.slideLoaded = function(e) {
@@ -268,7 +260,6 @@ StorySlide.prototype.slideLoaded = function(e) {
 	if(!element.onStage){
 			element.fireEvent('animarSlide')
 	}
-
 };
 
 
@@ -317,7 +308,6 @@ StorySlide.prototype.setAxis = function(_axis) {
 
 
 	return point
-
 };
  
 
@@ -334,7 +324,6 @@ StorySlide.prototype.cleaner = function() {
 
 	// this function should track all images and remove them from memory
 };
-
 
 
 
