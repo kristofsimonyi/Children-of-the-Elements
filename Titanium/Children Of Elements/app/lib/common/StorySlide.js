@@ -113,7 +113,7 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 					}
 
 					
-
+					currentElement.touchEnabled = false;
 					
 				})
 
@@ -157,7 +157,7 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 			})
 		}else{
 
-			currentElement.touchEnabled = false;
+			//currentElement.touchEnabled = false;
 		}
 
 

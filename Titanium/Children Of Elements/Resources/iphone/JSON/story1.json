@@ -526,15 +526,14 @@
             {
             "type": "transition",
                 "properties": {
-                    "image": "Inori_screen7_inori_sitting.png",
                     "left":358,
                     "top": 144,
-                    "width": "266dip",
-                    "height": "401dip"
+                    "width": 266,
+                    "height": 401
                 },
                 "images": [
-                    "Inori_screen7_inori_sitting.png",
-                    "Inori_screen7_inori_stand.png"
+                    "inori_screen7_inori_sitting.png",
+                    "inori_screen7_inori_stand.png"
                 ]
             },
             {
@@ -606,7 +605,7 @@
                     "height": "427dip"
                 },
                 "animation": {
-                    "duration": 3000,
+                    "duration": 4000,
                     "left":628,
                     "delay":"1000"
                 }
@@ -615,14 +614,14 @@
             "type": "image",
                 "properties": {
                     "image": "Inori_screen8_inori.png",
-                    "left":377,
+                    "left":357,
                     "top": 270,
                     "width": "272dip",
                     "height": "429dip"
                 },
                 "animation": {
-                    "duration": 3000,
-                    "left":357,
+                    "duration": 4000,
+                    "left":377,
                     "delay":"1000"
                 }
             },
@@ -717,17 +716,6 @@
                 }
             }
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-
         ]
     }
     

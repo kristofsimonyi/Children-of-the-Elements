@@ -95,10 +95,10 @@ function setPlanet(){
  
 /// play sound on load
 function playLoopAudio(){
-	alert("FIX - BOOKSHELF:98")
+	//alert("FIX - BOOKSHELF:98")
 	player = Ti.Media.createSound({url:"/audio/storyOfTheSea.mp3", looping:true});
 	player.looping = true; 
-	//player.play();	
+	player.play();	
 }
 
 

@@ -1,6 +1,6 @@
 function ItemTransition(_transitionInfo) {
     this.transitionInfo = _transitionInfo;
-    return this.createSlide();
+    return this.createClickableSlide();
 }
 
 ItemTransition.prototype.transitionInfo;
@@ -10,6 +10,29 @@ ItemTransition.prototype.vierContainer;
 ItemTransition.prototype._slideContainer;
 
 ItemTransition.prototype._slideInterval;
+
+ItemTransition.prototype.createClickableSlide = function() {
+    var slideArray = this.parseImageArray(this.transitionInfo.images);
+    slideArray[0].opacity = 1;
+    this._slideContainer = Titanium.UI.createView(this.transitionInfo.properties);
+    this._slideContainer.touchEnabled = true;
+    this._slideContainer.add(slideArray[1]);
+    this._slideContainer.add(slideArray[0]);
+    this._slideContainer.addEventListener("click", function(e) {
+        var fadeIn = Titanium.UI.createAnimation({
+            opacity: 1,
+            duration: 6e3
+        });
+        var fadeOUT = Titanium.UI.createAnimation({
+            opacity: 0,
+            duration: 4e3
+        });
+        e.source.children[0].animate(fadeIn);
+        e.source.children[1].animate(fadeOUT);
+        e.source.removeEventListener("click", function() {});
+    });
+    return this._slideContainer;
+};
 
 ItemTransition.prototype.createSlide = function() {
     this._slideContainer = Titanium.UI.createView(this.transitionInfo.properties);
@@ -25,6 +48,7 @@ ItemTransition.prototype.createSlide = function() {
         imageItem.right = 0;
         imageItem.zIndex = 1;
         imageItem.opacity = 0;
+        imageItem.touchEnabled = "false";
         imageItem.id = "elemento" + [ i ];
         slideViews.push(imageItem);
     }
@@ -61,6 +85,26 @@ ItemTransition.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
         Ti.API.info("TOC");
         animationOUT.addEventListener("complete", reposition);
     }, 3200);
+};
+
+ItemTransition.prototype.parseImageArray = function(imageSlides) {
+    var slideViews = [];
+    for (var i = 0; imageSlides.length > i; i++) {
+        var imagePath = "/storyAssets/story1/" + imageSlides[i];
+        var imageItem = Ti.UI.createImageView({
+            image: imagePath
+        });
+        imageItem.width = Ti.UI.FILL;
+        imageItem.height = Ti.UI.FILL;
+        imageItem.bottom = 0;
+        imageItem.right = 0;
+        imageItem.zIndex = 1;
+        imageItem.opacity = 0;
+        imageItem.touchEnabled = false;
+        imageItem.id = "elemento" + [ i ];
+        slideViews.push(imageItem);
+    }
+    return slideViews;
 };
 
 module.exports = ItemTransition;

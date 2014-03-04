@@ -46,6 +46,7 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
                 e.source._parent.fireEvent("story_slideImage_loaded");
                 e.source._parent.imageCount = 0;
             }
+            currentElement.touchEnabled = false;
         });
         break;
 
@@ -65,7 +66,7 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
     if (_targetElement.alertOnClick) {
         currentElement._msg = _targetElement.alertOnClick;
         currentElement.addEventListener("click", function() {});
-    } else currentElement.touchEnabled = false;
+    }
     return currentElement;
 };
 

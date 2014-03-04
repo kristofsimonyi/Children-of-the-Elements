@@ -13,7 +13,7 @@ function ItemTransition(_transitionInfo) {
 	å*/
 	this.transitionInfo = _transitionInfo;
 
-	return this.createSlide();
+	return this.createClickableSlide() //this.createSlide();
 
 	
 }
@@ -23,25 +23,67 @@ ItemTransition.prototype.vierContainer;
 ItemTransition.prototype._slideContainer;
 ItemTransition.prototype._slideInterval;
 
+
+
+ItemTransition.prototype.createClickableSlide = function() {
+
+	var slideArray = this.parseImageArray(this.transitionInfo.images)
+	slideArray[0].opacity = 1
+
+	this._slideContainer =  Titanium.UI.createView(this.transitionInfo.properties);
+	this._slideContainer.touchEnabled = true
+
+
+	this._slideContainer.add(slideArray[1])
+	this._slideContainer.add(slideArray[0])
+
+
+	this._slideContainer.addEventListener("click", function(e){
+		//alert("yo bro!")
+		
+
+		var fadeIn = Titanium.UI.createAnimation({
+				opacity:1,
+				duration: 6000
+			});
+		
+		var fadeOUT = Titanium.UI.createAnimation({
+				opacity:0,
+				duration: 4000
+		});
+
+	
+		e.source.children[0].animate(fadeIn);
+		e.source.children[1].animate(fadeOUT);
+
+		e.source.removeEventListener('click', function(){})
+
+	})
+
+		//alert(slideArray[0].image)
+
+	return this._slideContainer
+};
+
+
+
 ItemTransition.prototype.createSlide = function() {
 
 	this._slideContainer =  Titanium.UI.createView(this.transitionInfo.properties);
 
 
 	//this._slideContainer.top=325;
-	//this._slideContainer.left=849;
-	/*
-	this._slideContainer.width = this.transitionInfo.properties.width; //'431dip'
-	this._slideContainer.height = this.transitionInfo.properties.height; //'426dip'
-	this._slideContainer.top = this.transitionInfo.properties.top; //'426dip'
-	this._slideContainer.left = this.transitionInfo.properties.top; //'426dip'
+		//this._slideContainer.left=849;
+		/*
+		this._slideContainer.width = this.transitionInfo.properties.width; //'431dip'
+		this._slideContainer.height = this.transitionInfo.properties.height; //'426dip'
+		this._slideContainer.top = this.transitionInfo.properties.top; //'426dip'
+		this._slideContainer.left = this.transitionInfo.properties.top; //'426dip'
 
-	this._slideContainer.borderColor = "#FF0000"
-	this._slideContainer.borderWidth = 5
-
+		this._slideContainer.borderColor = "#FF0000"
+		this._slideContainer.borderWidth = 5
 	*/
 	
-
 
 	var imageSlides = this.transitionInfo.images;
 	//["/bookshelf/bookshelf_imageslide_01.jpg", "/bookshelf/bookshelf_imageslide_02.jpg" , "/bookshelf/bookshelf_imageslide_03.jpg"]
@@ -60,6 +102,7 @@ ItemTransition.prototype.createSlide = function() {
 			imageItem.right = 0
 			imageItem.zIndex = 1
 			imageItem.opacity = 0
+			imageItem.touchEnabled = "false"
 
 			imageItem.id = "elemento"+ [i] 
 
@@ -145,4 +188,36 @@ ItemTransition.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 	},3200);
 };
 
+
+ItemTransition.prototype.parseImageArray = function(imageSlides){
+
+
+	var slideViews=[];
+
+	for (var i = 0; i < imageSlides.length; i++) {
+		
+
+		var imagePath = '/storyAssets/story1/'+ imageSlides[i];
+
+		var imageItem = Ti.UI.createImageView({image: imagePath });
+			imageItem.width =  Ti.UI.FILL //431
+			imageItem.height = Ti.UI.FILL //426
+			imageItem.bottom = 0
+			imageItem.right = 0
+			imageItem.zIndex = 1
+			imageItem.opacity = 0
+			imageItem.touchEnabled = false;
+
+			imageItem.id = "elemento"+ [i] 
+
+		///store slides in array
+		slideViews.push(imageItem);
+	};
+	
+	return slideViews;
+
+}
+
 module.exports = ItemTransition;
+
+
