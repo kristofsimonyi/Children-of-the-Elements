@@ -457,6 +457,280 @@
                     "rotate":"15"
                 }
             }
+
+        ]
+    },
+    {
+        "slideTitle": "07_enterAminah",
+        "stageElements": [
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen7_bkgSand.png",
+                    "left":0,
+                    "bottom": 0,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen7_wave3.png",
+                    "left":0,
+                    "bottom": 0,
+                    "width": "900dip",
+                    "height": "280dip"
+                },
+                "animation": {
+                    "left":"-30",
+                    "duration": 4500,
+                    "repeat": 55,
+                    "autoreverse": "true"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen7_wave2.png",
+                    "right":"-10",
+                    "bottom": 10,
+                    "width": "809dip",
+                    "height": "218dip"
+                },
+                "animation": {
+                    "right":"30",
+                    "duration": 5100,
+                    "repeat": 55,
+                    "autoreverse": "true",
+                    "delay":"500"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen7_wave1.png",
+                    "left":0,
+                    "bottom": 0,
+                    "width": "1024dip",
+                    "height": "210dip"
+                },
+                "animation": {
+                    "bottom": -10,
+                    "rotateAxis": "topCenter",
+                    "duration": 6000,
+                    "repeat": 55,
+                    "autoreverse": "true"
+                }
+            },
+            {
+            "type": "transition",
+                "properties": {
+                    "image": "Inori_screen7_inori_sitting.png",
+                    "left":358,
+                    "top": 144,
+                    "width": "266dip",
+                    "height": "401dip"
+                },
+                "images": [
+                    "Inori_screen7_inori_sitting.png",
+                    "Inori_screen7_inori_stand.png"
+                ]
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen7_cloud.png",
+                    "left":350,
+                    "top": 38,
+                    "width": "538dip",
+                    "height": "153dip"
+                },
+                "animation": {
+                    "left": 0,
+                    "duration": 25000,
+                    "repeat": 5,
+                    "autoreverse": "true",
+                    "delay":1800
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen7_amihan.png",
+                    "right":0,
+                    "top": 0,
+                    "width": "324dip",
+                    "height": "361dip"
+                },
+                "animation": {
+                    "rotate": 15,
+                    "rotateAxis": "topCenter",
+                    "duration": 3000,
+                    "repeat": 25,
+                    "autoreverse": "true"
+                }
+            }            
+        ]
+    },
+    {
+        "slideTitle": "08_friends",
+        "stageElements": [
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_bkg.png",
+                    "left":0,
+                    "top": 0,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_bamboo.png",
+                    "left":6,
+                    "top": 269,
+                    "width": "448dip",
+                    "height": "383dip"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_amihan.png",
+                    "left":638,
+                    "top": 262,
+                    "width": "294dip",
+                    "height": "427dip"
+                },
+                "animation": {
+                    "duration": 3000,
+                    "left":628,
+                    "delay":"1000"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_inori.png",
+                    "left":377,
+                    "top": 270,
+                    "width": "272dip",
+                    "height": "429dip"
+                },
+                "animation": {
+                    "duration": 3000,
+                    "left":357,
+                    "delay":"1000"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_blue_bubble.png",
+                    "left":735,
+                    "top": 16,
+                    "width": "253dip",
+                    "height": "257dip",
+                    "opacity":0
+                },
+                "animation": {
+                    "opacity":"1",
+                    "duration": 3000,
+                    "delay":"3000" 
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_bubble_green.png",
+                    "left":289,
+                    "top": 13,
+                    "width": 224,
+                    "height": 275,
+                    "opacity":0
+                },
+                "animation": {
+                    "opacity":"1",
+                    "duration": 3000,
+                    "delay":"3000"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_jelly_boat.png",
+                    "left":808,
+                    "top": 11,
+                    "width": "176dip",
+                    "height": "174dip",
+                    "opacity":0
+                },
+                "animation": {
+                    "opacity":"1",
+                    "duration": 3000,
+                    "delay":"4000"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_jellyfisn.png",
+                    "left":188,
+                    "top": 30,
+                    "width": "258dip",
+                    "height": "141dip",
+                    "opacity":0
+                },
+                "animation": {
+                    "opacity":"1",
+                    "duration": 3000,
+                    "delay":"4000"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_wave2.png",
+                    "left":0,
+                    "bottom": 0,
+                    "width": "893dip",
+                    "height": "157dip"
+                },
+                "animation": {
+                    "left": "-30",
+                    "duration": 8000,
+                    "repeat": 5,
+                    "autoreverse": "true"
+                }
+            },
+            {
+            "type": "image",
+                "properties": {
+                    "image": "Inori_screen8_wave_front.png",
+                    "left":0,
+                    "bottom": 0,
+                    "width": "1024dip",
+                    "height": "107dip"
+                }
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+
         ]
     }
+    
+    
 ]
+
