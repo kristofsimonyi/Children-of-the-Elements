@@ -369,7 +369,8 @@
 - (void) screen04SmallShipRockingAction;
 {
     smallShipRockingClock=smallShipRockingClock+smallShipRockingClockChange;
-    if ((smallShipRockingClock < SMALL_SHIP_ROTATE_LEFT)||(smallShipRockingClock > SMALL_SHIP_ROTATE_RIGHT)) {
+    if ((smallShipRockingClock < SMALL_SHIP_ROTATE_LEFT)||(smallShipRockingClock > SMALL_SHIP_ROTATE_RIGHT))
+    {
         smallShipRockingClockChange=-smallShipRockingClockChange;
     }
     [self setSmallShipRockingState];

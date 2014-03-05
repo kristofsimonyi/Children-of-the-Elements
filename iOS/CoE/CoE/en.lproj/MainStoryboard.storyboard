@@ -133,7 +133,47 @@ Take one minute to give us feedback about your experience.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="menu_set-top-w.png" id="SUF-4g-sVl" userLabel="HintImageView">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="4B5-ww-KXN" userLabel="Background2ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Yme-WA-nhg" userLabel="CloudImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="soS-zq-AR4" userLabel="Sand1ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="VGO-kw-Ewa" userLabel="Sand2ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="VPc-Eq-9pY" userLabel="InoriSittingImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nAL-c0-6Lg" userLabel="InoriStandingImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Nxy-De-CsV" userLabel="Wave1ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SGS-JR-ugw" userLabel="Wave2ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dZJ-Zr-2it" userLabel="WavesImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kGD-PK-VPv" userLabel="AmihanImageView">
+                                <rect key="frame" x="0.0" y="-768" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="SUF-4g-sVl" userLabel="HintImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -143,6 +183,24 @@ Take one minute to give us feedback about your experience.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="pE8-Gm-0di" userLabel="InoriControl" customClass="UIControl">
+                                <rect key="frame" x="369" y="264" width="157" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Nei-4r-d6g" appends="YES" id="Jfk-aD-aow"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="fi0-m5-Amt" userLabel="cloudControl" customClass="UIControl">
+                                <rect key="frame" x="500" y="72" width="473" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZfZ-4j-QMO" appends="YES" id="kJ5-lE-n80"/>
+                                </connections>
+                            </view>
                             <view contentMode="scaleToFill" id="Hld-bb-kcT" userLabel="PreviousScreenControl" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="2" width="86" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -193,9 +251,18 @@ Take one minute to give us feedback about your experience.</string>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
+                        <outlet property="amihanImageView" destination="kGD-PK-VPv" id="tSF-fd-KJq"/>
                         <outlet property="backgroundImageView" destination="RmQ-Al-ew7" id="B4l-l9-twI"/>
+                        <outlet property="backgroundImageView2" destination="4B5-ww-KXN" id="CEU-ib-QDl"/>
+                        <outlet property="cloudControl" destination="fi0-m5-Amt" id="NQf-BH-OnU"/>
+                        <outlet property="cloudImageView" destination="Yme-WA-nhg" id="n46-Ji-aKx"/>
                         <outlet property="hintLayerImageView" destination="SUF-4g-sVl" id="9EK-nn-8PW"/>
+                        <outlet property="inoriSittingImageView" destination="VPc-Eq-9pY" id="TGD-yM-Zm7"/>
+                        <outlet property="inoriStandingImageView" destination="nAL-c0-6Lg" id="icw-XU-Iu5"/>
                         <outlet property="menuImageView" destination="qah-F5-Zmt" id="0RT-U3-lYS"/>
+                        <outlet property="wave1ImageView" destination="Nxy-De-CsV" id="wvt-2z-0lu"/>
+                        <outlet property="wave2ImageView" destination="SGS-JR-ugw" id="bap-zQ-Kbt"/>
+                        <outlet property="wavesImagevView" destination="dZJ-Zr-2it" id="YMJ-74-lmc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIL-TA-gGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,6 +289,16 @@ Take one minute to give us feedback about your experience.</string>
                 <tapGestureRecognizer id="lXX-tE-6LL" userLabel="HintsButtonTap Gesture Recognizer">
                     <connections>
                         <action selector="hintButtonTapped:" destination="PgS-Zq-qU3" id="KqX-M0-JO2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Nei-4r-d6g" userLabel="InoriTap Gesture Recognizer">
+                    <connections>
+                        <action selector="inoriTapped:" destination="PgS-Zq-qU3" id="trd-pi-loC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZfZ-4j-QMO" userLabel="CloudTap Gesture Recognizer">
+                    <connections>
+                        <action selector="cloudTapped:" destination="PgS-Zq-qU3" id="Md3-1U-4wK"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
