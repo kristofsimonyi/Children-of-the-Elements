@@ -9,16 +9,23 @@
 	top:0
 },
 "#back":{
-	left:10,
-	top:10,
-	backgroundColor:"#182C9F"
+	left:0,
+	top:0,
+	width:107,
+	height:99,
+	backgroundImage:"/menu/button_prev.png"
 },
 "#next":{
-	right:10,
-	top:10,
-	backgroundColor:"#182C9F"
+	right:0,
+	top:0,
+	width:110,
+	height:100,
+	backgroundImage:"/menu/button_next.png"
+	
 },
 "#home":{
-	top:10,
-	backgroundColor:"#182C9F"
+	top:0,
+	width:98,
+	height:93,
+	backgroundImage:"/menu/bookshelf_navigator_home.png"
 }

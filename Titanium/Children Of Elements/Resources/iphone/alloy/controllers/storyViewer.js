@@ -38,28 +38,31 @@ function Controller() {
         id: "navBar"
     });
     $.__views.storyViewer.add($.__views.navBar);
-    $.__views.back = Ti.UI.createButton({
-        backgroundColor: "#182C9F",
-        left: 10,
-        top: 10,
-        title: "Back",
+    $.__views.back = Ti.UI.createView({
+        left: 0,
+        top: 0,
+        width: 107,
+        height: 99,
+        backgroundImage: "/menu/button_prev.png",
         id: "back"
     });
     $.__views.navBar.add($.__views.back);
     back ? $.__views.back.addEventListener("click", back) : __defers["$.__views.back!click!back"] = true;
-    $.__views.home = Ti.UI.createButton({
-        backgroundColor: "#182C9F",
-        top: 10,
-        title: "home",
+    $.__views.home = Ti.UI.createView({
+        top: 0,
+        width: 98,
+        height: 93,
+        backgroundImage: "/menu/bookshelf_navigator_home.png",
         id: "home"
     });
     $.__views.navBar.add($.__views.home);
     exitStory ? $.__views.home.addEventListener("click", exitStory) : __defers["$.__views.home!click!exitStory"] = true;
-    $.__views.next = Ti.UI.createButton({
-        backgroundColor: "#182C9F",
-        right: 10,
-        top: 10,
-        title: "next",
+    $.__views.next = Ti.UI.createView({
+        right: 0,
+        top: 0,
+        width: 110,
+        height: 100,
+        backgroundImage: "/menu/button_next.png",
         id: "next"
     });
     $.__views.navBar.add($.__views.next);

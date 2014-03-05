@@ -5,9 +5,9 @@
  
  		<View id="navBar">
 
-			<Button onClick="back" id="back"> Back </Button>
-			<Button onClick="exitStory" id="home"> home </Button>
-			<Button onClick="next" id="next"> next </Button>
+			<View onClick="back" id="back"></View>
+			<View onClick="exitStory" id="home"></View>
+			<View onClick="next" id="next"></View>
 
  		</View>
 
