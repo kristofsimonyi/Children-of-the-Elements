@@ -7,13 +7,13 @@
 //
 #define HINT_TIME                                       1.0
 
-#define CLOUD_FLOATING_SHIFT      25
-#define CLOUD_FLOAT_LEFT         -500
-#define CLOUD_FLOAT_RIGHT        500
+#define CLOUD_FLOATING_SHIFT                            25
+#define CLOUD_FLOAT_LEFT                                -500
+#define CLOUD_FLOAT_RIGHT                               500
 
 #define WAVE1_ORIG_CENTER                               512,384 //512,384
 #define CLOUD_NEW_CENTER                                1200,384
-#define AMIHAN_NEW_CENTER                               512,384
+#define AMIHAN_NEW_CENTER                               1024,-100
 #define WAVING_MAX_Y                                    75
 #define WAVING_ROTATION_STEP                            0.05
 #define WAVING_ROTATION_INCREMENT                       1.03
@@ -21,8 +21,13 @@
 
 #define BACKGROUND_TRANSITION_TIME                      3.0
 
+#define AMIHAN_ROTATE_LEFT                              -500
+#define AMIHAN_ROTATE_RIGHT                             500
+#define AMIHAN_ROTATE_SHIFT                             25
+
 #import "Inori_AmihanIntroducesHimselfViewController.h"
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface Inori_AmihanIntroducesHimselfViewController ()
 
@@ -148,6 +153,35 @@
     }];
     
     [cloudControl setEnabled:false];
+    
+    [self startAmihanRocking];
+}
+
+- (void) setAmihanRockingState;
+{
+    CGAffineTransform newTransform = CGAffineTransformRotate(amihanHangOriginalTransform,(1.00*amihanRockingClock/18000.00*M_PI));
+    [amihanImageView setTransform:newTransform];
+}
+
+-(void)amihanRockingAction;
+{
+    amihanRockingClock=amihanRockingClock+amihanRockingClockChange;
+    if ((amihanRockingClock < AMIHAN_ROTATE_LEFT)||(amihanRockingClock > AMIHAN_ROTATE_RIGHT)) {
+        amihanRockingClockChange=-amihanRockingClockChange;
+    }
+    [self setAmihanRockingState];
+}
+
+-(void)startAmihanRocking;
+{
+    amihanHangOriginalTransform=[amihanImageView transform];
+
+    amihanImageView.layer.anchorPoint = CGPointMake(1.0, -0.2);
+    
+    amihanRockingClock=0;
+    amihanRockingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(amihanRockingAction) userInfo:nil repeats:YES];
+    amihanRockingClockChange=AMIHAN_ROTATE_SHIFT;
+    [amihanRockingTimer fire];
 }
 
 -(void)startBackgroundMusic;

@@ -20,6 +20,10 @@
     CGFloat wavingClock, wavingClockChange, wavingClockMin, wavingClockMax, wavingClock2, wavingClockChange2, wavingClockMin2, wavingClockMax2;
     NSTimer *wavingTimer;
     BOOL isWavingUpward, isWavingUpward2;
+    
+    CGAffineTransform amihanHangOriginalTransform;
+    NSTimer *amihanRockingTimer;
+    CGFloat amihanRockingClock, amihanRockingClockChange;
 }
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView, *backgroundImageView2, *hintLayerImageView, *menuImageView, *cloudImageView;

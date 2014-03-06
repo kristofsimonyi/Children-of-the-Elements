@@ -170,7 +170,7 @@ Take one minute to give us feedback about your experience.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kGD-PK-VPv" userLabel="AmihanImageView">
-                                <rect key="frame" x="0.0" y="-768" width="1024" height="768"/>
+                                <rect key="frame" x="512" y="-1500" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" id="SUF-4g-sVl" userLabel="HintImageView">
@@ -260,6 +260,8 @@ Take one minute to give us feedback about your experience.</string>
                         <outlet property="inoriSittingImageView" destination="VPc-Eq-9pY" id="TGD-yM-Zm7"/>
                         <outlet property="inoriStandingImageView" destination="nAL-c0-6Lg" id="icw-XU-Iu5"/>
                         <outlet property="menuImageView" destination="qah-F5-Zmt" id="0RT-U3-lYS"/>
+                        <outlet property="sand2ImageView" destination="VGO-kw-Ewa" id="FMs-u7-MKo"/>
+                        <outlet property="sandImageView" destination="soS-zq-AR4" id="cPa-Ch-knF"/>
                         <outlet property="wave1ImageView" destination="Nxy-De-CsV" id="wvt-2z-0lu"/>
                         <outlet property="wave2ImageView" destination="SGS-JR-ugw" id="bap-zQ-Kbt"/>
                         <outlet property="wavesImagevView" destination="dZJ-Zr-2it" id="YMJ-74-lmc"/>
@@ -312,7 +314,55 @@ Take one minute to give us feedback about your experience.</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="VfW-Y5-8Nl" userLabel="BackgroundImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg-light.png" id="VfW-Y5-8Nl" userLabel="BackgroundImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="inori.png" id="Ujy-kb-9V1" userLabel="InoriImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="amihan.png" id="btM-YR-rGg" userLabel="AmihanImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bamboo.png" id="fTQ-1l-Lhi" userLabel="BambooImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="green-bubble.png" id="8bK-qt-yb5" userLabel="GreenBubbleImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blue-bubble.png" id="zKe-ST-dZC" userLabel="BlueBubbleImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="jellyfish.png" id="Bke-dE-fd8" userLabel="JellyfishImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_ship.png" id="xYy-Th-qKh" userLabel="ShipImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_sand.png" id="hb0-sH-3r3" userLabel="Sand1ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_sand2.png" id="doZ-ct-CrE" userLabel="Sand2ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_wave1.png" id="B91-m4-2Pn" userLabel="Wave1ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_wave2.png" id="XRy-z3-f66" userLabel="Wave2ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8_wavefront.png" id="poq-c6-Ui4" userLabel="WaveFrontImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -380,6 +430,9 @@ Take one minute to give us feedback about your experience.</string>
                         <outlet property="backgroundImageView" destination="VfW-Y5-8Nl" id="mau-3l-Phk"/>
                         <outlet property="hintLayerImageView" destination="4QR-6Z-svU" id="RTf-HU-CQu"/>
                         <outlet property="menuImageView" destination="Jj3-4Z-ai6" id="7af-9N-Sdn"/>
+                        <outlet property="wave1ImageView" destination="B91-m4-2Pn" id="3Va-Hd-dj4"/>
+                        <outlet property="wave2ImageView" destination="XRy-z3-f66" id="GKS-et-odd"/>
+                        <outlet property="wavesImagevView" destination="poq-c6-Ui4" id="Qk5-Ga-s6C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjW-YT-4aN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -470,7 +523,20 @@ Take one minute to give us feedback about your experience.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="8_sand.png" width="1024" height="768"/>
+        <image name="8_sand2.png" width="1024" height="768"/>
+        <image name="8_ship.png" width="1024" height="768"/>
+        <image name="8_wave1.png" width="1024" height="768"/>
+        <image name="8_wave2.png" width="1024" height="768"/>
+        <image name="8_wavefront.png" width="1024" height="768"/>
         <image name="Default-Landscape.png" width="1024" height="768"/>
+        <image name="amihan.png" width="1024" height="768"/>
+        <image name="bamboo.png" width="1024" height="768"/>
+        <image name="bg-light.png" width="1024" height="768"/>
+        <image name="blue-bubble.png" width="1024" height="768"/>
+        <image name="green-bubble.png" width="1024" height="768"/>
+        <image name="inori.png" width="1024" height="768"/>
+        <image name="jellyfish.png" width="1024" height="768"/>
         <image name="menu_set-top-w.png" width="1024" height="768"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
