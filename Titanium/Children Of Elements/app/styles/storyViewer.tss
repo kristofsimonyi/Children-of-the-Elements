@@ -23,6 +23,20 @@
 	backgroundImage:"/menu/button_next.png"
 	
 },
+"#speech":{
+	left:186,
+	top:0,
+	width:108,
+	height:95,
+	backgroundImage:"/menu/button_speech.png"
+},
+"#audio":{
+	left:294,
+	top:0,
+	width:97,
+	height:97,
+	backgroundImage:"/menu/button_sound.png"	
+},
 "#home":{
 	top:0,
 	width:98,

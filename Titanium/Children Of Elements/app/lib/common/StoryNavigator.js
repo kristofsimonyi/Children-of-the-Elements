@@ -87,6 +87,8 @@ StoryNavigator.prototype.loadSlide = function(_slideID) {
 		}
 	
 	}
+
+	
 };
 
 

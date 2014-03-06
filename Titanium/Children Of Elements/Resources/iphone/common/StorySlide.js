@@ -14,6 +14,8 @@ function StorySlide(_slideData) {
 
 var Transition = require("/common/ItemTransition");
 
+var TextSlide = require("/common/TextSlide");
+
 StorySlide.prototype.mainView;
 
 StorySlide.prototype.animatedItems;
@@ -54,6 +56,9 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
         currentElement = this.createTransition(_targetElement);
         break;
 
+      case "textSlide":
+        currentElement = this.createTextSlide(_targetElement);
+
       default:
         Ti.API.info("create single element, type not found");
     }
@@ -73,6 +78,12 @@ StorySlide.prototype.createSingleElement = function(_targetElement) {
 StorySlide.prototype.createTransition = function(_targetInfo) {
     var transition = new Transition(_targetInfo);
     return transition;
+};
+
+StorySlide.prototype.createTextSlide = function(_targetInfo) {
+    var textSlide = new TextSlide(_targetInfo);
+    this.mainView.speech = textSlide;
+    return textSlide.getContainer();
 };
 
 StorySlide.prototype.animations = function(_animData) {
@@ -106,7 +117,11 @@ StorySlide.prototype.slideLoaded = function(e) {
     element.animate(animation);
     animation.parentView = element.parentView;
     animation.addEventListener("complete", function(e) {
-        e.source.parentView.children.length > 1 && e.source.parentView.remove(e.source.parentView.children[0]);
+        if (e.source.parentView.children.length > 1) {
+            e.source.parentView.children[0].speech && e.source.parentView.children[0].speech.stopSpeech();
+            e.source.parentView.remove(e.source.parentView.children[0]);
+        }
+        e.source.parentView.children[0].speech && e.source.parentView.children[0].speech.startSpeech();
     });
     element.onStage || element.fireEvent("animarSlide");
 };

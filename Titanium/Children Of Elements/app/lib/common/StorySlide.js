@@ -5,6 +5,7 @@ return: a self contained slide
 */
 
 var Transition = require('/common/ItemTransition');
+var TextSlide = require('/common/TextSlide')
 
 function StorySlide(_slideData){
 	
@@ -121,9 +122,14 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 		
 		case "transition":
 
-			currentElement = this.createTransition( _targetElement)
-
+			currentElement = this.createTransition( _targetElement);
+			
 			break;
+		case "textSlide":
+
+			currentElement = this.createTextSlide( _targetElement );
+			//this.mainView.speech = true
+
 
 		default:
 			Ti.API.info("create single element, type not found");
@@ -170,6 +176,15 @@ StorySlide.prototype.createTransition = function(_targetInfo) {
 	var transition = new Transition(_targetInfo);
 
 	return transition
+};
+
+StorySlide.prototype.createTextSlide = function(_targetInfo) {
+	
+	var textSlide = new TextSlide(_targetInfo);
+
+	this.mainView.speech = textSlide //textSlide.startSpeech()
+
+	return textSlide.getContainer();
 };
 
 
@@ -243,12 +258,19 @@ StorySlide.prototype.slideLoaded = function(e) {
 	animation.addEventListener('complete',function(e){
  
 		
-		if(e.source.parentView.children.length > 1){ 
+		if(e.source.parentView.children.length > 1){
+			//stop sound
+			if(e.source.parentView.children[0].speech){
+				e.source.parentView.children[0].speech.stopSpeech()
+			}
+
 			//alert("removed Slide")//e.source.parentView.children.length )
 			e.source.parentView.remove(e.source.parentView.children[0]);
 		}
 
-		//alert("bamboozled")
+		if(e.source.parentView.children[0].speech){
+			e.source.parentView.children[0].speech.startSpeech()
+		}
 		
 
 	});
@@ -261,8 +283,6 @@ StorySlide.prototype.slideLoaded = function(e) {
 			element.fireEvent('animarSlide')
 	}
 };
-
-
 
 
 ///////////////////// TOOLS /////////
@@ -320,8 +340,6 @@ StorySlide.prototype.errorDetect = function(_alertMessage) {
 
 //memory delloc
 StorySlide.prototype.cleaner = function() {
-
-
 	// this function should track all images and remove them from memory
 };
 

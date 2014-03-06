@@ -21,7 +21,6 @@ function StoryBuilder(_storyID){
 
 	};
 
-
 	return _slides;
 }
 

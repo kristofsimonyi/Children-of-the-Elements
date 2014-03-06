@@ -48,6 +48,26 @@ function Controller() {
     });
     $.__views.navBar.add($.__views.back);
     back ? $.__views.back.addEventListener("click", back) : __defers["$.__views.back!click!back"] = true;
+    $.__views.speech = Ti.UI.createView({
+        left: 186,
+        top: 0,
+        width: 108,
+        height: 95,
+        backgroundImage: "/menu/button_speech.png",
+        id: "speech"
+    });
+    $.__views.navBar.add($.__views.speech);
+    back ? $.__views.speech.addEventListener("click", back) : __defers["$.__views.speech!click!back"] = true;
+    $.__views.audio = Ti.UI.createView({
+        left: 294,
+        top: 0,
+        width: 97,
+        height: 97,
+        backgroundImage: "/menu/button_sound.png",
+        id: "audio"
+    });
+    $.__views.navBar.add($.__views.audio);
+    back ? $.__views.audio.addEventListener("click", back) : __defers["$.__views.audio!click!back"] = true;
     $.__views.home = Ti.UI.createView({
         top: 0,
         width: 98,
@@ -79,6 +99,8 @@ function Controller() {
         init();
     });
     __defers["$.__views.back!click!back"] && $.__views.back.addEventListener("click", back);
+    __defers["$.__views.speech!click!back"] && $.__views.speech.addEventListener("click", back);
+    __defers["$.__views.audio!click!back"] && $.__views.audio.addEventListener("click", back);
     __defers["$.__views.home!click!exitStory"] && $.__views.home.addEventListener("click", exitStory);
     __defers["$.__views.next!click!next"] && $.__views.next.addEventListener("click", next);
     _.extend($, exports);
