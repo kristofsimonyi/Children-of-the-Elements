@@ -18,7 +18,8 @@ function init(){
 	//Ti.App.imageCount = 0
 	
 	_story = new Story(currentStoryID);
-	_navigator = new Navigator(_story)
+
+	_navigator = new Navigator( _story.getSlides() )
 
 	$.storyStage.add(_navigator.init() );
 
@@ -41,9 +42,22 @@ function back(){
 	_navigator.back();
 }
 
+function stopSpeech(){
+	_story.stopSpeech()
+}
+
 function exitStory(){
-	__navigator = null;
-	///_story.cleaner()
+
+	_story.clean()
 	_story = null;
+
+	_navigator.clean();
+	_navigator = null;
+	
+	$.storyStage.removeAllChildren()
+
+	
+	///_story.cleaner()
+
 	$.storyViewer.close();
 }

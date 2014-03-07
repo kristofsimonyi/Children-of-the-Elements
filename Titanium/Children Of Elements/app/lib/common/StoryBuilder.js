@@ -5,7 +5,7 @@ return all slides of  a story
 **/
 var Slide = require('/common/StorySlide');
 
-var _slides
+
 
 function StoryBuilder(_storyID){
 
@@ -13,16 +13,18 @@ function StoryBuilder(_storyID){
 	var _data = this.parseJSON('json/story'+ _storyID +'.json');
 	
 	/// create slide class
-	var _slides = []; //Ti.UI.createView()
+	this._slides = []; //Ti.UI.createView()
 
 	for (var i = 0; i < _data.length; i++) {
 
-		_slides.push( new Slide( _data[i] ) )
+		this._slides.push( new Slide( _data[i] ) )
 
 	};
 
-	return _slides;
+	//return this._slides;
 }
+
+StoryBuilder.prototype._slides;
 
 StoryBuilder.prototype.parseJSON = function(_URL) {
 	
@@ -34,6 +36,28 @@ StoryBuilder.prototype.parseJSON = function(_URL) {
 
 	return json;
 };
+
+StoryBuilder.prototype.getSlides = function() {
+	return this._slides;
+};
+
+StoryBuilder.prototype.clean = function() {
+	
+	for (var i = 0; i < this._slides.length; i++) {
+
+		this._slides[i].clean()
+
+	};
+};
+
+StoryBuilder.prototype.stopSpeech = function() {
+
+	for (var i = 0; i < this._slides.length; i++) {
+
+		this._slides[i].stopSpeech()
+
+	};
+}
 
 
 ////parser

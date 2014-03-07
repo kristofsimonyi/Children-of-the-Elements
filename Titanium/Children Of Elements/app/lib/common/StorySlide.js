@@ -36,13 +36,17 @@ function StorySlide(_slideData){
 
 	this.mainView.addEventListener('animarSlide', this.animateSlide);
 
-	return this.mainView;
+	//return this.mainView;
 }
 
 
 StorySlide.prototype.mainView;
 StorySlide.prototype.animatedItems;
 
+
+StorySlide.prototype.getSlide = function(){
+	return this.mainView;
+}
 
 /// parse the elements lists and add all elements to main View
 StorySlide.prototype.buildElements = function() {
@@ -337,10 +341,32 @@ StorySlide.prototype.errorDetect = function(_alertMessage) {
 	alert(_alertMessage)
 };
 
+StorySlide.prototype.stopSpeech = function() {
+	if(this.mainView.speech){
+		this.mainView.speech.stopSpeech();
+	}
+};
 
 //memory delloc
-StorySlide.prototype.cleaner = function() {
+StorySlide.prototype.clean = function() {
 	// this function should track all images and remove them from memory
+
+
+	//stop speech
+	if(this.mainView.speech){
+		this.mainView.speech.stopSpeech();
+		this.mainView.speech.clean()
+		this.mainView.speech = null;
+	}
+
+
+	
+    this.mainView.removeAllChildren() 
+
+
+	this.mainView = null
+
+
 };
 
 

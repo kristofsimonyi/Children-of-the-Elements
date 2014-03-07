@@ -68,22 +68,23 @@ StoryNavigator.prototype.back = function() {
 
 StoryNavigator.prototype.loadSlide = function(_slideID) {
 	
+	var currentSlide =  this.storySlides[_slideID].getSlide()
 	
-	this.storySlides[_slideID].backgroundColor = "#ffffff";
-	this.storySlides[_slideID].parentView = this.storyView;
-	this.storySlides[_slideID].opacity = 0
+	currentSlide.backgroundColor = "#ffffff";
+	currentSlide.parentView = this.storyView;
+	currentSlide.opacity = 0
 
-	this.storyView.add(this.storySlides[_slideID])
+	this.storyView.add(currentSlide)
 	
 	// check if this slide already appeared
 	if(Ti.Platform.name == "iPhone OS"){
 	
-		this.storySlides[_slideID].fireEvent('story_slideImage_loaded')
+		currentSlide.fireEvent('story_slideImage_loaded')
 	
 	}else if(Ti.Platform.name == "android"){
 	
-		if ( this.storySlides[_slideID].onStage  ){
-			this.storySlides[_slideID].fireEvent('story_slideImage_loaded')
+		if ( currentSlide.onStage  ){
+			currentSlide.fireEvent('story_slideImage_loaded')
 		}
 	
 	}
@@ -91,6 +92,10 @@ StoryNavigator.prototype.loadSlide = function(_slideID) {
 	
 };
 
+StoryNavigator.prototype.clean = function() {
+	this.storyView.removeAllChildren()
+	this.storyView = null
+};
 
 StoryNavigator.prototype.errorManager = function(_message) {
 
