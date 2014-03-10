@@ -61,12 +61,8 @@ StorySlide.prototype.buildElements = function() {
 	 
 		var element = this.createSingleElement( this.slideData.stageElements[i] , _itemsLength);
 			element.zIndex = i
-			element._parent = this.mainView
-			
-
-
-
-		this.mainView.add(element);
+			//element._parent = this.mainView
+			this.mainView.add(element);
 
 	};
 };
@@ -104,23 +100,25 @@ StorySlide.prototype.createSingleElement = function(_targetElement, _totalCount)
 			_targetElement.properties.image = '/storyAssets/story1/'+ _targetElement.properties.image;
 
 			currentElement = Ti.UI.createImageView(_targetElement.properties)
-			
+
+			currentElement.touchEnabled = false;
+					
+			var pete = "trolo"
 
 			///attach load event
-				currentElement.addEventListener('load',function(e){
+				currentElement.addEventListener('load', imageLoaded)
 
-
-
-					if(++e.source._parent.imageCount == e.source.itemCount){
-						e.source._parent.fireEvent("story_slideImage_loaded");
-						e.source._parent.imageCount = 0
-						//e.source._parent = null
+				function imageLoaded (e){
+					
+					 
+					if(++e.source.getParent().imageCount == e.source.itemCount){
+						e.source.getParent().fireEvent("story_slideImage_loaded");
+						e.source.getParent().imageCount = 0
 					}
-
 					
-					currentElement.touchEnabled = false;
-					
-				})
+					e.source.removeEventListener('load', imageLoaded);
+			
+				}
 
 			break;
 		

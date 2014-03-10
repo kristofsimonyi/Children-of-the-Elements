@@ -29,9 +29,7 @@ function init(){
 }
 
 
-$.storyViewer.addEventListener('open', function(){
-	init();
-})
+$.storyViewer.addEventListener('open', init );
 
 
 function next(){
@@ -50,14 +48,18 @@ function exitStory(){
 
 	_story.clean()
 	_story = null;
+	delete _story;
 
 	_navigator.clean();
 	_navigator = null;
+	delete _navigator
 	
 	$.storyStage.removeAllChildren()
 
 	
 	///_story.cleaner()
+
+	$.storyViewer.addEventListener('open', init)
 
 	$.storyViewer.close();
 }

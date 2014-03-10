@@ -18,6 +18,7 @@ Alloy.Globals.rotateTop = Ti.UI.create2DMatrix().rotate(-180);
 Alloy.Globals.rotateInterno = Ti.UI.create2DMatrix().rotate(49).scale(2, 2);
 Alloy.Globals.rotateReset= Ti.UI.create2DMatrix().rotate(0);
 
+Alloy.Globals.storyFolderRoot = "/storyAssets/"
 
 //if(1 = 1) {
 
