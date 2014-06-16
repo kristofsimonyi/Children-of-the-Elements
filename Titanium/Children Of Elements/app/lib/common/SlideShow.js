@@ -58,7 +58,7 @@ SlideShow.prototype.slideShowStart = function(_arrayTarget, _viewTarget) {
 
 		if(val<0){
 			val = _arrayTarget.length - 1;
-			 Ti.App.fireEvent('stopSlideShow' , {custom_data:e});
+			 //Ti.App.fireEvent('stopSlideShow' , {custom_data:e});
 
 		}
 
